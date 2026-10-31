@@ -29,7 +29,16 @@
       "legacy_inputs": [],
       "reading_status": "read",
       "ingest_status": "integrating",
-      "integrated_topics": [],
+      "integrated_topics": [
+        "wiki/overview.md",
+        "wiki/foundations/Formalization.md",
+        "wiki/vision/Overview.md",
+        "wiki/architecture/Overview.md",
+        "wiki/training/Overview.md",
+        "wiki/efficiency/Overview.md",
+        "wiki/evaluation/Overview.md",
+        "wiki/models/Overview.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 36
     },
@@ -53,7 +62,16 @@
       "legacy_inputs": [],
       "reading_status": "read",
       "ingest_status": "integrating",
-      "integrated_topics": [],
+      "integrated_topics": [
+        "wiki/overview.md",
+        "wiki/foundations/Formalization.md",
+        "wiki/architecture/Overview.md",
+        "wiki/training/Overview.md",
+        "wiki/efficiency/Overview.md",
+        "wiki/reasoning/Overview.md",
+        "wiki/evaluation/Overview.md",
+        "wiki/models/Overview.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 91
     },
@@ -77,7 +95,17 @@
       "legacy_inputs": [],
       "reading_status": "read",
       "ingest_status": "integrating",
-      "integrated_topics": [],
+      "integrated_topics": [
+        "wiki/overview.md",
+        "wiki/foundations/Formalization.md",
+        "wiki/vision/Overview.md",
+        "wiki/architecture/Overview.md",
+        "wiki/training/Overview.md",
+        "wiki/efficiency/Overview.md",
+        "wiki/reasoning/Overview.md",
+        "wiki/evaluation/Overview.md",
+        "wiki/models/Overview.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 92
     },
@@ -85,7 +113,7 @@
       "source_id": "S004",
       "slug": "ViT",
       "type": "paper",
-      "title": "ViT",
+      "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
       "primary_direction": "vision/encoders",
       "identity_key": "arxiv:2010.11929",
       "raw_path": "raw/papers/vision/encoders/ViT.pdf",
@@ -101,8 +129,8 @@
       "legacy_inputs": [
         "raw/notes/多模态经典/2021-ICLR-ViT.md"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 22
@@ -128,13 +156,14 @@
         "raw/notes/视觉编码器/Latex_out/SoViT总结.pdf",
         "raw/notes/视觉编码器/SoViT总结.tex"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 21
     },
     {
       "source_id": "S006",
@@ -157,13 +186,14 @@
         "raw/notes/视觉编码器/Latex_out/NaViT总结.pdf",
         "raw/notes/视觉编码器/NaViT总结.tex"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 26
     },
     {
       "source_id": "S007",
@@ -186,13 +216,14 @@
         "raw/notes/视觉编码器/AIMv2总结.tex",
         "raw/notes/视觉编码器/Latex_out/AIMv2总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 18
     },
     {
       "source_id": "S008",
@@ -216,8 +247,8 @@
         "raw/notes/多模态经典/2021-ICML-CLIP总结.tex",
         "raw/notes/多模态经典/Latex_out/2021-ICML-CLIP总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 48
@@ -243,13 +274,14 @@
         "raw/notes/视觉编码器/Latex_out/SigLIP总结.pdf",
         "raw/notes/视觉编码器/SigLIP总结.tex"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 17
     },
     {
       "source_id": "S010",
@@ -272,13 +304,14 @@
         "raw/notes/视觉编码器/Latex_out/SigLIP2总结.pdf",
         "raw/notes/视觉编码器/SigLIP2总结.tex"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 20
     },
     {
       "source_id": "S011",
@@ -302,13 +335,14 @@
         "raw/notes/多模态经典/ALBEF动量蒸馏.md",
         "raw/notes/多模态经典/Latex_out/2021-NeurIPS-ALBEF总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 16
     },
     {
       "source_id": "S012",
@@ -331,14 +365,15 @@
         "raw/notes/多模态经典/2022-ICML-BLIP总结.tex",
         "raw/notes/多模态经典/Latex_out/2022-ICML-BLIP总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
         "Title matching false only because PDF uses the fi ligature in Unified; title and authors manually verified."
-      ]
+      ],
+      "pages": 12
     },
     {
       "source_id": "S013",
@@ -361,13 +396,14 @@
         "raw/notes/多模态经典/2022-CoCa总结.tex",
         "raw/notes/多模态经典/Latex_out/2022-CoCa总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 19
     },
     {
       "source_id": "S014",
@@ -390,8 +426,8 @@
         "raw/notes/多模态经典/2022-NeurIPS-VLMo总结.tex",
         "raw/notes/多模态经典/Latex_out/2022-NeurIPS-VLMo总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 16
@@ -418,12 +454,13 @@
         "raw/notes/多模态经典/Latex_out/2023-CVPR-BEiT-v3总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 18
     },
     {
       "source_id": "S016",
@@ -447,8 +484,8 @@
         "raw/notes/多模态经典/2022-NeurIPS-Flamingo总结.tex",
         "raw/notes/多模态经典/Latex_out/2022-NeurIPS-Flamingo总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 54
@@ -475,8 +512,8 @@
         "raw/notes/多模态经典/2023-ICML-BLIP-2总结.tex",
         "raw/notes/多模态经典/Latex_out/2023-ICML-BLIP-2总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 13
@@ -502,13 +539,14 @@
         "raw/notes/多模态经典/2023-InstructBLIP总结.tex",
         "raw/notes/多模态经典/Latex_out/2023-InstructBLIP总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 17
     },
     {
       "source_id": "S019",
@@ -531,13 +569,14 @@
         "raw/notes/多模态经典/2023-MiniGPT-4总结.tex",
         "raw/notes/多模态经典/Latex_out/2023-MiniGPT-4总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 15
     },
     {
       "source_id": "S020",
@@ -560,13 +599,14 @@
         "raw/notes/多模态经典/2023-mPLUG-OWL总结.tex",
         "raw/notes/多模态经典/Latex_out/2023-mPLUG-OWL总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 21
     },
     {
       "source_id": "S021",
@@ -590,13 +630,14 @@
         "raw/notes/多模态经典/Latex_out/2023-MiniGPT-5总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
         "v4 PDF title omits MiniGPT-5 prefix and uses singular Voken, while arXiv metadata retains MiniGPT-5: Interleaved Vision-and-Language Generation via Generative Vokens. Authors Kaizhi Zheng, Xuehai He, Xin Eric Wang match; abstract explicitly identifies MiniGPT-5. Same source, title variation retained."
-      ]
+      ],
+      "pages": 19
     },
     {
       "source_id": "S022",
@@ -621,7 +662,7 @@
         "raw/notes/多模态经典/Latex_out/2023-NeurIPS-LLaVA总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 25
@@ -648,12 +689,13 @@
         "raw/notes/多模态经典/Latex_out/2023-LLaVA-1.5总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 15
     },
     {
       "source_id": "S024",
@@ -683,7 +725,7 @@
         "raw/notes/多模态经典/Latex_out/2024-LLaVA-NeXT总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -713,7 +755,7 @@
         "raw/notes/视觉编码器/Latex_out/InternViT总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 25
@@ -745,7 +787,8 @@
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 24
     },
     {
       "source_id": "S027",
@@ -774,7 +817,8 @@
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 52
     },
     {
       "source_id": "S028",
@@ -804,7 +848,8 @@
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
         "PDF first page credits Qwen Team; arXiv metadata enumerates individual authors."
-      ]
+      ],
+      "pages": 42
     },
     {
       "source_id": "S029",
@@ -869,7 +914,8 @@
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
         "PDF first page credits Qwen Team; arXiv metadata enumerates individual authors."
-      ]
+      ],
+      "pages": 28
     },
     {
       "source_id": "S031",
@@ -898,7 +944,8 @@
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 33
     },
     {
       "source_id": "S032",
@@ -927,7 +974,8 @@
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
-      ]
+      ],
+      "pages": 28
     },
     {
       "source_id": "S033",
@@ -957,7 +1005,8 @@
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
         "Legacy TeX links official GitHub DeepSeek_OCR_paper.pdf; official repository and arXiv metadata confirm the same title and authors. Versioned arXiv original selected for archival."
-      ]
+      ],
+      "pages": 22
     },
     {
       "source_id": "S034",
@@ -989,7 +1038,8 @@
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
         "PDF first page credits DeepSeek-AI; architecture/training legacy notes refer to this same report."
-      ]
+      ],
+      "pages": 51
     }
   ]
 }
