@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-10-31",
-  "status": "baseline_prepared_migration_not_started",
+  "status": "migration_completed_byte_verified",
   "root": "C:\\Users\\ZENGZX\\Desktop\\MLLM",
   "path_convention": "Vault-relative POSIX paths; size is byte count; SHA-256 is lowercase hex; files is the complete 261-file immutable-original baseline",
   "files": [
@@ -1856,7 +1856,7 @@
     "tex_count": 31,
     "tex_dependency_count": 165,
     "tex_dependency_command_counts": {
-      "includegraphics": 157,
+      "includegraphics": 156,
       "figw": 9
     },
     "tex_missing_or_unresolved": 0,
@@ -1864,7 +1864,17 @@
     "tex_references_to_seven_paper_pdfs": 0,
     "markdown_local_link_count": 19,
     "markdown_missing_local_link_count": 3,
-    "duplicate_hash_groups": 2
+    "duplicate_hash_groups": 2,
+    "tex_command_occurrences_including_macro_templates": {
+      "includegraphics": 157,
+      "figw": 9
+    },
+    "tex_dependency_count_note": "165 actual resource references = 156 direct includegraphics + 9 figw invocations. 157 includegraphics lexical occurrences include the VLMo macro definition template and are not 157 direct resource references.",
+    "migrated_original_file_count": 261,
+    "imported_reference_file_count": 1,
+    "new_official_source_object_count": 24,
+    "new_official_raw_file_count": 26,
+    "new_official_raw_total_bytes": 161566748
   },
   "tex_dependency_audit": {
     "method": "Static command scan with TeX comment stripping, balanced braces, optional arguments and explicit VLMo figw macro expansion. Local paths resolve relative to each TeX source directory; no compilation performed.",
@@ -1957,7 +1967,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-OCR/fig-73.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 6
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "MLLM实例/Deepseek/DeepSeek-V4.1-Flash架构总结.tex",
@@ -2074,7 +2088,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-329.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 12
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "MLLM实例/Deepseek/DeepSeek-V4.1-Flash训练总结.tex",
@@ -2218,7 +2236,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnJypV1UxZN0CFuJIGrXrzsh.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 15
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "MLLM实例/Deepseek/DeepSeek-VL2总结.tex",
@@ -2281,7 +2303,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL2/fig-06.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 6
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "MLLM实例/Deepseek/DeepSeek-VL总结.tex",
@@ -2326,7 +2352,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL/fig-04.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 4
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "MLLM实例/Qwen/Qwen-3.5总结.tex",
@@ -2389,7 +2419,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Qwen/images/Qwen-3.5/fig-06.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 6
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "MLLM实例/Qwen/Qwen-VL总结.tex",
@@ -2443,7 +2477,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Qwen/images/Qwen-VL/fig-05.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 5
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "MLLM实例/Qwen/Qwen2-VL总结.tex",
@@ -2506,7 +2544,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Qwen/images/Qwen2-VL/fig-06.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 6
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "MLLM实例/Qwen/Qwen3-VL总结.tex",
@@ -2578,7 +2620,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Qwen/images/Qwen3-VL/fig-07.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 7
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "MLLM实例/Qwen/Qwen3.8-Flash-Next总结.tex",
@@ -2776,7 +2822,11 @@
             "resolved_new_path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-237.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 21
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2021-ICML-CLIP总结.tex",
@@ -2812,7 +2862,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2021-ICML-CLIP/fig-03.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 3
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2021-NeurIPS-ALBEF总结.tex",
@@ -2839,7 +2893,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2021-NeurIPS-ALBEF/fig-728.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 2
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2022-CoCa总结.tex",
@@ -2866,7 +2924,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2022-CoCa/fig-02.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 2
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2022-ICML-BLIP总结.tex",
@@ -2893,7 +2955,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2022-ICML-BLIP/fig-02.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 2
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2022-NeurIPS-Flamingo总结.tex",
@@ -2965,13 +3031,17 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2022-NeurIPS-Flamingo/fig-07.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 7
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2022-NeurIPS-VLMo总结.tex",
         "new_source": "raw/notes/多模态经典/2022-NeurIPS-VLMo总结.tex",
         "command_counts": {
-          "includegraphics": 1,
+          "includegraphics": 0,
           "figw": 9
         },
         "dependencies": [
@@ -3065,7 +3135,12 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-09.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 1,
+          "figw": 9
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2023-CVPR-BEiT-v3总结.tex",
@@ -3092,7 +3167,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2023-CVPR-BEiT-v3/fig-02.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 2
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2023-ICML-BLIP-2总结.tex",
@@ -3146,7 +3225,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2023-ICML-BLIP-2/fig-05.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 5
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2023-InstructBLIP总结.tex",
@@ -3182,7 +3265,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2023-InstructBLIP/fig-03.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 3
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2023-LLaVA-1.5总结.tex",
@@ -3236,7 +3323,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2023-LLaVA-1.5/fig-05.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 5
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2023-MiniGPT-4总结.tex",
@@ -3272,7 +3363,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2023-MiniGPT-4/fig-03.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 3
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2023-MiniGPT-5总结.tex",
@@ -3290,7 +3385,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2023-MiniGPT-5/fig-01.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 1
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2023-NeurIPS-LLaVA总结.tex",
@@ -3344,7 +3443,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2023-NeurIPS-LLaVA/fig-05.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 5
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2023-mPLUG-OWL总结.tex",
@@ -3371,7 +3474,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2023-mPLUG-OWL/fig-02.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 2
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "多模态经典/2024-LLaVA-NeXT总结.tex",
@@ -3398,7 +3505,11 @@
             "resolved_new_path": "raw/notes/多模态经典/images/2024-LLaVA-NeXT/fig-02.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 2
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "视觉编码器/AIMv2总结.tex",
@@ -3470,7 +3581,11 @@
             "resolved_new_path": "raw/notes/视觉编码器/images/AIMv2/fig-07.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 7
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "视觉编码器/InternViT总结.tex",
@@ -3506,7 +3621,11 @@
             "resolved_new_path": "raw/notes/视觉编码器/images/InternViT/fig-03.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 3
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "视觉编码器/NaViT总结.tex",
@@ -3560,7 +3679,11 @@
             "resolved_new_path": "raw/notes/视觉编码器/images/NaViT/fig-05.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 5
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "视觉编码器/SigLIP2总结.tex",
@@ -3596,7 +3719,11 @@
             "resolved_new_path": "raw/notes/视觉编码器/images/SigLIP2/fig-03.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 3
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "视觉编码器/SigLIP总结.tex",
@@ -3632,7 +3759,11 @@
             "resolved_new_path": "raw/notes/视觉编码器/images/SigLIP/fig-03.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 3
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       },
       {
         "source": "视觉编码器/SoViT总结.tex",
@@ -3668,7 +3799,11 @@
             "resolved_new_path": "raw/notes/视觉编码器/images/SoViT/fig-03.png",
             "migration_relative_reference": "preserved"
           }
-        ]
+        ],
+        "command_occurrences_including_macro_templates": {
+          "includegraphics": 3
+        },
+        "post_migration_dependency_status": "all_present_relative_paths_preserved"
       }
     ],
     "macro_templates": [
@@ -5244,7 +5379,329 @@
     "mapping_unique": true,
     "original_reparse_points_found": false,
     "original_bytes_changed": false,
-    "migration_executed": false,
-    "baseline_rehashed_before_record_write": true
+    "migration_executed": true,
+    "baseline_rehashed_before_record_write": true,
+    "post_migration_original_hashes_verified": 261,
+    "post_migration_original_sizes_verified": 261,
+    "post_migration_tex_resource_references_verified": 165,
+    "old_source_files_remaining": 0,
+    "old_top_level_directories_removed": [
+      "多模态经典",
+      "视觉编码器",
+      "MLLM实例"
+    ],
+    "imported_reference_byte_verified": true,
+    "official_import_byte_verified": 26,
+    "git_commit_performed_by_migration_agent": false
+  },
+  "baseline_git_commit": "beb00884709059882482b9dc8d6059949608faef",
+  "imported_reference": [
+    {
+      "source_path": "C:\\Users\\ZENGZX\\Desktop\\Long-Horizon-Agents\\raw\\articles\\llm-wiki.md",
+      "new_path": "raw/articles/llm-wiki.md",
+      "sha256": "dc3efe98ae62f23dd08acad13aba2e95287beb20b6bec2f4af0423557fe37401",
+      "size": 11985,
+      "kind": "reference_article_markdown",
+      "date": "2026-10-31",
+      "source_bytes_unchanged": true
+    }
+  ],
+  "imported_official_sources": {
+    "object_count": 24,
+    "raw_file_count": 26,
+    "copied_byte_identical": true,
+    "files": [
+      {
+        "source_id": "S005",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S005-SoViT.pdf",
+        "new_path": "raw/papers/vision/encoders/SoViT.pdf",
+        "sha256": "360540d5b39e666adc1a72bf6f50c803b5494c05bf4e03b666bf479cc7ab903b",
+        "size": 758597,
+        "original_url": "https://arxiv.org/abs/2305.13035",
+        "final_url": "https://arxiv.org/pdf/2305.13035v5"
+      },
+      {
+        "source_id": "S006",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S006-NaViT.pdf",
+        "new_path": "raw/papers/vision/encoders/NaViT.pdf",
+        "sha256": "d4421cab93fe27a49c64120faa46822dc95a563ed70f5495b25112b35619a396",
+        "size": 1853088,
+        "original_url": "https://arxiv.org/abs/2307.06304",
+        "final_url": "https://arxiv.org/pdf/2307.06304v1"
+      },
+      {
+        "source_id": "S007",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S007-AIMv2.pdf",
+        "new_path": "raw/papers/vision/encoders/AIMv2.pdf",
+        "sha256": "f86924b23fb81db4f190c82d416597c0cd9fd8d819c106bf32a11c24db815d4f",
+        "size": 4788339,
+        "original_url": "https://arxiv.org/abs/2411.14402",
+        "final_url": "https://arxiv.org/pdf/2411.14402v1"
+      },
+      {
+        "source_id": "S009",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S009-SigLIP.pdf",
+        "new_path": "raw/papers/vision/alignment/SigLIP.pdf",
+        "sha256": "2efade8de3baeffe9eba759aab9f510ea8f8ac3c365f02f0da75d9baf9ffa2db",
+        "size": 614960,
+        "original_url": "https://arxiv.org/abs/2303.15343",
+        "final_url": "https://arxiv.org/pdf/2303.15343v4"
+      },
+      {
+        "source_id": "S010",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S010-SigLIP2.pdf",
+        "new_path": "raw/papers/vision/alignment/SigLIP2.pdf",
+        "sha256": "b840240c075aad94d46f739712c594cb6848d0bf0e5b516da5d8da7586ad6bb9",
+        "size": 623539,
+        "original_url": "https://arxiv.org/abs/2502.14786",
+        "final_url": "https://arxiv.org/pdf/2502.14786v1"
+      },
+      {
+        "source_id": "S011",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S011-ALBEF.pdf",
+        "new_path": "raw/papers/architecture/pretraining/ALBEF.pdf",
+        "sha256": "137c937c0834d8aa116bac93cae46cabe86cf7b7645f3b6339639b194273b229",
+        "size": 7739417,
+        "original_url": "https://arxiv.org/abs/2107.07651",
+        "final_url": "https://arxiv.org/pdf/2107.07651v2"
+      },
+      {
+        "source_id": "S012",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S012-BLIP.pdf",
+        "new_path": "raw/papers/architecture/pretraining/BLIP.pdf",
+        "sha256": "63e0335cdd57c3d92b907b89c93d10befdd29b8aeed108091bbde90c121ed97a",
+        "size": 1303121,
+        "original_url": "https://arxiv.org/abs/2201.12086",
+        "final_url": "https://arxiv.org/pdf/2201.12086v2"
+      },
+      {
+        "source_id": "S013",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S013-CoCa.pdf",
+        "new_path": "raw/papers/architecture/pretraining/CoCa.pdf",
+        "sha256": "ebb8ecad1667502a8e016241b499b2479e296d59c7df06abdedb5cb51d26457b",
+        "size": 4092626,
+        "original_url": "https://arxiv.org/abs/2205.01917",
+        "final_url": "https://arxiv.org/pdf/2205.01917v2"
+      },
+      {
+        "source_id": "S015",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S015-BEiT-v3.pdf",
+        "new_path": "raw/papers/architecture/pretraining/BEiT-v3.pdf",
+        "sha256": "f02c366d9a3e02d744807fac11f5f89255aff2532108a0795d4ee2736c1376d4",
+        "size": 611526,
+        "original_url": "https://arxiv.org/abs/2208.10442",
+        "final_url": "https://arxiv.org/pdf/2208.10442v2"
+      },
+      {
+        "source_id": "S018",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S018-InstructBLIP.pdf",
+        "new_path": "raw/papers/architecture/connectors/InstructBLIP.pdf",
+        "sha256": "31c03f3ee54016e6da875593ed9d98419899d4164af638dc8cca76a4871beb35",
+        "size": 3774907,
+        "original_url": "https://arxiv.org/abs/2305.06500",
+        "final_url": "https://arxiv.org/pdf/2305.06500v2"
+      },
+      {
+        "source_id": "S019",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S019-MiniGPT-4.pdf",
+        "new_path": "raw/papers/architecture/connectors/MiniGPT-4.pdf",
+        "sha256": "a78f64448a86d91bd3c821178686cbe129312d53ee2b7eaf29ab412ce44c2ac0",
+        "size": 3698200,
+        "original_url": "https://arxiv.org/abs/2304.10592",
+        "final_url": "https://arxiv.org/pdf/2304.10592v2"
+      },
+      {
+        "source_id": "S020",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S020-mPLUG-Owl.pdf",
+        "new_path": "raw/papers/architecture/connectors/mPLUG-Owl.pdf",
+        "sha256": "997b330fb3b0b6e4972f7e98ae7753cfbadf81512d0d070eae654e3be2085ffd",
+        "size": 15952374,
+        "original_url": "https://arxiv.org/abs/2304.14178",
+        "final_url": "https://arxiv.org/pdf/2304.14178v3"
+      },
+      {
+        "source_id": "S021",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S021-MiniGPT-5.pdf",
+        "new_path": "raw/papers/architecture/generation/MiniGPT-5.pdf",
+        "sha256": "496647dc686fa0955af3f7346940273e92052fd0828776747a35d8214549c9f1",
+        "size": 42553867,
+        "original_url": "https://arxiv.org/abs/2310.02239",
+        "final_url": "https://arxiv.org/pdf/2310.02239v4"
+      },
+      {
+        "source_id": "S023",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S023-LLaVA-1.5.pdf",
+        "new_path": "raw/papers/models/llava/LLaVA-1.5.pdf",
+        "sha256": "b7074a6dad218e0dd109f2a80311548d447e1cf4b9e31c002696985784cc05b9",
+        "size": 2215588,
+        "original_url": "https://arxiv.org/abs/2310.03744",
+        "final_url": "https://arxiv.org/pdf/2310.03744v2"
+      },
+      {
+        "source_id": "S024",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S024-official-blog.html",
+        "new_path": "raw/web/S024-LLaVA-NeXT/official-blog.html",
+        "sha256": "23029ba42dcf6bba3b006770a839f44e76b52763b600d8780ab2d9712d7c886e",
+        "size": 29763,
+        "original_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/",
+        "final_url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/"
+      },
+      {
+        "source_id": "S024",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S024-high_res_arch_v2.png",
+        "new_path": "raw/web/S024-LLaVA-NeXT/high_res_arch_v2.png",
+        "sha256": "7f8ed15e0ef0d16843297e1deb4a5d7ac2f386e681e44690d939b543b6d1f848",
+        "size": 460988,
+        "original_url": "https://llava-vl.github.io/blog/assets/images/llava-1-6/high_res_arch_v2.png",
+        "final_url": "https://llava-vl.github.io/blog/assets/images/llava-1-6/high_res_arch_v2.png"
+      },
+      {
+        "source_id": "S026",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S026-Qwen-VL.pdf",
+        "new_path": "raw/papers/models/qwen/Qwen-VL.pdf",
+        "sha256": "b4eca60ae9d3c1548242da02ece0e2f35ce23d3a983255830d98212aa92e3167",
+        "size": 6329953,
+        "original_url": "https://arxiv.org/abs/2308.12966",
+        "final_url": "https://arxiv.org/pdf/2308.12966v3"
+      },
+      {
+        "source_id": "S027",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S027-Qwen2-VL.pdf",
+        "new_path": "raw/papers/models/qwen/Qwen2-VL.pdf",
+        "sha256": "30bb0f6c9babf910295d6b7cd34b6f54824236f68782664c3c93fbf4803275d0",
+        "size": 35936325,
+        "original_url": "https://arxiv.org/abs/2409.12191",
+        "final_url": "https://arxiv.org/pdf/2409.12191v2"
+      },
+      {
+        "source_id": "S028",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S028-Qwen3-VL.pdf",
+        "new_path": "raw/papers/models/qwen/Qwen3-VL.pdf",
+        "sha256": "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380",
+        "size": 4385558,
+        "original_url": "https://arxiv.org/abs/2511.21631",
+        "final_url": "https://arxiv.org/pdf/2511.21631v2"
+      },
+      {
+        "source_id": "S029",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S029-README.md",
+        "new_path": "raw/web/S029-Qwen-3.5/README.md",
+        "sha256": "bda4b24e975f65ac677985306ddbad33362e65064637660654c8bb7dea7edf50",
+        "size": 94793,
+        "original_url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/raw/8472618112abcbd45acbcdc58436aff4233c23f7/README.md",
+        "final_url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/raw/8472618112abcbd45acbcdc58436aff4233c23f7/README.md"
+      },
+      {
+        "source_id": "S029",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S029-config.json",
+        "new_path": "raw/web/S029-Qwen-3.5/config.json",
+        "sha256": "3ae7fa89c2f7d1354096418ddaf1331e9e0898a8ca11e804fb6dbaa087efb7da",
+        "size": 4177,
+        "original_url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/raw/8472618112abcbd45acbcdc58436aff4233c23f7/config.json",
+        "final_url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/raw/8472618112abcbd45acbcdc58436aff4233c23f7/config.json"
+      },
+      {
+        "source_id": "S030",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S030-Qwen3.8-Flash-Next.pdf",
+        "new_path": "raw/papers/models/qwen/Qwen3.8-Flash-Next.pdf",
+        "sha256": "17db868acaa0b86caaf89cd9516e0a92f79d7e161431e5e274b70a3123d60ef7",
+        "size": 2363790,
+        "original_url": "https://arxiv.org/abs/2608.30320",
+        "final_url": "https://arxiv.org/pdf/2608.30320v1"
+      },
+      {
+        "source_id": "S031",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S031-DeepSeek-VL.pdf",
+        "new_path": "raw/papers/models/deepseek/DeepSeek-VL.pdf",
+        "sha256": "09e6a250407a046b156a0f97c81ac681b57983d89c8287ccdc77d51e379692b9",
+        "size": 6079366,
+        "original_url": "https://arxiv.org/abs/2403.05525",
+        "final_url": "https://arxiv.org/pdf/2403.05525v2"
+      },
+      {
+        "source_id": "S032",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S032-DeepSeek-VL2.pdf",
+        "new_path": "raw/papers/models/deepseek/DeepSeek-VL2.pdf",
+        "sha256": "cff2bd0ad1656769d7447f0e3cf3a1885902333894f123bdac27fce05c97459e",
+        "size": 6007241,
+        "original_url": "https://arxiv.org/abs/2412.10302",
+        "final_url": "https://arxiv.org/pdf/2412.10302v1"
+      },
+      {
+        "source_id": "S033",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S033-DeepSeek-OCR.pdf",
+        "new_path": "raw/papers/models/deepseek/DeepSeek-OCR.pdf",
+        "sha256": "a7297788968f8ad9ed21bcd273110814e4889efbbc99bfea86dca12205797a90",
+        "size": 7631170,
+        "original_url": "https://arxiv.org/abs/2510.18234",
+        "final_url": "https://arxiv.org/pdf/2510.18234v1"
+      },
+      {
+        "source_id": "S034",
+        "source_path": "C:\\Users\\ZENGZX\\AppData\\Local\\Temp\\mllm-kb-20261031\\acquisition\\S034-DeepSeek-V4.1-Flash.pdf",
+        "new_path": "raw/papers/models/deepseek/DeepSeek-V4.1-Flash.pdf",
+        "sha256": "0cfdda19c8e1691b5226dd0d4949e2397051268e8a823c2fb61db94ea20c4ac0",
+        "size": 1663475,
+        "original_url": "https://arxiv.org/abs/2609.19969",
+        "final_url": "https://arxiv.org/pdf/2609.19969v1"
+      }
+    ],
+    "note": "24 independently reviewed source objects, 26 raw files; imported separately from the 261 original-file migration. Source registry is maintained by the coordinator; acquisition text extraction/first-page files were not imported."
+  },
+  "migration_execution": {
+    "migration_executed": true,
+    "baseline_git_commit": "beb00884709059882482b9dc8d6059949608faef",
+    "moved_count": 261,
+    "verified_count": 261,
+    "removed_empty_directories": [
+      "MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/exports",
+      "MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/source",
+      "MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构",
+      "MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练",
+      "MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw",
+      "MLLM实例/Qwen/images/Qwen3.8-Flash-Next",
+      "MLLM实例/Deepseek/images/DeepSeek-VL2",
+      "MLLM实例/Deepseek/images/DeepSeek-OCR",
+      "MLLM实例/Deepseek/images/DeepSeek-VL",
+      "多模态经典/images/2022-NeurIPS-Flamingo",
+      "多模态经典/images/2021-NeurIPS-ALBEF",
+      "多模态经典/images/2023-NeurIPS-LLaVA",
+      "多模态经典/images/2022-NeurIPS-VLMo",
+      "多模态经典/images/2023-CVPR-BEiT-v3",
+      "多模态经典/images/2023-InstructBLIP",
+      "多模态经典/images/2023-ICML-BLIP-2",
+      "多模态经典/images/2024-LLaVA-NeXT",
+      "多模态经典/images/2023-MiniGPT-5",
+      "多模态经典/images/2023-MiniGPT-4",
+      "多模态经典/images/2023-LLaVA-1.5",
+      "多模态经典/images/2022-ICML-BLIP",
+      "多模态经典/images/2021-ICML-CLIP",
+      "MLLM实例/Qwen/images/Qwen-3.5",
+      "MLLM实例/Qwen/images/Qwen3-VL",
+      "多模态经典/images/2023-mPLUG-OWL",
+      "MLLM实例/Qwen/images/Qwen2-VL",
+      "MLLM实例/Qwen/images/Qwen-VL",
+      "MLLM实例/Deepseek/Latex_out",
+      "视觉编码器/images/InternViT",
+      "多模态经典/images/2022-CoCa",
+      "MLLM实例/Deepseek/images",
+      "MLLM实例/Qwen/Latex_out",
+      "视觉编码器/images/SigLIP2",
+      "视觉编码器/images/SigLIP",
+      "视觉编码器/images/SoViT",
+      "视觉编码器/images/NaViT",
+      "MLLM实例/Qwen/images",
+      "视觉编码器/images/AIMv2",
+      "视觉编码器/Latex_out",
+      "多模态经典/Latex_out",
+      "MLLM实例/Deepseek",
+      "多模态经典/images",
+      "视觉编码器/images",
+      "MLLM实例/Qwen",
+      "MLLM实例",
+      "视觉编码器",
+      "多模态经典"
+    ],
+    "preserved_nonempty_old_directories": []
   }
 }
