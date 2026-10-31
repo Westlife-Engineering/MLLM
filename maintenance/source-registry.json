@@ -409,7 +409,7 @@
       "source_id": "S014",
       "slug": "VLMo",
       "type": "paper",
-      "title": "VLMo",
+      "title": "VLMO: Unified Vision-Language Pre-Training with Mixture-of-Modality-Experts",
       "primary_direction": "architecture/pretraining",
       "identity_key": "arxiv:2111.02358",
       "raw_path": "raw/papers/architecture/pretraining/VLMo.pdf",
@@ -453,8 +453,8 @@
         "raw/notes/多模态经典/2023-CVPR-BEiT-v3总结.tex",
         "raw/notes/多模态经典/Latex_out/2023-CVPR-BEiT-v3总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -466,7 +466,7 @@
       "source_id": "S016",
       "slug": "Flamingo",
       "type": "paper",
-      "title": "Flamingo",
+      "title": "Flamingo: a Visual Language Model for Few-Shot Learning",
       "primary_direction": "architecture/connectors",
       "identity_key": "arxiv:2204.14198",
       "raw_path": "raw/papers/architecture/connectors/Flamingo.pdf",
@@ -629,8 +629,8 @@
         "raw/notes/多模态经典/2023-MiniGPT-5总结.tex",
         "raw/notes/多模态经典/Latex_out/2023-MiniGPT-5总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -643,7 +643,7 @@
       "source_id": "S022",
       "slug": "LLaVA",
       "type": "paper",
-      "title": "LLaVA",
+      "title": "Visual Instruction Tuning",
       "primary_direction": "models/llava",
       "identity_key": "arxiv:2304.08485",
       "raw_path": "raw/papers/models/llava/LLaVA.pdf",
@@ -661,8 +661,8 @@
         "raw/notes/多模态经典/2023-NeurIPS-LLaVA总结.tex",
         "raw/notes/多模态经典/Latex_out/2023-NeurIPS-LLaVA总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 25
@@ -688,8 +688,8 @@
         "raw/notes/多模态经典/2023-LLaVA-1.5总结.tex",
         "raw/notes/多模态经典/Latex_out/2023-LLaVA-1.5总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -724,8 +724,8 @@
         "raw/notes/多模态经典/2024-LLaVA-NeXT总结.tex",
         "raw/notes/多模态经典/Latex_out/2024-LLaVA-NeXT总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -736,7 +736,7 @@
       "source_id": "S025",
       "slug": "InternVL",
       "type": "paper",
-      "title": "InternVL",
+      "title": "InternVL: Scaling up Vision Foundation Models and Aligning for Generic Visual-Linguistic Tasks",
       "primary_direction": "models/internvl",
       "identity_key": "arxiv:2312.14238",
       "raw_path": "raw/papers/models/internvl/InternVL.pdf",
@@ -754,8 +754,8 @@
         "raw/notes/视觉编码器/InternViT总结.tex",
         "raw/notes/视觉编码器/Latex_out/InternViT总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 25
@@ -781,8 +781,8 @@
         "raw/notes/MLLM实例/Qwen/Latex_out/Qwen-VL总结.pdf",
         "raw/notes/MLLM实例/Qwen/Qwen-VL总结.tex"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -811,8 +811,8 @@
         "raw/notes/MLLM实例/Qwen/Latex_out/Qwen2-VL总结.pdf",
         "raw/notes/MLLM实例/Qwen/Qwen2-VL总结.tex"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -842,7 +842,7 @@
         "raw/notes/MLLM实例/Qwen/Qwen3-VL总结.tex"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -879,7 +879,7 @@
         "raw/notes/MLLM实例/Qwen/Qwen-3.5总结.tex"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -908,7 +908,7 @@
         "raw/notes/MLLM实例/Qwen/Qwen3.8-Flash-Next总结.tex"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -938,8 +938,8 @@
         "raw/notes/MLLM实例/Deepseek/DeepSeek-VL总结.tex",
         "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-VL总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -968,8 +968,8 @@
         "raw/notes/MLLM实例/Deepseek/DeepSeek-VL2总结.tex",
         "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-VL2总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -999,7 +999,7 @@
         "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-OCR总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -1032,7 +1032,7 @@
         "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-V4.1-Flash训练总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [

@@ -19,7 +19,7 @@ ingest_status: integrating
 
 - **身份**：Junnan Li、Dongxu Li、Silvio Savarese、Steven Hoi，*BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models*，Salesforce Research。固定 arXiv:2301.12597v3（2023-06-15），[原件URL](https://arxiv.org/pdf/2301.12597v3)；首页核对标题／作者／版本。
 - **原件**：[[raw/papers/architecture/connectors/BLIP-2.pdf]]，13页；以下使用PDF页序。SHA-256：`6bc5d399d6127a64ace5167a2f0c00112a49725d2475d80322dbf0083f139e80`，本次复核一致。
-- **2026-10-31实际读取**：正文pp.1–8，附录pp.12–13的微调参数／失败样例／VQA结构；参考文献不逐项核读。实际渲染查看pp.3、4、6、7、8、12、13，核对mask、阶段结构、结果表和视觉编码器解冻标记；无代码审计／复现，Obsidian内显示未测。
+- **2026-10-31实际读取**：正文pp.1–8，附录pp.12–13的微调参数／失败样例／VQA结构；参考文献不逐项核读。实际渲染查看pp.3、4、6、7、8、12、13，核对mask、阶段结构、结果表、冻结标记及正文微调范围；无代码审计／复现，Obsidian内显示未测。
 - **旧笔记输入**：[[raw/notes/多模态经典/2023-ICML-BLIP-2.md]]、[[raw/notes/多模态经典/2023-ICML-BLIP-2总结.tex]]及其冻结编译包[[raw/notes/多模态经典/Latex_out/2023-ICML-BLIP-2总结.pdf]]。本次对照前两者；旧代码摘录不是本次实际核读仓库。
 
 ## 连接的具体困难
@@ -72,7 +72,7 @@ Q-Former从BERT-base初始化，新增cross-attention随机初始化；32个lear
 
 ## 必须修正的旧笔记判断
 
-1. **“视觉模型始终冻结”**应限定为BLIP-2预训练；正文下游微调明确更新视觉编码器。图7的问题条件化Q-Former也表明，不能将所有使用场景都说成“Q-Former从不读问题”。[[raw/papers/architecture/connectors/BLIP-2.pdf#page=7|§4.2–4.4]] [[raw/papers/architecture/connectors/BLIP-2.pdf#page=13|图7]]
+1. **“视觉模型始终冻结”**应限定为BLIP-2预训练；正文下游微调明确更新视觉编码器。**原件图文存在冲突：**p13图7的image encoder仍带冻结图标，与正文微调image encoder的说明不一致；本页按正文登记可训练范围，图7仅用于确认问题条件化的信息路径。图7的问题条件化Q-Former也表明，不能将所有使用场景都说成“Q-Former从不读问题”。[[raw/papers/architecture/connectors/BLIP-2.pdf#page=7|§4.2–4.4]] [[raw/papers/architecture/connectors/BLIP-2.pdf#page=13|图7]]
 2. **“hidden_dim全部设为vision_dim”错误**：论文明确query hidden为768，举例ViT-L视觉特征宽度1024；cross-attention投影可以处理不同输入宽度。旧代码里的encoder_width不等于把全部hidden_size重设。[[raw/papers/architecture/connectors/BLIP-2.pdf#page=3|§3.1]]
 3. **旧稿同时写“无hard negative”和“每次必取最高负例”**：前者与§3.2明确采用hard negative mining冲突；后者是过强的实现断言，本次未审计仓库，也未另读被引ALBEF方法，不把它当本文正文已证明的确定argmax策略。[[raw/papers/architecture/connectors/BLIP-2.pdf#page=3|ITM段]]
 4. **“MLP或cross-attention普遍优于Q-Former”“理论和实验证明Q-Former导致DocVQA不足及幻觉”**没有这篇原文的对应控制实验，本库撤回为定论。瓶颈可能损失细节是合理待检验问题，不能由32个token直接推出具体任务失败的唯一原因。

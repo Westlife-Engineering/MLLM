@@ -75,8 +75,8 @@ p.5 的 Multiway Transformer 包含视觉 V-FFN、语言 L-FFN 与视觉语言 V
 | 任务 | 图中的信息组织 | 学习信号 |
 | --- | --- | --- |
 | Image-Text Contrastive Learning | 图像和文字分别编码 | 比较图像表示与文本表示是否匹配 |
-| Image-Text Matching | 先处理各模态，再在融合层交互 | 判断配对是否匹配，图中还标出 hard negative mining |
-| Masked Language Modeling | 文字有掩码，视觉与文字在融合层交互 | 依据可见文字与图像恢复被遮挡词 |
+| Image-Text Matching | 图文拼接后从底层 self-attention 交互；低层分模态 FFN、顶层 VL-FFN | 判断配对是否匹配，图中还标出 hard negative mining；讲义图见 [[raw/lectures/VLM-2.pdf#page=5\|p.5]]，原论文补核见 [[raw/papers/architecture/pretraining/VLMo.pdf#page=4\|S014 · p.4–5 · §3.1–3.2 / Fig.3]] |
+| Masked Language Modeling | 遮蔽部分文本；联合图文从底层 attention 交互以预测被遮蔽词 | 依据可见文字与图像恢复被遮挡词；讲义图见 [[raw/lectures/VLM-2.pdf#page=5\|p.5]]，原论文补核见 [[raw/papers/architecture/pretraining/VLMo.pdf#page=16\|S014 · p.16 · Appendix A]] |
 
 **三阶段训练要看冻结状态。** p.6 先用纯图像训练视觉专家与共享注意力；再冻结二者，用纯文本 MLM 训练语言专家；最后用图文对训练整体模型。不能概括成“从一开始所有参数都用图文共同训练”。
 
