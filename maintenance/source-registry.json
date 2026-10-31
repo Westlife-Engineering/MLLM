@@ -27,8 +27,8 @@
         }
       ],
       "legacy_inputs": [],
-      "reading_status": "partial",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 36
@@ -51,8 +51,8 @@
         }
       ],
       "legacy_inputs": [],
-      "reading_status": "partial",
-      "ingest_status": "reading",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 91
@@ -75,8 +75,8 @@
         }
       ],
       "legacy_inputs": [],
-      "reading_status": "unread",
-      "ingest_status": "pending",
+      "reading_status": "read",
+      "ingest_status": "integrating",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 92
@@ -102,7 +102,7 @@
         "raw/notes/多模态经典/2021-ICLR-ViT.md"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 22
@@ -129,7 +129,7 @@
         "raw/notes/视觉编码器/SoViT总结.tex"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -158,7 +158,7 @@
         "raw/notes/视觉编码器/NaViT总结.tex"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -187,7 +187,7 @@
         "raw/notes/视觉编码器/Latex_out/AIMv2总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -217,7 +217,7 @@
         "raw/notes/多模态经典/Latex_out/2021-ICML-CLIP总结.pdf"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "acquisition": "user-provided local original",
       "pages": 48
@@ -244,7 +244,7 @@
         "raw/notes/视觉编码器/SigLIP总结.tex"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
@@ -273,7 +273,7 @@
         "raw/notes/视觉编码器/SigLIP2总结.tex"
       ],
       "reading_status": "unread",
-      "ingest_status": "pending",
+      "ingest_status": "reading",
       "integrated_topics": [],
       "accessed": "2026-10-31",
       "identity_notes": [
