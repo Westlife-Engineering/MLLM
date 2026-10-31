@@ -1,0 +1,45 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Task-owned temporary work; original archived assets are tracked
+.research-tmp/
+.work/
+.tmp/
+tmp/
+~$*
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Private Obsidian UI state and caches; do not copy plugin configuration
+.obsidian/workspace*.json
+.obsidian/cache/
+.obsidian/.cache/
+.trash/
+
+# Python caches and local virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Reproducible LaTeX compiler intermediates; retain final PDFs
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex*
+*.xdv
+*.bbl
+*.blg
+*.bcf
+*.run.xml

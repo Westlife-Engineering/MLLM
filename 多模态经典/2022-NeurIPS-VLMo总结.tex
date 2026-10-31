@@ -1,0 +1,607 @@
+\documentclass[zihao=false,fontset=windows]{ctexart}
+\usepackage{scrextend}
+\changefontsizes[12pt]{10pt}
+
+\usepackage[a4paper,left=2.35cm,right=2.35cm,top=1.7cm,bottom=1.9cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[most]{tcolorbox}
+
+\definecolor{feishuText}{RGB}{31,35,41}
+\definecolor{feishuBlue}{RGB}{36,91,219}
+\definecolor{feishuRed}{RGB}{216,57,49}
+\definecolor{feishuGray}{RGB}{100,106,115}
+\definecolor{feishuGray2}{RGB}{143,149,158}
+\definecolor{feishuPinkBg}{RGB}{251,191,188}
+\definecolor{quoteBar}{RGB}{51,112,255}
+\definecolor{codebg}{RGB}{245,246,247}
+\definecolor{codeborder}{RGB}{222,224,227}
+\definecolor{inlinebg}{RGB}{242,243,245}
+\definecolor{callRed}{RGB}{253,226,226}
+\definecolor{callOrange}{RGB}{255,245,235}
+\definecolor{callYellow}{RGB}{254,255,240}
+\definecolor{callGreen}{RGB}{240,251,239}
+\definecolor{callBlue}{RGB}{240,244,255}
+\definecolor{callRedSoft}{RGB}{254,241,241}
+\definecolor{callSun}{RGB}{255,255,204}
+\definecolor{callOrangeSolid}{RGB}{254,234,210}
+\definecolor{callBlueSolid}{RGB}{225,234,255}
+\definecolor{hiGreen}{RGB}{197,241,193}
+\definecolor{hiYellow}{RGB}{255,248,149}
+\definecolor{tableHead}{RGB}{242,243,245}
+\definecolor{tableRule}{RGB}{222,224,227}
+\definecolor{codeText}{RGB}{31,35,41}
+\definecolor{codeKeyword}{RGB}{0,0,255}
+\definecolor{codeComment}{RGB}{0,128,0}
+\definecolor{codeString}{RGB}{163,21,21}
+
+\setmainfont{Times New Roman}
+\setCJKmainfont{Microsoft YaHei}[AutoFakeBold=2.2]
+\setCJKsansfont{Microsoft YaHei}[AutoFakeBold=2.2]
+\setCJKmonofont{Microsoft YaHei}[AutoFakeBold=2.2]
+\setmonofont{Consolas}
+\newfontfamily\emojifont{Segoe UI Emoji}
+\xeCJKDeclareCharClass{Default}{"FE0E, "FE0F, "200D, "20E3}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=feishuBlue,
+  linkcolor=feishuBlue,
+  unicode=true,
+  pdftitle={VLMo(2021, Microsoft)}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.42em}
+\setlength{\fboxsep}{1.5pt}
+\setlength{\emergencystretch}{3em}
+\linespread{1.28}
+\color{feishuText}
+\arrayrulecolor{tableRule}
+\urlstyle{same}
+
+\setlist[enumerate]{label=\textcolor{feishuBlue}{\arabic*.}, leftmargin=1.7em, itemsep=0.22em, topsep=0.28em, parsep=0.08em, partopsep=0pt}
+\setlist[itemize,1]{label=\textcolor{feishuBlue}{\textbullet}, leftmargin=1.35em, itemsep=0.18em, topsep=0.25em, parsep=0.06em, partopsep=0pt}
+\setlist[itemize,2]{label=\textcolor{feishuBlue}{◦}, leftmargin=1.45em, itemsep=0.12em, topsep=0.15em}
+\setlist[itemize,3]{label=\textcolor{feishuBlue}{\rule[0.18em]{0.38em}{0.38em}}, leftmargin=1.55em, itemsep=0.1em, topsep=0.12em}
+
+\newcommand{\feiEmoji}[1]{{\emojifont #1}}
+\newcommand{\incode}[1]{\colorbox{inlinebg}{\ttfamily\small #1}}
+\newcommand{\bigmath}[1]{%
+  \begin{center}\large$\displaystyle #1$\end{center}%
+}
+\newcommand{\redb}[1]{\textcolor{feishuRed}{\textbf{#1}}}
+\newcommand{\blu}[1]{\textcolor{feishuBlue}{#1}}
+\newcommand{\pink}[1]{\colorbox{feishuPinkBg}{#1}}
+\newcommand{\yel}[1]{\colorbox{hiYellow}{#1}}
+\newcommand{\grn}[1]{\colorbox{hiGreen}{#1}}
+\newcommand{\figw}[2]{%
+  \begin{center}\includegraphics[width=#1\textwidth]{images/2022-NeurIPS-VLMo/#2}\end{center}%
+}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\footnotesize\color{codeText},
+  keywordstyle=\color{codeKeyword},
+  commentstyle=\color{codeComment},
+  stringstyle=\color{codeString},
+  showstringspaces=false,
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+  tabsize=4,
+  upquote=true,
+  aboveskip=2pt,
+  belowskip=0pt,
+  xleftmargin=0pt,
+  frame=none
+}
+
+\tcbset{
+  feishubase/.style 2 args={
+    enhanced,
+    boxrule=0pt,
+    arc=8pt,
+    left=10pt,
+    right=10pt,
+    top=7pt,
+    bottom=7pt,
+    before skip=6pt,
+    after skip=6pt,
+    colback=#1,
+    colframe=#1,
+    before upper={\feiEmoji{#2}\hspace{0.45em}\ignorespaces}
+  }
+}
+\newtcolorbox{feishubox}[2]{feishubase={#1}{#2}, breakable}
+\newtcolorbox{feishuboxnb}[2]{feishubase={#1}{#2}}
+
+\newtcolorbox{feishuquote}{
+  enhanced,
+  breakable,
+  boxrule=0pt,
+  leftrule=3pt,
+  arc=0pt,
+  colframe=quoteBar,
+  colback=white,
+  left=8pt,
+  right=2pt,
+  top=2pt,
+  bottom=2pt,
+  before skip=4pt,
+  after skip=4pt,
+  before upper=\color{feishuGray}
+}
+
+\newtcolorbox{feishucode}{
+  enhanced,
+  breakable,
+  colback=codebg,
+  colframe=codeborder,
+  boxrule=0.6pt,
+  arc=6pt,
+  left=6pt,
+  right=6pt,
+  top=5pt,
+  bottom=4pt,
+  before skip=6pt,
+  after skip=6pt
+}
+
+\begin{document}
+{\zihao{1}\bfseries VLMo(2021, Microsoft)\par}
+\vspace{0.15em}
+
+\begin{feishuquote}
+VLMo：灵活处理不同模态（2021，Microsoft）\par
+\href{https://arxiv.org/abs/2111.02358}{Unified \textbf{Vision-Language} Pre-Training with \textbf{Mixture-of-Modality-Experts}}\par
+\end{feishuquote}
+
+\par\vspace{1.15em}\noindent{\zihao{-2}\bfseries 1. VLMo背景}\par\vspace{0.28em}
+为了将VLP任务中常见的这两种结构的优势拼在一起，作者提出了一种统一的视觉语言模型 VLMo。VLMo 相当于是一个\textbf{混合专家 Transformer 模型 (Mixture-of-Modality-Experts, MoME)}，预训练完成后，使用时既可以是双塔结构，实现高效地对图像和文本进行检索，又可以是单塔结构，对融合的图像和文本的特征进行建模和交互。\par
+核心点：\par
+\begin{enumerate}
+\item MoME架构
+\item 不同模态的Multi-Head Self Attention层参数共享，只依靠FFN调整：在Feed Foward （前向传播，FC）层，每个模态就会对应自己不同的Expert
+\item 分阶段的预训练策略：先训练单一模态，最后训练。
+\begin{feishuquote}
+\textcolor{feishuGray2}{多模态的训练数据集不够多，但是在单模态里，Vision或者NLP可用的数据很多，所以采用分阶段的预训练策略来训练，效果会提升很多。}\par
+\end{feishuquote}
+\end{enumerate}
+
+\par\vspace{1.15em}\noindent{\zihao{-2}\bfseries 2. VLMo模型结构}\par\vspace{0.28em}
+\par\vspace{0.95em}\noindent{\zihao{3}\bfseries 2.1 输入表示}\par\vspace{0.28em}
+图像的表示：\par
+图像的表示与 \href{https://scnajei2ds6y.feishu.cn/wiki/QEJ8wXq9GiTBrxkMqbScnd8nnod\#KIesdv1kNolnX9xtyatcRyE2nZf}{ViT} 的做法一样。VLMo多了一个类型编码 $V_{type}\in R^D$ 。\par
+最终得到图像表示： $H^v_0=[v_{I\_CLS},V_{v^p_i},\ldots,V_{v^p_N}]+V_{pos}+V_{type}$ ，式中 $H^v_0\in R^{(N+1)\times D}$ ，投影为 $V\in R^{(P^2 C)\times D}$ ，其中$v_{I\_CLS}$是表示图像全局特征的标记。\par
+文本的表示：\par
+文本的表示与\href{https://swfvqxo30ma.feishu.cn/wiki/QIRDwHkqKiEStbkLczjcHn2hnQh}{Bert}一样，都是采用BPE进行分词。VLMo也是多了一个类型编码$T_{type}\in R^D$。\par
+最终得到文本表示： $H^w_0=[w_{T\_CLS},w_i,\ldots,w_M,w_{T\_SEP}]+T_{pos}+T_{type}$ ，式中 $H^w_0\in R^{(M+2)\times D}$ ，投影为 $W\in R^{(P^2 C)\times D}$ ，其中M是tokenized词根长度，$w_{T\_CLS}$是表示文本全局特征的标记，$w_{T\_SEP}$是表示不同句子的区分。\par
+图像-文本对的表示：\par
+将图像和文本输入向量拼接在一起形成文本和图像的表示：$H^{vl}_0=[H^w_0;H^v_0]$\par
+
+\par\vspace{0.95em}\noindent{\zihao{3}\bfseries 2.2 MoME模型架构}\par\vspace{0.28em}
+\figw{0.32}{fig-01.png}
+VLMo 是一个混合专家 Transformer 模型（MoME）。依旧遵循 Transformer 的一般设计思路，但是做出了一定的改动。\par
+MoME Transformer 也是先一个 Multi-Head Self-Attention（MHSA）的子模块，再串联一个 Feed Forward Network（FFN）的子模块。但是和正常 Transformer 不同的是，引入了模态专家的混合，以替代标准Transformer的前馈网络。在MoME Transformer中的 FFN 子模块是由3个并行、独立的 FFN 并联得到。这3个 FFN 分别是 Vision-FFN（V-FFN，视觉专家），Language-FFN（L-FFN，文本专家）和 Vision-Language-FFN（VL-FFN，视觉文本专家），针对不同的模态输入对应不同的专家，所以是\textbf{switching modality expert}。不同FFN的结构没有任何不同，都是：MLP + GELU + LayerNorm。在代码中用\incode{modality\_type='image'\textbackslash'text'\textbackslash'vl'}参数来选择进入到不同的模块中。\par
+
+\begin{feishubox}{callOrangeSolid}{⚠️}
+不同模态的\textbf{Multi-Head Self-Attention（MHSA）}共享权重，但是不同模态的FFN独立学习，捕获不同模态下的信息。\par
+\blu{即，不论是图像、文本还是图像-文本信号，输入任何的token 序列，self-attention的模型权重都是一样的，这个也是transformer架构的优势，或者说是多模态学习接下来的趋势。}\par
+\blu{有一些工作证明，同样的self-attention 权重可以用来做不同的图像文本音频视频任务，不需要重新去训练自注意力参数。}\par
+\end{feishubox}
+
+\begin{feishubox}{callRed}{💥}
+MoME Transformer 的主要组成结构：\par
+\begin{enumerate}
+\item 共享的MHSA；
+\item 适配不同任务的FFN模块（expert 专家）。
+\end{enumerate}
+流程：\par
+给定一个输入数据，我们首先将它输入到共享的多头自注意力层，然后再根据不同的输入数据类型，MoME Transformer选择切换不同的专家进行训练。\par
+\end{feishubox}
+假设MoME Transformer的前一层的输出（当前层的输入）表示为$H_{l-1}$ ，那么MoME Transformer的计算方式可以简化为：\par
+\bigmath{H'_l=MSA(LN(H_{l-1}))+H_{l-1}),\ H_l=MoME\text{-}FFN(LN(H'_l))+H'_l)}
+
+\begin{feishubox}{callSun}{🌟}
+\redb{VLMo的灵活性：}\par
+\begin{itemize}
+\item 如果输入是\textbf{纯图像或者纯文本}，就使用视觉专家和文本专家分别对输入的图像和文本进行编码；
+\item 如果输入由\textbf{多模态的向量组成}，比如是\textbf{图像和文本的拼接}，就先使用视觉专家和文本专家分别对输入的图像和文本进行编码，再使用多模态专家进行联合地交互。
+\end{itemize}
+VLMo 根据需求可以灵活地使用不同的专家模型，不论是架构层面还是训练层面都很灵活。\par
+\end{feishubox}
+
+\par\vspace{1.15em}\noindent{\zihao{-2}\bfseries 3. VLMo预训练}\par\vspace{0.28em}
+为了利用大规模的纯图像的数据集和纯文本的语料库，设计了一种\textbf{分阶段的预训练方法}：对纯图像数据的训练，对纯文本数据的训练，以及混合模态数据的训练。\par
+\figw{0.98}{fig-02.png}
+
+\par\vspace{0.95em}\noindent{\zihao{3}\bfseries 3.1 单模态}\par\vspace{0.28em}
+单模态的数据训练包括\textbf{纯文本数据的训练}和\textbf{纯图像数据的训练}。\par
+\figw{0.50}{fig-03.png}
+
+\par\vspace{0.75em}\noindent{\zihao{4}\bfseries 3.1.1 Image-Only}\par\vspace{0.28em}
+\begin{enumerate}
+\item \pink{阶段一：纯图像数据：}
+\begin{itemize}
+\item VLMo采用了BEiT 的图像完形填空 MIM （掩码图像模型 Maksed Image Model）进行预训练。
+\item 只使用V-FFN专家模型，更新MHSA和V-FFN的参数
+\end{itemize}
+\end{enumerate}
+
+\par\vspace{0.75em}\noindent{\zihao{4}\bfseries 3.1.2 Text-Only}\par\vspace{0.28em}
+\begin{enumerate}[resume]
+\item \pink{阶段二：纯文本数据的训练：}
+\begin{itemize}
+\item VLMo采用了BERT 中的完形填空 MLM（掩码语言模型 Masked Language Model）进行模型的预训练。
+\item 只使用L-FFN专家模型，\textbf{冻住MHSA和V-FFN的参数，更新L-FFN参数，意思就是在这一步中使用前一步中训练好的MHSA模型参数。}
+\item \feiEmoji{⚠️} \textcolor{feishuRed}{在视觉数据上训练的自注意力模型（MHSA），可以直接用于文本建模，不需要fine-tune，就可能表现很好。但是如果我现在文本数据上训练MHSA，然后直接用于图像建模，结果就不是很好。}
+\end{itemize}
+\end{enumerate}
+
+\par\vspace{0.75em}\noindent{\zihao{4}\bfseries 补充MIM}\par\vspace{0.28em}
+介绍一下\redb{Maksed Image Model，MIM}：\par
+BEiT 是图像界的 BERT 模型，所以也遵循着和 BERT 相似的自监督训练方法 MLM 。BEiT 使用了类似 BERT 的自监督训练方式：Masked Image Modeling，MLM，即：\par
+\begin{feishuquote}
+给 BEIT 看很多的图片，随机盖住一些图片的 patches，让 BEIT 模型预测盖住的patches是什么，不断计算预测的 patches 与真实的 patches 之间的差异，利用它作为 loss 进行反向传播更新参数，来达到 Self-Supervised Learning 的效果。\par
+\end{feishuquote}
+\figw{0.61}{fig-04.png}
+具体做法是（\href{https://www.cvmart.net/community/detail/4980}{引用}）：\par
+\begin{enumerate}
+\item 给定输入图片$x$。
+\item 通过patch embedding等类似的方法将$x$变成 N 个图片 patches $\{x^p_i\}^N_{i=1}$ 。
+\item 使用经过dVAE训练的tokenizer将上一步变成 N 个 visual tokens$\{z_i\}^N_{i=1}$。
+\begin{feishuquote}
+tokenizer：（同样也是真实patches对应的visual token的获取方式）\par
+作者把一张 224×224 的输入图片通过 Tokenizer 变成了 14×14 个 visual token，每个 visual token 是一个位于[1, 8192]之间的数值。就像有个 image 的词汇表一样，这个词汇表里面有 8192 个词，每个 16×16 的image patch会经过 Tokenizer 映射成$|V|$里面的一个词。\par
+\figw{0.46}{fig-05.png}
+\textcolor{feishuGray2}{（图片引用自：}{\hypersetup{urlcolor=feishuGray2}\href{https://www.cvmart.net/community/detail/4980}{https://www.cvmart.net/community/detail/4980}}\textcolor{feishuGray2}{）}\par
+\end{feishuquote}
+\item 随机盖住40\% 的图片 patches，盖住的位置可以表示为$M\in\{1,\ldots,N\}^{0.4N}$ 。
+\begin{feishuquote}
+随机遮盖40\%的图片patches的方式：Blockwise Masking\par
+\figw{0.38}{fig-06.png}
+A. 初始化，输入\textbf{：}\par
+\begin{itemize}
+\item 一张图像被划分成 \incode{h × w} 个 patches，每个 patch 的大小为 \incode{16 × 16}。
+\item 设 \incode{N = h × w}，表示总的 patches 数量。
+\item 目标是 mask \incode{0.4N} 个 patches。
+\item 定义一个空集合 \incode{$\mathcal{M}$}，用于存储被 mask 的 patches。
+\end{itemize}
+B. 进入循环，直到被 mask 的 patches 数量达到 40\%\par
+（循环步骤）\par
+\begin{enumerate}
+\item 随机确定一个 block 的大小 \incode{s}（block 内包含的 patches 数量），设定范围
+\item 随机选择 block 的纵横比 \incode{r}
+\item 计算 block 的宽 \incode{b} 和高 \incode{a}，确保面积合理
+\item 在 \incode{h × w} 网格中随机选取 block 的位置\textbf{，确保 block 不会超出图像边界。}
+\item 遮盖 block 内所有的 patches
+\item 检查是否达到了 40\%
+\end{enumerate}
+C. 返回最终的遮盖区域\par
+\begin{itemize}
+\item 最终输出 \incode{$\mathcal{M}$}，其中包含所有被 mask 的 patches 坐标。
+\item 这 40\% 的 patches 作为 BEiT 预训练的 masked patches，模型需要预测它们的视觉 token。
+\end{itemize}
+\feiEmoji{⚠️} ：BEiT 的 blockwise masking 以 block（矩形区域）为单位遮挡完整的 patches，最终遮盖 40\% 的 patches，而不会部分遮盖某个 patch。\par
+\textbf{效果例子：}\par
+假设我们有 \incode{14×14} patches 的网格（1个patch大小为\incode{16×16}），下面是 \incode{blockwise masking} 可能的效果：\par
+\begin{feishucode}
+\begin{lstlisting}[language={}]
+.  .  X  X  X  .  .  .  .  .  .  .  .  .
+.  .  X  X  X  .  .  .  .  .  .  .  .  .
+.  .  X  X  X  .  .  X  X  X  X  .  .  .
+.  .  .  .  .  .  .  X  X  X  X  .  .  .
+.  .  .  .  .  .  .  X  X  X  X  .  .  .
+.  X  X  .  .  .  .  X  X  X  X  .  .  .
+.  X  X  .  .  .  .  .  .  .  .  .  .  .
+.  X  X  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  .  X  X  X  X
+.  .  .  .  .  .  .  .  .  X  X  X  X
+.  .  .  .  .  .  .  .  .  X  X  X  X
+.  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  .  .  .  .  .
+.  .  .  .  .  .  .  .  .  .  .  .  .
+\end{lstlisting}
+\end{feishucode}
+\begin{itemize}
+\item \incode{X} 代表被 mask 的 patches。
+\item 你可以看到 \textbf{遮盖的 block 是多个 patches 组成的矩形区域}。
+\item 没有 patch 被 \textbf{部分遮盖}，要么完全 \incode{X}，要么完全 \incode{.}。
+\end{itemize}
+\end{feishuquote}
+\item 把盖住的这40\%的图片 patches 替换成可学习的编码$e_{[m]}\in R^D$ 。
+\item 现在这个输入的图片 patches 就可以表示成原本的patch和遮盖后patch的并集：$x^M=\{x^p_i:i \notin M\}^N_{i=1} \cup \{e_{[M]}:i \in M\}^N_{i=1}$
+\item 把这个$x^M$通过 L 层的 BEiT Encode，得到表示输入image patches的编码表示。
+\item 将【盖住的位置的输出】去通过一个分类器，预测盖住的这个 patch相应的 visual token，类似BERT中的流程。
+\item BERT 的训练目标是最小化计算预测的 token 与真实的 token 之间的差异，所以\textbf{BEiT的目标也是最小化计算预测的 token 与真实的 token 之间的差异}。但其实并不完全一致，在 BEiT 里面，假设盖住第 i 个patch，毫无疑问它对应的 visual token 应该是$z_i$，这时候我会希望 Encoder 输出的第$i$个位置的东西通过分类器之后是$z_i$的概率最大。（简单一点，就是\textbf{希望通过分类器之后得到的预测的visual token与真实patches对应的visual token越接近越好}）
+\end{enumerate}
+以上就是纯图像预训练的方法\redb{MIM}。\par
+
+\par\vspace{0.95em}\noindent{\zihao{3}\bfseries 3.2 多模态}\par\vspace{0.28em}
+\figw{0.33}{fig-07.png}
+在第一阶段Image-Only和第二阶段Text-Only训练结束后，视觉和文本专家的参数都得到了很好的初始化，进入第三阶段Image-Text Pair多模态的训练，在这一步中会更新所有模型的参数，泛化性能更好。使用经典老三样\href{https://scnajei2ds6y.feishu.cn/wiki/U5sZwCwKwivERwktFWvcdM50nkf\#HFfNdb3hbobohJxMPu3cEHuPnue}{\textbf{Image-Text Contrast（ITC）}}、\href{https://scnajei2ds6y.feishu.cn/wiki/U5sZwCwKwivERwktFWvcdM50nkf\#C7YrdlkjHoRWhVxE5BicV7xNnjJ}{\textbf{Masked Language Modeling（MLM）}}和\href{https://scnajei2ds6y.feishu.cn/wiki/U5sZwCwKwivERwktFWvcdM50nkf\#S7ObdE0VwojSbQxDqNJcmZmQnpb}{\textbf{Image-Text Matching（ITM）}}三个任务进行训练。\par
+\figw{0.71}{fig-08.png}
+L 层 transformer 分类两部分，前 (L-F)层和后 F 层。前 (L-F) 层仅使用 V-FFN 和 L-FFN（模型对图片和文本分别做训练），后 F 层的使用情况视任务而定（在ITM和MLM中，在F层在VL-FFN训练）。\par
+\grn{\feiEmoji{⚠️} VLMo中，未用到cross attention}\par
+\feiEmoji{🌰}：如果模型结构用的是Vision Transformer Base，一共12层，那么前10层用V-FFN和L-FFN，后F=2层用VL-FFN，即后面只有2层transformer block做模态之间的融合。\par
+\begin{itemize}
+\item \href{https://scnajei2ds6y.feishu.cn/wiki/U5sZwCwKwivERwktFWvcdM50nkf\#HFfNdb3hbobohJxMPu3cEHuPnue}{\textbf{训练图文对比学习任务 ITC： ITC 的设计目的是让不同模态的在特征空间对齐。}}
+\begin{itemize}
+\item ITC 的训练遵循CLIP的做法，图像和文本使用各自的专家模型（\feiEmoji{⚠️} \textbf{这里 MHSA 是共享的参数}），比如图像端就是一个12层的ViT，文本端就是一个12层的Bert。
+\item 实验中是将 image embedding 和 text embedding 进行拼接一块输入，attention中使用一个 mask 矩阵防止两个模态相互看到，特征空间使用对比学习损失（交叉熵）。
+\end{itemize}
+\item \href{https://scnajei2ds6y.feishu.cn/wiki/U5sZwCwKwivERwktFWvcdM50nkf\#C7YrdlkjHoRWhVxE5BicV7xNnjJ}{\textbf{训练完形填空任务 MLM：}}
+\begin{itemize}
+\item 模型变成有fusion ecoder的形式（增加了VL-FFN）。在网络的前 (L-F) 层，不同模态拼接在一次，通过共享的MHSA ，再拆分成不同模态的 embedding 通过各自的专家模型即可。在网络的后 F 层，通过共享 MHSA 后在通过 VL-FFN 模型。
+\item 遵循Bert的做法，随机 mask 掉 15\% 的文本 token，然后以图文对的方式输入到F层的MHSA中（这里的MHSA与之前和后面的attention都是共享权重的），训练 VLMo 模型使之从 "未被 mask 掉的文本" 和 "视觉信息" 中预测盖住的词是什么。使用分类器得到 masked token 的输出分布，交叉熵损失训练。
+\end{itemize}
+\item \href{https://scnajei2ds6y.feishu.cn/wiki/U5sZwCwKwivERwktFWvcdM50nkf\#S7ObdE0VwojSbQxDqNJcmZmQnpb}{\textbf{训练图文匹配任务 ITM：ITM 的设计目的是预测图文对是否匹配，二分类任务。}}
+\begin{itemize}
+\item 提出了全局难负样本hard negatives挖掘，并从所有GPU（全局计算）收集到的更多训练示例中的hard negative图像-文本对进行采样，区别于ALBEF的单个gpu。
+\end{itemize}
+\end{itemize}
+总结三个阶段的预训练：\par
+\begin{tcbraster}[raster columns=3, raster equal height=rows, raster column skip=9pt, raster row skip=8pt, raster left skip=0pt, raster right skip=0pt]
+\begin{feishuboxnb}{callRed}{1️⃣}
+\redb{视觉预训练：}\par
+Image-Only data\par
+在纯图像数据集上面预训练视觉专家模型，方案就是 MIM 的做法。\blu{文本专家模型和视觉文本专家模型的 FFN 权重冻结，共享的 Self-Attention 参数更新。}\par
+\end{feishuboxnb}
+\begin{feishuboxnb}{callRed}{2️⃣}
+\redb{文本预训练：}\par
+Text-Only data\par
+在纯文本数据集上面预训练文本专家模型，方案就是 MLM 的做法。\blu{视觉专家模型和视觉文本专家模型的 FFN 权重冻结，共享的 Self-Attention 参数也冻结，注意这里的 Self-Attention 的参数还是视觉数据集上面训练出来的了。}\par
+\end{feishuboxnb}
+\begin{feishuboxnb}{callRed}{3️⃣}
+\redb{多模态预训练：}\par
+Image-Text Pair data\par
+在多模态数据集上面预训练文本专家模型，方案就是ITC、MLM、ITM三个目标函数。\blu{所有参数都开放更新。}\par
+\end{feishuboxnb}
+\end{tcbraster}
+
+\begin{feishubox}{callBlueSolid}{🙋}
+\begin{enumerate}
+\item \yel{MoME Transformer这种灵活性模型架构设计的好处：}
+\begin{itemize}
+\item 做 \textbf{ITC} 时，VLMo 和 CLIP 很像，可以让视觉专家 V-FFN 输入视觉信息，让文本专家 L-FFN 输入文本信息，把得到的输出做对比学习即可。
+\item 做 \textbf{ITM} 时，可以在前几个 Block 让视觉专家 V-FFN 输入视觉信息，让文本专家 L-FFN 输入文本信息，在后几个 Block 把信息给视觉文本专家，然后做二分类即可。
+\item 做\textbf{ MLM} 时，可以在前几个 Block 让视觉专家 V-FFN 输入视觉信息，让文本专家 L-FFN 输入文本信息，在后几个 Block 把信息给视觉文本专家，然后做预测即可。
+\end{itemize}
+\end{enumerate}
+\end{feishubox}
+
+\begin{feishubox}{callBlueSolid}{🙋}
+\begin{enumerate}
+\item \yel{ITC、ITM、MLM、MIM分别在哪里使用，一共用了几次？}\par
+ITC、ITM：第三阶段Image-Text Pairs多模态训练中，1次；\par
+MLM：第二阶段Text-Only文本训练和第三阶段Image-Text Pairs多模态训练中，2次；\par
+MIM：第一阶段Image-Only图片训练中，1次。\par
+\end{enumerate}
+\end{feishubox}
+
+\begin{feishubox}{callBlueSolid}{🙋}
+\begin{enumerate}
+\item \yel{为什么在视觉上训练好的 MHSA，在文本任务中表现也很好？}\par
+\textbf{视觉数据的训练方式对 MHSA 具有更强的泛化性，原因：}\par
+\feiEmoji{✅} \textbf{(1) 视觉 MHSA 需要学习复杂的 2D 关系，能力更泛化}\par
+\begin{itemize}
+\item 视觉 Transformer（ViT）将图像划分成 Patch 序列，每个 Patch 是一个 Token（例如 16x16 像素）。
+\item 视觉中的 \textbf{物体、边缘、层次结构、局部特征、远程依赖关系} 都需要被 MHSA 捕捉。
+\item \textbf{这种能力可以自然地迁移到文本数据}，因为文本也依赖 \textbf{上下文关系、长距离依赖等特征}。
+\item 由于视觉 Token 是一个 2D 结构，MHSA 被训练成\textbf{更泛化的关系建模方法}，因此直接迁移到文本时，它仍然可以有效建模文本 token 之间的关系。
+\end{itemize}
+\feiEmoji{✅} \textbf{(2) 视觉训练让 MHSA 习得更强的注意力分布}\par
+\begin{itemize}
+\item 在 \textbf{视觉任务中}，MHSA 需要学习哪些 Patch 之间存在\textbf{重要的联系}（例如，在目标检测或图像分类任务中）。
+\item 这种能力在文本数据中\textbf{同样适用}，因为 NLP 任务也需要学习\textbf{哪些词语之间有重要联系}（如句法结构、语义关系）。
+\item 所以，\textbf{在视觉上预训练的 MHSA 已经学会了如何合理地分配注意力，因此可以无缝适配到文本任务}。
+\end{itemize}
+\feiEmoji{✅} \textbf{(3) 视觉训练的 MHSA 具有更好的归纳偏置（Inductive Bias）}\par
+\begin{itemize}
+\item 视觉任务的 MHSA 需要学习到\textbf{局部感受野（locality）、层级结构（hierarchical structure）、长程依赖（long-range dependencies）}，而这些结构在文本数据中同样存在。
+\item 由于视觉中的注意力结构比文本更加丰富，MHSA 在视觉上训练时，会更全面地学习如何建模不同类型的关系。
+\item 所以，\textbf{视觉训练的 MHSA 在文本任务上依然适用，而反过来却不行}。
+\end{itemize}
+\item \yel{为什么先在文本上训练 MHSA，然后迁移到视觉任务效果不佳？}\par
+虽然 MHSA 是通用的，但文本和视觉数据的结构存在一些\textbf{关键性差异}，导致 \textbf{文本训练的 MHSA 在视觉任务上效果不好}。\par
+\feiEmoji{❌} \textbf{(1) 文本 MHSA 主要关注局部关系，泛化能力较差}\par
+\begin{itemize}
+\item \textbf{文本数据是线性的 1D 序列}，主要关注 \textbf{短距离依赖（short-range dependency）}。
+\item \textbf{视觉数据是 2D 结构}，需要建模 \textbf{多尺度（multi-scale）、空间结构（spatial structure）和远程依赖（long-range dependency）}。
+\item \textbf{如果 MHSA 先在文本数据上训练，它更容易过拟合 1D 依赖模式，导致它在视觉数据上泛化能力变差}。
+\end{itemize}
+\feiEmoji{❌} \textbf{(2) 文本 MHSA 的注意力机制无法处理复杂空间关系}\par
+\begin{itemize}
+\item 在 NLP 任务中，注意力主要用于学习\textbf{词序、句法结构}，但视觉任务需要更强的\textbf{空间建模能力}。
+\item \textbf{文本数据中没有物理空间关系，视觉数据有明显的空间结构（2D 关系）。}
+\item \textbf{如果 MHSA 先在文本任务上训练，它在处理 2D 视觉数据时会缺乏必要的 inductive bias，导致性能下降。}
+\end{itemize}
+\feiEmoji{❌} \textbf{(3) 文本数据的 token 表示方式和视觉不同}\par
+\begin{itemize}
+\item \textbf{文本 Token 是离散的（discrete），每个词有固定的 embedding。}
+\item \textbf{视觉 Patch 是连续的（continuous），需要额外的 Positional Embedding 和归一化。}
+\item \textbf{如果 MHSA 先在文本任务上训练，它的参数可能更适应离散数据，而不适用于视觉任务。}
+\end{itemize}
+\end{enumerate}
+\end{feishubox}
+
+\begin{feishubox}{callBlueSolid}{🙋}
+\begin{enumerate}
+\item \yel{VLMo为什么没有用cross attention？}\par
+核心原因：在 VLMo 中，视觉 token 和文本 token 都通过同一个多头自注意力（MHSA）来进行交互，其参数（如$W_Q$，$W_K$，$W_V$）\textbf{在所有模态上共享}。\par
+\textbf{(1) 传统多模态模型：}\par
+\begin{itemize}
+\item 视觉和文本有各自单独的自注意力（例如 Vision Encoder + Language Encoder）。
+\item 为了让视觉特征与文本特征融合，需要额外的 cross attention，通过一组专门的注意力参数来“跨模态”匹配 Q（来自文本）和 K、V（来自视觉）或反之。
+\end{itemize}
+\textbf{(2) VLMo 的做法：}\par
+\begin{itemize}
+\item 只有一个“统一”Transformer，把视觉 token 与文本 token 拼在一起，当成一个长序列来做\textbf{自注意力}。
+\item 这个自注意力层的\textbf{$W_Q$，}$\textbf{$W_K$，}$\textbf{$W_V$ 等参数在所有 token 之间共享}，模型可以根据输入的类型（视觉或文本 token）动态学到如何互相注意。
+\item 因此，模型不需要再显式设计“视觉对文本”或“文本对视觉”的 cross attention，因为\textbf{共享的自注意力层就能自然地完成跨模态信息的交互}。
+\end{itemize}
+\end{enumerate}
+\end{feishubox}
+
+核心代码，不同专家的实现：\par
+{\color{feishuGray}代码块\par}
+\begin{feishucode}
+\begin{lstlisting}
+""" Vision Transformer (ViT) in PyTorch
+实现Vision Transformer的PyTorch版本，参考论文：
+'An Image Is Worth 16 x 16 Words: Transformers for Image Recognition at Scale'
+官方Jax代码：https://github.com/google-research/vision_transformer
+
+主要贡献/改动：
+1. 添加了多模态处理能力（图像+文本）
+2. 支持分阶段训练（单模态/跨模态）
+3. 实现模态特定的前馈网络（FFN）
+"""
+
+......
+
+class Block(nn.Module):
+    """Transformer块（包含注意力+模态特定FFN）"""
+    def __init__(
+        self,
+        dim,                    # 输入维度
+        num_heads,              # 注意力头数
+        mlp_ratio=4.0,          # MLP扩展比例
+        qkv_bias=False,         # 是否在QKV中使用偏置
+        qk_scale=None,          # 缩放因子
+        drop=0.0,               # 基础dropout率
+        attn_drop=0.0,          # 注意力dropout率
+        drop_path=0.0,          # 随机深度率
+        act_layer=nn.GELU,      # 激活函数
+        norm_layer=nn.LayerNorm, # 归一化层
+        with_vlffn=False,       # 是否包含跨模态FFN
+        layer_scale_init_values=0.1, # 层缩放初始化值
+        max_text_len=40,        # 最大文本长度（用于特征分割）
+    ):
+        super().__init__()
+        # 归一化层
+        self.norm1 = norm_layer(dim)
+        # 注意力模块
+        self.attn = Attention(
+            dim, num_heads=num_heads, qkv_bias=qkv_bias,
+            qk_scale=qk_scale, attn_drop=attn_drop, proj_drop=drop
+        )
+        # 随机路径丢弃
+        self.drop_path = DropPath(drop_path) if drop_path > 0.0 else nn.Identity()
+        
+        # 模态特定归一化层
+        self.norm2_text = norm_layer(dim)
+        self.norm2_imag = norm_layer(dim)
+        
+        # MLP参数计算
+        mlp_hidden_dim = int(dim * mlp_ratio)
+        
+        # 文本模态FFN
+        self.mlp_text = Mlp(
+            in_features=dim,
+            hidden_features=mlp_hidden_dim,
+            act_layer=act_layer,
+            drop=drop,
+        )
+        # 图像模态FFN
+        self.mlp_imag = Mlp(
+            in_features=dim,
+            hidden_features=mlp_hidden_dim,
+            act_layer=act_layer,
+            drop=drop,
+        )
+        # 跨模态FFN（可选）
+        self.mlp_vl = None
+        if with_vlffn:
+            self.mlp_vl = Mlp(
+                in_features=dim,
+                hidden_features=mlp_hidden_dim,
+                act_layer=act_layer,
+                drop=drop,
+            )
+            self.norm2_vl = norm_layer(dim)
+        
+        # 层缩放参数（类似ConvNeXt设计）
+        self.gamma_1 = nn.Parameter(layer_scale_init_values * torch.ones(dim)) \
+            if layer_scale_init_values else 1.0
+        self.gamma_2 = nn.Parameter(layer_scale_init_values * torch.ones(dim)) \
+            if layer_scale_init_values else 1.0
+
+        self.max_text_len = max_text_len  # 最大文本长度（用于分割特征）
+
+    def forward(self, x, mask=None, modality_type=None, relative_position_bias=None):
+        # 残差连接1：注意力部分
+        x = x + self.drop_path(
+            self.gamma_1 * self.attn(  # 层缩放
+                self.norm1(x),         # 先归一化
+                mask=mask,
+                relative_position_bias=relative_position_bias
+            )
+        )
+
+        # 残差连接2：模态特定FFN
+        if modality_type == "image":  # 图像模态
+            x = x + self.drop_path(
+                self.gamma_2 * self.mlp_imag(self.norm2_imag(x))
+        elif modality_type == "text":  # 文本模态
+            x = x + self.drop_path(
+                self.gamma_2 * self.mlp_text(self.norm2_text(x))
+        else:  # 跨模态或混合模态
+            if self.mlp_vl is None:
+                # 分割文本和图像特征
+                x_text = x[:, :self.max_text_len]
+                x_imag = x[:, self.max_text_len:]
+                # 分别处理文本和图像
+                x_text = x_text + self.drop_path(
+                    self.gamma_2 * self.mlp_text(self.norm2_text(x_text)))
+                x_imag = x_imag + self.drop_path(
+                    self.gamma_2 * self.mlp_imag(self.norm2_imag(x_imag)))
+                x = torch.cat([x_text, x_imag], dim=1)
+            else:
+                # 使用跨模态FFN
+                x = x + self.drop_path(
+                    self.gamma_2 * self.mlp_vl(self.norm2_vl(x)))
+        return x
+\end{lstlisting}
+\end{feishucode}
+
+\par\vspace{1.15em}\noindent{\zihao{-2}\bfseries 4. VLMo微调}\par\vspace{0.28em}
+可以通过对VLMo进行微调以适应不同的下游任务，在论文中有两种下游任务：\par
+\figw{0.66}{fig-09.png}
+\begin{itemize}
+\item 视觉语言检索（上图(a)）：
+\begin{itemize}
+\item 双塔结构
+\item 在微调期间，使用图像-文本对比损失来优化。在推理过程中，作者计算所有图像和文本的表示，然后使用点积来获得所有可能的图像-文本对的图像到文本和文本到图像相似度分数。VLMo 的这个做法可以实现更快的推理速度。
+\end{itemize}
+\item 视觉语言分类（上图(b)），包括视觉问答VQA和视觉推理NLVR等：
+\begin{itemize}
+\item 单塔结构
+\item 先通过视觉专家和文本专家建模各自特征，再联合送入多模态专家完成更复杂的交互，完成分类任务。VLMo 使用 [T\_CLS] token 的最终编码向量作为图像-文本对的表示，并加上分类头预测类别。
+\end{itemize}
+\end{itemize}
+
+\par\vspace{1.15em}\noindent{\zihao{-2}\bfseries 5. 总结}\par\vspace{0.28em}
+\textbf{VLMo 的 MoME 设计，兼顾了“统一”与“专精”的平衡，“}\redb{灵活}\textbf{”是 VLMo 最突出的亮点：}\par
+\begin{enumerate}
+\item \textbf{统一的自注意力避免了繁琐的跨模态模块。}
+\item \textbf{Mixture-of-Experts 让视觉、语言、跨模态等不同需求都能通过}\textbf{并行专家来独立学习，还能在推理时自动调度“最优专家组合”。}
+\item 模型可\textbf{一体化处理单/多模态任务}，提升了迁移学习和下游适配的效率。
+\end{enumerate}
+VLMO还用大量的实验证明Self-Attention层确实是可以共享参数的，它跟模态没什么关系。\par
+发布VLMo微软这个团队在那几年，真的是出了很多厉害的工作，包括BEiT v1、v2、v3，还有LayoutLM v1、v2、v3，还有做语音的，做视频的，可以说是多模态领域里非常solid的一个组。所以大家如果想做多模态学习，任何一个领域的多模态学习，都可以去看一下他们组发的论文，应该或多或少都会有一些联系的。\par
+BEiT系列工作的发展历程：\par
+1）BEiT V1：2021年6月份发布\par
+2）VLMo：2021年11月份发布\par
+3）VL-BEiT：22年6月份发布，作者团队同时用Mask Modeling做Vision和 Language。\par
+4）BEiT V2：22年8月份发布，BEiT V2是BEIT V1的一个升级版，它还是做的视觉的Dataset。\par
+5）BEiT V3：22年8月份发布，BEiT V3就是之前所有工作的一个集大成版本，一个多模态的网络同时做单模态和多模态任务。\par
+
+\end{document}

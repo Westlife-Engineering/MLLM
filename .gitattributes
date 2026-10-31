@@ -1,0 +1,21 @@
+# Normalize new maintained text; immutable originals override this rule.
+* text=auto
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Preserve exact bytes before and after the authorized migration.
+"多模态经典/**" -text
+"视觉编码器/**" -text
+"MLLM实例/**" -text
+raw/** -text
+
+# Binary formats must never undergo text conversion.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
