@@ -7,7 +7,9 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/connectors/BLIP-2.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - architecture/pretraining
 ---
 
 # BLIP-2：先训练视觉查询，再对齐冻结语言模型
@@ -82,4 +84,14 @@ Q-Former从BERT-base初始化，新增cross-attention随机初始化；32个lear
 
 作者未观察到加入in-context VQA示例能提升该模型表现，并将其归因于单图文对训练缺少跨样例关联；这是作者解释，不是已排除所有架构／提示因素的因果实验。失败图6展示知识、推理和时效错误；论文正文§5误指Figure7，本页按实际失败图所在p12 Figure6定位。[[raw/papers/architecture/connectors/BLIP-2.pdf#page=8|§5]] [[raw/papers/architecture/connectors/BLIP-2.pdf#page=12|图6]]
 
-可整合主题：视觉信息瓶颈与注入位置、三目标mask、预训练与下游微调的冻结边界、zero-shot transfer的不同含义。主题页建立后由协调者补双向链接。
+本库整合主题：视觉信息瓶颈与注入位置、三目标mask、预训练与下游微调的冻结边界、zero-shot transfer的不同含义。实际双向主题关系见页末。
+
+## 实际整合关系
+
+支撑三目标mask、query瓶颈与LLM前缀连接，明确预训练/下游冻结边界和计算成本。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/efficiency/Resource-Ledger|资源账本：视觉token、激活参数、KV与系统预算分别省在哪里？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

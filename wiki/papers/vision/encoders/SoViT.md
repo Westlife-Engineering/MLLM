@@ -7,7 +7,7 @@ sources:
   - "[[raw/papers/vision/encoders/SoViT.pdf]]"
 primary_direction: vision/encoders
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 ---
 
 # SoViT：固定计算预算下，应该把 ViT 做宽、做深，还是增大 MLP？
@@ -87,4 +87,12 @@ SoViT-400m/14形状为width1152、27层、MLP4304，表1实际参数428M。JFT-3
 
 旧稿把“目前主流ViT都参数冗余”“SoViT效果最佳”“最能体现VLM优越性”写得过广。本页改为**本文基线、预算、任务与decoder设置下的竞争性结果**，保留GQA/VQAv2及分割差距。旧稿“无限计算时增大$x_k$仍因第二项暴增”的句子混淆了极限：固定$x_k$令$t\to\infty$时第二项消失；只有固定/受限计算下增大$x_k$才出现代价。平均分配预算也不等于相同形状增长率。
 
-**可整合主题**：编码器设计中的容量、形状与训练时长；FLOPs/墙钟时间/推理成本的分离；分类表示与语言解码、密集预测的目标差异。待主代理统一建立主题入链，本页当前不链接空主题。与[[wiki/papers/vision/encoders/ViT|ViT]]的连接在于：ViT证明了大数据下标准架构的可扩展性，SoViT继续询问同一类架构如何分配有限计算；二者具体数据、训练配方和评估年份不同，不能直接用最终分数判架构进步的因果来源。
+**本库整合主题**：编码器设计中的容量、形状与训练时长；FLOPs/墙钟时间/推理成本的分离；分类表示与语言解码、密集预测的目标差异。实际主题入链见页末。与[[wiki/papers/vision/encoders/ViT|ViT]]的连接在于：ViT证明了大数据下标准架构的可扩展性，SoViT继续询问同一类架构如何分配有限计算；二者具体数据、训练配方和评估年份不同，不能直接用最终分数判架构进步的因果来源。
+
+## 实际整合关系
+
+支撑形状/时长/容量的预算分配，解释FLOPs、参数与墙钟的分离及密集任务边界。
+
+- [[wiki/vision/Objectives-and-Transfer|视觉预训练：目标要求保留什么，迁移又读取什么？]]。
+- [[wiki/efficiency/Resource-Ledger|资源账本：视觉token、激活参数、KV与系统预算分别省在哪里？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。

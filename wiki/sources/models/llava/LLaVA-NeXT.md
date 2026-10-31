@@ -7,8 +7,11 @@ sources:
   - "[[raw/web/S024-LLaVA-NeXT/high_res_arch_v2.png]]"
 source_id: S024
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 primary_direction: models/llava
+related_directions:
+  - architecture/connectors
+  - vision/encoders
 ---
 
 # LLaVA-NeXT：2024年1月版本的官方技术说明
@@ -80,4 +83,13 @@ SGLang被列为部署/推理支持，但博客没有相同硬件、batch、输�
 
 旧稿“分辨率提高4倍”改成4倍像素；224块只属于旧HD例子，此版按Model Card写336；“改变比例”扩成可核的数据替换/新增；“34B超过Gemini-Pro”补选定指标和反例。旧稿总结“每代视觉编码器、连接器、LLM都更强”删除：博客明确复用连接器且视觉参数规模相同，没有逐项能力因果证据。团队也不能缩成单一Microsoft Research归属。
 
-待整合：视觉主题比较固定336、224-HD和336-AnyRes；训练/评测主题登记训练图像重叠与删除TextCaps的动机；模型主题按组件、数据、预算、来源版本分别组织。当前共享主题尚待协调整合。
+本库整合：视觉主题比较固定336、224-HD和336-AnyRes；训练/评测主题登记训练图像重叠与删除TextCaps的动机；模型主题按组件、数据、预算、来源版本分别组织。实际共享主题关系见页末。
+
+## 实际整合关系
+
+支撑336-AnyRes有限网格、GPT-4V及任务数据变化、模型卡预算；HTML按固定快照解释。
+
+- [[wiki/vision/Resolution-and-Token-Budget|分辨率、packing与tiling：预算到底在哪个位置？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。
+- [[wiki/efficiency/Resource-Ledger|资源账本：视觉token、激活参数、KV与系统预算分别省在哪里？]]。

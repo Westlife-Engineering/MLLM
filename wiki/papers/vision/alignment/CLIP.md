@@ -7,7 +7,9 @@ sources:
   - "[[raw/papers/vision/alignment/CLIP.pdf]]"
 primary_direction: vision/alignment
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - vision/encoders
 ---
 
 # CLIP：从批内图文配对到由文字生成分类器
@@ -20,7 +22,7 @@ ingest_status: integrating
 - **论文**：Alec Radford、Jong Wook Kim 等，*Learning Transferable Visual Models From Natural Language Supervision*，2021；本地为 arXiv:2103.00020 **v1，2021-02-26**，共 48 页。题名、首作者、版本标识已对照首页；以下页码均为 PDF 页码，本版与正文印刷页相同。
 - **原件**：[[raw/papers/vision/alignment/CLIP.pdf]]；登记 URL：[arXiv v1 原文](https://arxiv.org/pdf/2103.00020v1) 。原件 SHA-256：`6478b6e571a7d6fcd846d8ef77bfd60c285f1986abb8f475eedc43de403074f5`，本次重算一致。
 - **2026-10-31 实际阅读**：正文 pp.1–20（引言、方法、迁移实验、稳健性、人类比较、重叠检测及局限）；补读 pp.21–24 社会偏差讨论；附录 pp.37–38 线性评估协议、p.44 去重及数据消融、pp.45–48 检索/OCR/动作/定位及超参数。关键原页视觉核查：pp.2、3、5、7、8、12、16、44、46、48。
-- **未穷尽范围**：pp.25–27 后续 broader impacts/讨论未逐段核读，参考文献未逐条追溯；pp.39–43 全量逐数据集表格和定性图片未逐格审核。未复现、未审计代码；Obsidian 内显示未测。`read` 仅指本页登记的阅读范围，整合与独立审核尚未完成。
+- **未穷尽范围**：pp.25–27 后续 broader impacts/讨论未逐段核读，参考文献未逐条追溯；pp.39–43 全量逐数据集表格和定性图片未逐格审核。未复现、未审计代码；Obsidian 内显示未测。`read` 仅指本页登记的阅读范围；摄入状态见页首。
 - **旧笔记输入**：[[raw/notes/多模态经典/2021-ICML-CLIP.md]]、[[raw/notes/多模态经典/2021-ICML-CLIP总结.tex]]、[[raw/notes/多模态经典/Latex_out/2021-ICML-CLIP总结.pdf]] 为冻结二手材料；本次重点核对 Markdown 解释与 TeX 身份，不把旧编译 PDF 另计学术来源。
 
 ## 为什么用配对，而不直接预测整段配文？
@@ -93,4 +95,10 @@ CLIP 在计数、部分细粒度识别、低分辨率/手写数字和不常见�
 3. 旧导读把 Flickr30k 接近最好结果的检索方向写反：原表是 **给图找文**。零样本分类、检索、冻结特征回归各自记录，不统称同一种 zero-shot 能力。
 4. “不会框出物体”限定为**本文方法没有直接的检测输出/局部监督验证**；不能外推为任何基于 CLIP 的后续系统均不能定位。
 
-建议整合主题：视觉表示与图文对齐、对比损失的归一化范围、零样本评估与提示、分布变化下的迁移。当前页保持唯一来源入口，主题链接由主协调者在目标页实际存在并整合后补齐。待检验问题是：在固定数据、模型和算力下，批内竞争与逐对判别分别如何影响对齐、负例敏感性和局部特征；本论文不能单独回答。
+本库整合主题：视觉表示与图文对齐、对比损失的归一化范围、零样本评估与提示、分布变化下的迁移。本页保持唯一来源入口，实际主题关系见页末。待检验问题是：在固定数据、模型和算力下，批内竞争与逐对判别分别如何影响对齐、负例敏感性和局部特征；本论文不能单独回答。
+
+## 实际整合关系
+
+支撑批内双向softmax、文本类别接口和zero-shot/冻结probe的不同评估。
+
+- [[wiki/vision/Objectives-and-Transfer|视觉预训练：目标要求保留什么，迁移又读取什么？]]。

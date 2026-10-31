@@ -5,9 +5,12 @@ primary_direction: models/deepseek
 created: 2026-10-31
 updated: 2026-10-31
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 sources:
   - "[[raw/papers/models/deepseek/DeepSeek-VL.pdf]]"
+related_directions:
+  - vision/encoders
+  - architecture/connectors
 ---
 # DeepSeek-VL：在固定视觉序列内合并语义和细节，并控制语言遗忘
 
@@ -15,7 +18,7 @@ sources:
 
 原文为 Haoyu Lu、Wen Liu、Bo Zhang 等（DeepSeek-AI）的 *DeepSeek-VL: Towards Real-World Vision-Language Understanding*，arXiv **2403.05525v2**（PDF 标记 2024-03-11），33 页。[版本入口](https://arxiv.org/abs/2403.05525v2)。本地原件：[[raw/papers/models/deepseek/DeepSeek-VL.pdf]]；SHA-256：`09e6a250407a046b156a0f97c81ac681b57983d89c8287ccdc77d51e379692b9`。
 
-2026-10-31 实读摘要、正文 PDF pp.1–23、附录 A pp.30–33；参考文献 pp.23–29 仅用于导航，未逐篇追读。实际渲染核对 p.10 架构尺寸、p.12 Figure 3 冻结标记、p.14 Figure 4、pp.16–17 Tables 4–6、p.19 Figures 6–7、pp.20–22 Tables 8–10 / Figures 8–10，以及 pp.30–31、33 的示例。p.32 示范已读文字，未逐个验证图中对象身份。未运行代码、模型或基准，未实测 Obsidian；read 表示完成上述原文阅读，主题整合与独立审核仍在进行。
+2026-10-31 实读摘要、正文 PDF pp.1–23、附录 A pp.30–33；参考文献 pp.23–29 仅用于导航，未逐篇追读。实际渲染核对 p.10 架构尺寸、p.12 Figure 3 冻结标记、p.14 Figure 4、pp.16–17 Tables 4–6、p.19 Figures 6–7、pp.20–22 Tables 8–10 / Figures 8–10，以及 pp.30–31、33 的示例。p.32 示范已读文字，未逐个验证图中对象身份。未运行代码、模型或基准，未实测 Obsidian；read 表示完成上述原文阅读；实际主题关系见页末，摄入状态见页首。
 
 ## 具体解决什么问题
 
@@ -26,7 +29,7 @@ sources:
 7B 系列使用 SigLIP-L 和 SAM-B 图像编码器的并行支路；1.3B 在 Table 4 中仅使用 SigLIP，不能将混合结构无条件归到整个家族。
 
 ```mermaid
-flowchart LR
+flowchart TB
   I[同一输入图像] --> L[384×384 SigLIP-L]
   I --> H[1024×1024 SAM-B 图像编码器]
   L --> LF[576×1024 特征与独立线性投影]
@@ -53,7 +56,7 @@ flowchart LR
 
 冻结依据是 Figure 3 图注和 §3.2.3 的具体文字，不把图中整体“Hybrid Vision Encoder”旁火焰理解为 SAM 也解冻；正文说明 SAM 因 GPU 内存约束保持冻结。小模型三阶段 steps 为 15K/96K/10K、batch 为 256/1024/256，stage 2 LR 为 $3\times10^{-5}$。作者报告 7B 训练约 5 天、64 节点、每节点 8 张 A100；小模型约 7 天、16 节点。本文未提供可用于跨架构公平比较的端到端推理能耗。[[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=12|Figure 3 / §3.2.1]] [[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=15|§3.2.3–3.3]] [[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=16|Table 4]]
 
-预训练混合 Table 1 中纯文本占 **70%**；其余为 interleaved 13.1%、caption 11.1%、table/chart 2.1%、web code 0.4%、scene OCR 1.2%、document OCR 2.1%。材料包含公开与自建数据：例如从 1.46M notebooks 提取图与代码后过滤为约 1.1M 单图样本，以及 arXiv/电子书渲染资料。SFT Table 2 的 text-only 为 47.9%，其余包括 in-house 10.5%、general multimodal 35.5%、table/chart 4.1%、web code 2.0%；**SFT 配比不等于 stage 2 配比**。[[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=6|§2.1 / Table 1]] [[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=8|§2.2 / Table 2]]
+预训练混合 Table 1 中纯文本占 **70%**；其余为 interleaved 13.1%、caption 11.1%、table/chart 2.1%、web code 0.4%、scene OCR 1.2%、document OCR 2.1%。材料包含公开与自建数据：例如从 1.46M notebooks 提取图与代码后过滤为约 1.1M 单图样本，以及 arXiv/电子书渲染资料。SFT Table 2 的 text-only 为 47.9%，其余包括 in-house 10.5%、general multimodal 35.5%、table/chart 4.1%、web code 2.0%；**SFT 配比不等于 stage 2 配比**。[[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=6|§2.1]] [[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=7|Table 1]] [[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=8|§2.2 / Table 2]]
 
 > [!warning] 原文内的比例冲突
 > §3.2.2、Table 1 和 modality warmup 示例均支持最终约“语言 70%、多模态 30%”；p.14 Figure 4 图注却写 `multimodal:language=70%:30%`。本页按正文与数据表记录配方，并保留图注反向这一冲突；不把它作为另一套已确认配方。图中的 ratio 消融也不意味着 7:3 在所有模型和数据下最优。[[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=13|§3.2.2]] [[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=14|Figure 4]] [[raw/papers/models/deepseek/DeepSeek-VL.pdf#page=21|Modality Warmup]]
@@ -88,6 +91,14 @@ Table 8 从 2K 增到 80K stage-1 steps 后直接 SFT，平均分未改善（57.
 
 ## 主题落点
 
-可将固定 token 下的多编码器融合与其信息损失整合到 [[wiki/architecture/Overview]]、[[wiki/vision/Overview]]；将模态比例、冻结、warmup 与语言遗忘的条件整合到 [[wiki/training/Overview]]；自建人工评测与 GPT judge 的不同证据强度适合 [[wiki/evaluation/Overview]]；家族位置见 [[wiki/models/Overview]]。这些是待协调者完成的双向整合，不声称仅有链接便完成整合。
+可将固定 token 下的多编码器融合与其信息损失整合到 [[wiki/architecture/Overview]]、[[wiki/vision/Overview]]；将模态比例、冻结、warmup 与语言遗忘的条件整合到 [[wiki/training/Overview]]；自建人工评测与 GPT judge 的不同证据强度适合 [[wiki/evaluation/Overview]]；家族位置见 [[wiki/models/Overview]]。实际双向综合由页末主题承接，并保留原文定位与条件。
 
 英文检索词：hybrid vision encoder；embedding concatenation；joint vision-language pretraining；modality warmup；modality group training；Multi-choice PPL；language forgetting。
+
+## 实际整合关系
+
+支撑固定576位置的双视觉通道融合、文本比例与冻结/遗忘条件；不把高分辨率前端当更多LLM位置。
+
+- [[wiki/vision/Resolution-and-Token-Budget|分辨率、packing与tiling：预算到底在哪个位置？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

@@ -7,7 +7,10 @@ sources:
   - "[[raw/papers/vision/encoders/AIMv2.pdf]]"
 primary_direction: vision/encoders
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - architecture/pretraining
+  - vision/alignment
 ---
 
 # AIMv2：用图像与文本的自回归预测，训练可复用的视觉编码器
@@ -121,6 +124,15 @@ $\alpha=0.2/0.4/0.6$时IN-1k均85.6，VQA/TextVQA仅小幅波动，因此0.4是�
 4. 旧稿代码里的bias、位置编码、scaled_dot_product_attention等实现陈述本次未核官方代码，不能直接升级为本页原文事实；不沿旧稿链接扩展比较其他模型。
 5. “2025年初主流模型都是判别式”不是2024年v1能直接支撑的全体断言；“全面超过DINOv2/CLIP”“ICL超过整个MM1系列”改为具体任务、预算与作者所列对照。4/8-shot平均优势是本文表8报告；0-shot并未优于DFN-CLIP，且部分基线为引用报告。[[raw/papers/vision/encoders/AIMv2.pdf#page=6|p.6 表8]]；[[raw/papers/vision/encoders/AIMv2.pdf#page=7|p.7 §4.3.2]]
 
-**可整合主题**：视觉预训练目标（判别、caption、自回归像素）；训练decoder与部署encoder的分工；冻结表示评估、适配与多模态SFT的证据层次；native输入与tiling的不同成本。待主代理统一主题落点与双向链接。
+**本库整合主题**：视觉预训练目标（判别、caption、自回归像素）；训练decoder与部署encoder的分工；冻结表示评估、适配与多模态SFT的证据层次；native输入与tiling的不同成本。实际主题落点与双向链接见页末。
 
 **待检验问题**：图像回归的局部增益能否在严格相同数据质量、总FLOPs、输入token与decoder预算下保持？prefix策略究竟改善了哪些空间信息？这些需要后续受控证据，当前不以作者解释替代验证。
+
+## 实际整合关系
+
+支撑prefix像素+文本目标、训练decoder/部署encoder分工，以及native变batch与tiling的不同机制。
+
+- [[wiki/vision/Objectives-and-Transfer|视觉预训练：目标要求保留什么，迁移又读取什么？]]。
+- [[wiki/vision/Resolution-and-Token-Budget|分辨率、packing与tiling：预算到底在哪个位置？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。

@@ -7,7 +7,7 @@ sources:
   - "[[raw/papers/vision/encoders/ViT.pdf]]"
 primary_direction: vision/encoders
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 ---
 
 # ViT：图块序列上的标准 Transformer，何时能学好视觉表示？
@@ -77,6 +77,14 @@ $$
 
 **旧笔记差异**：保留其“先解释输入与迁移，再读实验”的顺序；把“大约9000万张前后”的说法收紧为特定模型、JFT子集和5-shot协议，不设通用数据阈值；把“混合前端只在小模型值得留”改为本组预算下的观测；去掉以位置相似度作为插值有效性的充分因果理由。明确原文也试过全像素L2目标，主结果仍是监督训练。旧稿不回写。
 
-**本库可整合主题**：视觉编码器的输入离散化与位置；归纳偏置与数据规模；表示评估中冻结探测、few-shot与整网微调的区别；理论FLOPs与硬件成本。当前待主代理建立并双向整合主题，不创建不存在的链接。
+**本库整合主题**：视觉编码器的输入离散化与位置；归纳偏置与数据规模；表示评估中冻结探测、few-shot与整网微调的区别；理论FLOPs与硬件成本。实际主题与双向关系见页末。
 
 **待检验问题**：当目标从整图分类变为细粒度定位、OCR或多模态语言生成时，哪些patch大小、空间编码和读出设计仍合适？这些问题不由本文分类分数回答。
+
+## 实际整合关系
+
+支撑patch计数、位置适配、数据规模与归纳偏置条件，并区分分类预训练和迁移读出。
+
+- [[wiki/vision/Objectives-and-Transfer|视觉预训练：目标要求保留什么，迁移又读取什么？]]。
+- [[wiki/vision/Resolution-and-Token-Budget|分辨率、packing与tiling：预算到底在哪个位置？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。

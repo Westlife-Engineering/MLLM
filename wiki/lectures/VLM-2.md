@@ -6,7 +6,7 @@ updated: 2026-10-31
 sources:
   - "[[raw/lectures/VLM-2.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 ---
 
 # Vision Language Models – II：从模态专家到多模态大模型
@@ -37,7 +37,7 @@ ingest_status: integrating
 | 重点原页核对 | p.5–16、20–32、33–47、53–70、73–90 的架构、冻结标记、表格、公式和训练流程；p.27、35、37、45、71、72、74、82、83 等另作单页放大 |
 | 未读与未做 | 本 PDF 无跳过页段；被引论文正文、链接网页、源码未在此任务核读；未复现实验，未验证示例输出；Obsidian 内显示未测 |
 | 旧笔记输入 | S003 无独立旧总结输入登记；其他模型的冻结旧笔记不是本页证据 |
-| 整合状态 | 本页已通过登记范围的独立内容审查并接入初始主题/索引；完整来源综合、结构与主 Agent 最终验收仍待收尾，状态保持 integrating |
+| 整合状态 | 已接入页末列出的主题和当前索引；摄入状态见页首 |
 
 页码均从 PDF 首页计数；原幻灯片未见独立印刷页码，以下不另造页码。
 
@@ -382,7 +382,7 @@ p.86 总图保留图像/文本编码器的 sigmoid 图文目标，加上自回�
 | TIPS | 并列 contrastive、self-distillation、masking loss；student 输入 masked patches，teacher 提供目标 | 为局部/被遮挡位置添加密集预测约束 |
 | MAP head | multi-head pooling attention 汇聚表示，用于图文匹配分支 | pooling 的全局输出与局部特征是不同使用层次 |
 
-**图例不宜过度解释。** 总图把 sigmoid / LocCa 标为 100%，SILC/TIPS 标为 20%；讲义没有就近解释其精确训练日程含义，本页不直接当作 loss 系数或数据配比。p.87 正文把 LocCa 拼为 LocLa，页脚及图中为 LocCa；这里按页脚题名统一，并保留原件拼写问题。[[raw/lectures/VLM-2.pdf#page=87|p.87 · LocCa]]
+**图例不宜过度解释。** 总图把 sigmoid / LocCa 标为 100%，SILC/TIPS 标为 20%；讲义没有就近解释其精确训练日程含义，本页不直接当作 loss 系数或数据配比。 原论文另已由[[wiki/papers/vision/alignment/SigLIP2|S010 SigLIP2]]核清：固定分辨率主配方在最后20%训练启用这两项目标；这是独立原论文补充，不是讲义已解释的内容。p.87 正文把 LocCa 拼为 LocLa，页脚及图中为 LocCa；这里按页脚题名统一，并保留原件拼写问题。[[raw/lectures/VLM-2.pdf#page=87|p.87 · LocCa]]
 
 **数据与计算条件。** p.86 列 WebLI 的 10B images、12B alt-texts、109 languages，90% English / 10% non-English；batch size 32k、20k warmup、累计 40B examples、2048 TPUv5e chips。10B 为数据集图像规模，40B 为训练累计量，不能相加为不同原始图像数。本页只记录课程条件，没有核验网页来源、筛选或各变体训练日程。
 
@@ -421,12 +421,12 @@ p.91 展望包括扩展模态、跨模态推理、人机协作、将 GPT 类预�
 
 ## 10. 本库主题落点
 
-本讲已实际整合到下列初始地图，课程转述、课程勘误与本库教学整理的身份保持不变；讲义引用不替代其他唯一来源页的原论文阅读。
+本页的地图/课程贡献与实际主题双向关系见下节。当前主题已结合独立原论文深化；本页对被引工作的转述身份保持不变，不把其他唯一页的直接阅读归为本材料已完成的证据。
 
-- [[wiki/overview|总览]] 与 [[wiki/foundations/Formalization|基础]]：信息流、token、冻结和任务证据的区别。
-- [[wiki/vision/Overview|视觉]] 与 [[wiki/architecture/Overview|架构]]：原生分辨率、切片、位置组织、共享/专用参数和连接位置。
-- [[wiki/training/Overview|训练]] 与 [[wiki/efficiency/Overview|效率]]：数据、目标、开放范围、累计预算与长度，以及前端/接口/语言计算的分账。
-- [[wiki/reasoning/Overview|推理]]：课程 Agent 图中的动作—观察方向与轨迹/训练服务接口。
-- [[wiki/evaluation/Overview|评测]] 与 [[wiki/models/Overview|模型演进]]：案例、任务分数和可复现证据的区别，以及跨代机制变化轴。
+## 实际整合关系
 
-全部当前来源入口与施工状态见 [[wiki/index|索引]]。
+提供共享/专用参数、位置推导、Agent闭环与家族教学地图；已读原论文另由唯一页承担直接证据。
+
+- [[wiki/architecture/Overview|架构：分开读取权重、可见性、路由与输出接口]]。
+- [[wiki/reasoning/Overview|推理与交互：增加计算、改变观察、控制环境怎样分别起作用？]]。
+- [[wiki/models/Overview|模型演进：按机制变化轴进入家族，按证据条件读结果]]。

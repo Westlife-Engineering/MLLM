@@ -7,7 +7,9 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/pretraining/ALBEF.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - vision/alignment
 ---
 
 # ALBEF：先对齐表示，再学习细粒度融合
@@ -182,6 +184,15 @@ RefCOCO+ 上 ITM Grad-CAM 的 val/testA/testB 为 58.46/65.89/46.25，高于 ITC
 
 ## 6. 可持续追问与整合落点
 
-本来源可支持“全局对齐与局部融合的互补”“自生成软监督”“检索两阶段计算”“监督噪声与伪目标不确定性”等主题。此时这些是整合建议，最终主题链接由实际创建与综合后的页面承接。
+本来源可支持“全局对齐与局部融合的互补”“自生成软监督”“检索两阶段计算”“监督噪声与伪目标不确定性”等主题。这些关系已由页末实际主题承接；跨来源综合保留各自证据身份。
 
 仍未解决的问题是：教师什么时候会强化错误配对；不同噪声类型、数据质量和规模下，硬标签/软目标的最合适混合比例是否改变；没有预训练图像重叠时 grounding 增益还剩多少；当后续模型同时学习 captioning 或直接改写数据时，改进究竟来自目标、数据还是模型预算。本文没有提供覆盖这些问题的完整控制实验。
+
+## 实际整合关系
+
+支撑对齐/融合分工、相似度难负例与EMA软目标，说明检索重排及KL/软交叉熵关系。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

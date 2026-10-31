@@ -7,7 +7,10 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/models/qwen/Qwen-VL.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - vision/encoders
+  - architecture/connectors
 ---
 
 # Qwen-VL：固定视觉接口、细粒度监督与三阶段训练
@@ -100,4 +103,14 @@ Table 11 的 Qwen-7B intermediate 在 MMLU/C-Eval 为 49.9/48.5，Qwen-VL 为 50
 
 旧笔记的三阶段冻结关系、256 query 与 2D 位置设计可保留；“ViT 可学习 1D PE、resampler 不可学习 2D PE”及与其它实现的细节比较，在本次论文已读范围未被完整展开，不作为本篇直接证据。“缓解 1D 位置编码损失”宜收紧为原文说的“缓解压缩中的位置细节损失”；主张对象不同。补充 Qwen-7B intermediate 身份、查询数消融的 ViT-L 条件、窗口实验与实际训练预算，使旧稿的架构介绍能够对应证据范围。
 
-本来源可支持 [[wiki/vision/Overview|视觉表示]] 中固定 token 瓶颈与细粒度监督的讨论，[[wiki/training/Overview|训练]] 中三阶段开放参数与文本混合的比较，以及 [[wiki/evaluation/Overview|评测]] 中 base/chat、开放生成/选项判分和初始化差异的区分。共享主题尚待协调者整合；本篇没有单独隔离分辨率、位置编码、数据量与所有目标任务提升的因果贡献。作者提出未来扩展音频/视频与图像/语音生成，这些不属于本报告已经验证的完整能力。[[raw/papers/models/qwen/Qwen-VL.pdf#page=10|p.10 · §6]]
+本来源可支持 [[wiki/vision/Overview|视觉表示]] 中固定 token 瓶颈与细粒度监督的讨论，[[wiki/training/Overview|训练]] 中三阶段开放参数与文本混合的比较，以及 [[wiki/evaluation/Overview|评测]] 中 base/chat、开放生成/选项判分和初始化差异的区分。实际共享主题关系见页末；本篇没有单独隔离分辨率、位置编码、数据量与所有目标任务提升的因果贡献。作者提出未来扩展音频/视频与图像/语音生成，这些不属于本报告已经验证的完整能力。[[raw/papers/models/qwen/Qwen-VL.pdf#page=10|p.10 · §6]]
+
+## 实际整合关系
+
+支撑固定256query与压缩前分辨率、坐标文本化、三阶段开放参数和实际初始化比较。
+
+- [[wiki/vision/Resolution-and-Token-Budget|分辨率、packing与tiling：预算到底在哪个位置？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/architecture/Generative-Output-Interfaces|生成输出接口：读入图片、输出文字、合成图片分别由谁完成？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。

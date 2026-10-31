@@ -7,7 +7,9 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/connectors/Flamingo.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - architecture/pretraining
 ---
 
 # Flamingo：把交错视觉上下文接入冻结语言模型
@@ -97,6 +99,14 @@ M3W 从约4300万网页获得交错图文，每个样本随机取256个文本 to
 - **旧TeX“层越深视觉语义融合越大”应收回**：图6画的是gate绝对值；作者明确提醒各层门前激活尺度可能不同，不能据此直接量化语义融合强弱。[[raw/papers/architecture/connectors/Flamingo.pdf#page=23|附录A.1.2]]
 - **旧TeX“gating、resampler、cross attention都是必须的”改为受条件约束的消融优势**；替代结构仍有非零性能。旧Markdown称VLM术语使用的“起点”没有本论文内足够历史证据，本页不采用。旧稿对1 FPS与mask的表述补上了训练／推理及M3W增强区别。
 
-## 可整合的问题
+## 本库整合问题
 
-本页支持：视觉token压缩与LLM内部注入的区别；冻结参数如何影响训练成本与遗忘；交错数据、attention mask与in-context评估之间的关系。与其他连接机制的正式比较需回到各自原文及同条件实验，不能由模块外观相似直接判断优劣。主题页待协调者实际建立后补双向链接。
+本页支持：视觉token压缩与LLM内部注入的区别；冻结参数如何影响训练成本与遗忘；交错数据、attention mask与in-context评估之间的关系。与其他连接机制的正式比较需回到各自原文及同条件实验，不能由模块外观相似直接判断优劣。实际双向主题关系见页末。
+
+## 实际整合关系
+
+支撑64-latent压缩与LM内部gated CA分工、最近图直接可见性及交错训练/ICL条件。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

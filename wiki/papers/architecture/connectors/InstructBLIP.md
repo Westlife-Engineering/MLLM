@@ -7,7 +7,9 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/connectors/InstructBLIP.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - architecture/pretraining
 ---
 
 # InstructBLIP：在视觉特征被压缩之前引入任务指令
@@ -99,4 +101,13 @@ caption与开放VQA通常直接生成；ScienceQA、IconQA、A-OKVQA多选、Hat
 
 本文仍继承冻结LLM的幻觉与偏差；高分不等于回答一定有视觉依据。下一步可查：对于OCR与细粒度任务，提升来自外部OCR、任务数据还是instruction-aware取样；相同视觉token预算下何种指令改变最容易漏信息。当前为本库问题，不是已完成实验。[[raw/papers/architecture/connectors/InstructBLIP.pdf#page=13|附录A]]
 
-建议整合主题：指令条件化视觉连接、指令数据与采样、held-out泛化及评测输入条件；主题落点由协调者建立后补双向链接。
+本库整合主题：指令条件化视觉连接、指令数据与采样、held-out泛化及评测输入条件；实际双向主题关系见页末。
+
+## 实际整合关系
+
+支撑指令条件化视觉提取、数据采样与held-out层级；外部OCR及候选评分是结果条件。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

@@ -7,7 +7,9 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/pretraining/VLMo.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - vision/alignment
 ---
 
 # VLMo：共享注意力、模态专家与两种任务接口
@@ -157,3 +159,12 @@ Base 在 COCO 5k test 检索 TR/IR R@1=74.8/57.2，在 Flickr30k 1k test 为 92.
 与 [[wiki/papers/architecture/pretraining/ALBEF|ALBEF（S011）]] 比较，VLMo 在融合时用拼接序列的 self-attention 承担图文交互，而不是单独的文本查询图像 cross-attention 模块；两者都有 ITC/ITM/MLM，但参数复用与阶段初始化不同。与 [[wiki/papers/architecture/pretraining/BLIP|BLIP（S012）]]、[[wiki/papers/architecture/pretraining/CoCa|CoCa（S013）]] 比较，VLMo 本篇重点是理解/检索与可共享骨干，captioning 仍列为未来工作，不能据“统一”一词补出已验证生成能力。
 
 可整合的问题包括模态专家路由与 attention 可见性的独立设计、单模态资源怎样初始化多模态网络、候选规模与负例难度、检索重型编码成本与全库打分成本。未解决的问题包括同等总预算下阶段预训练与联合从头训练的比较、共享 attention 对其它模态的边界，以及更大图文数据与阶段初始化之间是否存在可替代关系；本篇没有覆盖全部对照。
+
+## 实际整合关系
+
+支撑共享attention/模态FFN/联合可见性的独立设计，以及阶段预训练和双塔检索成本。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

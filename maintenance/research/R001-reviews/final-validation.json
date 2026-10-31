@@ -1,0 +1,45 @@
+{
+  "scope": "Structural integrity only; no scholarly correctness, TeX compilation, remote resource completeness, or Obsidian UI validation.",
+  "root": "C:\\Users\\ZENGZX\\Desktop\\MLLM",
+  "allow_incomplete": false,
+  "counts": {
+    "manifest_raw_records": 288,
+    "links_checked": 2499,
+    "markdown_files": 74,
+    "tex_files": 31,
+    "tex_dependencies": 165,
+    "raw_files": 288,
+    "raw_bytes": 320669809
+  },
+  "registry_sources": 34,
+  "registry_types": {
+    "survey": 2,
+    "lecture": 1,
+    "paper": 29,
+    "source": 2
+  },
+  "pdfs_checked": 32,
+  "errors": [],
+  "warnings": [],
+  "documented_historical_links": [
+    {
+      "file": "raw/notes/MLLM实例/Qwen/复刻说明.md",
+      "line": 11,
+      "target": "Latex_out/Qwen3.8-Flash-Next总结.pdf",
+      "kind": "frozen_raw_missing_link"
+    },
+    {
+      "file": "raw/notes/视觉编码器/README.md",
+      "line": 43,
+      "target": "../.work/visual-encoders/continuation-main/review.md",
+      "kind": "frozen_raw_missing_link"
+    },
+    {
+      "file": "raw/notes/视觉编码器/README.md",
+      "line": 43,
+      "target": "../.work/visual-encoders/continuation-main/final-verification.json",
+      "kind": "frozen_raw_missing_link"
+    }
+  ],
+  "passed": true
+}

@@ -7,7 +7,7 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/connectors/mPLUG-Owl.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 ---
 
 # mPLUG-Owl：分阶段调整视觉与语言参数，使用视觉抽象器压缩输入
@@ -93,3 +93,12 @@ baseline来源混合本地released code与在线demo：OpenFlamingo-9B、BLIP-2 
 3. “已和最新2025 MLLM结构基本一致”是无边界的历史概括，当前页不采用。三模块表象不保证训练方式、token保留、跨注意力位置相同；正文新增了参数路线／超参数／r编号三组原文冲突，而不是静默沿用旧稿单一版本。
 
 建议整合到视觉连接器、参数冻结与LoRA路线、开放式人评及能力标签边界；对应主题页建立后补双向链接。下一步若需实现级比较，须先锁定与v3相符的仓库commit，再核abstractor与LoRA配置；本轮不启动代码审计或训练。
+
+## 实际整合关系
+
+支撑abstractor输入接入与分阶段开放参数，OwlEval用作有范围的人工诊断；阶段2冲突保持未裁定。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

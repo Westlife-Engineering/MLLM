@@ -7,7 +7,10 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/pretraining/BLIP.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - vision/alignment
+  - architecture/generation
 ---
 
 # BLIP：将理解、生成和训练数据改进接成一个流程
@@ -160,3 +163,13 @@ VisDial 使用候选答案排序的判别设置，条件包括图像、caption�
 | ALBEF 等均爬取 4 亿图像 | ALBEF 本文设置为 4M/14M；BLIP 本文为 14M/129M，不能把其它模型的数据规模转移过来 |
 
 已核读材料支持的综合问题是：共享表示与任务专用注意力如何折中；优化软监督与直接改造语料各自解决什么噪声；合成多样性怎样在 filter 偏差下保留。尚待验证的是过滤决策相对人工事实判断的误差、多轮 bootstrap 是否积累同源错误、完整训练—生成成本，以及候选式 VQA 和忽略时间的视频结果能多大程度迁移到更开放任务。后续主题整合应围绕这些条件展开，不只按多任务分数排序。
+
+## 实际整合关系
+
+支撑MED可见性与参数共享、CapFilt语料流程和生成/过滤成本，保留候选VQA与视频协议。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/architecture/Generative-Output-Interfaces|生成输出接口：读入图片、输出文字、合成图片分别由谁完成？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

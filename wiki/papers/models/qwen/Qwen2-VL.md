@@ -7,7 +7,10 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/models/qwen/Qwen2-VL.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - vision/encoders
+  - architecture/connectors
 ---
 
 # Qwen2-VL：动态视觉 token、M-RoPE 与图像视频统一输入
@@ -103,4 +106,14 @@ R2R/REVERIE valid-unseen SR=51.7/31.0，落后于表中专用系统 79.0/61.0；
 
 旧笔记将视觉 RoPE-2D 与 LLM M-RoPE 混称，现分开其位置和职责；保留 MLP 合并邻近 $2\times2$ 的事实，但代码类名、两层结构和具体频率索引未经本次代码核查，不当作论文细节。旧稿“测试时放大图片就会提升”改成有限范围内的任务相关收益，并加入 OCR 下降和 MMMU 弱变化。训练阶段不补造 merger 冻结状态。
 
-本页可支持 [[wiki/vision/Overview|视觉表示]] 的空间/时间 token 预算，[[wiki/architecture/Overview|架构]] 的前端与 LLM 位置机制分工，[[wiki/reasoning/Overview|推理与交互]] 的模型—工具—环境关系，以及 [[wiki/evaluation/Overview|评测]] 的内部合成测试与完整任务验收区别。共享主题仍待协调者整合；本文原页已读不表示上述定性示例全部经过本次独立验算，也不把其它来源图像中的产品限制或公式当成本模型的新架构。
+本页可支持 [[wiki/vision/Overview|视觉表示]] 的空间/时间 token 预算，[[wiki/architecture/Overview|架构]] 的前端与 LLM 位置机制分工，[[wiki/reasoning/Overview|推理与交互]] 的模型—工具—环境关系，以及 [[wiki/evaluation/Overview|评测]] 的内部合成测试与完整任务验收区别。实际共享主题关系见页末；本文原页已读不表示上述定性示例全部经过本次独立验算，也不把其它来源图像中的产品限制或公式当成本模型的新架构。
+
+## 实际整合关系
+
+支撑动态空间合并、视觉2D-RoPE/LLM M-RoPE分工，及动作匹配/模拟终态/定性执行的不同证据。
+
+- [[wiki/vision/Resolution-and-Token-Budget|分辨率、packing与tiling：预算到底在哪个位置？]]。
+- [[wiki/reasoning/Overview|推理与交互：增加计算、改变观察、控制环境怎样分别起作用？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

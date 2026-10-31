@@ -7,7 +7,7 @@ sources:
   - "[[raw/papers/vision/encoders/NaViT.pdf]]"
 primary_direction: vision/encoders
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 ---
 
 # NaViT：怎样让不同形状、不同 token 数的图像高效一起训练？
@@ -30,7 +30,7 @@ ingest_status: integrating
 下面是**本库根据图2重组的流程**，箭头表示数据处理顺序，不代表原文新增模块：
 
 ```mermaid
-flowchart LR
+flowchart TB
   A[保宽高比缩放与切块] --> B[各图可选不同 token drop]
   B --> C[多图序列打包及少量 padding]
   C --> D[带样本边界 mask 的编码器]
@@ -97,4 +97,11 @@ OOD成绩还依赖crop协议。作者的ObjectNet/ImageNet-A中心裁剪与不�
 
 **旧笔记校正**：把“按原始分辨率直接拼接”改为“支持原始尺寸，主要实验采用保比例重采样”；将最后一张图特调drop以填满容器标为作者讨论的可选做法，实际A.3是greedy+padding；位置参数量比较要包含向量维$D$（联合表约$L^2D$、相加分轴表约$2LD$），且不能据此承诺所有未见坐标都能外推；“始终优于ViT”改为本文条件下的结果。
 
-**待整合主题**：视觉token预算与batch效率；分辨率、宽高比、patch大小三者区别；输入灵活性与位置外推；训练预算和推理预算的不同优化。主题尚待主代理统一落盘。**待检验问题**：在OCR等细节敏感任务上，低分辨率吞吐收益何时被信息损失抵消？本文没有给出所有任务可共用的最佳采样分布。
+**本库整合主题**：视觉token预算与batch效率；分辨率、宽高比、patch大小三者区别；输入灵活性与位置外推；训练预算和推理预算的不同优化。实际主题落点见页末。**待检验问题**：在OCR等细节敏感任务上，低分辨率吞吐收益何时被信息损失抵消？本文没有给出所有任务可共用的最佳采样分布。
+
+## 实际整合关系
+
+支撑保比例变长输入、packing的三层样本隔离及同预算曝光/推理分辨率的区别。
+
+- [[wiki/vision/Resolution-and-Token-Budget|分辨率、packing与tiling：预算到底在哪个位置？]]。
+- [[wiki/efficiency/Resource-Ledger|资源账本：视觉token、激活参数、KV与系统预算分别省在哪里？]]。

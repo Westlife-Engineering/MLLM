@@ -6,8 +6,11 @@ sources:
   - "[[raw/papers/models/llava/LLaVA-1.5.pdf]]"
 source_id: S023
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 primary_direction: models/llava
+related_directions:
+  - architecture/connectors
+  - vision/encoders
 ---
 
 # LLaVA-1.5：简单接口、任务数据与明确输出格式
@@ -84,4 +87,12 @@ HD并非每项都更好：相对336/13B，MM-Vet36.1→39.4、TextVQA61.3→62.5
 
 旧笔记输入：[[raw/notes/多模态经典/2023-LLaVA-1.5总结.tex]]、[[raw/notes/多模态经典/Latex_out/2023-LLaVA-1.5总结.pdf]]。本次对照TeX正文，编译副本未逐页复核。本页纠正其把Dynamic High-Resolution笼统归入普通1.5的写法，区分336基线与224切块的HD；补齐数据总量/格式/预算与逐项增益条件。旧稿引用初版“倒数第二层更好”消融，不能由此声称所有模型/任务必然如此；“最后层更全局”仍是作者假说。
 
-待整合：视觉主题讨论局部块与整图互补及token成本；训练主题讨论回答格式和样本单位；模型演进按数据/连接/视觉尺寸/语言模型四轴比较。共享主题尚待协调整合。
+本库整合：视觉主题讨论局部块与整图互补及token成本；训练主题讨论回答格式和样本单位；模型演进按数据/连接/视觉尺寸/语言模型四轴比较。实际共享主题关系见页末。
+
+## 实际整合关系
+
+支撑MLP/网格、回答格式、任务数据与普通336/实验HD的多轴变化，逐步实验不作全因素归因。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

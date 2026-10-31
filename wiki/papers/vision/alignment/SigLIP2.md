@@ -7,7 +7,9 @@ sources:
   - "[[raw/papers/vision/alignment/SigLIP2.pdf]]"
 primary_direction: vision/alignment
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - vision/encoders
 ---
 
 # SigLIP 2：全局对齐之外，怎样学习可定位的视觉特征？
@@ -20,7 +22,7 @@ ingest_status: integrating
 - **论文**：Michael Tschannen、Alexey Gritsenko、Xiao Wang、Muhammad Ferjad Naeem、Ibrahim Alabdulmohsin 等，*SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features*。本地固定 arXiv:2502.14786 **v1，2025-02-20**，20页；题名/作者/版本日期已对照首页。页码均为PDF页码，与印刷页一致。
 - **原件**：[[raw/papers/vision/alignment/SigLIP2.pdf]]；[arXiv v1](https://arxiv.org/pdf/2502.14786v1)；SHA-256：b840240c075aad94d46f739712c594cb6848d0bf0e5b516da5d8da7586ad6bb9，本次重算一致。
 - **2026-10-31 阅读范围**：正文 pp.1–12，附录 pp.17–20。实际视觉核查 pp.2、3、4、5、7、9、11、17、18、20：训练架构、权重和schedule、分类/检索、NaFlex、dense probing、定位、VLM与公平性表。参考文献未逐条核读，也未追读 LocCa/SILC/TIPS/ACID/NaViT 的原论文；下述关于这些技术只确认本报告如何采用。
-- **旧笔记输入**：[[raw/notes/视觉编码器/SigLIP2总结.tex]]、[[raw/notes/视觉编码器/Latex_out/SigLIP2总结.pdf]]；本次读取TeX机制与实验解释，旧编译PDF不另计来源。未复现、未审计代码；Obsidian 内显示未测。当前 integrating，待主题整合与独立审核。
+- **旧笔记输入**：[[raw/notes/视觉编码器/SigLIP2总结.tex]]、[[raw/notes/视觉编码器/Latex_out/SigLIP2总结.pdf]]；本次读取TeX机制与实验解释，旧编译PDF不另计来源。未复现、未审计代码；Obsidian 内显示未测。
 
 ## 为什么全局相似度还不够？
 
@@ -116,4 +118,12 @@ $s$ 表示主训练进度；sigmoid与LocCa等权；局部/全局一致性和mas
 - 旧稿“性能都优于其他基准”改为带反例与任务条件的总体趋势；dense和定位分数明确需要下游训练。
 - 原文引用的LocCa/SILC/TIPS等机制仍标为**本报告的采用说明**，不新建被引论文页或增加精读来源数。
 
-建议整合主题：全局对齐与局部特征、视觉预训练目标组合、分辨率/视觉token预算、视觉编码器对MLLM的迁移。可继续追问：固定数据与总成本时哪个新增监督提供多少收益；NaFlex和固定分辨率在相同训练目标下如何比较；新编码器对未测LLM及真实文档长宽比的收益是否稳定。这些是待检验问题，不是已证实的研究空白。
+本库整合主题：全局对齐与局部特征、视觉预训练目标组合、分辨率/视觉token预算、视觉编码器对MLLM的迁移。可继续追问：固定数据与总成本时哪个新增监督提供多少收益；NaFlex和固定分辨率在相同训练目标下如何比较；新编码器对未测LLM及真实文档长宽比的收益是否稳定。这些是待检验问题，不是已证实的研究空白。
+
+## 实际整合关系
+
+支撑全局/区域/密集监督、最后20%训练日程与NaFlex独立分支，按probe/VLM协议讨论迁移。
+
+- [[wiki/vision/Objectives-and-Transfer|视觉预训练：目标要求保留什么，迁移又读取什么？]]。
+- [[wiki/vision/Resolution-and-Token-Budget|分辨率、packing与tiling：预算到底在哪个位置？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。

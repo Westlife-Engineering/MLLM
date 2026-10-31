@@ -6,7 +6,7 @@ updated: 2026-10-31
 sources:
   - "[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 ---
 
 # Perception, Reason, Think, and Plan：从多模态解题走向交互式推理
@@ -30,7 +30,7 @@ ingest_status: integrating
 | 原页视觉核查 | p1、3、7、10、16、19、25–30、32–33、35、41；图1–10全部查看，表6、12–15查看原页；其他表读取内容与上下文，未逐项追索其原论文 |
 | 公式与机制图 | 正文未见独立编号的数学推导；图5的 DPO、GRPO、奖励类型示意已看，不能据图声称掌握完整优化目标或实现细节 |
 | 未读与未测 | p44–91参考文献未逐条阅读；未追索被引原论文，未复现模型/benchmark，未审计数据、代码或隐藏推理过程；Obsidian 内显示未测 |
-| 整合状态 | 本页已通过登记范围的独立内容审查并接入初始主题/索引；完整来源综合、结构与主 Agent 最终验收仍待收尾，状态保持 integrating |
+| 整合状态 | 已接入页末列出的主题和当前索引；摄入状态见页首 |
 
 ## 四阶段究竟改变了什么
 
@@ -128,9 +128,13 @@ Stage 1 的细分见 [[raw/surveys/Perception, Reason, Think, and Plan A Survey 
 
 ## 本库主题落点
 
-本页已实际接入以下初始地图；四阶段仍是作者组织与展望，个案仍是个案，模型案例在本页仍以综述为依据。其他唯一来源页的原论文阅读情况以 [[wiki/index|索引]] 为准。
+本页的地图/课程贡献与实际主题双向关系见下节。当前主题已结合独立原论文深化；本页对被引工作的转述身份保持不变，不把其他唯一页的直接阅读归为本材料已完成的证据。
 
-- [[wiki/overview|总览]] 与 [[wiki/foundations/Formalization|基础]]：感知、推理与规划的工作区分，输出和任务证据的层次。
-- [[wiki/architecture/Overview|架构]] 与 [[wiki/reasoning/Overview|推理]]：推理载体、接口、工具与动作—观察闭环；native 仍须落实到机制和验证。
-- [[wiki/training/Overview|训练]] 与 [[wiki/efficiency/Overview|效率]]：训练形成的能力与测试时路径/计算分配分别记录。
-- [[wiki/evaluation/Overview|评测]] 与 [[wiki/models/Overview|模型演进]]：答案、解释、执行和终态取证，以及任务分类、判分和演进叙事的不同用途。
+## 实际整合关系
+
+提供计算、工具、环境与判分地图，以及终答/解释/产物可分离的作者个案；路线展望不当既成能力。
+
+- [[wiki/overview|MLLM：沿视觉证据、学习接口与任务结果建立理解]]。
+- [[wiki/reasoning/Overview|推理与交互：增加计算、改变观察、控制环境怎样分别起作用？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/architecture/Generative-Output-Interfaces|生成输出接口：读入图片、输出文字、合成图片分别由谁完成？]]。

@@ -7,7 +7,7 @@ sources:
   - "[[raw/papers/vision/alignment/SigLIP.pdf]]"
 primary_direction: vision/alignment
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 ---
 
 # SigLIP：把批内选择改成逐对判别，究竟改变了什么？
@@ -20,7 +20,7 @@ ingest_status: integrating
 - **身份**：Xiaohua Zhai、Basil Mustafa、Alexander Kolesnikov、Lucas Beyer，*Sigmoid Loss for Language Image Pre-Training*；arXiv:2303.15343，本轮固定 **v4**，PDF 共17页，页码与印刷页一致。题名/作者对照首页，版本按固定下载 URL 与登记记录确认。
 - **原件**：[[raw/papers/vision/alignment/SigLIP.pdf]]；[arXiv v4](https://arxiv.org/pdf/2303.15343v4)；SHA-256：2efade8de3baeffe9eba759aab9f510ea8f8ac3c365f02f0da75d9baf9ffa2db，本次重算一致。
 - **2026-10-31 阅读**：正文 pp.1–10，附录 pp.14–17；参考文献仅定位，不扩读被引工作。视觉核查 pp.2、3、4、7、8、9、14 的算法、损失公式、分块图、batch/负例曲线和主结果/消融表；附录逐语言表未逐格视觉审核。不声称复现或代码审计；Obsidian 内显示未测。
-- **旧笔记输入**：[[raw/notes/视觉编码器/SigLIP总结.tex]] 与 [[raw/notes/视觉编码器/Latex_out/SigLIP总结.pdf]]；核对 TeX 中公式、分块表述和结果主张，编译版不另算来源。当前 integrating，待主题整合与审核。
+- **旧笔记输入**：[[raw/notes/视觉编码器/SigLIP总结.tex]] 与 [[raw/notes/视觉编码器/Latex_out/SigLIP总结.pdf]]；核对 TeX 中公式、分块表述和结果主张，编译版不另算来源。
 
 ## 从“在这一批里选谁”到“这一对是否匹配”
 
@@ -85,3 +85,10 @@ Table 3 的较强模型来自另一个扩展配方：40B seen examples、32k bat
 旧 TeX 对逐对二分类的主线基本正确，但需补上：$1/N$归一化、bias展示式冲突、分块只节省中间矩阵、SigLiT与SigLIP训练成本不同，以及排行榜不是单变量消融。旧稿“全面超越先前模型”改为原作者在Table 3特定模型/任务集合中的比较主张。
 
 本库已经可以与 [[wiki/papers/vision/alignment/CLIP|CLIP]] 比较**训练目标的归一化范围**，不能把两篇原始表格直接拼成同条件性能结论。建议主题落点：图文对齐、负例构造、分布式训练的内存/通信、受控实验与预算。未解问题包括：固定唯一数据、总计算与优化步数后的loss效应；高效困难负例筛选如何同时处理假负例；逐对全局对齐是否足够支持局部dense features。后一个问题需要新的原文证据。
+
+## 实际整合关系
+
+支撑逐对sigmoid的归一化/负例假设，以及分块中间矩阵、通信与全配对计算的区别。
+
+- [[wiki/vision/Objectives-and-Transfer|视觉预训练：目标要求保留什么，迁移又读取什么？]]。
+- [[wiki/efficiency/Resource-Ledger|资源账本：视觉token、激活参数、KV与系统预算分别省在哪里？]]。

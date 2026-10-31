@@ -6,7 +6,7 @@ sources:
   - "[[raw/papers/architecture/generation/MiniGPT-5.pdf]]"
 source_id: S021
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 primary_direction: architecture/generation
 ---
 
@@ -26,7 +26,7 @@ MiniGPT-5 要解决的是：给定前面的图片和叙述，模型怎样决定�
 输入图片由 MiniGPT-4 的 ViT、Q-Former 和线性投影转为 $32\times d$ 视觉特征，与文字 embedding 拼接，供 Vicuna 理解上下文。输出词表另加默认 8 个 `[IMG1]…[IMG8]`。它们不是输入的32个视觉特征：**输入特征承载已见图像，输出 vokens 的位置和隐藏状态指定将要生成的图像**。[[raw/papers/architecture/generation/MiniGPT-5.pdf#page=3|§3.1，PDF p.3]]
 
 ```mermaid
-flowchart LR
+flowchart TB
   A[已有图像与文字] --> B[MiniGPT-4 编码及 Vicuna]
   B --> C[文字 token 与图像 vokens]
   C --> D[voken 位置的隐藏状态]
@@ -86,6 +86,17 @@ v4 表8新增 Qwen2.5-VL+SD3 等组合，不应当成2023初版实验证据；�
 
 旧稿“替换 SD 的 CLIP 文本编码器”可作粗略接口类比，但本页明确保留 mapper、voken 定位与扩散生成的职责；训练仍使用原文本编码器的 $L_{CAP}$，不能解释为从系统彻底移除它。旧稿“同时生成”改为交错自回归文字/vokens与条件扩散协作；“完美结合”和无条件长序列能力不保留。本次另补阶段冻结、实际数据范围、指标分歧及 v4 新实验边界。
 
-## 待整合问题
+## 本库整合问题
 
-接口主题可比较“输入视觉压缩”与“输出生成条件”；训练主题可用此例解释冻结模块仍传梯度、caption-free 的阶段限定；评测主题可比较语义相似、人类偏好、分布 FID 与身份一致性四种证据。共享主题由协调者后续整合，当前不声称双向综合已完成。
+接口主题可比较“输入视觉压缩”与“输出生成条件”；训练主题可用此例解释冻结模块仍传梯度、caption-free 的阶段限定；评测主题可比较语义相似、人类偏好、分布 FID 与身份一致性四种证据。实际双向主题综合见页末。
+
+## 实际整合关系
+
+支撑输入视觉特征/输出vokens/扩散条件的分工、冻结传梯度及多种生成指标的不同测量。
+
+- [[wiki/architecture/Generative-Output-Interfaces|生成输出接口：读入图片、输出文字、合成图片分别由谁完成？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。
+- [[wiki/reasoning/Overview|推理与交互：增加计算、改变观察、控制环境怎样分别起作用？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

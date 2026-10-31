@@ -7,7 +7,10 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/pretraining/BEiT-v3.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - vision/encoders
+  - vision/alignment
 ---
 
 # BEiT-3：以 masked data modeling 统一视觉与视觉语言预训练
@@ -162,3 +165,14 @@ ImageNet 的 89.6 强调公开 image-tag 数据条件，不能与使用私有 JF
 与 [[wiki/papers/architecture/pretraining/VLMo|VLMo（S014）]] 相比，BEiT-3 继承模态专家骨干，但将多种单模态/图文预训练统一到 masked prediction，并采用联合大规模主预训练；二者不能只凭相似架构图认为训练策略相同。与 [[wiki/papers/architecture/pretraining/ALBEF|ALBEF（S011）]]、[[wiki/papers/architecture/pretraining/BLIP|BLIP（S012）]] 相比，本篇主预训练不使用它们的 ITC+ITM 组合；与 [[wiki/papers/architecture/pretraining/CoCa|CoCa（S013）]] 相比，本篇也没有在主预训练采用 contrastive+autoregressive captioning 双目标。这里比较的是训练机制，不是用异条件成绩推断优劣。
 
 可整合到主题的问题包括：统一目标与统一接口的区别；attention 可见性和 FFN 路由如何共同决定信息流；主预训练与中间适配应怎样计入性能条件；离散视觉目标与文本目标的共性和差异。待核问题是同等模型、数据及总预算下 MDM 与多目标方法的差别，以及哪些收益来自扩大单模态数据。作者在结尾提出 multilingual、audio 与 in-context learning 等未来方向，本篇没有完成这些能力的验证。[[raw/papers/architecture/pretraining/BEiT-v3.pdf#page=9|p.9 · §4]]
+
+## 实际整合关系
+
+支撑统一MDM与多任务接口的区别、视觉输入/离散目标区分、检索中间对比训练条件。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/architecture/Generative-Output-Interfaces|生成输出接口：读入图片、输出文字、合成图片分别由谁完成？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

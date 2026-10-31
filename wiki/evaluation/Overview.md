@@ -3,50 +3,38 @@ type: overview
 created: 2026-10-31
 updated: 2026-10-31
 sources:
-  - "[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf]]"
   - "[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf]]"
-  - "[[raw/lectures/VLM-2.pdf]]"
+  - "[[raw/papers/models/llava/LLaVA.pdf]]"
+  - "[[raw/papers/architecture/pretraining/CoCa.pdf]]"
+  - "[[raw/papers/architecture/pretraining/ALBEF.pdf]]"
+  - "[[raw/papers/architecture/pretraining/BEiT-v3.pdf]]"
+  - "[[raw/papers/vision/encoders/AIMv2.pdf]]"
+  - "[[raw/papers/vision/encoders/SoViT.pdf]]"
+  - "[[raw/papers/models/deepseek/DeepSeek-OCR.pdf]]"
+  - "[[raw/papers/models/qwen/Qwen3-VL.pdf]]"
+  - "[[raw/papers/models/deepseek/DeepSeek-V4.1-Flash.pdf]]"
 ---
 
-# 评测：任务、判分与证据范围
+# 评测与证据：任务对象、判分和预算一起决定分数
 
-一个分数的含义由三件事共同决定：**交给模型什么任务、怎样认定输出成功、在什么输入与预算条件下运行。** S002 的 Understanding / Generation / Reasoning / Planning 是任务地图，§5.5 是判分方法地图；两者不是同一分类。S001 的能力结果汇表和 S003 的教学比较则说明，分数必须连着划分、指标和设置读。[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=32|S002 · §5、Fig.10 · pp.32–41]] [[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=22|S001 · Table 4 · p.22]]
+一个分数至少连接三件事：**任务是什么、什么观察算成功、在什么输入与预算下运行。** 任务地图和判分地图不相同；S002的Understanding/Generation/Reasoning/Planning与其matching/model-scoring分类就回答不同问题。[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=32|S002 · pp.32–41 §5]]
 
-## 先明确成功对象
+深入页[[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功]]用LLaVA-Bench、MiniGPT-4、OwlEval、MiniGPT-5、Qwen和DeepSeek原始实验解释：人评、模型评审、参考覆盖、转写precision、检索诊断、动作匹配和真实终态不能互换。
 
-| 要确认的对象 | 可观察证据 | 单独不足以替代它的观察 |
-| --- | --- | --- |
-| 感知正确 | 输入中的对象、文字、位置与报告对应 | 回答流畅或引用常识 |
-| 答案正确 | 符合参考答案或可验证约束 | 有很长的推理过程 |
-| 解释可靠 | 展示步骤逐项成立并与解法相容 | 最终答案恰好正确 |
-| 执行发生 | 工具结果、环境变化、实际生成物 | 模型说已调用或已完成 |
-| 任务完成 | 最终产物或环境状态满足全部要求 | 文件存在、进程正常结束或某局部动作成功 |
+| 要确认什么 | 应看的证据 |
+| --- | --- |
+| 图像细节正确 | 输出与实际视觉内容/位置对应 |
+| 终答正确 | 参考答案或可验证约束 |
+| 解释可靠 | 展示步骤成立，并非只看最终答案 |
+| 动作执行 | 工具日志、环境变化、实际产物 |
+| 任务完成 | 最终产物/环境满足全部要求 |
 
-这是本库的证据分解，不是综述提供的一套统一评测器。S002 的六指、数独、简历与媒体个案提示这些观察可以分离；个案未报告统一样本总数与控制协议，不能估计各类失败概率。[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=26|S002 · §4.1、Fig.6–8 · pp.26–28]]
+表为本库证据分解，S002的数独与产物案例说明这些对象可以分离；不能以个案估计失败率。LLaVA的GPT-4相对评分、ScienceQA系统内judge和训练reward judge又是不同角色。[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=26|S002 · pp.26–28 Figs6–8]] [[raw/papers/models/llava/LLaVA.pdf#page=6|S022 · pp.6–9 §5]]
 
-## 谁来判、按什么规则判
+“zero-shot”“held-out”“probe”都要附协议：CoCa冻结检索、ALBEF从COCO适配后转移、BEiT-3中间对比训练并非同条件；AIMv2 attentive probe与SoViT全调也不同。所有表格保留任务划分、训练见图标记、视觉输入、模型/接口、生成/候选/工具预算及指标聚合。[[raw/papers/architecture/pretraining/CoCa.pdf#page=9|S013 · p.9]] [[raw/papers/architecture/pretraining/ALBEF.pdf#page=6|S011 · p.6]] [[raw/papers/architecture/pretraining/BEiT-v3.pdf#page=16|S015 · p.16]] [[raw/papers/vision/encoders/AIMv2.pdf#page=5|S007 · p.5]] [[raw/papers/vision/encoders/SoViT.pdf#page=8|S005 · p.8]]
 
-| S002 判分分类 | 主要比较对象 | 应保留的条件 |
-| --- | --- | --- |
-| Exact / Fuzzy Matching | 输出与参考答案 | 规范化、同义表达、参考答案覆盖及模糊匹配规则 |
-| Options Matching | 选项或其标签 | 选项顺序、提取规则、选择题与开放生成的任务差别 |
-| LLM / MLLM Scoring | 评分提示中的输出与要求 | 评分器版本、提示、视觉可见性、稳定性与人工对齐 |
-| Agentic Evaluation | 工具或多 agent 辅助形成评价 | 工具证据、讨论组织和错误相关性 |
+OCR转写不是一般长上下文推理；needle retrieval不是长视频因果理解；坐标输出不是交互成功；harness与effort会改变agent成绩。成本接[[wiki/efficiency/Overview|效率]]，动作—观察循环接[[wiki/reasoning/Overview|推理]]。本库未运行benchmark或审计完整评测代码，不从作者表格建立独立排行榜。[[raw/papers/models/deepseek/DeepSeek-OCR.pdf#page=19|S033 · p.19 §5–6]] [[raw/papers/models/qwen/Qwen3-VL.pdf#page=25|S028 · p.25 §5.12.3]] [[raw/papers/models/deepseek/DeepSeek-V4.1-Flash.pdf#page=35|S034 · p.35 Table4]]
 
-表中分类来自 S002，右列是本库的协议核查问题。**Agentic Evaluation 在此指 agent 参与评价，不能自动理解成评测对象是 Agent。** 多评价者一致也不直接增加事实证据强度。[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=41|S002 · §5.5 · p.41]]
+## 实际来源入口
 
-## 分数比较前保留哪些条件
-
-S001 Table 4 的 MMMU 两个值对应 val/test，SEED 对应整体/image 子集，MME 的 perception/cognition 与两者合计不同；星号还标注训练时见过相应数据集训练图像。把斜杠两侧混比、缺失当零分、合计与单项混比，会直接改变结论。星号本身也不足以完成全部污染分析。[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=22|S001 · Table 4 脚注 · p.22]]
-
-课程 BEiT-3 的例子同时含 VQA score、Accuracy 和 CIDEr，且分别来自 VQAv2、NLVR2、COCO 的不同划分。指标回答不同问题，不能相加为一个通用能力数。课程嵌入的基线成绩也不是本库独立复跑或预算匹配消融。[[raw/lectures/VLM-2.pdf#page=12|S003 · BEiT-3 配置与结果 · pp.12–13]]
-
-本库据此在实际对照中保留：任务与划分、模型和视觉/语言骨干、分辨率及视觉 token、训练数据可见性、提示与解码、候选和工具预算、判分规则及基线条件。缺失项写未确认；不为了填完整表格推定作者没报告或系统不存在。能力汇表若没有硬件、时延、显存和能耗，就不能回答整体效率最优。[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=5|S001 · Table 1 · p.5]] [[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=21|S001 · §6.3、Table 4 · pp.21–22]]
-
-## 代理指标何时越过证据边界
-
-“输出 CoT”“得到了奖励”“产物已生成”“某基准得高分”分别是格式、训练信号、执行结果和受限任务成绩。只有核对它们与目标要求的关系，才可讨论能力。本库据 S002 个案提出这一分层，未据此证明任何代理指标普遍无效，也未确认一个覆盖所有场景的完成判据。[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=16|S002 · Fig.5 · pp.16–18]] [[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=27|S002 · §4.1 · pp.27–28]]
-
-后续遇到新 benchmark，应核它测量的任务、判分有效性、人工对齐和可泛化范围；当前这三份地图材料中的 benchmark 列表只是导航，不能把表中每个被引评测都计作本库已读来源。训练信号见 [[wiki/training/Overview|训练]]，运行反馈见 [[wiki/reasoning/Overview|推理]]，成本见 [[wiki/efficiency/Overview|效率]]。
-
-来源入口：[[wiki/surveys/Efficient Multimodal Large Language Models A Survey|S001]] · [[wiki/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models|S002]] · [[wiki/lectures/VLM-2|S003]]。返回 [[wiki/overview|总览]]；未运行 benchmark，Obsidian 内显示未测。
+[[wiki/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models|S002 Multimodal-Reasoning-Survey]] · [[wiki/papers/vision/encoders/SoViT|S005 SoViT]] · [[wiki/papers/vision/encoders/AIMv2|S007 AIMv2]] · [[wiki/papers/architecture/pretraining/ALBEF|S011 ALBEF]] · [[wiki/papers/architecture/pretraining/CoCa|S013 CoCa]] · [[wiki/papers/architecture/pretraining/BEiT-v3|S015 BEiT-v3]] · [[wiki/papers/models/llava/LLaVA|S022 LLaVA]] · [[wiki/papers/models/qwen/Qwen3-VL|S028 Qwen3-VL]] · [[wiki/papers/models/deepseek/DeepSeek-OCR|S033 DeepSeek-OCR]] · [[wiki/papers/models/deepseek/DeepSeek-V4.1-Flash|S034 DeepSeek-V4.1-Flash]]。原始定位在上文；唯一页保存身份、读取范围和实验条件。

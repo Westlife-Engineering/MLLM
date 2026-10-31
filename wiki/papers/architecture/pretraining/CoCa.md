@@ -7,7 +7,10 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/pretraining/CoCa.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
+related_directions:
+  - vision/alignment
+  - architecture/generation
 ---
 
 # CoCa：在一次计算图中保留对比表示和条件生成
@@ -152,4 +155,14 @@ Captioning 在 COCO 上仅用 captioning 交叉熵微调，不做 CIDEr 专项�
 
 与 [[wiki/papers/architecture/pretraining/ALBEF|ALBEF（S011）]]、[[wiki/papers/architecture/pretraining/BLIP|BLIP（S012）]] 比较时，值得保留的是信息可见性与训练接口：ALBEF 用双向文本/融合路径和 MLM；BLIP 为编码和生成保留不同 SA 参数并训练 ITC+ITM+LM；CoCa 的同一因果文本流前后分段，只训练 contrastive+captioning。三者的数据规模、初始化、监督与评测接口差异很大，架构相似性不能代替控制实验。
 
-后续整合建议是“独立表示与融合表示的统一”“任务 pooler 与信息保留”“共享计算图的增量成本”“zero-shot、冻结特征和微调的证据边界”。仍需新证据的问题包括：相同数据与预算下双目标收益能否保持，pooler 与 decoder 分层选择如何随规模变化，去重与缺失视频对子集结果的影响，以及全局对齐的提升是否伴随更可靠的细粒度事实生成。
+实际整合的问题是“独立表示与融合表示的统一”“任务 pooler 与信息保留”“共享计算图的增量成本”“zero-shot、冻结特征和微调的证据边界”。仍需新证据的问题包括：相同数据与预算下双目标收益能否保持，pooler 与 decoder 分层选择如何随规模变化，去重与缺失视频对子集结果的影响，以及全局对齐的提升是否伴随更可靠的细粒度事实生成。
+
+## 实际整合关系
+
+支撑因果decoder前后分段、串联pooler与共享计算，区分zero-shot、attentive读出与任务适配。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/architecture/Generative-Output-Interfaces|生成输出接口：读入图片、输出文字、合成图片分别由谁完成？]]。
+- [[wiki/vision/Objectives-and-Transfer|视觉预训练：目标要求保留什么，迁移又读取什么？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

@@ -6,8 +6,12 @@ sources:
   - "[[raw/papers/models/internvl/InternVL.pdf]]"
 source_id: S025
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 primary_direction: models/internvl
+related_directions:
+  - vision/encoders
+  - vision/alignment
+  - architecture/connectors
 ---
 
 # InternVL：扩展视觉主干，并用语言中间件逐步对齐
@@ -99,6 +103,16 @@ ITC为图文表示对齐，ITM区分匹配与不匹配，ITG用视觉条件预�
 4. 旧稿“QK Norm就是L2单位化、点积必在[-1,1]”与它自己展示的`InternRMSNorm`片段也不相符。**数学澄清（本库分析）：**RMS归一化并不令向量L2范数为1，且可学习缩放会再改变范数，不能直接给出余弦界限。这只纠正旧解释的逻辑，不证明当前正式代码实现。
 5. 旧Markdown“眼睛不够大时后续微调补不回来”和QLLaMA后来普及程度超出本论文实验范围，本页不保留为原文结论。
 
-## 待整合方向
+## 本库整合方向
 
-视觉主题可区分“大视觉主干”与“大语言中间件”；架构主题解释直接视觉+query双路以及C/G/Chat的任务接口；训练主题按开放参数与数据曝光记账；评测主题分开线性探测、全调、zero-shot以及多帧平均。共享主题尚待协调整合；关于规模失衡是否因果瓶颈、SFT全部行的冻结映射、后续代码实现均保留为有边界的待核问题。
+视觉主题可区分“大视觉主干”与“大语言中间件”；架构主题解释直接视觉+query双路以及C/G/Chat的任务接口；训练主题按开放参数与数据曝光记账；评测主题分开线性探测、全调、zero-shot以及多帧平均。实际共享主题关系见页末；关于规模失衡是否因果瓶颈、SFT全部行的冻结映射、后续代码实现均保留为有边界的待核问题。
+
+## 实际整合关系
+
+支撑大视觉主干与QLLaMA中间件、直接/query双路、阶段曝光和编码延迟口径；InternViT不重复计数。
+
+- [[wiki/vision/Objectives-and-Transfer|视觉预训练：目标要求保留什么，迁移又读取什么？]]。
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/efficiency/Resource-Ledger|资源账本：视觉token、激活参数、KV与系统预算分别省在哪里？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。

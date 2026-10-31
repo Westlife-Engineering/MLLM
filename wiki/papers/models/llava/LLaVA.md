@@ -6,8 +6,10 @@ sources:
   - "[[raw/papers/models/llava/LLaVA.pdf]]"
 source_id: S022
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 primary_direction: models/llava
+related_directions:
+  - architecture/connectors
 ---
 
 # LLaVA：把图文对改写成视觉指令训练
@@ -80,4 +82,14 @@ ScienceQA有12726/4241/4241训练/验证/测试样本。LLaVA13B专门微调后9
 
 旧稿把语言端简称LLaMA，本页按本文实现写Vicuna；“只保留确定问题”改为提示要求，未升级为逐条质量审核；“视觉冻结所以不会比CLIP看得更细”收窄为视觉权重不变，整体读出与任务回答仍可能改变；“85.1%/92.53%”补齐裁判、参考、系统与任务条件。演示中认出人物或写网页的个例不证明未污染或普遍泛化，作者网页演示还需要手动修正小错误（PDF p.16）。
 
-待整合：训练主题可讨论符号化教师监督与视觉证据间的缺口；架构主题比较线性投影与查询压缩；评测主题区分裁判重复性、人类一致性和系统内决策器。当前共享主题尚待协调整合。
+本库整合：训练主题可讨论符号化教师监督与视觉证据间的缺口；架构主题比较线性投影与查询压缩；评测主题区分裁判重复性、人类一致性和系统内决策器。实际共享主题关系见页末。
+
+## 实际整合关系
+
+支撑线性网格接口、文字教师合成指令、回答loss，以及开放回答裁判和系统内judge的不同角色。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。

@@ -5,9 +5,12 @@ primary_direction: models/deepseek
 created: 2026-10-31
 updated: 2026-10-31
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 sources:
   - "[[raw/papers/models/deepseek/DeepSeek-VL2.pdf]]"
+related_directions:
+  - vision/encoders
+  - architecture/connectors
 ---
 # DeepSeek-VL2：动态切块、稀疏语言模型与可定位的回答
 
@@ -15,7 +18,7 @@ sources:
 
 Zhiyu Wu、Xiaokang Chen、Zizheng Pan、Xingchao Liu、Wen Liu 等，DeepSeek-AI，*DeepSeek-VL2: Mixture-of-Experts Vision-Language Models for Advanced Multimodal Understanding*；arXiv **2412.10302v1**，2024-12-13，28 页。[版本入口](https://arxiv.org/abs/2412.10302v1)。原件 [[raw/papers/models/deepseek/DeepSeek-VL2.pdf]]，SHA-256 `cff2bd0ad1656769d7447f0e3cf3a1885902333894f123bdac27fce05c97459e`。
 
-2026-10-31 实读 pp.1–20 全部正文（含 pp.13–19 定性实例文字）；pp.21–28 为参考文献，未追读所引论文，本版本无另附方法附录。实际渲染查看 pp.4–5 Figures 2–3 / Table 1、p.9 训练阶段、p.10 Table 2、pp.11–12 Tables 3–4、p.17 Table 5、p.15 Figure 6、pp.18–19 Figures 8–10。其他例图未逐个验证事实。未运行代码/模型/基准或实测 Obsidian；待主题整合与独立审核。
+2026-10-31 实读 pp.1–20 全部正文（含 pp.13–19 定性实例文字）；pp.21–28 为参考文献，未追读所引论文，本版本无另附方法附录。实际渲染查看 pp.4–5 Figures 2–3 / Table 1、p.9 训练阶段、p.10 Table 2、pp.11–12 Tables 3–4、p.17 Table 5、p.15 Figure 6、pp.18–19 Figures 8–10。其他例图未逐个验证事实。未运行代码/模型/基准或实测 Obsidian。
 
 ## 变化针对哪一层瓶颈
 
@@ -26,7 +29,7 @@ Zhiyu Wu、Xiaokang Chen、Zizheng Pan、Xingchao Liu、Wen Liu 等，DeepSeek-A
 候选网格满足 $m,n\ge1,\ mn\le9$，目标尺寸 $(384m,384n)$；图像保持宽高比缩放、补边，选择所需 padding 面积最小的候选。产生 $mn$ 张局部 tile，加一张全局 thumbnail。每张 tile 经 SigLIP 得到 $27\times27=729$ 个 1152 维 embedding，然后用原文称为 $2\times2$ pixel shuffle 的操作降到 $14\times14=196$ 个位置。论文给出了此尺寸变化，但没有在正文明确奇数 27 网格的 padding 实现；不能靠后续代码补写成本版本已经解释。[[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=4|§2 Dynamic Tiling]] [[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=5|§2 Vision-Language Adaptor]]
 
 ```mermaid
-flowchart LR
+flowchart TB
   I[图像] --> G[384×384 全局缩略图]
   I --> T[按候选网格缩放补边并切局部tiles]
   G --> E[共享SigLIP；每tile 729位置]
@@ -71,7 +74,7 @@ Grounding 把对象短语与框作为语言输出：`<|ref|>对象<|/ref|><|det|
 
 ## 评测与解释边界
 
-本文使用现成 benchmarks，没有在本报告提出新的完整 benchmark；因此不把方法页强套自建评测模板。Table 3 的 DocVQA/ChartQA/InfoVQA 为 test，TextVQA 为 val；主模型依次 93.3/86.0/78.1/84.2，OCRBench 811。Small 的 OCRBench **834 高于主模型 811**；“更大处处更好”不成立。Table 4 主模型 MMMU-val 51.1、MathVista-testmini 62.8、MMBench-en test 83.1、MMBench v1.1 79.2、RealWorldQA 68.4。外部条目含 CoT 或不同设置标记；本报告没有完整列出统一的生成长度、温度、样本解析及各测试运行成本，故只作为作者报告的多任务比较。Figure 1 平均了六项分数并将 OCRBench 除以 10，这是作者的聚合口径，不是一般能力尺度。[[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=1|Figure 1]] [[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=11|Table 3]] [[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=12|Table 4]]
+本文使用现成 benchmarks，没有在本报告提出新的完整 benchmark；因此不把方法页强套自建评测模板。Table 3 的 DocVQA/ChartQA/InfoVQA 为 test，TextVQA 为 val；主模型依次 93.3/86.0/78.1/84.2，OCRBench 811。Small 的 OCRBench **834 高于主模型 811**；“更大处处更好”不成立。Table 4 主模型 MMMU-val 51.1、MathVista-testmini 62.8、MMBench（原表标 sum）83.1、MMBench-en test 79.6、MMBench-v1.1 cn test 79.2、RealWorldQA 68.4。外部条目含 CoT 或不同设置标记；本报告没有完整列出统一的生成长度、温度、样本解析及各测试运行成本，故只作为作者报告的多任务比较。Figure 1 平均了六项分数并将 OCRBench 除以 10，这是作者的聚合口径，不是一般能力尺度。[[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=1|Figure 1]] [[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=11|Table 3]] [[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=12|Table 4]]
 
 Table 5 主模型 RefCOCO val/testA/testB 为 95.1/96.7/92.7；RefCOCO+ 为 91.2/94.9/87.4；RefCOCOg val/test 为 92.8/92.9。此表区分 vision model、带 task-specific finetuning 的 VLM 和通用 VLM；不能跨组当作等训练条件。Tiny 并非每列领先：RefCOCO testA/testB 为 87.8/78.4，InternVL2-1B 为 88.7/79.8；RefCOCOg-val 73.8 也低于其 80.2，故图注“不同规模都最好”需限缩。本文表格未在本处重述全部定位判分阈值，不能擅补成已经核过评测实现。[[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=17|Table 5]]
 
@@ -89,6 +92,17 @@ Table 5 主模型 RefCOCO val/testA/testB 为 95.1/96.7/92.7；RefCOCO+ 为 91.2
 
 ## 主题连接与后续问题
 
-[[wiki/architecture/Overview]] / [[wiki/vision/Overview]]：比较动态 tile 与第一代固定 token 通道融合，保留位置恢复和多图预算；[[wiki/efficiency/Overview]]：区分总参数、激活计算和 KV 存储；[[wiki/training/Overview]]：视觉冻结及不同模态配比；[[wiki/evaluation/Overview]]：预算改变、CoT 标记与非控制比较；[[wiki/models/Overview]]：模型家族。双向整合由协调者继续。
+[[wiki/architecture/Overview]] / [[wiki/vision/Overview]]：比较动态 tile 与第一代固定 token 通道融合，保留位置恢复和多图预算；[[wiki/efficiency/Overview]]：区分总参数、激活计算和 KV 存储；[[wiki/training/Overview]]：视觉冻结及不同模态配比；[[wiki/evaluation/Overview]]：预算改变、CoT 标记与非控制比较；[[wiki/models/Overview]]：模型家族。实际双向主题关系见页末。
 
 待核问题：相同数据和训练预算下各升级的独立增益；统一输入 token 下的实际吞吐/首 token 延迟；多图关闭 tiling 后密集文字性能；grounding 的输出格式错误率和真实交互后果。英文检索词：dynamic tiling；pixel shuffle；tile newline；Mixture of Experts；Multi-head Latent Attention；activated parameters；grounded conversation。
+
+## 实际整合关系
+
+支撑动态tiles的整图长度、MoE/MLA各自成本、版本冻结与模态比例变化及grounding输出接口。
+
+- [[wiki/vision/Resolution-and-Token-Budget|分辨率、packing与tiling：预算到底在哪个位置？]]。
+- [[wiki/efficiency/Resource-Ledger|资源账本：视觉token、激活参数、KV与系统预算分别省在哪里？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。
+- [[wiki/architecture/Generative-Output-Interfaces|生成输出接口：读入图片、输出文字、合成图片分别由谁完成？]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。

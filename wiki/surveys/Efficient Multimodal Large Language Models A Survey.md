@@ -6,7 +6,7 @@ updated: 2026-10-31
 sources:
   - "[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 ---
 
 # Efficient Multimodal Large Language Models: A Survey
@@ -14,7 +14,7 @@ ingest_status: integrating
 **这篇综述最有用的视角，是把 MLLM 的效率问题拆到信息流与训练流程中：图像怎样变成特征，多少视觉 token 进入语言模型，哪些参数参与计算和更新，以及任务要求保留什么信息。** 小语言模型只是其中一个入口；高分辨率、长视频和文档理解还要求控制视觉信息进入 LLM 的方式。作者的目标是降低资源消耗、扩大可用场景，同时尽量减小性能损失；这不是一个单一的参数量指标。[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=2|S001 · §1 · pp.2–4、Fig.3]]
 
 > [!info] 本页证据与状态
-> 已通读本地版本正文 PDF pp.1–24，核对下列关键原页图表；参考文献从 p.25 开始，未逐项追索原论文。本文是综述，下面模型案例在本页均依据**综述转述**，本页阅读不增加被引原论文的已读来源数；其他唯一来源页是否已独立核读，见 [[wiki/index|索引]]。`read` 只表示完成这里登记的阅读范围；本页已通过登记范围的独立内容审查，已接入初始主题与索引；全库及最终验收仍待收尾，摄入状态为 `integrating`。未运行代码、复现实验或实测部署；Obsidian 内显示未测。
+> 已通读本地版本正文 PDF pp.1–24，核对下列关键原页图表；参考文献从 p.25 开始，未逐项追索原论文。本文是综述，下面模型案例在本页均依据**综述转述**，本页阅读不增加被引原论文的已读来源数；其他唯一来源页是否已独立核读，见 [[wiki/index|索引]]。`read` 只表示完成这里登记的阅读范围；本页已通过登记范围的独立内容审查，已接入主题与索引；摄入状态见页首。未运行代码、复现实验或实测部署；Obsidian 内显示未测。
 
 ## 先理解瓶颈：效率改变的是哪一段计算
 
@@ -139,18 +139,20 @@ Table 4 汇集不同模型在 14 个视觉语言基准上的报告分数；它�
 | 实际看图/表原页 | p.1 身份；p.2 Fig.1；p.3 Fig.2；p.4 Fig.3/Eq.1；p.5 Table 1/Eq.2；p.7 Fig.5/Eq.3；p.9 Fig.7；p.10 Fig.8–9；p.12 Fig.10；p.14 Fig.11；p.15 Fig.12；p.18 Fig.14/Eq.4–5；pp.20–22 Tables 2–4。以原页图像核对结构、字段和脚注，未逐项复算表内分数 |
 | 未逐项核读 | pp.26–36 参考文献未通读；所有引用论文均未追索原文；Fig.4、6、13、15 的所在正文已读，但未作逐图视觉核验，不以其图内细节作证据 |
 | 未做事项 | 未访问/审计综述代码仓库；未跑模型、测延迟/显存/能耗、训练或复现；未检查 Obsidian 渲染和 PDF 跳转 |
-| 整合状态 | 已完成本页范围的独立内容审查和初始主题/索引整合；完整来源综合、结构与主 Agent 最终验收仍待收尾，状态保持 integrating |
+| 整合状态 | 已接入页末列出的主题和当前索引；摄入状态见页首 |
 
 页内阅读入口：[[#先理解瓶颈：效率改变的是哪一段计算|机制入口]] · [[#六个视角如何组成领域地图|分类地图]] · [[#怎样使用评测表，而不把它变成效率排行榜|评测边界]]。回查全文：[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf|S001 原件]]。
 
 
 ## 本库主题落点
 
-本页已经实际接入以下初始地图；模型机制在这些页面中仍按综述转述使用，未因跨页综合升级为原论文直接证据。
+本页的地图/课程贡献与实际主题双向关系见下节。当前主题已结合独立原论文深化；本页对被引工作的转述身份保持不变，不把其他唯一页的直接阅读归为本材料已完成的证据。
 
-- [[wiki/overview|总览]] 与 [[wiki/foundations/Formalization|基础]]：编码器—连接器—语言模型的信息流、视觉 token 与可训练参数的区别。
-- [[wiki/vision/Overview|视觉]] 与 [[wiki/architecture/Overview|架构]]：多视图、压缩、连接器以及信息进入语言计算的位置。
-- [[wiki/training/Overview|训练]] 与 [[wiki/efficiency/Overview|效率]]：相同自回归目标下的数据/参数差异，以及训练、视觉前端和解码成本分账。
-- [[wiki/evaluation/Overview|评测]] 与 [[wiki/models/Overview|模型演进]]：带划分和脚注读结果，按输入/接口/骨干/训练变化轴比较，避免把能力表当效率榜。
+## 实际整合关系
 
-来源目录与施工进度见 [[wiki/index|索引]]。
+提供组件/训练/数据效率地图和汇表条件，资源分账由本库综合展开；范围外模型仍保留综述转述。
+
+- [[wiki/overview|MLLM：沿视觉证据、学习接口与任务结果建立理解]]。
+- [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。
+- [[wiki/efficiency/Resource-Ledger|资源账本：视觉token、激活参数、KV与系统预算分别省在哪里？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。

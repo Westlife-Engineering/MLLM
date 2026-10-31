@@ -7,7 +7,7 @@ updated: 2026-10-31
 sources:
   - "[[raw/papers/architecture/connectors/MiniGPT-4.pdf]]"
 reading_status: read
-ingest_status: integrating
+ingest_status: complete
 ---
 
 # MiniGPT-4：冻结已有视觉桥，仅训练到Vicuna的线性接口
@@ -92,4 +92,13 @@ Q-Former早已通过BLIP-2预训练获得视觉与语言相关表征；本轮只
 3. “LLaVA多轮肯定更好／MiniGPT图像理解可能更好”是旧稿猜测，本次没有受控对照支持，不纳入已知结论。
 4. “质量大于数量、数据才是关键”改为：在既有大规模预训练基础上，小量精炼描述改善该设置的语言生成。实验没有控制全部数据质量、规模、格式、LLM与预算，不能建立普遍的质量／数量优先级。
 
-可整合主题：已有预训练视觉桥的复用；轻量对齐与指令数据；生成流畅性、参考覆盖、事实正确性之间的区别。主题建立后由协调者补双向链接。
+本库整合主题：已有预训练视觉桥的复用；轻量对齐与指令数据；生成流畅性、参考覆盖、事实正确性之间的区别。实际双向主题关系见页末。
+
+## 实际整合关系
+
+支撑已有视觉桥复用与小量精炼描述学习，并区分参考覆盖、人评、幻觉和传统VQA。
+
+- [[wiki/architecture/Visibility-and-Connections|可见性、路由与连接：视觉信息在哪里与语言相遇？]]。
+- [[wiki/training/Supervision-and-Stages|监督与阶段：数据、目标、开放参数和预算如何一起改变？]]。
+- [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+- [[wiki/models/Family-Changes|家族变化轴：输入、接口、数据和计算怎样共同演进？]]。

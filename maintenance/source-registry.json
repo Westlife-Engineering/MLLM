@@ -28,16 +28,12 @@
       ],
       "legacy_inputs": [],
       "reading_status": "read",
-      "ingest_status": "integrating",
+      "ingest_status": "complete",
       "integrated_topics": [
         "wiki/overview.md",
         "wiki/foundations/Formalization.md",
-        "wiki/vision/Overview.md",
-        "wiki/architecture/Overview.md",
-        "wiki/training/Overview.md",
-        "wiki/efficiency/Overview.md",
-        "wiki/evaluation/Overview.md",
-        "wiki/models/Overview.md"
+        "wiki/efficiency/Resource-Ledger.md",
+        "wiki/evaluation/Judges-and-Task-Success.md"
       ],
       "acquisition": "user-provided local original",
       "pages": 36
@@ -61,16 +57,12 @@
       ],
       "legacy_inputs": [],
       "reading_status": "read",
-      "ingest_status": "integrating",
+      "ingest_status": "complete",
       "integrated_topics": [
         "wiki/overview.md",
-        "wiki/foundations/Formalization.md",
-        "wiki/architecture/Overview.md",
-        "wiki/training/Overview.md",
-        "wiki/efficiency/Overview.md",
         "wiki/reasoning/Overview.md",
-        "wiki/evaluation/Overview.md",
-        "wiki/models/Overview.md"
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/architecture/Generative-Output-Interfaces.md"
       ],
       "acquisition": "user-provided local original",
       "pages": 91
@@ -94,16 +86,10 @@
       ],
       "legacy_inputs": [],
       "reading_status": "read",
-      "ingest_status": "integrating",
+      "ingest_status": "complete",
       "integrated_topics": [
-        "wiki/overview.md",
-        "wiki/foundations/Formalization.md",
-        "wiki/vision/Overview.md",
         "wiki/architecture/Overview.md",
-        "wiki/training/Overview.md",
-        "wiki/efficiency/Overview.md",
         "wiki/reasoning/Overview.md",
-        "wiki/evaluation/Overview.md",
         "wiki/models/Overview.md"
       ],
       "acquisition": "user-provided local original",
@@ -130,8 +116,12 @@
         "raw/notes/多模态经典/2021-ICLR-ViT.md"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Objectives-and-Transfer.md",
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/foundations/Formalization.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 22
     },
@@ -157,8 +147,12 @@
         "raw/notes/视觉编码器/SoViT总结.tex"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Objectives-and-Transfer.md",
+        "wiki/efficiency/Resource-Ledger.md",
+        "wiki/evaluation/Judges-and-Task-Success.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -187,8 +181,11 @@
         "raw/notes/视觉编码器/NaViT总结.tex"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/efficiency/Resource-Ledger.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -217,8 +214,13 @@
         "raw/notes/视觉编码器/Latex_out/AIMv2总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Objectives-and-Transfer.md",
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/training/Supervision-and-Stages.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -248,8 +250,10 @@
         "raw/notes/多模态经典/Latex_out/2021-ICML-CLIP总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Objectives-and-Transfer.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 48
     },
@@ -275,8 +279,11 @@
         "raw/notes/视觉编码器/SigLIP总结.tex"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Objectives-and-Transfer.md",
+        "wiki/efficiency/Resource-Ledger.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -305,8 +312,12 @@
         "raw/notes/视觉编码器/SigLIP2总结.tex"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Objectives-and-Transfer.md",
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/training/Supervision-and-Stages.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -336,8 +347,13 @@
         "raw/notes/多模态经典/Latex_out/2021-NeurIPS-ALBEF总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -366,8 +382,14 @@
         "raw/notes/多模态经典/Latex_out/2022-ICML-BLIP总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/architecture/Generative-Output-Interfaces.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
@@ -397,8 +419,14 @@
         "raw/notes/多模态经典/Latex_out/2022-CoCa总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/architecture/Generative-Output-Interfaces.md",
+        "wiki/vision/Objectives-and-Transfer.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -427,8 +455,13 @@
         "raw/notes/多模态经典/Latex_out/2022-NeurIPS-VLMo总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/foundations/Formalization.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 16
     },
@@ -454,8 +487,15 @@
         "raw/notes/多模态经典/Latex_out/2023-CVPR-BEiT-v3总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/foundations/Formalization.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/architecture/Generative-Output-Interfaces.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -485,8 +525,12 @@
         "raw/notes/多模态经典/Latex_out/2022-NeurIPS-Flamingo总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/foundations/Formalization.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 54
     },
@@ -513,8 +557,14 @@
         "raw/notes/多模态经典/Latex_out/2023-ICML-BLIP-2总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/efficiency/Resource-Ledger.md",
+        "wiki/foundations/Formalization.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 13
     },
@@ -540,8 +590,13 @@
         "raw/notes/多模态经典/Latex_out/2023-InstructBLIP总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -570,8 +625,13 @@
         "raw/notes/多模态经典/Latex_out/2023-MiniGPT-4总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -600,8 +660,13 @@
         "raw/notes/多模态经典/Latex_out/2023-mPLUG-OWL总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -630,8 +695,15 @@
         "raw/notes/多模态经典/Latex_out/2023-MiniGPT-5总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Generative-Output-Interfaces.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/foundations/Formalization.md",
+        "wiki/reasoning/Overview.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
@@ -662,8 +734,14 @@
         "raw/notes/多模态经典/Latex_out/2023-NeurIPS-LLaVA总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/models/Family-Changes.md",
+        "wiki/foundations/Formalization.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 25
     },
@@ -689,8 +767,12 @@
         "raw/notes/多模态经典/Latex_out/2023-LLaVA-1.5总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -725,8 +807,13 @@
         "raw/notes/多模态经典/Latex_out/2024-LLaVA-NeXT总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/models/Family-Changes.md",
+        "wiki/efficiency/Resource-Ledger.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Official blog HTML body is substantive primary evidence, preserved without modification; essential high-resolution architecture image archived separately. Decorative institutional logos and example conversation images not archived. HTML is retrieval-date state, not claimed to be unchanged since original publication."
@@ -755,8 +842,14 @@
         "raw/notes/视觉编码器/Latex_out/InternViT总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Objectives-and-Transfer.md",
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/efficiency/Resource-Ledger.md",
+        "wiki/models/Family-Changes.md",
+        "wiki/training/Supervision-and-Stages.md"
+      ],
       "acquisition": "user-provided local original",
       "pages": 25
     },
@@ -782,8 +875,14 @@
         "raw/notes/MLLM实例/Qwen/Qwen-VL总结.tex"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/architecture/Generative-Output-Interfaces.md",
+        "wiki/models/Family-Changes.md",
+        "wiki/foundations/Formalization.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -812,8 +911,14 @@
         "raw/notes/MLLM实例/Qwen/Qwen2-VL总结.tex"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/reasoning/Overview.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/foundations/Formalization.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -841,9 +946,16 @@
         "raw/notes/MLLM实例/Qwen/Latex_out/Qwen3-VL总结.pdf",
         "raw/notes/MLLM实例/Qwen/Qwen3-VL总结.tex"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
-      "integrated_topics": [],
+      "reading_status": "read",
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/architecture/Visibility-and-Connections.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/reasoning/Overview.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
@@ -878,9 +990,13 @@
         "raw/notes/MLLM实例/Qwen/Latex_out/Qwen-3.5总结.pdf",
         "raw/notes/MLLM实例/Qwen/Qwen-3.5总结.tex"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
-      "integrated_topics": [],
+      "reading_status": "read",
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Sequence-Memory-and-Retrieval.md",
+        "wiki/efficiency/Resource-Ledger.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Official model card and exact model configuration preserved byte-for-byte at pinned Hugging Face commit. Source is documentation, not a fabricated paper. Official qwen.ai blog URL was tested but returned no readable body through web tool; not substituted with a search snippet. Configuration is necessary evidence for vision/text architecture parameters; no model weights or tokenizer payload downloaded."
@@ -907,9 +1023,15 @@
         "raw/notes/MLLM实例/Qwen/Latex_out/Qwen3.8-Flash-Next总结_排版调整.pdf",
         "raw/notes/MLLM实例/Qwen/Qwen3.8-Flash-Next总结.tex"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
-      "integrated_topics": [],
+      "reading_status": "read",
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Sequence-Memory-and-Retrieval.md",
+        "wiki/efficiency/Resource-Ledger.md",
+        "wiki/models/Family-Changes.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/reasoning/Overview.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
@@ -939,8 +1061,12 @@
         "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-VL总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -969,8 +1095,15 @@
         "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-VL2总结.pdf"
       ],
       "reading_status": "read",
-      "ingest_status": "integrating",
-      "integrated_topics": [],
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/efficiency/Resource-Ledger.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/models/Family-Changes.md",
+        "wiki/architecture/Generative-Output-Interfaces.md",
+        "wiki/foundations/Formalization.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
@@ -998,9 +1131,16 @@
         "raw/notes/MLLM实例/Deepseek/DeepSeek-OCR总结.tex",
         "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-OCR总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
-      "integrated_topics": [],
+      "reading_status": "read",
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/vision/Resolution-and-Token-Budget.md",
+        "wiki/efficiency/Resource-Ledger.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/reasoning/Overview.md",
+        "wiki/models/Family-Changes.md",
+        "wiki/training/Supervision-and-Stages.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
@@ -1031,9 +1171,16 @@
         "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-V4.1-Flash架构总结.pdf",
         "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-V4.1-Flash训练总结.pdf"
       ],
-      "reading_status": "unread",
-      "ingest_status": "reading",
-      "integrated_topics": [],
+      "reading_status": "read",
+      "ingest_status": "complete",
+      "integrated_topics": [
+        "wiki/architecture/Sequence-Memory-and-Retrieval.md",
+        "wiki/efficiency/Resource-Ledger.md",
+        "wiki/training/Supervision-and-Stages.md",
+        "wiki/reasoning/Overview.md",
+        "wiki/evaluation/Judges-and-Task-Success.md",
+        "wiki/models/Family-Changes.md"
+      ],
       "accessed": "2026-10-31",
       "identity_notes": [
         "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",

@@ -3,42 +3,38 @@ type: overview
 created: 2026-10-31
 updated: 2026-10-31
 sources:
-  - "[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf]]"
-  - "[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf]]"
+  - "[[raw/papers/architecture/pretraining/VLMo.pdf]]"
+  - "[[raw/papers/architecture/connectors/BLIP-2.pdf]]"
+  - "[[raw/papers/architecture/generation/MiniGPT-5.pdf]]"
+  - "[[raw/papers/architecture/pretraining/ALBEF.pdf]]"
+  - "[[raw/papers/architecture/pretraining/BLIP.pdf]]"
+  - "[[raw/papers/architecture/pretraining/CoCa.pdf]]"
+  - "[[raw/papers/architecture/pretraining/BEiT-v3.pdf]]"
+  - "[[raw/papers/architecture/connectors/InstructBLIP.pdf]]"
+  - "[[raw/papers/architecture/connectors/MiniGPT-4.pdf]]"
+  - "[[raw/papers/architecture/connectors/mPLUG-Owl.pdf]]"
+  - "[[raw/papers/models/internvl/InternVL.pdf]]"
+  - "[[raw/papers/models/qwen/Qwen3-VL.pdf]]"
   - "[[raw/lectures/VLM-2.pdf]]"
+  - "[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf]]"
 ---
 
-# 架构：共享什么，在哪里交换信息
+# 架构：分开读取权重、可见性、路由与输出接口
 
-比较多模态架构，先把三个问题拆开：**参数是否共享、一次前向中哪些 token 能相互读取、视觉适配发生在什么位置。** “统一”“专家”“连接器”只回答其中部分问题。S001 给常见组件框架，S003 提供共享/专用参数与接口实例；下文具体模型仍为综述或讲义转述。[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=4|S001 · §2 · pp.4–7]] [[raw/lectures/VLM-2.pdf#page=4|S003 · VLMo · pp.4–7]]
+比较架构先问：**参数复用谁，当前token能读谁，信息经过哪条路，输出交给谁？** 统一骨干、查询压缩、跨层注入与生成vokens回答不同问题。本库按这些轴组织，而不是把模型分成互斥的“简单/复杂”两类。[[raw/papers/architecture/pretraining/VLMo.pdf#page=3|S014 · pp.3–5]] [[raw/papers/architecture/connectors/BLIP-2.pdf#page=3|S017 · pp.3–4]] [[raw/papers/architecture/generation/MiniGPT-5.pdf#page=3|S021 · pp.3–4]]
 
-## 共享参数不等于每次都融合信息
+| 阅读入口 | 关键区分 |
+| --- | --- |
+| [[wiki/architecture/Visibility-and-Connections\|可见性、路由与连接]] | 双塔/融合；共享attention与模态FFN；Flamingo内部CA、BLIP-2 query前缀、LLaVA逐位置投影。 |
+| [[wiki/architecture/Generative-Output-Interfaces\|生成输出接口]] | 输入视觉特征、输出文字/坐标、输出图像条件与扩散合成的职责。 |
+| [[wiki/architecture/Sequence-Memory-and-Retrieval\|序列记忆与检索]] | 固定状态、显式KV检索、层间残差流与参数查表分别保存什么。 |
 
-讲义 VLMo 的不同模态复用注意力参数，FFN 按模态 hard routing。图文对比学习可分别编码图像与文本，融合任务才让联合序列在内部交互；检索可用双塔，分类可用单塔。**参数共享描述模型怎样复用权重，token 可见性描述当前计算能访问什么信息。** 两者须分别画、分别读。[[raw/lectures/VLM-2.pdf#page=4|S003 · VLMo · pp.4–7]]
+ALBEF、BLIP、CoCa表明独立表示和条件融合可在同系统共存；VLMo/BEiT-3共享attention却仍按任务改变输入和mask。共享权重不会让分别前向的图文自动交互；顶部VL-FFN也不是联合attention第一次融合的位置。[[raw/papers/architecture/pretraining/ALBEF.pdf#page=3|S011 · pp.3–4]] [[raw/papers/architecture/pretraining/BLIP.pdf#page=2|S012 · pp.2–3]] [[raw/papers/architecture/pretraining/CoCa.pdf#page=4|S013 · pp.4–5]] [[raw/papers/architecture/pretraining/BEiT-v3.pdf#page=4|S015 · p.4 Fig.3]]
 
-课程 BEiT-3 进一步把掩码建模框架用于图像、文字和图文，同时展示视觉编码器、语言编码器、融合、双编码器与生成等用法。“统一预训练”并未消除下游任务的 mask、输出头和推理流程差异。[[raw/lectures/VLM-2.pdf#page=8|S003 · BEiT-3 · pp.8–9]]
+query既可以压缩视觉，也可以被任务条件化；InstructBLIP把指令送入提取模块，MiniGPT-4则冻结既有Q-Former桥，mPLUG-Owl用abstractor接输入端。InternVL还能保留直接网格与query双路，Qwen3-VL DeepStack以跨层注入增加视觉通道而不增长序列。结构图必须保留这些关系，不能将所有连接器都画成同一个方框。[[raw/papers/architecture/connectors/InstructBLIP.pdf#page=5|S018 · p.5 Fig.3]] [[raw/papers/architecture/connectors/MiniGPT-4.pdf#page=2|S019 · p.2 Fig.1]] [[raw/papers/architecture/connectors/mPLUG-Owl.pdf#page=4|S020 · p.4 Fig.2]] [[raw/papers/models/internvl/InternVL.pdf#page=5|S025 · p.5 Fig.4]] [[raw/papers/models/qwen/Qwen3-VL.pdf#page=3|S028 · pp.3–4 Fig.1]]
 
-## 接口位置与信息选择
+冻结范围进入[[wiki/training/Overview|训练]]，长度与计算进入[[wiki/efficiency/Overview|效率]]。课程CogVLM等范围外例子保留[[wiki/lectures/VLM-2|S003转述]]身份；S002的native multimodal reasoning属于综合与展望，不能据名称判定现有模型成熟度。[[raw/lectures/VLM-2.pdf#page=74|S003 · pp.74–75]] [[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=30|S002 · pp.30–31 §4.3]]
 
-| 接口组织 | 信息怎样传递 | 阅读时要检查什么 |
-| --- | --- | --- |
-| 输入端线性 / MLP 投影 | 将视觉特征映射到语言模型可接受的嵌入维度 | 是否同时改 token 数，视觉空间结构怎样保留 |
-| 可学习 query 与 cross-attention | 少量 query 从视觉特征读取信息 | query 数、可见范围、是否受任务指令影响 |
-| LLM 内部视觉专用参数 | 视觉位置用专用投影 / FFN，再在组合序列交互 | 专用参数在哪些层，注意力如何跨模态 |
-| 多深度视觉特征注入 | 不同深度视觉特征接向不同 LLM 层 | 接口数量、注入位置、是否额外保留输入视觉序列 |
+## 实际来源入口
 
-表为本库机制重组：前两行依据 S001 §2.2 与讲义 BLIP-2 / LLaVA，后两行分别对应课程 CogVLM 与 DeepStack。接口越复杂不自动越好，收益仍依训练和任务。[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=6|S001 · §2.2 · pp.6–7]] [[raw/lectures/VLM-2.pdf#page=22|S003 · pp.22–23]] [[raw/lectures/VLM-2.pdf#page=28|S003 · LLaVA · pp.28–30]] [[raw/lectures/VLM-2.pdf#page=74|S003 · p.74]] [[raw/lectures/VLM-2.pdf#page=60|S003 · p.60]]
-
-**BLIP-2 的 mask 让“连接”更具体。** 课程图中 ITC 的 query/text 互不读取；ITM 全双向；生成 mask 让文本读 query 与过去文本，query 不读文本。连接器结构相同，不同 mask 就会改变可用于学习和预测的信息。InstructBLIP 再把指令输入 Q-Former，使视觉提取随任务变化，而非仅在 LLM 末端附加问题。[[raw/lectures/VLM-2.pdf#page=22|S003 · BLIP-2 masks · p.22]] [[raw/lectures/VLM-2.pdf#page=26|S003 · InstructBLIP · p.26]]
-
-## “专家”按什么条件选择
-
-VLMo 的模态 FFN 由 token 模态决定；CogVLM 的视觉位置使用专用 Q/K/V 和 FFN，并在组合序列上注意力交互；S001 的稀疏 MoE 则强调总容量与每次激活参数的区别。把三者统称“用了专家”会丢掉路由依据、共享对象和成本位置。[[raw/lectures/VLM-2.pdf#page=4|S003 · p.4]] [[raw/lectures/VLM-2.pdf#page=74|S003 · p.74]] [[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=9|S001 · §2.5 · p.9]]
-
-训练范围是另一个轴。冻结视觉编码器/LLM、仅训练连接器，与使用哪种连接结构并非同一选择；同一接口也可以分阶段解冻。具体问题转到 [[wiki/training/Overview|训练页]]，避免由“adapter”名称推断全流程成本。
-
-## 原生多模态是研究主张，还需落实到机制
-
-S002 主张让模态信息持续参与推理、生成和环境交互，但同时讨论统一表示与模态专用 MoE。由此不能把 native 定义成“只有一个编码器”或“绝不使用工具”。更有用的比较是：中间信息用文字、图像还是其他表示；在哪些层交互；行动后新观察怎样回来。作者的 N-LMRM 在四阶段图中属于展望，不能给现有模型直接贴成熟度分数。[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=5|S002 · §2、Fig.3 · pp.5–7]] [[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=30|S002 · §4.3 · pp.30–31]]
-
-来源入口：[[wiki/surveys/Efficient Multimodal Large Language Models A Survey|S001]] · [[wiki/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models|S002]] · [[wiki/lectures/VLM-2|S003]]。返回 [[wiki/overview|总览]]；Obsidian 内显示未测。
+[[wiki/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models|S002 Multimodal-Reasoning-Survey]] · [[wiki/lectures/VLM-2|S003 VLM-2]] · [[wiki/papers/architecture/pretraining/ALBEF|S011 ALBEF]] · [[wiki/papers/architecture/pretraining/BLIP|S012 BLIP]] · [[wiki/papers/architecture/pretraining/CoCa|S013 CoCa]] · [[wiki/papers/architecture/pretraining/VLMo|S014 VLMo]] · [[wiki/papers/architecture/pretraining/BEiT-v3|S015 BEiT-v3]] · [[wiki/papers/architecture/connectors/BLIP-2|S017 BLIP-2]] · [[wiki/papers/architecture/connectors/InstructBLIP|S018 InstructBLIP]] · [[wiki/papers/architecture/connectors/MiniGPT-4|S019 MiniGPT-4]] · [[wiki/papers/architecture/connectors/mPLUG-Owl|S020 mPLUG-Owl]] · [[wiki/papers/architecture/generation/MiniGPT-5|S021 MiniGPT-5]] · [[wiki/papers/models/internvl/InternVL|S025 InternVL]] · [[wiki/papers/models/qwen/Qwen3-VL|S028 Qwen3-VL]]。原始定位在上文；唯一页保存身份、读取范围和实验条件。
