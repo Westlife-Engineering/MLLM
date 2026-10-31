@@ -1,0 +1,995 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-31",
+  "scope": {
+    "work_objects": 31,
+    "surveys": 2,
+    "lectures": 1,
+    "original_files": 261,
+    "note": "文件数、工作对象数和来源数分别统计；初始ID统一分配，未读不得创建完成来源页。"
+  },
+  "sources": [
+    {
+      "source_id": "S001",
+      "slug": "Efficient-MLLM-Survey",
+      "type": "survey",
+      "title": "Efficient Multimodal Large Language Models: A Survey",
+      "primary_direction": null,
+      "identity_key": "arxiv:2405.10739",
+      "raw_path": "raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf",
+      "wiki_path": "wiki/surveys/Efficient Multimodal Large Language Models A Survey.md",
+      "raw_files": [
+        {
+          "path": "raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf",
+          "sha256": "f62a5e5635507195c0571731aa46924e6336a13997c339ddc72c9e6b4ae83926",
+          "url": "https://arxiv.org/pdf/2405.10739v3",
+          "version": "v3"
+        }
+      ],
+      "legacy_inputs": [],
+      "reading_status": "partial",
+      "ingest_status": "reading",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 36
+    },
+    {
+      "source_id": "S002",
+      "slug": "Multimodal-Reasoning-Survey",
+      "type": "survey",
+      "title": "Perception, Reason, Think, and Plan: A Survey on Large Multimodal Reasoning Models",
+      "primary_direction": null,
+      "identity_key": "arxiv:2505.04921",
+      "raw_path": "raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf",
+      "wiki_path": "wiki/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.md",
+      "raw_files": [
+        {
+          "path": "raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf",
+          "sha256": "94bf79d9c9bbeeae25b997cd35a290e056dc4ba561bf5a9b4cd7a786e98cdd94",
+          "url": "https://arxiv.org/pdf/2505.04921v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [],
+      "reading_status": "partial",
+      "ingest_status": "reading",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 91
+    },
+    {
+      "source_id": "S003",
+      "slug": "VLM-2",
+      "type": "lecture",
+      "title": "Vision Language Models – II",
+      "primary_direction": null,
+      "identity_key": "lecture:THU-VLM-II:2026-05-22",
+      "raw_path": "raw/lectures/VLM-2.pdf",
+      "wiki_path": "wiki/lectures/VLM-2.md",
+      "raw_files": [
+        {
+          "path": "raw/lectures/VLM-2.pdf",
+          "sha256": "a81bcec1ed8f630632c2abccbba88bf3ddeaaab95f47aaa5fdf68596233b1a64",
+          "url": null,
+          "version": "2026-05-22 course slides"
+        }
+      ],
+      "legacy_inputs": [],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 92
+    },
+    {
+      "source_id": "S004",
+      "slug": "ViT",
+      "type": "paper",
+      "title": "ViT",
+      "primary_direction": "vision/encoders",
+      "identity_key": "arxiv:2010.11929",
+      "raw_path": "raw/papers/vision/encoders/ViT.pdf",
+      "wiki_path": "wiki/papers/vision/encoders/ViT.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/vision/encoders/ViT.pdf",
+          "sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+          "url": "https://arxiv.org/pdf/2010.11929v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2021-ICLR-ViT.md"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 22
+    },
+    {
+      "source_id": "S005",
+      "slug": "SoViT",
+      "type": "paper",
+      "title": "Getting ViT in Shape: Scaling Laws for Compute-Optimal Model Design",
+      "primary_direction": "vision/encoders",
+      "identity_key": "arxiv:2305.13035",
+      "raw_path": "raw/papers/vision/encoders/SoViT.pdf",
+      "wiki_path": "wiki/papers/vision/encoders/SoViT.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/vision/encoders/SoViT.pdf",
+          "sha256": "360540d5b39e666adc1a72bf6f50c803b5494c05bf4e03b666bf479cc7ab903b",
+          "url": "https://arxiv.org/pdf/2305.13035v5",
+          "version": "v5"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/视觉编码器/Latex_out/SoViT总结.pdf",
+        "raw/notes/视觉编码器/SoViT总结.tex"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S006",
+      "slug": "NaViT",
+      "type": "paper",
+      "title": "Patch n' Pack: NaViT, a Vision Transformer for any Aspect Ratio and Resolution",
+      "primary_direction": "vision/encoders",
+      "identity_key": "arxiv:2307.06304",
+      "raw_path": "raw/papers/vision/encoders/NaViT.pdf",
+      "wiki_path": "wiki/papers/vision/encoders/NaViT.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/vision/encoders/NaViT.pdf",
+          "sha256": "d4421cab93fe27a49c64120faa46822dc95a563ed70f5495b25112b35619a396",
+          "url": "https://arxiv.org/pdf/2307.06304v1",
+          "version": "v1"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/视觉编码器/Latex_out/NaViT总结.pdf",
+        "raw/notes/视觉编码器/NaViT总结.tex"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S007",
+      "slug": "AIMv2",
+      "type": "paper",
+      "title": "Multimodal Autoregressive Pre-training of Large Vision Encoders",
+      "primary_direction": "vision/encoders",
+      "identity_key": "arxiv:2411.14402",
+      "raw_path": "raw/papers/vision/encoders/AIMv2.pdf",
+      "wiki_path": "wiki/papers/vision/encoders/AIMv2.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/vision/encoders/AIMv2.pdf",
+          "sha256": "f86924b23fb81db4f190c82d416597c0cd9fd8d819c106bf32a11c24db815d4f",
+          "url": "https://arxiv.org/pdf/2411.14402v1",
+          "version": "v1"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/视觉编码器/AIMv2总结.tex",
+        "raw/notes/视觉编码器/Latex_out/AIMv2总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S008",
+      "slug": "CLIP",
+      "type": "paper",
+      "title": "Learning Transferable Visual Models From Natural Language Supervision",
+      "primary_direction": "vision/alignment",
+      "identity_key": "arxiv:2103.00020",
+      "raw_path": "raw/papers/vision/alignment/CLIP.pdf",
+      "wiki_path": "wiki/papers/vision/alignment/CLIP.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/vision/alignment/CLIP.pdf",
+          "sha256": "6478b6e571a7d6fcd846d8ef77bfd60c285f1986abb8f475eedc43de403074f5",
+          "url": "https://arxiv.org/pdf/2103.00020v1",
+          "version": "v1"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2021-ICML-CLIP.md",
+        "raw/notes/多模态经典/2021-ICML-CLIP总结.tex",
+        "raw/notes/多模态经典/Latex_out/2021-ICML-CLIP总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 48
+    },
+    {
+      "source_id": "S009",
+      "slug": "SigLIP",
+      "type": "paper",
+      "title": "Sigmoid Loss for Language Image Pre-Training",
+      "primary_direction": "vision/alignment",
+      "identity_key": "arxiv:2303.15343",
+      "raw_path": "raw/papers/vision/alignment/SigLIP.pdf",
+      "wiki_path": "wiki/papers/vision/alignment/SigLIP.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/vision/alignment/SigLIP.pdf",
+          "sha256": "2efade8de3baeffe9eba759aab9f510ea8f8ac3c365f02f0da75d9baf9ffa2db",
+          "url": "https://arxiv.org/pdf/2303.15343v4",
+          "version": "v4"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/视觉编码器/Latex_out/SigLIP总结.pdf",
+        "raw/notes/视觉编码器/SigLIP总结.tex"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S010",
+      "slug": "SigLIP2",
+      "type": "paper",
+      "title": "SigLIP 2: Multilingual Vision-Language Encoders with Improved Semantic Understanding, Localization, and Dense Features",
+      "primary_direction": "vision/alignment",
+      "identity_key": "arxiv:2502.14786",
+      "raw_path": "raw/papers/vision/alignment/SigLIP2.pdf",
+      "wiki_path": "wiki/papers/vision/alignment/SigLIP2.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/vision/alignment/SigLIP2.pdf",
+          "sha256": "b840240c075aad94d46f739712c594cb6848d0bf0e5b516da5d8da7586ad6bb9",
+          "url": "https://arxiv.org/pdf/2502.14786v1",
+          "version": "v1"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/视觉编码器/Latex_out/SigLIP2总结.pdf",
+        "raw/notes/视觉编码器/SigLIP2总结.tex"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S011",
+      "slug": "ALBEF",
+      "type": "paper",
+      "title": "Align before Fuse: Vision and Language Representation Learning with Momentum Distillation",
+      "primary_direction": "architecture/pretraining",
+      "identity_key": "arxiv:2107.07651",
+      "raw_path": "raw/papers/architecture/pretraining/ALBEF.pdf",
+      "wiki_path": "wiki/papers/architecture/pretraining/ALBEF.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/pretraining/ALBEF.pdf",
+          "sha256": "137c937c0834d8aa116bac93cae46cabe86cf7b7645f3b6339639b194273b229",
+          "url": "https://arxiv.org/pdf/2107.07651v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2021-NeurIPS-ALBEF总结.tex",
+        "raw/notes/多模态经典/ALBEF动量蒸馏.md",
+        "raw/notes/多模态经典/Latex_out/2021-NeurIPS-ALBEF总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S012",
+      "slug": "BLIP",
+      "type": "paper",
+      "title": "BLIP: Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation",
+      "primary_direction": "architecture/pretraining",
+      "identity_key": "arxiv:2201.12086",
+      "raw_path": "raw/papers/architecture/pretraining/BLIP.pdf",
+      "wiki_path": "wiki/papers/architecture/pretraining/BLIP.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/pretraining/BLIP.pdf",
+          "sha256": "63e0335cdd57c3d92b907b89c93d10befdd29b8aeed108091bbde90c121ed97a",
+          "url": "https://arxiv.org/pdf/2201.12086v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2022-ICML-BLIP总结.tex",
+        "raw/notes/多模态经典/Latex_out/2022-ICML-BLIP总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
+        "Title matching false only because PDF uses the fi ligature in Unified; title and authors manually verified."
+      ]
+    },
+    {
+      "source_id": "S013",
+      "slug": "CoCa",
+      "type": "paper",
+      "title": "CoCa: Contrastive Captioners are Image-Text Foundation Models",
+      "primary_direction": "architecture/pretraining",
+      "identity_key": "arxiv:2205.01917",
+      "raw_path": "raw/papers/architecture/pretraining/CoCa.pdf",
+      "wiki_path": "wiki/papers/architecture/pretraining/CoCa.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/pretraining/CoCa.pdf",
+          "sha256": "ebb8ecad1667502a8e016241b499b2479e296d59c7df06abdedb5cb51d26457b",
+          "url": "https://arxiv.org/pdf/2205.01917v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2022-CoCa总结.tex",
+        "raw/notes/多模态经典/Latex_out/2022-CoCa总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S014",
+      "slug": "VLMo",
+      "type": "paper",
+      "title": "VLMo",
+      "primary_direction": "architecture/pretraining",
+      "identity_key": "arxiv:2111.02358",
+      "raw_path": "raw/papers/architecture/pretraining/VLMo.pdf",
+      "wiki_path": "wiki/papers/architecture/pretraining/VLMo.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/pretraining/VLMo.pdf",
+          "sha256": "636d9dfd99492bdf57e2ec517f5587af7fcdc7dcb3470a6cddc68f53cdb2e5ee",
+          "url": "https://arxiv.org/pdf/2111.02358v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2022-NeurIPS-VLMo总结.tex",
+        "raw/notes/多模态经典/Latex_out/2022-NeurIPS-VLMo总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 16
+    },
+    {
+      "source_id": "S015",
+      "slug": "BEiT-v3",
+      "type": "paper",
+      "title": "Image as a Foreign Language: BEiT Pretraining for All Vision and Vision-Language Tasks",
+      "primary_direction": "architecture/pretraining",
+      "identity_key": "arxiv:2208.10442",
+      "raw_path": "raw/papers/architecture/pretraining/BEiT-v3.pdf",
+      "wiki_path": "wiki/papers/architecture/pretraining/BEiT-v3.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/pretraining/BEiT-v3.pdf",
+          "sha256": "f02c366d9a3e02d744807fac11f5f89255aff2532108a0795d4ee2736c1376d4",
+          "url": "https://arxiv.org/pdf/2208.10442v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2023-CVPR-BEiT-v3总结.tex",
+        "raw/notes/多模态经典/Latex_out/2023-CVPR-BEiT-v3总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S016",
+      "slug": "Flamingo",
+      "type": "paper",
+      "title": "Flamingo",
+      "primary_direction": "architecture/connectors",
+      "identity_key": "arxiv:2204.14198",
+      "raw_path": "raw/papers/architecture/connectors/Flamingo.pdf",
+      "wiki_path": "wiki/papers/architecture/connectors/Flamingo.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/connectors/Flamingo.pdf",
+          "sha256": "27af622bf50987fd98a03451a27a670adfaeefd5218a3e990b37abc326ba63f0",
+          "url": "https://arxiv.org/pdf/2204.14198v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2022-NeurIPS-Flamingo.md",
+        "raw/notes/多模态经典/2022-NeurIPS-Flamingo总结.tex",
+        "raw/notes/多模态经典/Latex_out/2022-NeurIPS-Flamingo总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 54
+    },
+    {
+      "source_id": "S017",
+      "slug": "BLIP-2",
+      "type": "paper",
+      "title": "BLIP-2: Bootstrapping Language-Image Pre-training  with Frozen Image Encoders and Large Language Models",
+      "primary_direction": "architecture/connectors",
+      "identity_key": "arxiv:2301.12597",
+      "raw_path": "raw/papers/architecture/connectors/BLIP-2.pdf",
+      "wiki_path": "wiki/papers/architecture/connectors/BLIP-2.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/connectors/BLIP-2.pdf",
+          "sha256": "6bc5d399d6127a64ace5167a2f0c00112a49725d2475d80322dbf0083f139e80",
+          "url": "https://arxiv.org/pdf/2301.12597v3",
+          "version": "v3"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2023-ICML-BLIP-2.md",
+        "raw/notes/多模态经典/2023-ICML-BLIP-2总结.tex",
+        "raw/notes/多模态经典/Latex_out/2023-ICML-BLIP-2总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 13
+    },
+    {
+      "source_id": "S018",
+      "slug": "InstructBLIP",
+      "type": "paper",
+      "title": "InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning",
+      "primary_direction": "architecture/connectors",
+      "identity_key": "arxiv:2305.06500",
+      "raw_path": "raw/papers/architecture/connectors/InstructBLIP.pdf",
+      "wiki_path": "wiki/papers/architecture/connectors/InstructBLIP.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/connectors/InstructBLIP.pdf",
+          "sha256": "31c03f3ee54016e6da875593ed9d98419899d4164af638dc8cca76a4871beb35",
+          "url": "https://arxiv.org/pdf/2305.06500v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2023-InstructBLIP总结.tex",
+        "raw/notes/多模态经典/Latex_out/2023-InstructBLIP总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S019",
+      "slug": "MiniGPT-4",
+      "type": "paper",
+      "title": "MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models",
+      "primary_direction": "architecture/connectors",
+      "identity_key": "arxiv:2304.10592",
+      "raw_path": "raw/papers/architecture/connectors/MiniGPT-4.pdf",
+      "wiki_path": "wiki/papers/architecture/connectors/MiniGPT-4.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/connectors/MiniGPT-4.pdf",
+          "sha256": "a78f64448a86d91bd3c821178686cbe129312d53ee2b7eaf29ab412ce44c2ac0",
+          "url": "https://arxiv.org/pdf/2304.10592v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2023-MiniGPT-4总结.tex",
+        "raw/notes/多模态经典/Latex_out/2023-MiniGPT-4总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S020",
+      "slug": "mPLUG-Owl",
+      "type": "paper",
+      "title": "mPLUG-Owl: Modularization Empowers Large Language Models with Multimodality",
+      "primary_direction": "architecture/connectors",
+      "identity_key": "arxiv:2304.14178",
+      "raw_path": "raw/papers/architecture/connectors/mPLUG-Owl.pdf",
+      "wiki_path": "wiki/papers/architecture/connectors/mPLUG-Owl.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/connectors/mPLUG-Owl.pdf",
+          "sha256": "997b330fb3b0b6e4972f7e98ae7753cfbadf81512d0d070eae654e3be2085ffd",
+          "url": "https://arxiv.org/pdf/2304.14178v3",
+          "version": "v3"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2023-mPLUG-OWL总结.tex",
+        "raw/notes/多模态经典/Latex_out/2023-mPLUG-OWL总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S021",
+      "slug": "MiniGPT-5",
+      "type": "paper",
+      "title": "MiniGPT-5: Interleaved Vision-and-Language Generation via Generative Vokens",
+      "primary_direction": "architecture/generation",
+      "identity_key": "arxiv:2310.02239",
+      "raw_path": "raw/papers/architecture/generation/MiniGPT-5.pdf",
+      "wiki_path": "wiki/papers/architecture/generation/MiniGPT-5.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/architecture/generation/MiniGPT-5.pdf",
+          "sha256": "496647dc686fa0955af3f7346940273e92052fd0828776747a35d8214549c9f1",
+          "url": "https://arxiv.org/pdf/2310.02239v4",
+          "version": "v4"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2023-MiniGPT-5总结.tex",
+        "raw/notes/多模态经典/Latex_out/2023-MiniGPT-5总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
+        "v4 PDF title omits MiniGPT-5 prefix and uses singular Voken, while arXiv metadata retains MiniGPT-5: Interleaved Vision-and-Language Generation via Generative Vokens. Authors Kaizhi Zheng, Xuehai He, Xin Eric Wang match; abstract explicitly identifies MiniGPT-5. Same source, title variation retained."
+      ]
+    },
+    {
+      "source_id": "S022",
+      "slug": "LLaVA",
+      "type": "paper",
+      "title": "LLaVA",
+      "primary_direction": "models/llava",
+      "identity_key": "arxiv:2304.08485",
+      "raw_path": "raw/papers/models/llava/LLaVA.pdf",
+      "wiki_path": "wiki/papers/models/llava/LLaVA.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/llava/LLaVA.pdf",
+          "sha256": "dc8bace378a282ea78caa9b5959306202fbfa3b8cedaf8a66541a9af18f4d3bf",
+          "url": "https://arxiv.org/pdf/2304.08485v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2023-NeurIPS-LLaVA.md",
+        "raw/notes/多模态经典/2023-NeurIPS-LLaVA总结.tex",
+        "raw/notes/多模态经典/Latex_out/2023-NeurIPS-LLaVA总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 25
+    },
+    {
+      "source_id": "S023",
+      "slug": "LLaVA-1.5",
+      "type": "paper",
+      "title": "Improved Baselines with Visual Instruction Tuning",
+      "primary_direction": "models/llava",
+      "identity_key": "arxiv:2310.03744",
+      "raw_path": "raw/papers/models/llava/LLaVA-1.5.pdf",
+      "wiki_path": "wiki/papers/models/llava/LLaVA-1.5.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/llava/LLaVA-1.5.pdf",
+          "sha256": "b7074a6dad218e0dd109f2a80311548d447e1cf4b9e31c002696985784cc05b9",
+          "url": "https://arxiv.org/pdf/2310.03744v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2023-LLaVA-1.5总结.tex",
+        "raw/notes/多模态经典/Latex_out/2023-LLaVA-1.5总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S024",
+      "slug": "LLaVA-NeXT",
+      "type": "source",
+      "title": "LLaVA-NeXT: Improved reasoning, OCR, and world knowledge",
+      "primary_direction": "models/llava",
+      "identity_key": "https://llava-vl.github.io/blog/2024-01-30-llava-next/",
+      "raw_path": "raw/web/S024-LLaVA-NeXT/official-blog.html",
+      "wiki_path": "wiki/sources/models/llava/LLaVA-NeXT.md",
+      "raw_files": [
+        {
+          "path": "raw/web/S024-LLaVA-NeXT/official-blog.html",
+          "sha256": "23029ba42dcf6bba3b006770a839f44e76b52763b600d8780ab2d9712d7c886e",
+          "url": "https://llava-vl.github.io/blog/2024-01-30-llava-next/",
+          "version": "Official blog dated 2024-01-30; exact HTML bytes retrieved 2026-10-31, SHA-256 pinned"
+        },
+        {
+          "path": "raw/web/S024-LLaVA-NeXT/high_res_arch_v2.png",
+          "sha256": "7f8ed15e0ef0d16843297e1deb4a5d7ac2f386e681e44690d939b543b6d1f848",
+          "url": "https://llava-vl.github.io/blog/assets/images/llava-1-6/high_res_arch_v2.png",
+          "version": "Official blog dated 2024-01-30; exact HTML bytes retrieved 2026-10-31, SHA-256 pinned"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2024-LLaVA-NeXT总结.tex",
+        "raw/notes/多模态经典/Latex_out/2024-LLaVA-NeXT总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Official blog HTML body is substantive primary evidence, preserved without modification; essential high-resolution architecture image archived separately. Decorative institutional logos and example conversation images not archived. HTML is retrieval-date state, not claimed to be unchanged since original publication."
+      ]
+    },
+    {
+      "source_id": "S025",
+      "slug": "InternVL",
+      "type": "paper",
+      "title": "InternVL",
+      "primary_direction": "models/internvl",
+      "identity_key": "arxiv:2312.14238",
+      "raw_path": "raw/papers/models/internvl/InternVL.pdf",
+      "wiki_path": "wiki/papers/models/internvl/InternVL.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/internvl/InternVL.pdf",
+          "sha256": "a948f7499c06b8a6cb0073149f1b8f41d3acd10c4bb29fe79f250806f32e5fab",
+          "url": "https://arxiv.org/pdf/2312.14238v3",
+          "version": "v3"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/多模态经典/2024-CVPR-InternVL.md",
+        "raw/notes/视觉编码器/InternViT总结.tex",
+        "raw/notes/视觉编码器/Latex_out/InternViT总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "acquisition": "user-provided local original",
+      "pages": 25
+    },
+    {
+      "source_id": "S026",
+      "slug": "Qwen-VL",
+      "type": "paper",
+      "title": "Qwen-VL: A Versatile Vision-Language Model for Understanding, Localization, Text Reading, and Beyond",
+      "primary_direction": "models/qwen",
+      "identity_key": "arxiv:2308.12966",
+      "raw_path": "raw/papers/models/qwen/Qwen-VL.pdf",
+      "wiki_path": "wiki/papers/models/qwen/Qwen-VL.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/qwen/Qwen-VL.pdf",
+          "sha256": "b4eca60ae9d3c1548242da02ece0e2f35ce23d3a983255830d98212aa92e3167",
+          "url": "https://arxiv.org/pdf/2308.12966v3",
+          "version": "v3"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/MLLM实例/Qwen/Latex_out/Qwen-VL总结.pdf",
+        "raw/notes/MLLM实例/Qwen/Qwen-VL总结.tex"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S027",
+      "slug": "Qwen2-VL",
+      "type": "paper",
+      "title": "Qwen2-VL: Enhancing Vision-Language Model's Perception of the World at Any Resolution",
+      "primary_direction": "models/qwen",
+      "identity_key": "arxiv:2409.12191",
+      "raw_path": "raw/papers/models/qwen/Qwen2-VL.pdf",
+      "wiki_path": "wiki/papers/models/qwen/Qwen2-VL.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/qwen/Qwen2-VL.pdf",
+          "sha256": "30bb0f6c9babf910295d6b7cd34b6f54824236f68782664c3c93fbf4803275d0",
+          "url": "https://arxiv.org/pdf/2409.12191v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/MLLM实例/Qwen/Latex_out/Qwen2-VL总结.pdf",
+        "raw/notes/MLLM实例/Qwen/Qwen2-VL总结.tex"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S028",
+      "slug": "Qwen3-VL",
+      "type": "paper",
+      "title": "Qwen3-VL Technical Report",
+      "primary_direction": "models/qwen",
+      "identity_key": "arxiv:2511.21631",
+      "raw_path": "raw/papers/models/qwen/Qwen3-VL.pdf",
+      "wiki_path": "wiki/papers/models/qwen/Qwen3-VL.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/qwen/Qwen3-VL.pdf",
+          "sha256": "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380",
+          "url": "https://arxiv.org/pdf/2511.21631v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/MLLM实例/Qwen/Latex_out/Qwen3-VL总结.pdf",
+        "raw/notes/MLLM实例/Qwen/Qwen3-VL总结.tex"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
+        "PDF first page credits Qwen Team; arXiv metadata enumerates individual authors."
+      ]
+    },
+    {
+      "source_id": "S029",
+      "slug": "Qwen-3.5",
+      "type": "source",
+      "title": "Qwen3.5-397B-A17B — official model card and configuration",
+      "primary_direction": "models/qwen",
+      "identity_key": "huggingface:Qwen/Qwen3.5-397B-A17B",
+      "raw_path": "raw/web/S029-Qwen-3.5/README.md",
+      "wiki_path": "wiki/sources/models/qwen/Qwen-3.5.md",
+      "raw_files": [
+        {
+          "path": "raw/web/S029-Qwen-3.5/README.md",
+          "sha256": "bda4b24e975f65ac677985306ddbad33362e65064637660654c8bb7dea7edf50",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/raw/8472618112abcbd45acbcdc58436aff4233c23f7/README.md",
+          "version": "HF commit 8472618112abcbd45acbcdc58436aff4233c23f7"
+        },
+        {
+          "path": "raw/web/S029-Qwen-3.5/config.json",
+          "sha256": "3ae7fa89c2f7d1354096418ddaf1331e9e0898a8ca11e804fb6dbaa087efb7da",
+          "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/raw/8472618112abcbd45acbcdc58436aff4233c23f7/config.json",
+          "version": "HF commit 8472618112abcbd45acbcdc58436aff4233c23f7"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/MLLM实例/Qwen/Latex_out/Qwen-3.5总结.pdf",
+        "raw/notes/MLLM实例/Qwen/Qwen-3.5总结.tex"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Official model card and exact model configuration preserved byte-for-byte at pinned Hugging Face commit. Source is documentation, not a fabricated paper. Official qwen.ai blog URL was tested but returned no readable body through web tool; not substituted with a search snippet. Configuration is necessary evidence for vision/text architecture parameters; no model weights or tokenizer payload downloaded."
+      ]
+    },
+    {
+      "source_id": "S030",
+      "slug": "Qwen3.8-Flash-Next",
+      "type": "paper",
+      "title": "On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability",
+      "primary_direction": "models/qwen",
+      "identity_key": "arxiv:2608.30320",
+      "raw_path": "raw/papers/models/qwen/Qwen3.8-Flash-Next.pdf",
+      "wiki_path": "wiki/papers/models/qwen/Qwen3.8-Flash-Next.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/qwen/Qwen3.8-Flash-Next.pdf",
+          "sha256": "17db868acaa0b86caaf89cd9516e0a92f79d7e161431e5e274b70a3123d60ef7",
+          "url": "https://arxiv.org/pdf/2608.30320v1",
+          "version": "v1"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/MLLM实例/Qwen/Latex_out/Qwen3.8-Flash-Next总结_排版调整.pdf",
+        "raw/notes/MLLM实例/Qwen/Qwen3.8-Flash-Next总结.tex"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
+        "PDF first page credits Qwen Team; arXiv metadata enumerates individual authors."
+      ]
+    },
+    {
+      "source_id": "S031",
+      "slug": "DeepSeek-VL",
+      "type": "paper",
+      "title": "DeepSeek-VL: Towards Real-World Vision-Language Understanding",
+      "primary_direction": "models/deepseek",
+      "identity_key": "arxiv:2403.05525",
+      "raw_path": "raw/papers/models/deepseek/DeepSeek-VL.pdf",
+      "wiki_path": "wiki/papers/models/deepseek/DeepSeek-VL.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/deepseek/DeepSeek-VL.pdf",
+          "sha256": "09e6a250407a046b156a0f97c81ac681b57983d89c8287ccdc77d51e379692b9",
+          "url": "https://arxiv.org/pdf/2403.05525v2",
+          "version": "v2"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/MLLM实例/Deepseek/DeepSeek-VL总结.tex",
+        "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-VL总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S032",
+      "slug": "DeepSeek-VL2",
+      "type": "paper",
+      "title": "DeepSeek-VL2: Mixture-of-Experts Vision-Language Models for Advanced Multimodal Understanding",
+      "primary_direction": "models/deepseek",
+      "identity_key": "arxiv:2412.10302",
+      "raw_path": "raw/papers/models/deepseek/DeepSeek-VL2.pdf",
+      "wiki_path": "wiki/papers/models/deepseek/DeepSeek-VL2.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/deepseek/DeepSeek-VL2.pdf",
+          "sha256": "cff2bd0ad1656769d7447f0e3cf3a1885902333894f123bdac27fce05c97459e",
+          "url": "https://arxiv.org/pdf/2412.10302v1",
+          "version": "v1"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/MLLM实例/Deepseek/DeepSeek-VL2总结.tex",
+        "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-VL2总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived."
+      ]
+    },
+    {
+      "source_id": "S033",
+      "slug": "DeepSeek-OCR",
+      "type": "paper",
+      "title": "DeepSeek-OCR: Contexts Optical Compression",
+      "primary_direction": "models/deepseek",
+      "identity_key": "arxiv:2510.18234",
+      "raw_path": "raw/papers/models/deepseek/DeepSeek-OCR.pdf",
+      "wiki_path": "wiki/papers/models/deepseek/DeepSeek-OCR.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/deepseek/DeepSeek-OCR.pdf",
+          "sha256": "a7297788968f8ad9ed21bcd273110814e4889efbbc99bfea86dca12205797a90",
+          "url": "https://arxiv.org/pdf/2510.18234v1",
+          "version": "v1"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/MLLM实例/Deepseek/DeepSeek-OCR总结.tex",
+        "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-OCR总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
+        "Legacy TeX links official GitHub DeepSeek_OCR_paper.pdf; official repository and arXiv metadata confirm the same title and authors. Versioned arXiv original selected for archival."
+      ]
+    },
+    {
+      "source_id": "S034",
+      "slug": "DeepSeek-V4.1-Flash",
+      "type": "paper",
+      "title": "DeepSeek-V4.1-Flash: Pushing the Limits of KV Cache Compression",
+      "primary_direction": "models/deepseek",
+      "identity_key": "arxiv:2609.19969",
+      "raw_path": "raw/papers/models/deepseek/DeepSeek-V4.1-Flash.pdf",
+      "wiki_path": "wiki/papers/models/deepseek/DeepSeek-V4.1-Flash.md",
+      "raw_files": [
+        {
+          "path": "raw/papers/models/deepseek/DeepSeek-V4.1-Flash.pdf",
+          "sha256": "0cfdda19c8e1691b5226dd0d4949e2397051268e8a823c2fb61db94ea20c4ac0",
+          "url": "https://arxiv.org/pdf/2609.19969v1",
+          "version": "v1"
+        }
+      ],
+      "legacy_inputs": [
+        "raw/notes/MLLM实例/Deepseek/DeepSeek-V4.1-Flash架构总结.tex",
+        "raw/notes/MLLM实例/Deepseek/DeepSeek-V4.1-Flash训练总结.tex",
+        "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-V4.1-Flash架构总结.pdf",
+        "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-V4.1-Flash训练总结.pdf"
+      ],
+      "reading_status": "unread",
+      "ingest_status": "pending",
+      "integrated_topics": [],
+      "accessed": "2026-10-31",
+      "identity_notes": [
+        "Fixed arXiv version; PDF parsed and first-page text extracted. Metadata page used for identity only, not archived.",
+        "PDF first page credits DeepSeek-AI; architecture/training legacy notes refer to this same report."
+      ]
+    }
+  ]
+}
