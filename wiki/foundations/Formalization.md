@@ -4,17 +4,16 @@ created: 2026-10-31
 updated: 2026-10-31
 sources:
   - "[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf]]"
-  - "[[raw/papers/models/llava/LLaVA.pdf]]"
-  - "[[raw/papers/architecture/connectors/BLIP-2.pdf]]"
-  - "[[raw/papers/architecture/connectors/Flamingo.pdf]]"
-  - "[[raw/papers/architecture/pretraining/BEiT-v3.pdf]]"
-  - "[[raw/papers/architecture/generation/MiniGPT-5.pdf]]"
+  - "[[raw/papers/training/instruction-adaptation/LLaVA.pdf]]"
+  - "[[raw/papers/architecture/visual-interfaces/BLIP-2.pdf]]"
+  - "[[raw/papers/architecture/visual-interfaces/Flamingo.pdf]]"
+  - "[[raw/papers/architecture/multimodal-backbones/BEiT-v3.pdf]]"
+  - "[[raw/papers/architecture/generative-interfaces/MiniGPT-5.pdf]]"
   - "[[raw/papers/models/qwen/Qwen-VL.pdf]]"
   - "[[raw/papers/models/qwen/Qwen2-VL.pdf]]"
   - "[[raw/papers/models/deepseek/DeepSeek-VL2.pdf]]"
-  - "[[raw/papers/architecture/pretraining/VLMo.pdf]]"
+  - "[[raw/papers/architecture/multimodal-backbones/VLMo.pdf]]"
   - "[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf]]"
-  - "[[raw/papers/vision/encoders/ViT.pdf]]"
 ---
 
 # 基础：把信息、参数与任务证据分成三个层次
@@ -28,23 +27,23 @@ sources:
 $$Z_v=g_\phi(X_v),\quad H_v=P_\psi(Z_v),\qquad
 p_\omega(Y\mid H_v,H_q)=\prod_{i=1}^{L}p_\omega(y_i\mid H_v,H_q,y_{<i}).$$
 
-这沿S001组件记法加入参数下标，便于描述冻结。$Z_v/H_v$通常是连续特征，不是已经转写的文字；$P$可仅映射宽度，也可选择、压缩位置。LLaVA线性网格与BLIP-2 query前缀就是两种不同$P$。Flamingo在LM内部多处cross-attention注入视觉，不能由这条简式误画成只接输入端。[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=4|S001 · pp.4–7 §2、Eqs1–3]] [[raw/papers/models/llava/LLaVA.pdf#page=4|S022 · p.4 §4.1]] [[raw/papers/architecture/connectors/BLIP-2.pdf#page=3|S017 · pp.3–4]] [[raw/papers/architecture/connectors/Flamingo.pdf#page=5|S016 · p.5 Fig.4]]
+这沿S001组件记法加入参数下标，便于描述冻结。$Z_v/H_v$通常是连续特征，不是已经转写的文字；$P$可仅映射宽度，也可选择、压缩位置。LLaVA线性网格与BLIP-2 query前缀就是两种不同$P$。Flamingo在LM内部多处cross-attention注入视觉，不能由这条简式误画成只接输入端。[[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=4|S001 · pp.4–7 §2、Eqs1–3]] [[raw/papers/training/instruction-adaptation/LLaVA.pdf#page=4|S022 · p.4 §4.1]] [[raw/papers/architecture/visual-interfaces/BLIP-2.pdf#page=3|S017 · pp.3–4]] [[raw/papers/architecture/visual-interfaces/Flamingo.pdf#page=5|S016 · p.5 Fig.4]]
 
 ## token是计算位置，不是统一信息单位
 
-文本token先是离散词表编号，embedding后参与计算；视觉patch、learned queries、merger输出也被称visual tokens，却不必属于离散词表。BEiT-3离散视觉token是masked预测目标，输入仍是patch embedding；MiniGPT-5输出image vokens又是调用图像生成接口的位置，和输入视觉特征不同。[[raw/papers/architecture/pretraining/BEiT-v3.pdf#page=4|S015 · pp.4–5 §2.2]] [[raw/papers/architecture/generation/MiniGPT-5.pdf#page=3|S021 · pp.3–4 §3.1–3.2]]
+文本token先是离散词表编号，embedding后参与计算；视觉patch、learned queries、merger输出也被称visual tokens，却不必属于离散词表。BEiT-3离散视觉token是masked预测目标，输入仍是patch embedding；MiniGPT-5输出image vokens又是调用图像生成接口的位置，和输入视觉特征不同。[[raw/papers/architecture/multimodal-backbones/BEiT-v3.pdf#page=4|S015 · pp.4–5 §2.2]] [[raw/papers/architecture/generative-interfaces/MiniGPT-5.pdf#page=3|S021 · pp.3–4 §3.1–3.2]]
 
 本库因此区分$N_{patch}$、$N_{visual}$、LLM上下文总长与输出长。Qwen-VL的1024patch可压成256query，Qwen2-VL224²为64视觉位置加2边界符，VL2单tile196却不是整图预算。数字相同不证明信息量相同；多了标记也不等于多看图像面积。[[raw/papers/models/qwen/Qwen-VL.pdf#page=20|S026 · p.20 Table8、p.22 E.2]] [[raw/papers/models/qwen/Qwen2-VL.pdf#page=4|S027 · p.4]] [[raw/papers/models/deepseek/DeepSeek-VL2.pdf#page=5|S032 · p.5]]
 
 ## 参与计算、参数共享、参数更新分开
 
-令全部参数$\Theta=\{\phi,\psi,\omega\}$，某阶段开放子集$\Theta_{train}\subseteq\Theta$。冻结表示优化器不更新该参数，仍可能前向计算并对输入传梯度；少更新参数不等于少存权重、少输入计算或部署必更快。MiniGPT-5冻结扩散U-Net仍传条件梯度，BLIP-2冻结LLM仍训练前面的Q-Former。[[raw/papers/architecture/generation/MiniGPT-5.pdf#page=4|S021 · pp.4–5]] [[raw/papers/architecture/connectors/BLIP-2.pdf#page=4|S017 · p.4 §3.3]]
+令全部参数$\Theta=\{\phi,\psi,\omega\}$，某阶段开放子集$\Theta_{train}\subseteq\Theta$。冻结表示优化器不更新该参数，仍可能前向计算并对输入传梯度；少更新参数不等于少存权重、少输入计算或部署必更快。MiniGPT-5冻结扩散U-Net仍传条件梯度，BLIP-2冻结LLM仍训练前面的Q-Former。[[raw/papers/architecture/generative-interfaces/MiniGPT-5.pdf#page=4|S021 · pp.4–5]] [[raw/papers/architecture/visual-interfaces/BLIP-2.pdf#page=4|S017 · p.4 §3.3]]
 
-共享描述复用权重；可见性描述当前前向可以访问的token；路由描述经过哪组变换。VLMo分别前向的图文复用attention却不交换当前信息；联合路径底层已经cross-modal attention，模态FFN并不恢复纯模态输入。冻结范围又是第四个独立轴。[[raw/papers/architecture/pretraining/VLMo.pdf#page=3|S014 · pp.3–6 Figs1–3、§3]]
+共享描述复用权重；可见性描述当前前向可以访问的token；路由描述经过哪组变换。VLMo分别前向的图文复用attention却不交换当前信息；联合路径底层已经cross-modal attention，模态FFN并不恢复纯模态输入。冻结范围又是第四个独立轴。[[raw/papers/architecture/multimodal-backbones/VLMo.pdf#page=3|S014 · pp.3–6 Figs1–3、§3]]
 
 ## 训练阶段不由loss名字单独定义
 
-图文对齐与指令微调可都用自回归交叉熵，差别在条件、监督位置、数据和开放参数。LLaVA只在助手回答和停止标记计loss；BEiT-3主预训练统一MDM，但检索还用中间/下游ITC训练。预训练不等于无监督，也不必从零训练整个LLM。[[raw/papers/models/llava/LLaVA.pdf#page=5|S022 · p.5 §4.2]] [[raw/papers/architecture/pretraining/BEiT-v3.pdf#page=4|S015 · pp.4–5 §2.2、p.16 AppendixA]]
+图文对齐与指令微调可都用自回归交叉熵，差别在条件、监督位置、数据和开放参数。LLaVA只在助手回答和停止标记计loss；BEiT-3主预训练统一MDM，但检索还用中间/下游ITC训练。预训练不等于无监督，也不必从零训练整个LLM。[[raw/papers/training/instruction-adaptation/LLaVA.pdf#page=5|S022 · p.5 §4.2]] [[raw/papers/architecture/multimodal-backbones/BEiT-v3.pdf#page=4|S015 · pp.4–5 §2.2、p.16 AppendixA]]
 
 ## 能力描述跟着观察对象走
 
@@ -60,4 +59,4 @@ p_\omega(Y\mid H_v,H_q)=\prod_{i=1}^{L}p_\omega(y_i\mid H_v,H_q,y_{<i}).$$
 
 ## 实际来源入口
 
-[[wiki/surveys/Efficient Multimodal Large Language Models A Survey|S001 Efficient-MLLM-Survey]] · [[wiki/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models|S002 Multimodal-Reasoning-Survey]] · [[wiki/papers/architecture/pretraining/VLMo|S014 VLMo]] · [[wiki/papers/architecture/pretraining/BEiT-v3|S015 BEiT-v3]] · [[wiki/papers/architecture/connectors/Flamingo|S016 Flamingo]] · [[wiki/papers/architecture/connectors/BLIP-2|S017 BLIP-2]] · [[wiki/papers/architecture/generation/MiniGPT-5|S021 MiniGPT-5]] · [[wiki/papers/models/llava/LLaVA|S022 LLaVA]] · [[wiki/papers/models/qwen/Qwen-VL|S026 Qwen-VL]] · [[wiki/papers/models/qwen/Qwen2-VL|S027 Qwen2-VL]] · [[wiki/papers/models/deepseek/DeepSeek-VL2|S032 DeepSeek-VL2]] · [[wiki/papers/vision/encoders/ViT|S004 ViT]]。原始定位在上文；唯一页保存身份、读取范围和实验条件。
+[[wiki/surveys/Efficient Multimodal Large Language Models A Survey|S001 Efficient-MLLM-Survey]] · [[wiki/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models|S002 Multimodal-Reasoning-Survey]] · [[wiki/papers/architecture/multimodal-backbones/VLMo|S014 VLMo]] · [[wiki/papers/architecture/multimodal-backbones/BEiT-v3|S015 BEiT-v3]] · [[wiki/papers/architecture/visual-interfaces/Flamingo|S016 Flamingo]] · [[wiki/papers/architecture/visual-interfaces/BLIP-2|S017 BLIP-2]] · [[wiki/papers/architecture/generative-interfaces/MiniGPT-5|S021 MiniGPT-5]] · [[wiki/papers/training/instruction-adaptation/LLaVA|S022 LLaVA]] · [[wiki/papers/models/qwen/Qwen-VL|S026 Qwen-VL]] · [[wiki/papers/models/qwen/Qwen2-VL|S027 Qwen2-VL]] · [[wiki/papers/models/deepseek/DeepSeek-VL2|S032 DeepSeek-VL2]]。原始定位在上文；唯一页保存身份、读取范围和实验条件。

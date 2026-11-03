@@ -156,3 +156,14 @@ Table 4 汇集不同模型在 14 个视觉语言基准上的报告分数；它�
 - [[wiki/foundations/Formalization|基础：把信息、参数与任务证据分成三个层次]]。
 - [[wiki/efficiency/Resource-Ledger|资源账本：视觉token、激活参数、KV与系统预算分别省在哪里？]]。
 - [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
+
+- [[wiki/training/Overview]]：综述 pp.18–19 §5用于区分训练阶段、开放参数与监督；属于综述转述。
+
+## 本轮定向核验的覆盖与使用
+
+2026-10-31 架构审核只补核下列页段；原有完整阅读范围不变，不把覆盖自动折算成实质使用，也不增加被引论文的阅读身份。
+
+| 原文页段 | 本轮核到的内容 | 现有落点 | 关系与证据身份 |
+| --- | --- | --- | --- |
+| [[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=18\|PDF 18–19，§5/Fig.14]] | 监督位置、开放参数与阶段 | [[wiki/training/Overview]] | 实质使用；补登记；综述转述 |
+| [[raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf#page=19\|PDF 19，§5.3–5.4]] | 多阶段/PEFT路线 | [[wiki/training/Supervision-and-Stages]] | 本轮确认原文覆盖；不据覆盖自动新增该主题的实质关系 |

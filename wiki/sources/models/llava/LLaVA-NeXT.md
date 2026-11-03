@@ -10,8 +10,8 @@ reading_status: read
 ingest_status: complete
 primary_direction: models/llava
 related_directions:
-  - architecture/connectors
-  - vision/encoders
+  - architecture/visual-interfaces
+  - vision/representation
 ---
 
 # LLaVA-NeXT：2024年1月版本的官方技术说明
@@ -31,7 +31,7 @@ related_directions:
 
 ![[raw/web/S024-LLaVA-NeXT/high_res_arch_v2.png]]
 
-上图是官方原图，展示2×2局部切块分别编码，再展平送入LLM；下路把整图缩小后编码，为局部特征补全局布局。不能把图中彩色小方块数当真实视觉token数。博客未完整展开padding移除、行末token、最终序列长度和动态网格选择算法；其链接指向更新后的1.5技术报告，相关报告细节见 [[wiki/papers/models/llava/LLaVA-1.5|LLaVA-1.5]]，但不能把报告的224像素HD设置原样覆盖此处336设置。[同节](https://llava-vl.github.io/blog/2024-01-30-llava-next/#1-dynamic-high-resolution)（访问2026-10-31；上述HTML与PNG原件）。
+上图是官方原图，展示2×2局部切块分别编码，再展平送入LLM；下路把整图缩小后编码，为局部特征补全局布局。不能把图中彩色小方块数当真实视觉token数。博客未完整展开padding移除、行末token、最终序列长度和动态网格选择算法；其链接指向更新后的1.5技术报告，相关报告细节见 [[wiki/papers/training/instruction-adaptation/LLaVA-1.5|LLaVA-1.5]]，但不能把报告的224像素HD设置原样覆盖此处336设置。[同节](https://llava-vl.github.io/blog/2024-01-30-llava-next/#1-dynamic-high-resolution)（访问2026-10-31；上述HTML与PNG原件）。
 
 **本库分析：**局部切块提供更多小字与物体细节，整图分支提供跨块关系；它增加视觉序列计算，并未自动保证多图理解、OCR正确或幻觉消失。博客关于细节提升和幻觉减少属于作者对机制/效果的解释，未附完整隔离消融。
 
@@ -73,7 +73,7 @@ related_directions:
 
 “超过Gemini Pro”限定在选定指标：该快照NeXT34B MMMU val51.1对47.9、MathVista46.5对45.2，但MM-Vet57.4低于64.3。不能概括成全面超过。表格明确区分specialist、监督微调、训练图像已见与zero-shot；HTML文本抽取会丢背景灰色含义，比较时应回到原始单元格属性，不能只据一列纯文本判所有行零样本。本文不重建完整异构排行榜。
 
-博客未在此报告结果方差、逐任务人工判分对齐、全部prompt和API快照。其1.5参考分数也与S023论文表格有小差异（例如MM-Vet36.3 vs36.1、MMB-ENG67.8 vs67.7）；本页保持网页数字，不与论文数值静默混合，差异原因未确认。[Results](https://llava-vl.github.io/blog/2024-01-30-llava-next/#results)；[[raw/papers/models/llava/LLaVA-1.5.pdf#page=5|S023表4，PDF p.5]]。
+博客未在此报告结果方差、逐任务人工判分对齐、全部prompt和API快照。其1.5参考分数也与S023论文表格有小差异（例如MM-Vet36.3 vs36.1、MMB-ENG67.8 vs67.7）；本页保持网页数字，不与论文数值静默混合，差异原因未确认。[Results](https://llava-vl.github.io/blog/2024-01-30-llava-next/#results)；[[raw/papers/training/instruction-adaptation/LLaVA-1.5.pdf#page=5|S023表4，PDF p.5]]。
 
 SGLang被列为部署/推理支持，但博客没有相同硬件、batch、输出长度下的吞吐/延迟对照，不能将其作为本机效率已验证。网页中仍有“coming soon”，这是抓取文本的状态，不用它判断代码当前是否已发布，也未为此扩展访问外部仓库。
 

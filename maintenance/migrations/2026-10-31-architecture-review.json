@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "status": "completed_byte_verified",
+  "baseline": "maintenance/research/2026-10-31-architecture-baseline.json",
+  "files": [],
+  "raw_moves": [
+    {
+      "source_id": "S004",
+      "old_path": "raw/papers/vision/encoders/ViT.pdf",
+      "new_path": "raw/papers/vision/representation/ViT.pdf",
+      "sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "size": 3743814
+    },
+    {
+      "source_id": "S005",
+      "old_path": "raw/papers/vision/encoders/SoViT.pdf",
+      "new_path": "raw/papers/vision/representation/SoViT.pdf",
+      "sha256": "360540d5b39e666adc1a72bf6f50c803b5494c05bf4e03b666bf479cc7ab903b",
+      "size": 758597
+    },
+    {
+      "source_id": "S006",
+      "old_path": "raw/papers/vision/encoders/NaViT.pdf",
+      "new_path": "raw/papers/vision/representation/NaViT.pdf",
+      "sha256": "d4421cab93fe27a49c64120faa46822dc95a563ed70f5495b25112b35619a396",
+      "size": 1853088
+    },
+    {
+      "source_id": "S007",
+      "old_path": "raw/papers/vision/encoders/AIMv2.pdf",
+      "new_path": "raw/papers/vision/representation/AIMv2.pdf",
+      "sha256": "f86924b23fb81db4f190c82d416597c0cd9fd8d819c106bf32a11c24db815d4f",
+      "size": 4788339
+    },
+    {
+      "source_id": "S008",
+      "old_path": "raw/papers/vision/alignment/CLIP.pdf",
+      "new_path": "raw/papers/vision/representation/CLIP.pdf",
+      "sha256": "6478b6e571a7d6fcd846d8ef77bfd60c285f1986abb8f475eedc43de403074f5",
+      "size": 6813639
+    },
+    {
+      "source_id": "S009",
+      "old_path": "raw/papers/vision/alignment/SigLIP.pdf",
+      "new_path": "raw/papers/vision/representation/SigLIP.pdf",
+      "sha256": "2efade8de3baeffe9eba759aab9f510ea8f8ac3c365f02f0da75d9baf9ffa2db",
+      "size": 614960
+    },
+    {
+      "source_id": "S010",
+      "old_path": "raw/papers/vision/alignment/SigLIP2.pdf",
+      "new_path": "raw/papers/vision/representation/SigLIP2.pdf",
+      "sha256": "b840240c075aad94d46f739712c594cb6848d0bf0e5b516da5d8da7586ad6bb9",
+      "size": 623539
+    },
+    {
+      "source_id": "S011",
+      "old_path": "raw/papers/architecture/pretraining/ALBEF.pdf",
+      "new_path": "raw/papers/architecture/multimodal-backbones/ALBEF.pdf",
+      "sha256": "137c937c0834d8aa116bac93cae46cabe86cf7b7645f3b6339639b194273b229",
+      "size": 7739417
+    },
+    {
+      "source_id": "S012",
+      "old_path": "raw/papers/architecture/pretraining/BLIP.pdf",
+      "new_path": "raw/papers/architecture/multimodal-backbones/BLIP.pdf",
+      "sha256": "63e0335cdd57c3d92b907b89c93d10befdd29b8aeed108091bbde90c121ed97a",
+      "size": 1303121
+    },
+    {
+      "source_id": "S013",
+      "old_path": "raw/papers/architecture/pretraining/CoCa.pdf",
+      "new_path": "raw/papers/architecture/multimodal-backbones/CoCa.pdf",
+      "sha256": "ebb8ecad1667502a8e016241b499b2479e296d59c7df06abdedb5cb51d26457b",
+      "size": 4092626
+    },
+    {
+      "source_id": "S014",
+      "old_path": "raw/papers/architecture/pretraining/VLMo.pdf",
+      "new_path": "raw/papers/architecture/multimodal-backbones/VLMo.pdf",
+      "sha256": "636d9dfd99492bdf57e2ec517f5587af7fcdc7dcb3470a6cddc68f53cdb2e5ee",
+      "size": 578934
+    },
+    {
+      "source_id": "S015",
+      "old_path": "raw/papers/architecture/pretraining/BEiT-v3.pdf",
+      "new_path": "raw/papers/architecture/multimodal-backbones/BEiT-v3.pdf",
+      "sha256": "f02c366d9a3e02d744807fac11f5f89255aff2532108a0795d4ee2736c1376d4",
+      "size": 611526
+    },
+    {
+      "source_id": "S016",
+      "old_path": "raw/papers/architecture/connectors/Flamingo.pdf",
+      "new_path": "raw/papers/architecture/visual-interfaces/Flamingo.pdf",
+      "sha256": "27af622bf50987fd98a03451a27a670adfaeefd5218a3e990b37abc326ba63f0",
+      "size": 31579390
+    },
+    {
+      "source_id": "S017",
+      "old_path": "raw/papers/architecture/connectors/BLIP-2.pdf",
+      "new_path": "raw/papers/architecture/visual-interfaces/BLIP-2.pdf",
+      "sha256": "6bc5d399d6127a64ace5167a2f0c00112a49725d2475d80322dbf0083f139e80",
+      "size": 6737540
+    },
+    {
+      "source_id": "S018",
+      "old_path": "raw/papers/architecture/connectors/InstructBLIP.pdf",
+      "new_path": "raw/papers/training/instruction-adaptation/InstructBLIP.pdf",
+      "sha256": "31c03f3ee54016e6da875593ed9d98419899d4164af638dc8cca76a4871beb35",
+      "size": 3774907
+    },
+    {
+      "source_id": "S019",
+      "old_path": "raw/papers/architecture/connectors/MiniGPT-4.pdf",
+      "new_path": "raw/papers/training/instruction-adaptation/MiniGPT-4.pdf",
+      "sha256": "a78f64448a86d91bd3c821178686cbe129312d53ee2b7eaf29ab412ce44c2ac0",
+      "size": 3698200
+    },
+    {
+      "source_id": "S020",
+      "old_path": "raw/papers/architecture/connectors/mPLUG-Owl.pdf",
+      "new_path": "raw/papers/training/instruction-adaptation/mPLUG-Owl.pdf",
+      "sha256": "997b330fb3b0b6e4972f7e98ae7753cfbadf81512d0d070eae654e3be2085ffd",
+      "size": 15952374
+    },
+    {
+      "source_id": "S021",
+      "old_path": "raw/papers/architecture/generation/MiniGPT-5.pdf",
+      "new_path": "raw/papers/architecture/generative-interfaces/MiniGPT-5.pdf",
+      "sha256": "496647dc686fa0955af3f7346940273e92052fd0828776747a35d8214549c9f1",
+      "size": 42553867
+    },
+    {
+      "source_id": "S022",
+      "old_path": "raw/papers/models/llava/LLaVA.pdf",
+      "new_path": "raw/papers/training/instruction-adaptation/LLaVA.pdf",
+      "sha256": "dc8bace378a282ea78caa9b5959306202fbfa3b8cedaf8a66541a9af18f4d3bf",
+      "size": 5906135
+    },
+    {
+      "source_id": "S023",
+      "old_path": "raw/papers/models/llava/LLaVA-1.5.pdf",
+      "new_path": "raw/papers/training/instruction-adaptation/LLaVA-1.5.pdf",
+      "sha256": "b7074a6dad218e0dd109f2a80311548d447e1cf4b9e31c002696985784cc05b9",
+      "size": 2215588
+    },
+    {
+      "source_id": "S025",
+      "old_path": "raw/papers/models/internvl/InternVL.pdf",
+      "new_path": "raw/papers/architecture/multimodal-backbones/InternVL.pdf",
+      "sha256": "a948f7499c06b8a6cb0073149f1b8f41d3acd10c4bb29fe79f250806f32e5fab",
+      "size": 1315333
+    },
+    {
+      "source_id": "S030",
+      "old_path": "raw/papers/models/qwen/Qwen3.8-Flash-Next.pdf",
+      "new_path": "raw/papers/architecture/language-backbones/Qwen3.8-Flash-Next.pdf",
+      "sha256": "17db868acaa0b86caaf89cd9516e0a92f79d7e161431e5e274b70a3123d60ef7",
+      "size": 2363790
+    },
+    {
+      "source_id": "S033",
+      "old_path": "raw/papers/models/deepseek/DeepSeek-OCR.pdf",
+      "new_path": "raw/papers/efficiency/context-compression/DeepSeek-OCR.pdf",
+      "sha256": "a7297788968f8ad9ed21bcd273110814e4889efbbc99bfea86dca12205797a90",
+      "size": 7631170
+    }
+  ],
+  "wiki_moves": [
+    {
+      "source_id": "S004",
+      "old_path": "wiki/papers/vision/encoders/ViT.md",
+      "new_path": "wiki/papers/vision/representation/ViT.md",
+      "sha256_before": "88145013ece5015a486a0ad9c1f6f3603e22bf4befd9a473fdbcfa00f282421f",
+      "size_before": 10170,
+      "sha256_after": "306f6f96a60abf5bddb7febd15c38803abca59549fa58221be8cceaf61008811",
+      "size_after": 10352
+    },
+    {
+      "source_id": "S005",
+      "old_path": "wiki/papers/vision/encoders/SoViT.md",
+      "new_path": "wiki/papers/vision/representation/SoViT.md",
+      "sha256_before": "fdf4e11c52b2aabe3fc7e15da0cb31c875b3fb2e0c37d0681372d94adcdf0761",
+      "size_before": 11049,
+      "sha256_after": "54af4ca0527628ad9ac2b12133c1c618835d819060220b96c9092d3238bda8f2",
+      "size_after": 11403
+    },
+    {
+      "source_id": "S006",
+      "old_path": "wiki/papers/vision/encoders/NaViT.md",
+      "new_path": "wiki/papers/vision/representation/NaViT.md",
+      "sha256_before": "f27869d73494e659f9ec4ee717cf749c187cac01ca4cd2876b94d9d36f2ca098",
+      "size_before": 11843,
+      "sha256_after": "28da3ded2fb943501986a1063e7ac2b84b551e1f7cb8cce9aabb29217b8d1e1f",
+      "size_after": 12172
+    },
+    {
+      "source_id": "S007",
+      "old_path": "wiki/papers/vision/encoders/AIMv2.md",
+      "new_path": "wiki/papers/vision/representation/AIMv2.md",
+      "sha256_before": "e452d26665f2abef8c19e7ec7a810cb8b614a724d0e816427fcd857805fff7c1",
+      "size_before": 15605,
+      "sha256_after": "6db39a136c879d8fda12a331e1756f17d54563e589719a9e5113ced5a9eee72f",
+      "size_after": 15936
+    },
+    {
+      "source_id": "S008",
+      "old_path": "wiki/papers/vision/alignment/CLIP.md",
+      "new_path": "wiki/papers/vision/representation/CLIP.md",
+      "sha256_before": "32ee344cce1554c95484889767aa28702f047c56a4cc3c02b85aa3ba40a808dd",
+      "size_before": 13546,
+      "sha256_after": "1cb398a378bb879d922dfc99eb34b4ad3e8d99357d3d801b520df2d2be4b7631",
+      "size_after": 13797
+    },
+    {
+      "source_id": "S009",
+      "old_path": "wiki/papers/vision/alignment/SigLIP.md",
+      "new_path": "wiki/papers/vision/representation/SigLIP.md",
+      "sha256_before": "ec7c55671fd1de33766af3454989c85c3da7a47c21ae7a54d2ab57533d3084d2",
+      "size_before": 11909,
+      "sha256_after": "a70ee105c2b9954215a25dea1f7cc98361c22459792b5e1b906bacfc10e2ee08",
+      "size_after": 12239
+    },
+    {
+      "source_id": "S010",
+      "old_path": "wiki/papers/vision/alignment/SigLIP2.md",
+      "new_path": "wiki/papers/vision/representation/SigLIP2.md",
+      "sha256_before": "e7d9e0db45ef53ef8d7bb5120b0fc6570c2daa7112142b370205fb619f9c9ec9",
+      "size_before": 16939,
+      "sha256_after": "216e47bc838a0c373262d386e717abc174ed7f9a2042f433cab0e7b433e0467b",
+      "size_after": 17217
+    },
+    {
+      "source_id": "S011",
+      "old_path": "wiki/papers/architecture/pretraining/ALBEF.md",
+      "new_path": "wiki/papers/architecture/multimodal-backbones/ALBEF.md",
+      "sha256_before": "d498659a19dfb3135915e86ba27b4ad9f15d7cdb2fae350977d47929eca9ad89",
+      "size_before": 20240,
+      "sha256_after": "c1d235a5ddee7581b4757af47e5472fb0e6abc688da21d77e95fefe092fcce87",
+      "size_after": 20643
+    },
+    {
+      "source_id": "S012",
+      "old_path": "wiki/papers/architecture/pretraining/BLIP.md",
+      "new_path": "wiki/papers/architecture/multimodal-backbones/BLIP.md",
+      "sha256_before": "29933fca7a5491ec373fe78d01d0534cf537a6a580167cad8630e93ce12474c9",
+      "size_before": 17828,
+      "sha256_after": "1fe136153b557b2f58b707a8e44a0b0a15ce7c1460bd956e3470a1765890dbe6",
+      "size_after": 18199
+    },
+    {
+      "source_id": "S013",
+      "old_path": "wiki/papers/architecture/pretraining/CoCa.md",
+      "new_path": "wiki/papers/architecture/multimodal-backbones/CoCa.md",
+      "sha256_before": "b16bd5d12fe637ea2f29125a61fdfea3933731220bd3e485ac80f522414be3bf",
+      "size_before": 17949,
+      "sha256_after": "e3be65e00f8bf76470c214f51662cd331ce27ba208a15cc03cfa459ca651e21e",
+      "size_after": 18377
+    },
+    {
+      "source_id": "S014",
+      "old_path": "wiki/papers/architecture/pretraining/VLMo.md",
+      "new_path": "wiki/papers/architecture/multimodal-backbones/VLMo.md",
+      "sha256_before": "d1ad33de67bbd0cd70b336e5321bc09020ddc8a23e3386b1cf1eae12d0a2fc62",
+      "size_before": 17425,
+      "sha256_after": "b86a0ad838e0b76d0c4e8167f7958250fff87cd88e4de626bd112ba568ee8085",
+      "size_after": 17842
+    },
+    {
+      "source_id": "S015",
+      "old_path": "wiki/papers/architecture/pretraining/BEiT-v3.md",
+      "new_path": "wiki/papers/architecture/multimodal-backbones/BEiT-v3.md",
+      "sha256_before": "c8bc45927926b7a05df7d5986ad05e14a3f1cf20bb11de6c37cff2c548e62f33",
+      "size_before": 19632,
+      "sha256_after": "fab7e9f57f42f7087ad3936aa5c04d5f3698c545c997cda2c7ed3ae296310f7a",
+      "size_after": 20139
+    },
+    {
+      "source_id": "S016",
+      "old_path": "wiki/papers/architecture/connectors/Flamingo.md",
+      "new_path": "wiki/papers/architecture/visual-interfaces/Flamingo.md",
+      "sha256_before": "109083993e7259ac3c3759bcd2ebdf39e9bcd496bf6c1cbb96cdbc87ef0cde62",
+      "size_before": 11928,
+      "sha256_after": "efa0ec8e4f28c2edaee30fcb5be859528318c0b6e112813114e567cb09e1af6b",
+      "size_after": 12428
+    },
+    {
+      "source_id": "S017",
+      "old_path": "wiki/papers/architecture/connectors/BLIP-2.md",
+      "new_path": "wiki/papers/architecture/visual-interfaces/BLIP-2.md",
+      "sha256_before": "3363b69042980a6b65c7bf8a20769b691502e6672a1858a772bf05357352b34c",
+      "size_before": 12016,
+      "sha256_after": "56ec85993aa118490c212318828b2b277807615d8a21c501b0b732adcdc3269f",
+      "size_after": 12449
+    },
+    {
+      "source_id": "S018",
+      "old_path": "wiki/papers/architecture/connectors/InstructBLIP.md",
+      "new_path": "wiki/papers/training/instruction-adaptation/InstructBLIP.md",
+      "sha256_before": "2dedddca591abaf06ca7248f0872507f15a0c9ec3edc32760183068fe9c1bcfe",
+      "size_before": 12577,
+      "sha256_after": "67b8a3e1602b206cc201cecaab80f9b87ddaa458c28f0300453b47c454939969",
+      "size_after": 13044
+    },
+    {
+      "source_id": "S019",
+      "old_path": "wiki/papers/architecture/connectors/MiniGPT-4.md",
+      "new_path": "wiki/papers/training/instruction-adaptation/MiniGPT-4.md",
+      "sha256_before": "96cca000dcfa864d89ef629c0a8e144be73c67355560b87da169488cc2ee7931",
+      "size_before": 10943,
+      "sha256_after": "e3737d3939b632647a3a16708f4ed254bc5493df8881b68107a40ab862b56e49",
+      "size_after": 11452
+    },
+    {
+      "source_id": "S020",
+      "old_path": "wiki/papers/architecture/connectors/mPLUG-Owl.md",
+      "new_path": "wiki/papers/training/instruction-adaptation/mPLUG-Owl.md",
+      "sha256_before": "fcc608c9749aade0b18a882660cbd3187a4b38aa5edc8b4b95e501cd74b7f8b3",
+      "size_before": 13584,
+      "sha256_after": "57dacc5d514661805e67833fc61c48e2514b406f124d06cd9d5da822ccc1bdd8",
+      "size_after": 14140
+    },
+    {
+      "source_id": "S021",
+      "old_path": "wiki/papers/architecture/generation/MiniGPT-5.md",
+      "new_path": "wiki/papers/architecture/generative-interfaces/MiniGPT-5.md",
+      "sha256_before": "9a222aaf9532d8508960c3dd10a153d8bfab6d3316cb4d72e3f063e205a16427",
+      "size_before": 10358,
+      "sha256_after": "b97b40af635baf219f82156ab747c41a9525dfd9646057e5aad78d488d1074e6",
+      "size_after": 10758
+    },
+    {
+      "source_id": "S022",
+      "old_path": "wiki/papers/models/llava/LLaVA.md",
+      "new_path": "wiki/papers/training/instruction-adaptation/LLaVA.md",
+      "sha256_before": "e631d61841c3e4299dee3c493ed7f618457e69a4550078eebc68d38f1dcaa3c2",
+      "size_before": 10495,
+      "sha256_after": "cab038e99e4ceedcb2df582b4f1092e1090c73b923b404c0090cbc42793b807b",
+      "size_after": 11095
+    },
+    {
+      "source_id": "S023",
+      "old_path": "wiki/papers/models/llava/LLaVA-1.5.md",
+      "new_path": "wiki/papers/training/instruction-adaptation/LLaVA-1.5.md",
+      "sha256_before": "ae0987f50687993c478b8fdba41a9d96db2d878c06654492e27222efbf3d6aee",
+      "size_before": 9812,
+      "sha256_after": "d8d3f411bf164e4ad71bce10b16f35448f2610f052710d8b46a0a5d767d7cf26",
+      "size_after": 10495
+    },
+    {
+      "source_id": "S025",
+      "old_path": "wiki/papers/models/internvl/InternVL.md",
+      "new_path": "wiki/papers/architecture/multimodal-backbones/InternVL.md",
+      "sha256_before": "500ceb9b798748ae5a6087acdae45bd4dc5a1b0ad660682c36671283af373fcc",
+      "size_before": 13270,
+      "sha256_after": "0be99a33f2f69c240bf4bdfaba4b61330dd561f579b2b6ba94f5ae830f211ae5",
+      "size_after": 13930
+    },
+    {
+      "source_id": "S030",
+      "old_path": "wiki/papers/models/qwen/Qwen3.8-Flash-Next.md",
+      "new_path": "wiki/papers/architecture/language-backbones/Qwen3.8-Flash-Next.md",
+      "sha256_before": "591fe36f53a998af3ef2147d10ffe22e55bfcb03e0f2786bf0a124f6ab97dab2",
+      "size_before": 28923,
+      "sha256_after": "19b81752e6cfa4c5768367747c096aed97920f1fd99d69b41cebc1da647ae615",
+      "size_after": 30058
+    },
+    {
+      "source_id": "S033",
+      "old_path": "wiki/papers/models/deepseek/DeepSeek-OCR.md",
+      "new_path": "wiki/papers/efficiency/context-compression/DeepSeek-OCR.md",
+      "sha256_before": "ddcaa6704c6b39221047ac6e6e0f7e5617a4abc108c61648d61a2e3e60e6cba3",
+      "size_before": 15680,
+      "sha256_after": "3a670aac288f2a796b1a3d513a19c84707444ba4616d678b53822222c4fd4ed6",
+      "size_after": 16379
+    }
+  ],
+  "historical_documents": [
+    {
+      "path": "maintenance/migrations/2026-10-31-initialization.md",
+      "sha256": "5ef2eda7f2e6c3e41d6f44bc1f8ba6ce3f3177eaf5b6c955201cb8cb44b25301",
+      "size": 8059
+    },
+    {
+      "path": "maintenance/research/R001-initialization.md",
+      "sha256": "ab03a35cd7954f95c20d031bf2adc35f1cb08a676184a4315c068b8864812295",
+      "size": 21081
+    },
+    {
+      "path": "maintenance/research/R001-reviews/final-structure.md",
+      "sha256": "bdeac0303ebc734d022915ece96ae5ddf052a17b90e4b6f73574596e84a678a3",
+      "size": 12139
+    },
+    {
+      "path": "maintenance/research/R001-reviews/lecture.md",
+      "sha256": "116459f00890d940d8d2d34129d81465e519e67f6a683f559f341fa7edefe660",
+      "size": 13227
+    },
+    {
+      "path": "maintenance/research/R001-reviews/models-and-generation.md",
+      "sha256": "8f0aecc553652bba32c8441b5a8eabfebd6feb499072353b477d684d9b077bed",
+      "size": 27136
+    },
+    {
+      "path": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+      "sha256": "843757f20f5678327f289efdb9c53028af89ab31154de4acdbb9531a7a03dcfc",
+      "size": 36959
+    },
+    {
+      "path": "maintenance/research/R001-reviews/rendering.md",
+      "sha256": "7d3c84b46a2935d2f38a635076f3281f3fbef95ab54e8c18f154bbcfefc33ea0",
+      "size": 13535
+    },
+    {
+      "path": "maintenance/research/R001-reviews/structure-tool-and-builds.md",
+      "sha256": "c3a4811d8fe3100f59a04d750bf4297b5a20a050abbd90c61a4e58a1f9edc07a",
+      "size": 13867
+    },
+    {
+      "path": "maintenance/research/R001-reviews/surveys.md",
+      "sha256": "5d682bdfcfd22c79681bb38918be183932ba21b246516de416cd07cb99cec13c",
+      "size": 19267
+    },
+    {
+      "path": "maintenance/research/R001-reviews/themes-and-diagrams.md",
+      "sha256": "06ff69b478e31008d12b2aa770a29b63e8b6d2c60a537223060a84a1342fcb6c",
+      "size": 18536
+    },
+    {
+      "path": "maintenance/research/R001-reviews/vision.md",
+      "sha256": "7a51dd0118562db67f5411b793809676f3ccc1984a7d639d9337c5186277c27a",
+      "size": 34134
+    }
+  ],
+  "source_count": 34,
+  "academic_source_count": 31,
+  "validation": "maintenance/research/2026-10-31-architecture-validation.json",
+  "preservation": "maintenance/research/2026-10-31-architecture-preservation.json",
+  "empty_directories_removed": [
+    "raw/papers/architecture/connectors",
+    "raw/papers/architecture/generation",
+    "raw/papers/architecture/pretraining",
+    "raw/papers/models/internvl",
+    "raw/papers/models/llava",
+    "raw/papers/vision/alignment",
+    "raw/papers/vision/encoders",
+    "wiki/papers/architecture/connectors",
+    "wiki/papers/architecture/generation",
+    "wiki/papers/architecture/pretraining",
+    "wiki/papers/models/internvl",
+    "wiki/papers/models/llava",
+    "wiki/papers/vision/alignment",
+    "wiki/papers/vision/encoders"
+  ],
+  "withdrawn_imported_reference": [
+    {
+      "old_path": "MLLM知识库架构调整方案.md",
+      "new_path": "raw/articles/2026-10-31-MLLM知识库架构调整方案-原始提案.md",
+      "sha256": "bd0ed4665fa9a65d093e41f5370489f995e8188ad2313dee2b5213b1ce98b539",
+      "size": 56001,
+      "kind": "user_proposal_not_academic_source"
+    }
+  ],
+  "withdrawal_record": "maintenance/migrations/2026-11-03-proposal-withdrawal.json",
+  "withdrawal_note": "2026-11-03：按用户明确要求删除原提案，转为撤下历史登记，不再计入当前 Raw 集合；23 项 Raw/Wiki 迁移保持。"
+}

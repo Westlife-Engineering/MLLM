@@ -8,9 +8,9 @@ sources:
   - "[[raw/lectures/VLM-2.pdf]]"
   - "[[raw/papers/models/qwen/Qwen2-VL.pdf]]"
   - "[[raw/papers/models/deepseek/DeepSeek-V4.1-Flash.pdf]]"
-  - "[[raw/papers/models/deepseek/DeepSeek-OCR.pdf]]"
-  - "[[raw/papers/models/qwen/Qwen3.8-Flash-Next.pdf]]"
-  - "[[raw/papers/architecture/generation/MiniGPT-5.pdf]]"
+  - "[[raw/papers/efficiency/context-compression/DeepSeek-OCR.pdf]]"
+  - "[[raw/papers/architecture/language-backbones/Qwen3.8-Flash-Next.pdf]]"
+  - "[[raw/papers/architecture/generative-interfaces/MiniGPT-5.pdf]]"
 ---
 
 # 推理与交互：增加计算、改变观察、控制环境怎样分别起作用？
@@ -55,10 +55,10 @@ effort越高，长度惩罚越弱；它不是保证执行的硬token上限。相
 
 ## 长序列与压缩是推理的条件，不是推理成功证明
 
-Qwen3-VL NIAH证明指定检索诊断中能找回needle，不等于长视频因果理解；DeepSeek-OCR验证页面转写/解析，尚未验证把任意对话光学压缩后一般推理保持。Qwen3.8-Next研究语言端固定状态与稀疏检索，任务是base语言评估，本报告没有视觉实验。三条路线应分别看[[wiki/vision/Resolution-and-Token-Budget|视觉输入]]与[[wiki/architecture/Sequence-Memory-and-Retrieval|序列记忆]]，不能只凭长窗口或低token称“更会推理”。[[raw/papers/models/qwen/Qwen3-VL.pdf#page=25|S028 · p.25 §5.12.3]] [[raw/papers/models/deepseek/DeepSeek-OCR.pdf#page=19|S033 · p.19 §5–6]] [[raw/papers/models/qwen/Qwen3.8-Flash-Next.pdf#page=22|S030 · pp.22–23 §4–5]]
+Qwen3-VL NIAH证明指定检索诊断中能找回needle，不等于长视频因果理解；DeepSeek-OCR验证页面转写/解析，尚未验证把任意对话光学压缩后一般推理保持。Qwen3.8-Next研究语言端固定状态与稀疏检索，任务是base语言评估，本报告没有视觉实验。三条路线应分别看[[wiki/vision/Resolution-and-Token-Budget|视觉输入]]与[[wiki/architecture/Sequence-Memory-and-Retrieval|序列记忆]]，不能只凭长窗口或低token称“更会推理”。[[raw/papers/models/qwen/Qwen3-VL.pdf#page=25|S028 · p.25 §5.12.3]] [[raw/papers/efficiency/context-compression/DeepSeek-OCR.pdf#page=19|S033 · p.19 §5–6]] [[raw/papers/architecture/language-backbones/Qwen3.8-Flash-Next.pdf#page=22|S030 · pp.22–23 §4–5]]
 
-S002的native multimodal reasoning仍是作者展望；MiniGPT-5提供交错文字/图像生成接口，却没有因此验证完整世界反馈推理能力。模型评审、人评、harness与终态判据接[[wiki/evaluation/Judges-and-Task-Success|任务成功]]，搜索/候选/工具的完整预算接[[wiki/efficiency/Resource-Ledger|资源账本]]。[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=30|S002 · pp.30–31 §4.3]] [[raw/papers/architecture/generation/MiniGPT-5.pdf#page=3|S021 · pp.3–5]]
+S002的native multimodal reasoning仍是作者展望；MiniGPT-5提供交错文字/图像生成接口，却没有因此验证完整世界反馈推理能力。模型评审、人评、harness与终态判据接[[wiki/evaluation/Judges-and-Task-Success|任务成功]]，搜索/候选/工具的完整预算接[[wiki/efficiency/Resource-Ledger|资源账本]]。[[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=30|S002 · pp.30–31 §4.3]] [[raw/papers/architecture/generative-interfaces/MiniGPT-5.pdf#page=3|S021 · pp.3–5]]
 
 ## 实际来源入口
 
-[[wiki/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models|S002 Multimodal-Reasoning-Survey]] · [[wiki/lectures/VLM-2|S003 VLM-2]] · [[wiki/papers/architecture/generation/MiniGPT-5|S021 MiniGPT-5]] · [[wiki/papers/models/qwen/Qwen2-VL|S027 Qwen2-VL]] · [[wiki/papers/models/qwen/Qwen3-VL|S028 Qwen3-VL]] · [[wiki/papers/models/qwen/Qwen3.8-Flash-Next|S030 Qwen3.8-Flash-Next]] · [[wiki/papers/models/deepseek/DeepSeek-OCR|S033 DeepSeek-OCR]] · [[wiki/papers/models/deepseek/DeepSeek-V4.1-Flash|S034 DeepSeek-V4.1-Flash]]。原始定位在上文；唯一页保存身份、读取范围和实验条件。
+[[wiki/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models|S002 Multimodal-Reasoning-Survey]] · [[wiki/lectures/VLM-2|S003 VLM-2]] · [[wiki/papers/architecture/generative-interfaces/MiniGPT-5|S021 MiniGPT-5]] · [[wiki/papers/models/qwen/Qwen2-VL|S027 Qwen2-VL]] · [[wiki/papers/models/qwen/Qwen3-VL|S028 Qwen3-VL]] · [[wiki/papers/architecture/language-backbones/Qwen3.8-Flash-Next|S030 Qwen3.8-Flash-Next]] · [[wiki/papers/efficiency/context-compression/DeepSeek-OCR|S033 DeepSeek-OCR]] · [[wiki/papers/models/deepseek/DeepSeek-V4.1-Flash|S034 DeepSeek-V4.1-Flash]]。原始定位在上文；唯一页保存身份、读取范围和实验条件。

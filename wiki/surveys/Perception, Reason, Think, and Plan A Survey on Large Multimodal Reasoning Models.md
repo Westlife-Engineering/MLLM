@@ -138,3 +138,14 @@ Stage 1 的细分见 [[raw/surveys/Perception, Reason, Think, and Plan A Survey 
 - [[wiki/reasoning/Overview|推理与交互：增加计算、改变观察、控制环境怎样分别起作用？]]。
 - [[wiki/evaluation/Judges-and-Task-Success|裁判与任务成功：答案、解释、生成物和终态怎样分别取证？]]。
 - [[wiki/architecture/Generative-Output-Interfaces|生成输出接口：读入图片、输出文字、合成图片分别由谁完成？]]。
+
+- [[wiki/evaluation/Overview]]：综述 p.32 Fig.10与p.41 §5.5用于分开任务地图和判分方式；属于综述转述。
+
+## 本轮定向核验的覆盖与使用
+
+2026-10-31 架构审核只补核下列页段；原有完整阅读范围不变，不把覆盖自动折算成实质使用，也不增加被引论文的阅读身份。
+
+| 原文页段 | 本轮核到的内容 | 现有落点 | 关系与证据身份 |
+| --- | --- | --- | --- |
+| [[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=32\|PDF 32，Fig.10；41，§5.5]] | 任务对象与判分方法两张地图 | [[wiki/evaluation/Overview]] | 实质使用；补登记；综述转述 |
+| [[raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf#page=30\|PDF 30，§4.3/Fig.9]] | native多模态推理展望 | [[wiki/architecture/Generative-Output-Interfaces]] | 具体限制推论，保留实质关系；不是已验证能力 |

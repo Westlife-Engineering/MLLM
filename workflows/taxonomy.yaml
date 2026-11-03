@@ -1,0 +1,34 @@
+# AGENTS.md is the rule entry; boundary decisions live in structure.md.
+# Only directions with actual sources are listed. Entries are existing Wiki pages.
+schema_version: 1
+directions:
+  vision/representation:
+    description: 可复用视觉及成对图文表示、编码组织
+    entry: wiki/vision/Overview.md
+  architecture/multimodal-backbones:
+    description: 保留独立表示、融合或条件解码接口的多模态骨干
+    entry: wiki/architecture/Visibility-and-Connections.md
+  architecture/visual-interfaces:
+    description: 视觉信息接入已有语言计算的桥接与注入接口
+    entry: wiki/architecture/Visibility-and-Connections.md
+  architecture/generative-interfaces:
+    description: 语言模型输出接入非文字生成器的条件接口
+    entry: wiki/architecture/Generative-Output-Interfaces.md
+  architecture/language-backbones:
+    description: 语言序列骨干的邻接机制证据，不推定视觉验证
+    entry: wiki/architecture/Sequence-Memory-and-Retrieval.md
+  training/instruction-adaptation:
+    description: 视觉指令、任务格式与对话输出适配的数据和训练配方
+    entry: wiki/training/Supervision-and-Stages.md
+  efficiency/context-compression:
+    description: 上下文表示的资源与恢复质量折中，保留实际任务边界
+    entry: wiki/efficiency/Resource-Ledger.md
+  models/llava:
+    description: LLaVA 家族联合系统或固定版本说明
+    entry: wiki/models/Family-Changes.md
+  models/qwen:
+    description: Qwen 家族联合多模态系统或固定版本说明
+    entry: wiki/models/Family-Changes.md
+  models/deepseek:
+    description: DeepSeek 家族联合多模态系统报告
+    entry: wiki/models/Family-Changes.md

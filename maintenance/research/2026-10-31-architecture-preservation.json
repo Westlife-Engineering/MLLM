@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-31",
+  "original_raw_files_verified": 288,
+  "original_raw_bytes_verified": 320669809,
+  "current_raw_files": 289,
+  "current_raw_bytes": 320725810,
+  "new_raw_user_input_count": 1,
+  "protected_history_files_verified": 13,
+  "original_log_prefix_verified": true,
+  "source_identity_version_status_unchanged": true,
+  "diagram_asset_files_byte_identical": 4,
+  "math_spans_unchanged": 539,
+  "mermaid_blocks_unchanged": 16,
+  "scope": "Byte/structure preservation only; math-token scan is not rendering verification."
+}

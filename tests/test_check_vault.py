@@ -21,6 +21,7 @@ class VaultTests(unittest.TestCase):
         self.rows, self.raw = [], []
         self.write("AGENTS.md", "# Rules\nRead-only fixture.\n")
         self.write("wiki/index.md", "# Index\n")
+        self.write("workflows/taxonomy.yaml", "schema_version: 1\ndirections:\n  vision/encoders:\n    description: Fixture direction\n    entry: wiki/index.md\n")
 
     def write(self, relative, content):
         path = self.root / relative
@@ -259,12 +260,161 @@ class VaultTests(unittest.TestCase):
         self.source(page=False)
         self.assertCheck(self.run_check(True), "source_page_missing")
 
+    def migration_fixture(self):
+        row = self.source()
+        old_raw, old_wiki = row["raw_path"], row["wiki_path"]
+        new_raw = old_raw.replace(".pdf", "-moved.pdf")
+        new_wiki = old_wiki.replace(".md", "-moved.md")
+        # Construct the post-migration snapshot; the checker never moves files.
+        (self.root / new_raw).write_bytes((self.root / old_raw).read_bytes())
+        (self.root / old_raw).unlink()
+        (self.root / old_wiki).unlink()
+        row["raw_path"], row["wiki_path"] = new_raw, new_wiki
+        row["raw_files"][0]["path"] = new_raw
+        self.write("wiki/index.md", "# Index\n")
+        self.source_page(row)
+        move = {"old_path": old_raw, "new_path": new_raw,
+                "sha256": self.raw[0]["sha256"], "size": self.raw[0]["size"]}
+        extra = {"raw_moves": [move], "wiki_moves": [
+            {"old_path": old_wiki, "new_path": new_wiki, "source_id": row["source_id"]}]}
+        return row, old_raw, old_wiki, extra
+
+    def test_two_hop_raw_and_wiki_history(self):
+        row, old_raw, old_wiki, extra = self.migration_fixture()
+        history = self.write("maintenance/old-review.md", f'[[{old_raw}#page=2]]\n[[{old_wiki}#Source]]\n')
+        extra["historical_documents"] = [{"path": "maintenance/old-review.md", "sha256": hashlib.sha256(history.read_bytes()).hexdigest()}]
+        report = self.run_check(manifest_extra=extra)
+        self.assertPass(report)
+        self.assertEqual(1, report["counts"]["raw_files"])
+        self.assertEqual(2, len(report["documented_historical_links"]))
+        # Subsequent maintained Wiki prose may change without freezing its old digest.
+        with (self.root / row["wiki_path"]).open("a", encoding="utf-8") as f:
+            f.write("New verified explanation.\n")
+        self.assertPass(self.run_check(manifest_extra=extra))
+
+    def test_history_exception_never_allows_current_stale_link(self):
+        _, old_raw, _, extra = self.migration_fixture()
+        self.write("AGENTS.md", f'[[{old_raw}]]\n')
+        self.assertCheck(self.run_check(manifest_extra=extra), "link_target")
+
+    def test_historical_anchor_is_still_checked(self):
+        _, old_raw, _, extra = self.migration_fixture()
+        history = self.write("maintenance/old-review.md", f'[[{old_raw}#page=3]]\n')
+        extra["historical_documents"] = [{"path": "maintenance/old-review.md", "sha256": hashlib.sha256(history.read_bytes()).hexdigest()}]
+        self.assertCheck(self.run_check(manifest_extra=extra), "pdf_page")
+        history.write_text(f'[[{old_raw}#page=2]]\n', encoding="utf-8")
+        self.assertCheck(self.run_check(manifest_extra=extra), "historical_document")
+
+    def test_raw_migration_rejects_hash_size_cycle_and_fork(self):
+        _, _, _, extra = self.migration_fixture()
+        original = dict(extra["raw_moves"][0])
+        for field, value in (("sha256", "0" * 64), ("size", 1)):
+            with self.subTest(field=field):
+                extra["raw_moves"] = [dict(original, **{field: value})]
+                self.assertCheck(self.run_check(manifest_extra=extra), "raw_file")
+        extra["raw_moves"] = [original, dict(original, old_path=original["new_path"], new_path=original["old_path"])]
+        self.assertCheck(self.run_check(manifest_extra=extra), "migration_chain")
+        extra["raw_moves"] = [original, dict(original, new_path="raw/fork.pdf")]
+        self.assertCheck(self.run_check(manifest_extra=extra), "migration_conflict")
+
+    def test_migration_rejects_outside_path_and_wrong_wiki_identity(self):
+        _, _, _, extra = self.migration_fixture()
+        extra["wiki_moves"][0]["source_id"] = "S999"
+        self.assertCheck(self.run_check(manifest_extra=extra), "wiki_migration_target")
+        extra["raw_moves"][0]["new_path"] = "raw/../../outside.pdf"
+        self.assertCheck(self.run_check(manifest_extra=extra), "check_failed")
+
+    def test_equal_byte_originals_must_not_merge(self):
+        self.source()
+        for name in ("a", "b"):
+            self.add_raw(f"raw/notes/{name}.bin", b"same bytes")
+        originals = self.raw[-2:]
+        for row in originals:
+            (self.root / row["new_path"]).unlink()
+        self.write("raw/notes/c.bin", "same bytes")
+        moves = [{"old_path": r["new_path"], "new_path": "raw/notes/c.bin", "sha256": r["sha256"], "size": r["size"]} for r in originals]
+        self.assertCheck(self.run_check(manifest_extra={"raw_moves": moves}), "migration_merge")
+        # A single move into another independently registered original also merges identities.
+        (self.root / "raw/notes/c.bin").unlink()
+        self.write("raw/notes/b.bin", "same bytes")
+        moves = [dict(moves[0], new_path="raw/notes/b.bin")]
+        self.assertCheck(self.run_check(manifest_extra={"raw_moves": moves}), "migration_merge")
+
+    def test_relation_paths_cannot_double_count_extension_alias(self):
+        row = self.source()
+        row["integrated_topics"] = ["wiki/vision/Overview", "wiki/vision/Overview.md"]
+        self.write("wiki/vision/Overview.md", '---\ntype: topic\ncreated: 2026-10-31\nupdated: 2026-10-31\nsources: []\n---\n# Vision\nMeaningful synthesis.\n' + f'[[{row["wiki_path"]}]]\n')
+        with (self.root / row["wiki_path"]).open("a", encoding="utf-8") as f:
+            f.write("[[wiki/vision/Overview]]\n")
+        self.assertCheck(self.run_check(True), "theme_path")
+
+    def test_taxonomy_and_cross_direction_are_validated(self):
+        row = self.source()
+        self.write("workflows/taxonomy.yaml", "schema_version: 1\ndirections: {}\n")
+        self.assertCheck(self.run_check(), "unknown_direction")
+        page = self.root / row["wiki_path"]
+        page.write_text(page.read_text(encoding="utf-8").replace("type: paper", "type: paper\nrelated_directions: [missing/direction]"), encoding="utf-8")
+        self.assertCheck(self.run_check(), "related_direction")
+        self.write("workflows/taxonomy.yaml", "directions: [unterminated\n")
+        self.assertCheck(self.run_check(), "check_failed")
+
+    def test_body_reference_candidates_exclude_metadata_and_navigation(self):
+        row = self.source()
+        topic = "wiki/vision/Overview.md"
+        header = f'---\ntype: topic\ncreated: 2026-10-31\nupdated: 2026-10-31\nsources: ["[[{row["raw_path"]}]]"]\n---\n# Vision\nMeaningful synthesis.\n'
+        footer = f'\n## 实际来源入口\n[[{row["raw_path"]}]]\n'
+        self.write(topic, header + footer)
+        self.assertEqual([], self.run_check(True)["topic_reference_candidates"])
+        self.write(topic, header + f'Body evidence [[{row["raw_path"]}#page=1]].\n' + footer)
+        report = self.run_check(True)
+        self.assertPass(report)
+        self.assertEqual([{"source_id": row["source_id"], "target": topic}], report["topic_reference_candidates"])
+        self.assertEqual([], row["integrated_topics"])
+
     def test_bad_anchor_and_outside_vault_link(self):
         row = self.source()
         self.write("AGENTS.md", f'[[{row["wiki_path"]}#Missing heading]]\n[Outside](../external.md)\n')
         report = self.run_check(True)
         self.assertCheck(report, "link_anchor")
         self.assertCheck(report, "linked_file")
+
+    def withdrawal_fixture(self):
+        self.source()
+        self.write("maintenance/withdrawal.md", "# Withdrawal\nExplicit user deletion; review retained.\n")
+        self.write("wiki/log.md", "# Log\n[[retired-proposal]]\n")
+        return {"withdrawn_documents": [{
+            "path": "retired-proposal.md", "replacement": "maintenance/withdrawal.md",
+            "date": "2026-11-03", "reason": "Implemented proposal removed",
+            "user_instruction": "Delete the proposal", "size": 8,
+            "sha256": hashlib.sha256(b"proposal").hexdigest()}]}
+
+    def test_withdrawal_resolves_history_only(self):
+        extra = self.withdrawal_fixture()
+        report = self.run_check(manifest_extra=extra)
+        self.assertPass(report)
+        self.assertEqual("documented_withdrawal", report["documented_historical_links"][0]["kind"])
+        self.write("AGENTS.md", "[[retired-proposal]]\n")
+        self.assertCheck(self.run_check(manifest_extra=extra), "link_target")
+
+    def test_withdrawal_requires_absence_and_valid_record(self):
+        extra = self.withdrawal_fixture()
+        for field, value in (("replacement", "maintenance/missing.md"),
+                             ("user_instruction", ""), ("sha256", "invalid")):
+            with self.subTest(field=field):
+                invalid = {"withdrawn_documents": [dict(extra["withdrawn_documents"][0], **{field: value})]}
+                self.assertCheck(self.run_check(manifest_extra=invalid), "withdrawn_document")
+        self.write("retired-proposal.md", "# Still present\n")
+        self.assertCheck(self.run_check(manifest_extra=extra), "withdrawn_document")
+
+    def test_withdrawal_does_not_hide_missing_registered_raw(self):
+        extra = self.withdrawal_fixture()
+        row = self.rows[0]
+        raw = self.root / row["raw_path"]
+        record = dict(extra["withdrawn_documents"][0], path=row["raw_path"],
+                      sha256=row["raw_files"][0]["sha256"], size=raw.stat().st_size)
+        raw.unlink()
+        extra["withdrawn_documents"].append(record)
+        self.assertCheck(self.run_check(manifest_extra=extra), "raw_file")
 
 
 if __name__ == "__main__":

@@ -27,19 +27,24 @@ Agent 生成的下载清单、审查报告、哈希表和检索输出不是 Raw�
 
 普通论文与官方文档的 primary_direction 与目录一致；related_directions 只记录实际交叉关系。一个身份一个来源 ID、一个来源页，其他方向链接过去，不复制 PDF 或正文，不用软链接制造多份来源。来源 ID 不随迁移变化，不回收已分配编号。
 
-| 主方向 | 初始材料归属 |
+| 主方向 | 当前材料归属与边界 |
 | --- | --- |
-| `vision/encoders` | ViT、SoViT、NaViT、AIMv2 |
-| `vision/alignment` | CLIP、SigLIP、SigLIP2 |
-| `architecture/pretraining` | ALBEF、BLIP、CoCa、VLMo、BEiT-v3 |
-| `architecture/connectors` | Flamingo、BLIP-2、InstructBLIP、MiniGPT-4、mPLUG-Owl |
-| `architecture/generation` | MiniGPT-5 |
-| `models/llava` | LLaVA 1、1.5、NeXT，对应原文身份逐一核验 |
-| `models/internvl` | InternVL；同论文内 InternViT 不拆独立来源 |
-| `models/qwen` | 现有 5 个独立材料对象，名称和出处由核验决定 |
-| `models/deepseek` | 现有 4 个独立材料对象；V4.1 两份总结若同一报告则合并学术身份 |
+| `vision/representation` | ViT、SoViT、NaViT、AIMv2、CLIP、SigLIP、SigLIP2；包括成对图文表示与编码组织，训练辅助 decoder 不决定产物类别。 |
+| `architecture/multimodal-backbones` | ALBEF、BLIP、CoCa、VLMo、BEiT-v3、InternVL；保留独立、融合或条件解码接口，不能只按 pretraining 阶段收文。InternViT 与 QLLaMA 不另计论文身份。 |
+| `architecture/visual-interfaces` | Flamingo、BLIP-2；视觉接入已有语言计算的桥接与注入，完整模型、数据配方与多任务评测不自动改变其接口主入口。 |
+| `architecture/generative-interfaces` | MiniGPT-5；模型输出接到非文字生成器的条件接口，caption、坐标文字与训练辅助 decoder 不满足此边界。 |
+| `architecture/language-backbones` | Qwen3.8-Flash-Next；语言序列结构的邻接证据，不由家族名推定多模态验证。 |
+| `training/instruction-adaptation` | InstructBLIP、MiniGPT-4、mPLUG-Owl、LLaVA、LLaVA-1.5；宽口径指令/任务格式/对话输出适配，不要求全参更新 LLM，不抹平数据、阶段与开放参数差异。 |
+| `efficiency/context-compression` | DeepSeek-OCR；视觉文本压缩与恢复的资源折中，当前证据限 OCR/解析，不表示一般上下文推理已验证。 |
+| `models/llava` | LLaVA-NeXT 固定官方说明；初版与1.5通过家族导航链接其训练方向唯一页。 |
+| `models/qwen` | Qwen-VL、Qwen2-VL、Qwen3-VL、Qwen-3.5 固定官方资料；联合多模态系统与配置，语言骨干研究另归架构。 |
+| `models/deepseek` | DeepSeek-VL、DeepSeek-VL2、DeepSeek-V4.1-Flash；联合系统报告，OCR专门压缩问题另归效率。 |
 
-该表规定初始工作对象的主方向，不预先证明其作者、版本或论文身份。新增类别须有实质内容和归属理由，同步词表，不把未确认材料长期堆到“其他”。综述和讲义单列，不强制技术主方向。
+该表是经原文定向核对的导航约定，不是互斥完备的学术本体。实际词值与现有入口由 [[workflows/taxonomy.yaml|词表]]校验。新增类别须有实质材料、边界和归属理由；综述和讲义单列，不强制技术主方向。独立训练方法、数据方法、推理策略、评测协议将来按其实际核心问题启用方向，不因最终训练出 encoder 就一律归视觉。
+
+判定时先核身份/类型，再读贡献、方法、保留接口与主要验证对象，在来源页写明理由及原文定位。具体问题方向优先；联合系统报告在无法用一个具体方法组织主要论证时保留家族目录，必须明确联合改变了哪些轴。家族名不是充分条件，也不需要把多个家族统一迁到泛化的 integrated-systems。跨方向家族与组件导航见 [[wiki/models/Overview#家族与组件导航|模型总览]]。
+
+边界判例：SoViT 与 SigLIP 按视觉对象路由，但效率/损失是主要贡献；BLIP 的 MED 与 CapFilt 并列重要；InternVL 按可复用多模态主体路由，保留 Chat 适配线。Flamingo 的 Resampler、gated cross-attention 足以组织接口论证，保留原主归属意图；LLaVA-1.5 的多轴改动共同研究视觉指令配方，归训练。MiniGPT-4 的详细描述/对话输出适配不等于 LLaVA 的 LLM 更新算法。逐项证据、替代选择和本次取舍见 [[maintenance/research/2026-10-31-architecture-review|架构审核记录]]；不得把这些导航决定写成“原文证明旧分类错误”。
 
 主题词表 foundations / vision / architecture / training / efficiency / reasoning / evaluation / models 与来源主目录分工不同。Overview 给地图和短摘要；子方向有独立内容且集中页妨碍定位时，搬移到明确主题页，更新入链和摘要，不保留平行长正文。不因某主题名在词表中就建空页。
 
@@ -60,6 +65,7 @@ Agent 生成的下载清单、审查报告、哈希表和检索输出不是 Raw�
 3. 原件移动前后核对 SHA-256 和大小；目标存在则核验冲突，不能覆盖。源文件字节不变化、不转码、不去重删除。所有原始用户输入应能在映射中追踪。
 4. 同步可维护 Wiki、frontmatter、索引、当前规则实例和展示引用，保留 PDF 页码、标题/块锚点与表格转义。不依赖应用自动改链。
 5. 原件内部引用与旧日志保持原样；迁移记录保存映射。当前 Wiki 链新路径，历史旧路径仅在映射、目标、哈希同时有效时作为已说明例外，不复制旧路径掩盖断链。
+   多跳迁移使用 `raw_moves` 保存不可变原件各跳，`wiki_moves` 保存来源 ID、旧新路径及迁移前后检查点哈希。Raw 最终集合按链终点去重验收，不以迁移记录条数充当文件数。Wiki 后续正文可改，历史路径由同一来源 ID 的当前唯一页验证；仅 `historical_documents` 明列且哈希未变的维护文档和追加日志可追溯，当前内容不得沿旧路径免责，追溯后仍检查页码/锚点。
 6. 递归验收文件数/字节/哈希、工作对象数、去重学术身份数和其他来源数；分别报告，任何差额有逐项解释。检查原件完整、来源唯一、镜像归属、状态、索引覆盖、链接/锚点、空目录与嵌套副本。
 7. 主 Agent 审核 diff 和明确暂存范围，按用户授权本地提交；不自动 push。规则落盘不等于迁移完成，结构检查不等于阅读验收，Obsidian 未实测须明确。
 

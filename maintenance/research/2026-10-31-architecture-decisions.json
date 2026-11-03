@@ -1,0 +1,313 @@
+{
+  "date": "2026-10-31",
+  "scope": "Main-agent decisions after source/evidence review; no source identity or reading-status change.",
+  "sources": [
+    {
+      "source_id": "S001",
+      "slug": "Efficient-MLLM-Survey",
+      "old_direction": null,
+      "new_direction": null,
+      "moved": false
+    },
+    {
+      "source_id": "S002",
+      "slug": "Multimodal-Reasoning-Survey",
+      "old_direction": null,
+      "new_direction": null,
+      "moved": false
+    },
+    {
+      "source_id": "S003",
+      "slug": "VLM-2",
+      "old_direction": null,
+      "new_direction": null,
+      "moved": false
+    },
+    {
+      "source_id": "S004",
+      "slug": "ViT",
+      "old_direction": "vision/encoders",
+      "new_direction": "vision/representation",
+      "moved": true,
+      "reason": "patch Transformer 的主要复用对象是视觉编码与迁移表示；分类任务是其验证方式。",
+      "page": 3,
+      "locator": "§3.1/Fig.1"
+    },
+    {
+      "source_id": "S005",
+      "slug": "SoViT",
+      "old_direction": "vision/encoders",
+      "new_direction": "vision/representation",
+      "moved": true,
+      "reason": "以视觉模型形状为主入口；固定计算下的 shape 优化是主要贡献，效率主题继续承担强入口，不能将其降为附带收益。",
+      "page": 2,
+      "locator": "pp.2–4，贡献/§3"
+    },
+    {
+      "source_id": "S006",
+      "slug": "NaViT",
+      "old_direction": "vision/encoders",
+      "new_direction": "vision/representation",
+      "moved": true,
+      "reason": "原生分辨率、packing、位置与样本隔离共同改变视觉编码组织；训练组织和资源折中仍在主题页解释。",
+      "page": 2,
+      "locator": "pp.2–4，Fig.2/§2"
+    },
+    {
+      "source_id": "S007",
+      "slug": "AIMv2",
+      "old_direction": "vision/encoders",
+      "new_direction": "vision/representation",
+      "moved": true,
+      "reason": "目标是强视觉 encoder；多模态 decoder 服务预训练，不因此将来源主归图像生成接口。",
+      "page": 2,
+      "locator": "pp.2–3，§2.1–2.2/Fig.1"
+    },
+    {
+      "source_id": "S008",
+      "slug": "CLIP",
+      "old_direction": "vision/alignment",
+      "new_direction": "vision/representation",
+      "moved": true,
+      "reason": "包含视觉与文本两侧的成对表示及文字分类接口，不能将 representation 理解成只有视觉塔。",
+      "page": 2,
+      "locator": "pp.2–4，Fig.1/§2"
+    },
+    {
+      "source_id": "S009",
+      "slug": "SigLIP",
+      "old_direction": "vision/alignment",
+      "new_direction": "vision/representation",
+      "moved": true,
+      "reason": "按图文表示对象归类；逐对损失和分块实现是主要方法，训练与效率解释保留，不推广为所有 loss 论文都归视觉。",
+      "page": 2,
+      "locator": "pp.1–3，Algorithm1/§3"
+    },
+    {
+      "source_id": "S010",
+      "slug": "SigLIP2",
+      "old_direction": "vision/alignment",
+      "new_direction": "vision/representation",
+      "moved": true,
+      "reason": "全局、局部与密集表示是复用对象；辅助 decoder 仅服务表示学习且不在发布模型中。",
+      "page": 3,
+      "locator": "§2.2–2.3"
+    },
+    {
+      "source_id": "S011",
+      "slug": "ALBEF",
+      "old_direction": "architecture/pretraining",
+      "new_direction": "architecture/multimodal-backbones",
+      "moved": true,
+      "reason": "保留独立对齐与融合编码接口；MoD/EMA 的训练贡献仍由训练主题解释。",
+      "page": 3,
+      "locator": "pp.3–4，Fig.1/§3"
+    },
+    {
+      "source_id": "S012",
+      "slug": "BLIP",
+      "old_direction": "architecture/pretraining",
+      "new_direction": "architecture/multimodal-backbones",
+      "moved": true,
+      "reason": "以 MED 的独立、条件编码及条件解码接口为主入口；CapFilt 是并列主要贡献，不能因目录选择而降格。",
+      "page": 2,
+      "locator": "pp.2–4，Figs.2–3/§3"
+    },
+    {
+      "source_id": "S013",
+      "slug": "CoCa",
+      "old_direction": "architecture/pretraining",
+      "new_direction": "architecture/multimodal-backbones",
+      "moved": true,
+      "reason": "独立文本表示与视觉条件解码同时保留；按多模态骨干组织，避免把双塔、融合和生成当互斥身份。",
+      "page": 4,
+      "locator": "pp.4–5，Fig.2/§3.2"
+    },
+    {
+      "source_id": "S014",
+      "slug": "VLMo",
+      "old_direction": "architecture/pretraining",
+      "new_direction": "architecture/multimodal-backbones",
+      "moved": true,
+      "reason": "共享 attention 与模态专家支持多种运行模式；共享骨干不表示全部参数共享。",
+      "page": 3,
+      "locator": "pp.3–5，Figs.1–3/§3"
+    },
+    {
+      "source_id": "S015",
+      "slug": "BEiT-v3",
+      "old_direction": "architecture/pretraining",
+      "new_direction": "architecture/multimodal-backbones",
+      "moved": true,
+      "reason": "Multiway 骨干可经任务适配用于独立、融合与条件接口；不宣称未经适配的一套权重直接完成全部任务。",
+      "page": 3,
+      "locator": "pp.3–4，Figs.2–3/§2"
+    },
+    {
+      "source_id": "S016",
+      "slug": "Flamingo",
+      "old_direction": "architecture/connectors",
+      "new_direction": "architecture/visual-interfaces",
+      "moved": true,
+      "reason": "保留视觉接入主归属：Resampler 与插入冻结 LM 的 gated cross-attention 已能组织核心接口论证。交错数据、few-shot 协议与模型家族共同贡献保留；不因完整系统存在而迁入系统目录。",
+      "page": 4,
+      "locator": "pp.4–6，贡献/§2/Figs.3–4"
+    },
+    {
+      "source_id": "S017",
+      "slug": "BLIP-2",
+      "old_direction": "architecture/connectors",
+      "new_direction": "architecture/visual-interfaces",
+      "moved": true,
+      "reason": "Q-Former 桥接冻结视觉与语言骨干是核心复用接口；两阶段预训练是桥接方法的核心组成，不同 LLM 接法保留为具体实现与验证条件。",
+      "page": 3,
+      "locator": "pp.3–4，§3/Figs.2–3"
+    },
+    {
+      "source_id": "S018",
+      "slug": "InstructBLIP",
+      "old_direction": "architecture/connectors",
+      "new_direction": "training/instruction-adaptation",
+      "moved": true,
+      "reason": "主要研究视觉指令适配及未见任务泛化；指令条件化视觉提取与采样是实质方法，冻结 LLM 不改变其训练研究身份。",
+      "page": 3,
+      "locator": "pp.3–5，贡献/§2/Fig.3"
+    },
+    {
+      "source_id": "S019",
+      "slug": "MiniGPT-4",
+      "old_direction": "architecture/connectors",
+      "new_direction": "training/instruction-adaptation",
+      "moved": true,
+      "reason": "归宽口径的指令/对话输出适配：复用冻结视觉桥与 Vicuna，仅训练线性投影，并用高质量详细描述改善输出。与更新 LLM 的 LLaVA 不视作同一算法。",
+      "page": 4,
+      "locator": "pp.4–5，§3.1–3.3；Fig.1见p.2"
+    },
+    {
+      "source_id": "S020",
+      "slug": "mPLUG-Owl",
+      "old_direction": "architecture/connectors",
+      "new_direction": "training/instruction-adaptation",
+      "moved": true,
+      "reason": "模块化训练、视觉侧开放参数与联合指令适配是主线；abstractor 仍在架构主题解释，第二阶段冻结描述的原文冲突不因迁移消失。",
+      "page": 4,
+      "locator": "pp.3–5，§3/Figs.1–2"
+    },
+    {
+      "source_id": "S021",
+      "slug": "MiniGPT-5",
+      "old_direction": "architecture/generation",
+      "new_direction": "architecture/generative-interfaces",
+      "moved": true,
+      "reason": "核心新增运行接口是 vokens/mapper 将 LLM 输出接到图像生成条件；输入图像特征、caption 和输出图像条件分开。",
+      "page": 3,
+      "locator": "pp.3–5，§3/Fig.2"
+    },
+    {
+      "source_id": "S022",
+      "slug": "LLaVA",
+      "old_direction": "models/llava",
+      "new_direction": "training/instruction-adaptation",
+      "moved": true,
+      "reason": "视觉指令数据构造与训练是主要问题；轻量投影用于开展 data-centric experiments，保留模型与评测贡献。",
+      "page": 4,
+      "locator": "pp.3–5，§3–4/Fig.1"
+    },
+    {
+      "source_id": "S023",
+      "slug": "LLaVA-1.5",
+      "old_direction": "models/llava",
+      "new_direction": "training/instruction-adaptation",
+      "moved": true,
+      "reason": "数据、响应格式、输入与 MLP 改动共同回答视觉指令适配配方问题，按训练入口组织；承认联合系统也是合理候选，不把联合提升归给单因素。",
+      "page": 3,
+      "locator": "pp.1–4，§3/Tables1–2"
+    },
+    {
+      "source_id": "S024",
+      "slug": "LLaVA-NeXT",
+      "old_direction": "models/llava",
+      "new_direction": "models/llava",
+      "moved": false
+    },
+    {
+      "source_id": "S025",
+      "slug": "InternVL",
+      "old_direction": "models/internvl",
+      "new_direction": "architecture/multimodal-backbones",
+      "moved": true,
+      "reason": "InternViT 与 QLLaMA 保留独立表示、对齐和条件生成接口，按多模态骨干组织；Chat/SFT 的系统线仍有家族入口，InternViT 不另计论文身份。",
+      "page": 4,
+      "locator": "pp.4–6，§3/Figs.3–4"
+    },
+    {
+      "source_id": "S026",
+      "slug": "Qwen-VL",
+      "old_direction": "models/qwen",
+      "new_direction": "models/qwen",
+      "moved": false
+    },
+    {
+      "source_id": "S027",
+      "slug": "Qwen2-VL",
+      "old_direction": "models/qwen",
+      "new_direction": "models/qwen",
+      "moved": false
+    },
+    {
+      "source_id": "S028",
+      "slug": "Qwen3-VL",
+      "old_direction": "models/qwen",
+      "new_direction": "models/qwen",
+      "moved": false
+    },
+    {
+      "source_id": "S029",
+      "slug": "Qwen-3.5",
+      "old_direction": "models/qwen",
+      "new_direction": "models/qwen",
+      "moved": false
+    },
+    {
+      "source_id": "S030",
+      "slug": "Qwen3.8-Flash-Next",
+      "old_direction": "models/qwen",
+      "new_direction": "architecture/language-backbones",
+      "moved": true,
+      "reason": "报告组织语言序列结构、成本与训练稳定性，作为 MLLM 邻接机制证据；家族名不构成视觉验证。",
+      "page": 1,
+      "locator": "pp.1–3、22，§1–2/§4–5"
+    },
+    {
+      "source_id": "S031",
+      "slug": "DeepSeek-VL",
+      "old_direction": "models/deepseek",
+      "new_direction": "models/deepseek",
+      "moved": false
+    },
+    {
+      "source_id": "S032",
+      "slug": "DeepSeek-VL2",
+      "old_direction": "models/deepseek",
+      "new_direction": "models/deepseek",
+      "moved": false
+    },
+    {
+      "source_id": "S033",
+      "slug": "DeepSeek-OCR",
+      "old_direction": "models/deepseek",
+      "new_direction": "efficiency/context-compression",
+      "moved": true,
+      "reason": "主问题是视觉文本压缩与恢复的资源折中；直接证据限 OCR/文档解析，不能由 context-compression 目录推成一般长上下文推理已验证。",
+      "page": 3,
+      "locator": "§1；p.19 §6 明确限制"
+    },
+    {
+      "source_id": "S034",
+      "slug": "DeepSeek-V4.1-Flash",
+      "old_direction": "models/deepseek",
+      "new_direction": "models/deepseek",
+      "moved": false
+    }
+  ]
+}

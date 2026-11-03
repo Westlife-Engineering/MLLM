@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-03",
+  "files": [],
+  "withdrawn_documents": [
+    {
+      "path": "MLLM知识库架构调整方案.md",
+      "sha256": "dc96e6d097024186bfea44cb9ebd707f49651ad231f563d7b5b4363b24b1c355",
+      "size": 6995,
+      "date": "2026-11-03",
+      "reason": "架构调整已经实施，用户明确要求删除方案及其 Raw 原始提案。",
+      "user_instruction": "好的，那就把这个文件删掉吧，包括raw里面的，反正已经修改过了。然后提交git",
+      "replacement": "maintenance/research/2026-10-31-architecture-review.md"
+    },
+    {
+      "path": "raw/articles/2026-10-31-MLLM知识库架构调整方案-原始提案.md",
+      "sha256": "bd0ed4665fa9a65d093e41f5370489f995e8188ad2313dee2b5213b1ce98b539",
+      "size": 56001,
+      "date": "2026-11-03",
+      "reason": "架构调整已经实施，用户明确要求删除方案及其 Raw 原始提案。",
+      "user_instruction": "好的，那就把这个文件删掉吧，包括raw里面的，反正已经修改过了。然后提交git",
+      "replacement": "maintenance/research/2026-10-31-architecture-review.md"
+    }
+  ],
+  "scope": "Explicit user deletion of these two proposal documents only. Historical links may resolve to the retained review; no Raw inventory or source evidence checks are exempted.",
+  "raw_inventory_before": 289,
+  "raw_inventory_after": 288,
+  "raw_bytes_after": 320669809,
+  "review": "maintenance/research/2026-10-31-architecture-review.md"
+}

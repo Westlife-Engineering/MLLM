@@ -9,8 +9,8 @@ ingest_status: complete
 sources:
   - "[[raw/papers/models/deepseek/DeepSeek-VL.pdf]]"
 related_directions:
-  - vision/encoders
-  - architecture/connectors
+  - vision/representation
+  - architecture/visual-interfaces
 ---
 # DeepSeek-VL：在固定视觉序列内合并语义和细节，并控制语言遗忘
 

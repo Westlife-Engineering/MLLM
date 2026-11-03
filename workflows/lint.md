@@ -12,6 +12,12 @@ python -B scripts/check_vault.py
 
 上述默认模式是严格结构检查（strict）。脚本向标准输出返回 JSON，包含 `errors`、`warnings`、计数、已登记历史断链及 `passed`；无错误退出码为 0，有错误为 1。依赖缺失或程序无法启动也可能非零退出，不能把缺少有效 JSON 报告当作通过。
 
+检查器还读取 [[workflows/taxonomy.yaml|方向词表]]，核对主/交叉方向与导航入口；沿 `raw_moves` 校验多跳字节链，将 `wiki_moves` 与 Raw 清单分开。只有显式冻结并哈希吻合的历史维护文档及追加日志可追溯旧链接，当前 Wiki/规则继续严格使用现路径。历史 Wiki 追溯核同一来源 ID 的当前唯一页，检查点哈希不冻结其未来正文；解析后继续检查锚点/PDF页码。
+
+用户明确撤下的文档可在迁移清单的 `withdrawn_documents` 登记原路径、删除前大小/哈希、日期、授权原话、原因和保留的维护入口。检查器仅允许追加日志与已冻结历史文档沿该登记追溯；当前链接仍严格。该登记不豁免 Raw 集合或来源原件检查；用户明确删除本轮尚未提交的新原件时，原归档条目改记撤下历史，不再计入当前原件集合。
+
+`topic_reference_candidates` 是去掉 frontmatter/页末入口后的正文 Raw 引用与 registry 登记差集，供人工判断；它不进入 errors/warnings，不自动补实质关系。`registered_integrated_relations` 是已登记数，`manifest_raw_records` 是原件登记条数，`raw_path_moves` 是路径移动条数，均不能互相代替。检查器不判定关系贡献深度或归属理由的学术正确性。
+
 建设过程中可运行：
 
 ```text

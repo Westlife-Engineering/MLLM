@@ -75,8 +75,8 @@ p.5 的 Multiway Transformer 包含视觉 V-FFN、语言 L-FFN 与视觉语言 V
 | 任务 | 图中的信息组织 | 学习信号 |
 | --- | --- | --- |
 | Image-Text Contrastive Learning | 图像和文字分别编码 | 比较图像表示与文本表示是否匹配 |
-| Image-Text Matching | 图文拼接后从底层 self-attention 交互；低层分模态 FFN、顶层 VL-FFN | 判断配对是否匹配，图中还标出 hard negative mining；讲义图见 [[raw/lectures/VLM-2.pdf#page=5\|p.5]]，原论文补核见 [[raw/papers/architecture/pretraining/VLMo.pdf#page=4\|S014 · p.4–5 · §3.1–3.2 / Fig.3]] |
-| Masked Language Modeling | 遮蔽部分文本；联合图文从底层 attention 交互以预测被遮蔽词 | 依据可见文字与图像恢复被遮挡词；讲义图见 [[raw/lectures/VLM-2.pdf#page=5\|p.5]]，原论文补核见 [[raw/papers/architecture/pretraining/VLMo.pdf#page=16\|S014 · p.16 · Appendix A]] |
+| Image-Text Matching | 图文拼接后从底层 self-attention 交互；低层分模态 FFN、顶层 VL-FFN | 判断配对是否匹配，图中还标出 hard negative mining；讲义图见 [[raw/lectures/VLM-2.pdf#page=5\|p.5]]，原论文补核见 [[raw/papers/architecture/multimodal-backbones/VLMo.pdf#page=4\|S014 · p.4–5 · §3.1–3.2 / Fig.3]] |
+| Masked Language Modeling | 遮蔽部分文本；联合图文从底层 attention 交互以预测被遮蔽词 | 依据可见文字与图像恢复被遮挡词；讲义图见 [[raw/lectures/VLM-2.pdf#page=5\|p.5]]，原论文补核见 [[raw/papers/architecture/multimodal-backbones/VLMo.pdf#page=16\|S014 · p.16 · Appendix A]] |
 
 **三阶段训练要看冻结状态。** p.6 先用纯图像训练视觉专家与共享注意力；再冻结二者，用纯文本 MLM 训练语言专家；最后用图文对训练整体模型。不能概括成“从一开始所有参数都用图文共同训练”。
 
@@ -382,7 +382,7 @@ p.86 总图保留图像/文本编码器的 sigmoid 图文目标，加上自回�
 | TIPS | 并列 contrastive、self-distillation、masking loss；student 输入 masked patches，teacher 提供目标 | 为局部/被遮挡位置添加密集预测约束 |
 | MAP head | multi-head pooling attention 汇聚表示，用于图文匹配分支 | pooling 的全局输出与局部特征是不同使用层次 |
 
-**图例不宜过度解释。** 总图把 sigmoid / LocCa 标为 100%，SILC/TIPS 标为 20%；讲义没有就近解释其精确训练日程含义，本页不直接当作 loss 系数或数据配比。 原论文另已由[[wiki/papers/vision/alignment/SigLIP2|S010 SigLIP2]]核清：固定分辨率主配方在最后20%训练启用这两项目标；这是独立原论文补充，不是讲义已解释的内容。p.87 正文把 LocCa 拼为 LocLa，页脚及图中为 LocCa；这里按页脚题名统一，并保留原件拼写问题。[[raw/lectures/VLM-2.pdf#page=87|p.87 · LocCa]]
+**图例不宜过度解释。** 总图把 sigmoid / LocCa 标为 100%，SILC/TIPS 标为 20%；讲义没有就近解释其精确训练日程含义，本页不直接当作 loss 系数或数据配比。 原论文另已由[[wiki/papers/vision/representation/SigLIP2|S010 SigLIP2]]核清：固定分辨率主配方在最后20%训练启用这两项目标；这是独立原论文补充，不是讲义已解释的内容。p.87 正文把 LocCa 拼为 LocLa，页脚及图中为 LocCa；这里按页脚题名统一，并保留原件拼写问题。[[raw/lectures/VLM-2.pdf#page=87|p.87 · LocCa]]
 
 **数据与计算条件。** p.86 列 WebLI 的 10B images、12B alt-texts、109 languages，90% English / 10% non-English；batch size 32k、20k warmup、累计 40B examples、2048 TPUv5e chips。10B 为数据集图像规模，40B 为训练累计量，不能相加为不同原始图像数。本页只记录课程条件，没有核验网页来源、筛选或各变体训练日程。
 
@@ -430,3 +430,14 @@ p.91 展望包括扩展模态、跨模态推理、人机协作、将 GPT 类预�
 - [[wiki/architecture/Overview|架构：分开读取权重、可见性、路由与输出接口]]。
 - [[wiki/reasoning/Overview|推理与交互：增加计算、改变观察、控制环境怎样分别起作用？]]。
 - [[wiki/models/Overview|模型演进：按机制变化轴进入家族，按证据条件读结果]]。
+
+- [[wiki/architecture/Visibility-and-Connections]]：讲义 p.74的CogVLM图用于说明专门参数与联合attention可共存；只确认讲义转述，未新增CogVLM原论文阅读。
+
+## 本轮定向核验的覆盖与使用
+
+2026-10-31 架构审核只补核下列页段；原有完整阅读范围不变，不把覆盖自动折算成实质使用，也不增加被引论文的阅读身份。
+
+| 原文页段 | 本轮核到的内容 | 现有落点 | 关系与证据身份 |
+| --- | --- | --- | --- |
+| [[raw/lectures/VLM-2.pdf#page=74\|PDF 74，CogVLM图；75，训练说明]] | 专门参数与联合attention可共存 | [[wiki/architecture/Visibility-and-Connections]] | 实质反例；补登记；讲义转述 |
+| [[raw/lectures/VLM-2.pdf#page=81\|PDF 81，Agentic RL图]] | 观察/动作、环境与推理/训练服务 | [[wiki/reasoning/Overview]] | 已有实质使用；讲义转述，不是实际执行或原系统复现 |

@@ -10,7 +10,7 @@ sources:
 reading_status: read
 ingest_status: complete
 related_directions:
-  - architecture/connectors
+  - architecture/visual-interfaces
 ---
 
 # Qwen3.5-397B-A17B：固定模型卡与配置能确认什么

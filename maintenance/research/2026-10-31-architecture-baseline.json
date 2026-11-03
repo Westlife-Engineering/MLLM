@@ -1,0 +1,1530 @@
+{
+  "date": "2026-10-31",
+  "git_head": "1f4705869bef5f3d09cb5a063e0efe60e72b2ea9",
+  "initial_user_change": "Only the untracked original architecture proposal; tracked tree was clean before this task.",
+  "raw_files": [
+    {
+      "path": "raw/articles/llm-wiki.md",
+      "sha256": "dc3efe98ae62f23dd08acad13aba2e95287beb20b6bec2f4af0423557fe37401",
+      "size": 11985
+    },
+    {
+      "path": "raw/lectures/VLM-2.pdf",
+      "sha256": "a81bcec1ed8f630632c2abccbba88bf3ddeaaab95f47aaa5fdf68596233b1a64",
+      "size": 14833206
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/DeepSeek-OCR总结.tex",
+      "sha256": "9e66575795a426773f9ed32e3070157f5619d228fb917efdb0026a66eef845e1",
+      "size": 12670
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/DeepSeek-V4.1-Flash架构总结.tex",
+      "sha256": "ac89d48f5659c76880c41a20c808f22d6afdf26399b103c3da63e2f34235541e",
+      "size": 65629
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/DeepSeek-V4.1-Flash训练总结.tex",
+      "sha256": "98fd8f4d3cd2ab73436f6e81523faf63ca9ad117b9e1597a7f10afd9e9c990f0",
+      "size": 53336
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/DeepSeek-VL2总结.tex",
+      "sha256": "515f379eaa40a6130b32bc79f393319ce9506c8fb9398bd970e5f476f3ce79af",
+      "size": 9444
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/DeepSeek-VL总结.tex",
+      "sha256": "0952652e3a6660dd04ff150d17c0f3d44619fa5c8f3c36139ccd3b266e4aa58b",
+      "size": 8028
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-OCR/fig-16.png",
+      "sha256": "19abccf0621a447bccf79f1fb3083d341ce319b8ae950566c7cc6df2ca45282f",
+      "size": 127669
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-OCR/fig-19.png",
+      "sha256": "eb2a392af7352ed3b4add03c9c8dd304aef99f740b7284afc769009678969282",
+      "size": 94469
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-OCR/fig-23.png",
+      "sha256": "5bd8c13b0520e03d7ee2af8bec33b982b0fe793c72b8350ab2961a8df0f84284",
+      "size": 190063
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-OCR/fig-28.png",
+      "sha256": "56d59e1f25c9933903c25f1c7b70553dd4fca46802d918f2f2d53c654aa71474",
+      "size": 139207
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-OCR/fig-30.png",
+      "sha256": "46a3c16e9d74badae163fdc80034483f6647dcb5308fb481bd26c2dd51a44e1f",
+      "size": 152499
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-OCR/fig-73.png",
+      "sha256": "de4d5db4b618f090aca3de1edeeeb8bd17f7e9112385d488564e85d70d9be784",
+      "size": 608514
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-103.png",
+      "sha256": "527ad47768ffe676d48166fa760cf66744c92d0d65194f3d616e7bceee4ab653",
+      "size": 105715
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-119.png",
+      "sha256": "7c311b8f0b45f7c99f7f01fbc7349c0829774ad4e4d3ea4ee16925ef5fb7acc1",
+      "size": 173158
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-171.png",
+      "sha256": "c0db3196ebd6e9bf88f4fb5a6f609253905999a324091b6061afd8e713111f58",
+      "size": 184364
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-210.png",
+      "sha256": "2cc0d9d4c09432e5deedf4108cba8f897136cf5c06b2f3b29741a8a1b7506de6",
+      "size": 96310
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-212.png",
+      "sha256": "8653a35d20ab9e9fb0d822c574cc2821e2b7bd9ea23898689d2921bcb4fdb3c7",
+      "size": 59633
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-215.png",
+      "sha256": "622affc095ec285520803aa700204fa2562d13d73d182bca3641b21fb5b48690",
+      "size": 83828
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-217.png",
+      "sha256": "80cb299bc42651ed771a07e94f32919f3d65947613881b4cec5bb795d8680d09",
+      "size": 37893
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-24.png",
+      "sha256": "66d11ea091493aa7da6c7d89b710be8e59d564aef566edc1c5f8cea088c8d0a4",
+      "size": 181222
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-289.png",
+      "sha256": "4b16c6280936ef09ce6fd1208ca29a7930f127db403326b4747182b5be750c03",
+      "size": 100005
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-291.png",
+      "sha256": "763791b54079acecedebca1ec7bd7727fc2198b9819cd810fa14091359791e68",
+      "size": 52954
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-325.png",
+      "sha256": "84183f0d3b632e5020068612f1bc346884ebe8b5b516f2b1c663ed172cca93a6",
+      "size": 428602
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash架构/fig-329.png",
+      "sha256": "3f361f3bcb9454200d4e1280a0872a35120dfc944147cb17582cc07afb093de5",
+      "size": 114654
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcn0UQ2wnqKqcgZEZjDapCJVf.png",
+      "sha256": "59cc08ce274cfa122ce6bafb2a37ae15b2022e6487d1656161bd6d54da5afa20",
+      "size": 131675
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnfl5B74H7tYPqxkrVhkVlHf.png",
+      "sha256": "1ebaf08f9049406c2b68424b5efcde8d4977758a2832bd39aea921076b1b6385",
+      "size": 102518
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnie6JAV9yxPBFsV6nWKF1gc.png",
+      "sha256": "7d418b13d9e1a9294ad91a11b65e6bc324fb9020862edae40b3d795489239187",
+      "size": 160357
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnIONKLFFiZtMjJj8lfMgQ7e.png",
+      "sha256": "474ed7fca9490dc9131d1841e8da30ee84fbc8c37adf62650cd2c93a36bc902a",
+      "size": 86825
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnJdwQOb9KSy666yhn4IZpYj.png",
+      "sha256": "02802e2c2954e736d0d2d67c17c5f2f2c8c1159e5cc4794a570c00978df7446a",
+      "size": 167190
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnJypV1UxZN0CFuJIGrXrzsh.png",
+      "sha256": "86f395de5f505e7c8e26a70e96df43fae9813ab540e9b91aaa0ee056f439e4b6",
+      "size": 105547
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnklTfSWN9Gk2ZkUlqZoEu2c.png",
+      "sha256": "18e067f3f7614db7cd0f89bdfcd42ae476be2bc37db6fd3a9f7e907b37dbc94c",
+      "size": 105179
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnKw3pfRgEmuWvNIhgEOh0Bb.png",
+      "sha256": "43251f626a3e932a0d80e53ba7f2469f3894c85c4cfc6ad54fe742524b3bfb44",
+      "size": 60590
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnPWi3YSFM4A7OkSiCkOQgxc.png",
+      "sha256": "229853af9c1aa1407d7f1dd2df7a74e27e01cd23fe7116798cb0895ad7c7ca31",
+      "size": 104582
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnq7t2JnGMTEGyCUeTOsXckg.png",
+      "sha256": "70c488d24e287dc748927428ad96c3e8bcd55efff789d7623d4065601f8aed79",
+      "size": 108667
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnSaOYnySZWOvJZaFUdzYA7b.png",
+      "sha256": "a8776fcf75687516832cad288055c2af9ac0fe52f81416a6bf1620e3c0d4bfca",
+      "size": 249103
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnU8AQtDdCA7IGXGRyMJ759f.png",
+      "sha256": "d45f9fd7da5f12fc4df3aaf2c7beae969069543986df3da0f5d4b6507a3f2ae5",
+      "size": 197665
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnvT9wMYqe4uE2LLgOx9sNqf.png",
+      "sha256": "02134b186daced7c4452aff2e6d10af348c3f47337a5c1b1d2c9c1b5e21ff14e",
+      "size": 233140
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/doxcnXxGyGkCckrux3ZvCAsHGPe.png",
+      "sha256": "2af61f2f39701ffff7e51ba74aea13445dc0894b56102618e414436911185af9",
+      "size": 219113
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-V4.1-Flash训练/pipeline-whiteboard.png",
+      "sha256": "21a9d0e63afe651496a831b1dbc5575fd40f3795da8b8a1bab3ddfdbb828929d",
+      "size": 11963
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL/fig-01.png",
+      "sha256": "ff4a478f28ba8f5c0f594a94236873a3103022c5a075011a5224c6190db770e0",
+      "size": 420872
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL/fig-02.png",
+      "sha256": "3090a88735d8aa910afddfff75783bb113f1b20bfa622e5f995abe4b347d637b",
+      "size": 191104
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL/fig-03.png",
+      "sha256": "23e57a7bf5315be2a0cb5ad77bd3a3822d45d785140a8dc476206d52a6f575f2",
+      "size": 8736
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL/fig-04.png",
+      "sha256": "d81c252e558b54ab2671a9aa582ec778c2e0b0f0bd3b9dd2778eaed7aa3813e3",
+      "size": 82887
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL2/fig-01.png",
+      "sha256": "19d5d0b6acef3a3e1cb403e50a9a5071790bd6b0cb52f1a1d54f55fb42e6d2fb",
+      "size": 27819
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL2/fig-02.png",
+      "sha256": "9af589f9683fb5d949ea3877e777a0990fa45a1054a1eb6b86d0d20457d84eef",
+      "size": 499022
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL2/fig-03.png",
+      "sha256": "f168f962c381f37f9d06738ad4b0902c4a17ba030363d33c76c61e335d69a976",
+      "size": 39611
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL2/fig-04.png",
+      "sha256": "2fbdb4085a05f4f924e774835a21d268a893b97b5f98330ef915c65e43d48388",
+      "size": 158500
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL2/fig-05.png",
+      "sha256": "38ba5fbbe304745562d96e1fd75dcf0efe1befcec9f691c7d8be28325356422f",
+      "size": 333685
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/images/DeepSeek-VL2/fig-06.png",
+      "sha256": "41fcd06f6824df3712d85810c9db555aef0d699e48f62b16f1fc2b9ba263c386",
+      "size": 145231
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-OCR总结.pdf",
+      "sha256": "f07f62b5eee0113a85db433950f38446cbe9eb4df6d4b397ecd6e9b16541ac36",
+      "size": 1428822
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-V4.1-Flash架构总结.pdf",
+      "sha256": "5d5a6b14878ccb4f3e69025f2367b6ff8bdd63d03d342f572e006d6720dac4b1",
+      "size": 2106388
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-V4.1-Flash训练总结.pdf",
+      "sha256": "a2a01777faf6028dac6e7ac4f25fd5472d5657c03dfc0c030bde197d9823cc30",
+      "size": 2418367
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-VL2总结.pdf",
+      "sha256": "bd700b52892963def4dc9f98cb8efeb4e039595ad054e4a3341d6aebd0a64e3d",
+      "size": 1326079
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/Latex_out/DeepSeek-VL总结.pdf",
+      "sha256": "fa06d7346a364d31ec029c8b27d3c1cac91625bab884be9e5f8e67f1c4f480d7",
+      "size": 873169
+    },
+    {
+      "path": "raw/notes/MLLM实例/Deepseek/复刻说明.md",
+      "sha256": "2d8ab23bae5fc6b2cd5235c989c8ca66aa1391f6c0f713462cd0bdd1fe37e8d8",
+      "size": 3506
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-3.5/fig-01.png",
+      "sha256": "47c87a2d95879ab7809a2bbed000523f0a7029c84af36acb791489fab2f814be",
+      "size": 351685
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-3.5/fig-02.png",
+      "sha256": "29e73ccd0b0d9060be3ce76dab32788f91636052f5119bfbcd8d712ea5655d83",
+      "size": 177345
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-3.5/fig-03.png",
+      "sha256": "dccb7a08ad3ba1a4eb61c79ae825f3bbfe8204c7a29a3954209b073a9d6fe412",
+      "size": 32234
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-3.5/fig-04.png",
+      "sha256": "56bf7f5b523187e903cca315b3a71ff82a4fe64e4e6bc18c3864e5344eabeee0",
+      "size": 202975
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-3.5/fig-05.png",
+      "sha256": "57ce6696b456a4cb59dbcc76aefbe2c5ae573792d9d1cba1751aa493f223c491",
+      "size": 57832
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-3.5/fig-06.png",
+      "sha256": "c60b5d874116e6d12fbcc381be4276143d74fd3eabb69a6a3ce929f1897d0072",
+      "size": 74056
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-VL/fig-01.png",
+      "sha256": "bdec24cccc7e24fce4d7c70ef5cb1d92b1c7013a37814ceaf10bbe3112f24732",
+      "size": 35263
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-VL/fig-02.png",
+      "sha256": "7960eff78c7717df985d08a52cc57f6423065c632e6453c6358fefeaf3083837",
+      "size": 27519
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-VL/fig-03.png",
+      "sha256": "93f224a9a988f47ff6b9745fd8b2b95c0c0aa447ade78f4d34f97c450f58eaf2",
+      "size": 113467
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-VL/fig-04.png",
+      "sha256": "8d321e77ec939ede44f33473e0e05fb3e10df54fe4756525f332e23e3d085d4f",
+      "size": 216899
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen-VL/fig-05.png",
+      "sha256": "e8017207e31c78c8e7e57551c3c89bbfc871ec754a477b9471d5a9a349b0bf59",
+      "size": 58989
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen2-VL/fig-01.png",
+      "sha256": "63711fc3e1eb03e245a23b13c5db55115496f8c2586b4741001b30964d5d965c",
+      "size": 186636
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen2-VL/fig-02.png",
+      "sha256": "af226dfa549344e6fa45e439fd88bc08dcbc902de9372808d196394128771273",
+      "size": 98194
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen2-VL/fig-03.png",
+      "sha256": "f41dead6b36c51dc0da69f94815880f3c444576678b79b676ac7fa5a5ae43be9",
+      "size": 76384
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen2-VL/fig-04.png",
+      "sha256": "f456b7d6ec21d03f51f26c2b87712ad334f7ec244d1ba087626e54ac9793a8a1",
+      "size": 387344
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen2-VL/fig-05.png",
+      "sha256": "7a19f0cd7f2fa9fcdd18459f9dd7dbf4978b7a328cf043fc437eca93b362c2a2",
+      "size": 96435
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen2-VL/fig-06.png",
+      "sha256": "d0be4d2eef9af17e3077a9ddcc0292eba4ddfefe06caa41ea1f08d268d4ce269",
+      "size": 149968
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3-VL/fig-01.png",
+      "sha256": "e30255d911d0c15b7d580d3b2c1fd6b2525a42b5fb30a6ec1fdd4ec4fd5e047e",
+      "size": 474632
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3-VL/fig-02.png",
+      "sha256": "7d876c1424082bee7574f098cc57e4dcb1483b9f0bd8be960a646808d9e063fe",
+      "size": 458245
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3-VL/fig-03.png",
+      "sha256": "320b30365a10bb8717384a0f801df70b860920e77f4c52af29466ec15bdb4b5b",
+      "size": 156521
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3-VL/fig-04.png",
+      "sha256": "c206fbe97bd4e170730e2f31f1c0d5df33896e70f1fe6cfd9991ec926af5ee3d",
+      "size": 90962
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3-VL/fig-05.png",
+      "sha256": "3f8f1a014fc728b974a9c2ebe6f38934b363264f1f60a2d44338b629d6a9f8d5",
+      "size": 82689
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3-VL/fig-06.png",
+      "sha256": "7678f72517e53d3cccb1976076787078dca57f9b0ee3d6b39fd82855b964c295",
+      "size": 242071
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3-VL/fig-07.png",
+      "sha256": "36075c88e8b86a99bf2ac871c5d274fbe87b55a773f166bb6a0b4dedd0700f03",
+      "size": 242895
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-125.png",
+      "sha256": "9217f51f0290655e3391f9ca770cc3044cacc4236871f11f33e1bf7fcbb617b8",
+      "size": 63329
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-196.png",
+      "sha256": "3ce53e11033080702b8ef8288b523cc523d3633596274476600b3a2bef9eda41",
+      "size": 27892
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-207.png",
+      "sha256": "fdb819015149f467b3ecce5a9aee47fbccbf75ded71b1f9f9bda9da1e3ad47ac",
+      "size": 43239
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-21.png",
+      "sha256": "ab09008960a03f549b6ae0e11bb2d1a6c7b22187e5d9b7b1638d2bbb1e998cba",
+      "size": 350735
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-23.png",
+      "sha256": "eda47772353c79d4b6aafa794201f6d1e15e878f3bd6f7b54dd9ed394feca137",
+      "size": 135599
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-237.png",
+      "sha256": "bf500e5154b63db16ac72899a5bab75b3212234a7595e9273ef19b503840a85d",
+      "size": 181555
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-283.png",
+      "sha256": "6b730c784f377cfa31b9933ba86519ee0b14ffa759df96a78b6d4a6a995561c6",
+      "size": 52208
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-285.png",
+      "sha256": "dd197c82ea7d68ec5d95981e17beaee6fbb3514921185b9cc5f361711b41c857",
+      "size": 55182
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-297.png",
+      "sha256": "3b573f3af7d138b275e533f2a720911d7b49e8f23510dd4590c16357fa5a1aff",
+      "size": 17963
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-299.png",
+      "sha256": "85c57cf94ee8950792bf6629fb93cdc118607c7e2fca83a6716cd98222f770aa",
+      "size": 24992
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-300.png",
+      "sha256": "950eb33d4c10372203bdfbe79d1356c71b1da9e7ccebb9ec8f835cfdf312b982",
+      "size": 55404
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-307.png",
+      "sha256": "b53e70cfc33b837a34deb9fca0baf1d136f5398ea57a03878d19b5509a8ed0b6",
+      "size": 88715
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-309.png",
+      "sha256": "bcf240e7f6c982533e894e171fd78cc008a565f3c052979b42e5c7e8c1bd6892",
+      "size": 27485
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-311.png",
+      "sha256": "4237daef100da4cc04b76cd0c3cb3eee165543585c052f69c7b574259ddfa0ba",
+      "size": 20827
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-33.png",
+      "sha256": "48a755a81e1400a7180034d8f22cca71fb023dc22ebee014a31a23a7aa24ab27",
+      "size": 156030
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-331.png",
+      "sha256": "652c6d6ae12f8abf1e412dd71627abcf9fe00ad05c5dccc450c0ed091592c7ea",
+      "size": 59998
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-337.png",
+      "sha256": "c4385be100d1f36f8c921fda18773978e2e4c65023023c00075d7130f5081113",
+      "size": 45447
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-339.png",
+      "sha256": "6d0080a9bac47cc5c54097748ecaf8fc6c58e36f9b89ec8d36570841a93fddb3",
+      "size": 42440
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-342.png",
+      "sha256": "cf0719cad07cf13a898db855f4ca9638b32a37fa08a52c3e478dd79a835827ae",
+      "size": 44473
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-344.png",
+      "sha256": "f8e13ce9c2df6f86e64decefe79130a59a4eaaf438446e72acfa3f569a394518",
+      "size": 54012
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/fig-94.png",
+      "sha256": "40b6b46b793470c019ba7d1c01daf52f261e159acdfd52067de352902395992f",
+      "size": 87986
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/exports/fig-297.pdf",
+      "sha256": "85234bb8ade10b3a34948c8dc06a5c63d386264268c08b9426faae0b94379f43",
+      "size": 44897
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/exports/fig-299.pdf",
+      "sha256": "ed3a0377d3e2bb485c70e91206f9a93ba47efdc4d6a6b200d2a73b9c0b7965f9",
+      "size": 53738
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/exports/fig-309.pdf",
+      "sha256": "b714102e66125b3051fcc9175e8c429a066d21b5598cbcfce572089919d4db0f",
+      "size": 45952
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/exports/fig-311.pdf",
+      "sha256": "0e92062d888d132a3408e11ccda54eb29612d3e47ed7bac62f3bab142029ca83",
+      "size": 66840
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/source/fig-297.excalidraw",
+      "sha256": "a7e3871ae130e3ba8bd23c1194776da81861937f24b4f0e3db1f0fa76d6687c0",
+      "size": 69275
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/source/fig-299.excalidraw",
+      "sha256": "ee34758069310387eed98e76df12a457aa0f53df9a51d60c7004cb2b69871f60",
+      "size": 108422
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/source/fig-309.excalidraw",
+      "sha256": "f59136d2a5df535138969dfb6f00f16339d2bcd125b2697f824cb143894aceff",
+      "size": 68750
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/images/Qwen3.8-Flash-Next/redraw/source/fig-311.excalidraw",
+      "sha256": "2f2c9cf2811309420f584e71552fec420940890594c4b10fd7f2785e760f0ef4",
+      "size": 177910
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Latex_out/Qwen-3.5总结.pdf",
+      "sha256": "c77023c9f1bd6b769545b0eeccea0d2ebd54169e5f7e23650ecb2db7ef0d3b62",
+      "size": 1116038
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Latex_out/Qwen-VL总结.pdf",
+      "sha256": "14a273067abc200a4879157d3f1b141d1bc7805e7b22fcbe98f900f1d609eb82",
+      "size": 644698
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Latex_out/Qwen2-VL总结.pdf",
+      "sha256": "5ac1f3bb0447c049566b5420914e49adf2040ca73aa8180b2c89feef3d80fbf4",
+      "size": 1037543
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Latex_out/Qwen3-VL总结.pdf",
+      "sha256": "bb188e9543462d205977d7ac2aefa8d20af26b91172d6bbd9834c0313120773e",
+      "size": 2186999
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Latex_out/Qwen3.8-Flash-Next总结_排版调整.pdf",
+      "sha256": "19bec123493815838c240e2ac6799ac3a14ed8a490cef7a461750549f05f975d",
+      "size": 2269258
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Qwen-3.5总结.tex",
+      "sha256": "c6017686560750107ce1cdb8fe066249798fa00e20fc22c64d77a2e4c1e016fc",
+      "size": 15588
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Qwen-VL总结.tex",
+      "sha256": "8880cfc992cc625d07479e4c4077c1a573772056fabff286700fcf70760ca868",
+      "size": 11183
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Qwen2-VL总结.tex",
+      "sha256": "c5a754d468712c1406124c38a9c5db706e75dfa19a9f2e6b7ac6dc04e414c321",
+      "size": 9214
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Qwen3-VL总结.tex",
+      "sha256": "26207608fa1cadd508a36edc4c18ab8e679a00feb665da42ab8e18870ce8747d",
+      "size": 46611
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/Qwen3.8-Flash-Next总结.tex",
+      "sha256": "4f8adb183685e716d9a57cd9b368183edb9ec00333ceaefada9532eef3b59a2b",
+      "size": 58719
+    },
+    {
+      "path": "raw/notes/MLLM实例/Qwen/复刻说明.md",
+      "sha256": "3b8b9a6d64c573250e781a8bf3577d6d9adf14a24a526624d34ada29fccbb6c6",
+      "size": 3633
+    },
+    {
+      "path": "raw/notes/多模态经典/2021-ICLR-ViT.md",
+      "sha256": "f5abece1210355db3c790aacc3e13ba00bc49d61090b6b568b9acff3986bdc70",
+      "size": 19152
+    },
+    {
+      "path": "raw/notes/多模态经典/2021-ICML-CLIP.md",
+      "sha256": "5dad565bf3f98791f86d613a2da2e0e66366b6618e56817b20cd5f4262763318",
+      "size": 29112
+    },
+    {
+      "path": "raw/notes/多模态经典/2021-ICML-CLIP总结.tex",
+      "sha256": "683877000fa091548b3158063d2ebce74c71fed7b45294c976490997c63b13d3",
+      "size": 37246
+    },
+    {
+      "path": "raw/notes/多模态经典/2021-NeurIPS-ALBEF总结.tex",
+      "sha256": "2ba4644a2982beb71e7cc0024ee4fb5c8b6e12605cb713101e623fce168da3f6",
+      "size": 48359
+    },
+    {
+      "path": "raw/notes/多模态经典/2022-CoCa总结.tex",
+      "sha256": "88aa5a2b5c00c6c9f64a2b1e80d11ae3bf6a90dbbc11ca16cb8c864c4a0e32a1",
+      "size": 37494
+    },
+    {
+      "path": "raw/notes/多模态经典/2022-ICML-BLIP总结.tex",
+      "sha256": "e4828ad2d3b09c047dc01613fa254e2a0c9a6a88afcad57531cc1397c8a69531",
+      "size": 35931
+    },
+    {
+      "path": "raw/notes/多模态经典/2022-NeurIPS-Flamingo.md",
+      "sha256": "68b7c87484e5fc7fce00e3e98f6992e4e75f4bb3672ab7d51e52141db67d1d9b",
+      "size": 5103
+    },
+    {
+      "path": "raw/notes/多模态经典/2022-NeurIPS-Flamingo总结.tex",
+      "sha256": "14ccbb204fb5470f4c4b1817a6de864137e8273d7c5671c2a43e3b895b319c8c",
+      "size": 10457
+    },
+    {
+      "path": "raw/notes/多模态经典/2022-NeurIPS-VLMo总结.tex",
+      "sha256": "4088cbeddd45952ffe565edfaf752694ad44f0077c1aa2d83424020c4e75ee9e",
+      "size": 36407
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-CVPR-BEiT-v3总结.tex",
+      "sha256": "934b8e165b54627d70755398f2004b6fc3f888ca46a41134c023a752a4a86792",
+      "size": 14636
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-ICML-BLIP-2.md",
+      "sha256": "c4a089b4cf0cc2ea1a428666936b3528188488e6af01a95cb329e4bc6bc7697c",
+      "size": 5036
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-ICML-BLIP-2总结.tex",
+      "sha256": "34e5cd7219418d6023fa51b0b0fde110fdecbd16c606489729cbcecacb6a6f60",
+      "size": 24544
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-InstructBLIP总结.tex",
+      "sha256": "997877366fee7e043babb5f0d9b77418a9378fe65f0f94de87ad1192413bcd94",
+      "size": 35254
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-LLaVA-1.5总结.tex",
+      "sha256": "697ad14faab068459100b11b4a7cb659871d24c5517f917d7401d845bd0b195e",
+      "size": 10910
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-MiniGPT-4总结.tex",
+      "sha256": "4f3c02d0471d64620f762be63e487782c7b68c341701b1fb96308a1d68464bd9",
+      "size": 22309
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-MiniGPT-5总结.tex",
+      "sha256": "c4e63f7726e0768d4d23389dd51176a975ec55def489a488ed047b4ebdae92a1",
+      "size": 10081
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-mPLUG-OWL总结.tex",
+      "sha256": "8b3739ed97f46f844b53b3d115f850f81aee8203a5362d170dda5e07b2502613",
+      "size": 10261
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-NeurIPS-LLaVA.md",
+      "sha256": "165a18383816a35256beba6d559ae8890795dc25a6dc3d0f0df7e986d1e1c28d",
+      "size": 5241
+    },
+    {
+      "path": "raw/notes/多模态经典/2023-NeurIPS-LLaVA总结.tex",
+      "sha256": "f4e5a7a1ac0d32912e6d4750efeec4e77561e20afe72b897a56e7ead7a19a782",
+      "size": 26503
+    },
+    {
+      "path": "raw/notes/多模态经典/2024-CVPR-InternVL.md",
+      "sha256": "e07990559b9ef715cceaf4dc70d68db634aeadfdeec812ded2de514ff36f9f40",
+      "size": 6110
+    },
+    {
+      "path": "raw/notes/多模态经典/2024-LLaVA-NeXT总结.tex",
+      "sha256": "71b3db5a0e7b6f985a030ae2c545b6569ebe2cec0353822ac77395609dc626ae",
+      "size": 8844
+    },
+    {
+      "path": "raw/notes/多模态经典/ALBEF动量蒸馏.md",
+      "sha256": "029267d7cb901499b87680f8933859f38a546b025c2ee235976d6a670a7aa98a",
+      "size": 15438
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-ICML-CLIP/fig-01.png",
+      "sha256": "4c65fac9fdcf8acb6e5f9ba8bbbfd7b7c9aff93cce381bfe3ba343ad83a60b2d",
+      "size": 225846
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-ICML-CLIP/fig-02.png",
+      "sha256": "2bdd33aeb04da6bf71fc6177a08d8c27f1096b61809507c4d9e07a7bc284281b",
+      "size": 70600
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-ICML-CLIP/fig-03.png",
+      "sha256": "4d11e8be167538e4c3c7e524dfd66fc85dc8ba2614d6ef64d40f46757f5ad764",
+      "size": 64729
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-NeurIPS-ALBEF/fig-675.png",
+      "sha256": "758db85aa3b32221d0736b27baab7eac83e81144140ab3f4deb610b67e08e789",
+      "size": 146183
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-NeurIPS-ALBEF/fig-728.png",
+      "sha256": "20eac7c220e0bf355d5a3cf388502c8f8fc54bc4982a10db3485cecad828d285",
+      "size": 394898
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-NeurIPS-ALBEF/fig-760.png",
+      "sha256": "282f46c94ed30a581062e0d8b08c63c84448b0e838014c1a6f96507fcbef8c9d",
+      "size": 21470
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-NeurIPS-ALBEF/fig-765.png",
+      "sha256": "cc6f2e06b1c0786d5365ed63aae525665c69577a68cb3ac0017518b18d5a83ce",
+      "size": 11963
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-NeurIPS-ALBEF/fig-776.png",
+      "sha256": "28ac3d611d03fedfcc0e4a7b4ae47a5f951e80a9a3b358bbc2a67e5a434e9831",
+      "size": 9418
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-NeurIPS-ALBEF/fig-780.png",
+      "sha256": "5929d8995b02ef8ef721a13672001896fcdfa58fdd16040d6b114498899d3f9a",
+      "size": 9239
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-NeurIPS-ALBEF/fig-811.png",
+      "sha256": "addfdbd69e19728960e6cb64b27f7a49af95f9c63788a7dddd0f6ee22e9e03a3",
+      "size": 15263
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2021-NeurIPS-ALBEF/fig-817.png",
+      "sha256": "0722da162ef84414a7a4b24627d494bc3b251d31d4f9b5f9eebd66d4a62355ec",
+      "size": 13933
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-CoCa/fig-01.png",
+      "sha256": "789e79f6122e04ca4f9989b11253502e3fce5206a3557fd23d4a75289ec59430",
+      "size": 192338
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-CoCa/fig-02.png",
+      "sha256": "2d081c9f5b261591346342bdd1ad6bbf2b9a04965fbe8c7784aaadb2e6aa6cb3",
+      "size": 296750
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-ICML-BLIP/fig-01.png",
+      "sha256": "57d7ae786925a77a8e8e2e99a02eb8653778c43821ca3c5132da96dc3ee32747",
+      "size": 181725
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-ICML-BLIP/fig-02.png",
+      "sha256": "bbb3f5178e299693e23702053940be5dbfc1c830145c7a5e1f5c5da64f3fd704",
+      "size": 183571
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-Flamingo/fig-01.png",
+      "sha256": "6c27f6b72e238318ac2fb323ac7a2ec352ccda2b7be528ceb2ae5c8810668ac9",
+      "size": 228110
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-Flamingo/fig-02.png",
+      "sha256": "c7d85141104ee3f40d11d960ce956514378c459ebbc38bfd6603ac3a6496df04",
+      "size": 273372
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-Flamingo/fig-03.png",
+      "sha256": "bac1be1c9623e764196949eeec18c489a32d523f2b6c73b83650bec41d240bd7",
+      "size": 150258
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-Flamingo/fig-04.png",
+      "sha256": "5736aa13d4086f493323ca7fbaf42dda78423d998d8faf3b2908e822f8a7527a",
+      "size": 187268
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-Flamingo/fig-05.png",
+      "sha256": "4118a3ab3c9220941d9e961b374c7db6e3bbc63eeb65705f15455f2f345dd13e",
+      "size": 131683
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-Flamingo/fig-06.png",
+      "sha256": "aac88293165875289c92168cc8b8d741666d409508e23d2ffc2410b60df7fae6",
+      "size": 179789
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-Flamingo/fig-07.png",
+      "sha256": "29637d9152f6c8105c679425abdf5669d9528abead45b9a62476a418d19bd771",
+      "size": 232707
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-01.png",
+      "sha256": "e66b4e072b13389c64678d2f3a4e8844a51b63329d822b4ccfda40d7232bde16",
+      "size": 69838
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-02.png",
+      "sha256": "c99e5ac40786de744a85bfd7cfe3234814a687f8c2ab717889932c677e9123ad",
+      "size": 288483
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-03.png",
+      "sha256": "7833713aefe6b1a878175750216363f16f434ebb5eb9034cb7ae9ab24a80e902",
+      "size": 89214
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-04.png",
+      "sha256": "f77acdb51522e6a1b86717153a4bac967e741857f9759b5352815cbe98943295",
+      "size": 685036
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-05.png",
+      "sha256": "cd307c3425b8c4fbcf632389caac469620bc0fe25316db67f9b66338eb4770d6",
+      "size": 248847
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-06.png",
+      "sha256": "20eb2f502bb38bb6ada0db7e5e2fcf8b61173b74c2416ed48efafe06d2edee62",
+      "size": 104652
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-07.png",
+      "sha256": "63439cd322473257f03d0f45fb97e143eb8342b1ad7db96fb65bf24509e5c7fa",
+      "size": 44295
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-08.png",
+      "sha256": "dfcf091ae899b8e6533a988728147594dd82fb1b40aa7383e21fabd37e69ba51",
+      "size": 579721
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2022-NeurIPS-VLMo/fig-09.png",
+      "sha256": "c2e7b3e80ff24896a8957a0a9e4d30e5b3ff7a40d26f37c2fbdb0b5dc854930d",
+      "size": 273338
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-CVPR-BEiT-v3/fig-01.png",
+      "sha256": "69d182ad7aaea9e213d6891fb9a32e0edab97ad62878711394d82e71f783ac61",
+      "size": 90909
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-CVPR-BEiT-v3/fig-02.png",
+      "sha256": "9596b69bfdb1d21990361daf962d4b3ac5c269f1c617472e0826494b3e84b387",
+      "size": 205160
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-ICML-BLIP-2/fig-01.png",
+      "sha256": "f5c665da2c72e02f599ad3b98966397c5105cd978c09cc2a6a815873a605d6c0",
+      "size": 882145
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-ICML-BLIP-2/fig-02.png",
+      "sha256": "ce6def18627fc7a1358ff4dad5409690a03d119301c19c8f0d2a9862fb4ddbab",
+      "size": 69160
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-ICML-BLIP-2/fig-03.png",
+      "sha256": "ef70e621cc6422217a88977871fbb5e78465a7a563723d5d74af72d7b0eb3769",
+      "size": 206975
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-ICML-BLIP-2/fig-04.png",
+      "sha256": "39e1ce3d3ec10c4b5a989256d23279dcda6982550e51537131cfcfbcd744ebbf",
+      "size": 354923
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-ICML-BLIP-2/fig-05.png",
+      "sha256": "7a4372a5444fceff8a64d91dfc56568f51eaf2fa2d9f3d4bff18a8ccd773f7fb",
+      "size": 155079
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-InstructBLIP/fig-01.png",
+      "sha256": "6e9caec92297ff657ef6f26a2f09d769edb66aa0ef5e19dc17d6a02ebc77e899",
+      "size": 461475
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-InstructBLIP/fig-02.png",
+      "sha256": "1dd514d609b77cbf12ca44e9ff281384568292bae1662d1893a4bc8df7aec341",
+      "size": 401522
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-InstructBLIP/fig-03.png",
+      "sha256": "936ca87914d06c8ac8ff4e7c428065c3373b062e947b4843f2e43c61a60c2d10",
+      "size": 406831
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-LLaVA-1.5/fig-01.png",
+      "sha256": "941d0b18deb11fffeb856de7b30c40b71bfb88bc646ef7256c6981f951777174",
+      "size": 410745
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-LLaVA-1.5/fig-02.png",
+      "sha256": "cc0c97119c9f946d08c42a34c15b667c068eb8316f3abd5e0bee09606c06ddf2",
+      "size": 307760
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-LLaVA-1.5/fig-03.png",
+      "sha256": "ad7a479314dd0aad8fc5a80e68def0a2b4d6cf4efb55068a0876a0c200a2aec6",
+      "size": 147520
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-LLaVA-1.5/fig-04.png",
+      "sha256": "3910d0387bafbeda707b1d868afc8ff1d2e555d25839d428803c15734027029e",
+      "size": 267955
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-LLaVA-1.5/fig-05.png",
+      "sha256": "d86df3a8474abb53b6f91c52631d4d2dd90d0352a866f5f83968f74f73d38469",
+      "size": 391693
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-MiniGPT-4/fig-01.png",
+      "sha256": "0d36081463ff80fcc93b11b87a488cd74316b3bcf03d36c3dfdc2dba5d09311f",
+      "size": 404899
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-MiniGPT-4/fig-02.png",
+      "sha256": "947a87e21462fdb9117a0b98d6c310a2f879f88d86487494716b9e4fb825ea96",
+      "size": 478344
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-MiniGPT-4/fig-03.png",
+      "sha256": "0bc1cb12d398e65ccb4fd4187477fabf70248b7129b0daf05cca93f87834c180",
+      "size": 125834
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-MiniGPT-5/fig-01.png",
+      "sha256": "547188609db787c222079c71734a59bb7b337d8a09b9c47c0f4681ebf2b0bb53",
+      "size": 576509
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-mPLUG-OWL/fig-01.png",
+      "sha256": "b1be9a2393a06160941498267b20a533624fb9694f445d48d71a946167877a76",
+      "size": 533596
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-mPLUG-OWL/fig-02.png",
+      "sha256": "6c9b134196e45e157f543aabcb0c4515602e59a1e0880d8371f39b6be2234e44",
+      "size": 283136
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-NeurIPS-LLaVA/fig-01.png",
+      "sha256": "e5f768f90303cf33ae9d9042d9fc2581d8f03723b2139ce4235daeb53eaa037a",
+      "size": 250464
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-NeurIPS-LLaVA/fig-02.png",
+      "sha256": "318483a2fe48f8e73be5d9f8185dffc185609be400b81f49fd2d60117e9ebea9",
+      "size": 120986
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-NeurIPS-LLaVA/fig-03.png",
+      "sha256": "bdcad33803780446a40487488ed9a4fdb044c6570483aa6978f8f0f92b214519",
+      "size": 198308
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-NeurIPS-LLaVA/fig-04.png",
+      "sha256": "8fe8ef1bdb4c8189c0537b21b49806a40cacd7f491285ca358e9077abd9cb916",
+      "size": 99517
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2023-NeurIPS-LLaVA/fig-05.png",
+      "sha256": "f6f2967600cc841171f7b39fd177dd2d872309ca3d6101112ade9fd75cdb1645",
+      "size": 31361
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2024-LLaVA-NeXT/fig-01.png",
+      "sha256": "288aa5a3a8fc65d206fdaa4341aba90aa0164e70a4d359752727b975655454f3",
+      "size": 331575
+    },
+    {
+      "path": "raw/notes/多模态经典/images/2024-LLaVA-NeXT/fig-02.png",
+      "sha256": "c229a056bfa442b68c190285950adda14c5613a1fc137b060a41e25b5b5dab67",
+      "size": 362212
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2021-ICML-CLIP总结.pdf",
+      "sha256": "b482e1ef14dd86cf41f5a9efab4a2b35dd7b56011b4f161c1bb7d19e1a6958ff",
+      "size": 867099
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2021-NeurIPS-ALBEF总结.pdf",
+      "sha256": "62a8d3762293a1ea32ca737ecc11f645e8430791a55a1df1eba95714ca3c4061",
+      "size": 1046379
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2022-CoCa总结.pdf",
+      "sha256": "9b916bdf0ddc4559a09ebfab8cef330f7b77fac87ae701802905e9173227102c",
+      "size": 902709
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2022-ICML-BLIP总结.pdf",
+      "sha256": "6913130327feca777d8d8c569fa3d38e88e3b5e03a9e263bf993a285f2a076a2",
+      "size": 731710
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2022-NeurIPS-Flamingo总结.pdf",
+      "sha256": "2516ab7035089a1ab36e83da98fa2aa92eb1b32808389440c23ecfa5cf3c44c3",
+      "size": 1340902
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2022-NeurIPS-VLMo总结.pdf",
+      "sha256": "a2917de919ec85494fa9a57f864f15c6259bdaef22f321c788cd06e5f4d5bc08",
+      "size": 2331650
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2023-CVPR-BEiT-v3总结.pdf",
+      "sha256": "1b3c170a888152ddd87131bfc6d974809c53f88ee6ac25197cb05dc667f796ec",
+      "size": 628883
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2023-ICML-BLIP-2总结.pdf",
+      "sha256": "cca4625e30dcb083d661b47f5ebd17fcab8fa44237f9f935b35ab14860ceae7d",
+      "size": 1819390
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2023-InstructBLIP总结.pdf",
+      "sha256": "dbdb4b09d5973e35520f8aefa33b1c47cafbac779932353370129e399066723c",
+      "size": 1656397
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2023-LLaVA-1.5总结.pdf",
+      "sha256": "55caf8dd0e90089c1fb1b1e7f4d37f4ce3310402f5a84eecd1eb3546e4f1a80d",
+      "size": 1603211
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2023-MiniGPT-4总结.pdf",
+      "sha256": "efe2ad1f960ac38e8629a8dfc8ad9a92a084b6a7a3e4dbb1f4dbef2ffc4329e5",
+      "size": 1314628
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2023-MiniGPT-5总结.pdf",
+      "sha256": "b7cf36a2394b8edd2c3e8ecde0fe48f6818ffdc2226641f5ae97c8c1578407ea",
+      "size": 713594
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2023-mPLUG-OWL总结.pdf",
+      "sha256": "fa83b47643ce984fded753b26e2908059091bb5dac25f0058e336c7171d353fe",
+      "size": 977471
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2023-NeurIPS-LLaVA总结.pdf",
+      "sha256": "c780a1d7dc9f04d92c4555c31c291dd36b87f19fa77ff9eecd1340036a37887e",
+      "size": 1044959
+    },
+    {
+      "path": "raw/notes/多模态经典/Latex_out/2024-LLaVA-NeXT总结.pdf",
+      "sha256": "c7789d48eeabc19dc625a97b4132f7535528650beb2f3450365b0eaaf30d9882",
+      "size": 821597
+    },
+    {
+      "path": "raw/notes/视觉编码器/AIMv2总结.tex",
+      "sha256": "ad3ff2f20f6f32c77a4975f6afdfe0a60d853382900204e579f4b0dd419756b3",
+      "size": 14262
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/AIMv2/fig-01.png",
+      "sha256": "9d48de0afad7d60460b8697f99a7feef80411cf861442ea112918bd7374dd13b",
+      "size": 195327
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/AIMv2/fig-02.png",
+      "sha256": "46879f9846909aaf88dcaa763d807a21f8420ee08bf760f23a0d6624fa5a53ad",
+      "size": 358004
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/AIMv2/fig-03.png",
+      "sha256": "46879f9846909aaf88dcaa763d807a21f8420ee08bf760f23a0d6624fa5a53ad",
+      "size": 358004
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/AIMv2/fig-04.png",
+      "sha256": "fc0749ec721f3ab5ea77978dcafab1c010396b33d341e22afb76c4aa8fa6f44b",
+      "size": 106124
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/AIMv2/fig-05.png",
+      "sha256": "f0a6b8922d41937503a6529e8946b5c40b8ece896d95bb12949bde6febb0058b",
+      "size": 109235
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/AIMv2/fig-06.png",
+      "sha256": "6ceca02f773ebdf1b45a64f8ae3be022da3b0114ec3f1ece664b9909cace0992",
+      "size": 182983
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/AIMv2/fig-07.png",
+      "sha256": "84298ec44f3520ae3ecdecbca12bbac244b093f234c046a1e6a4ab3ec2dff5b0",
+      "size": 107394
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/InternViT/fig-01.png",
+      "sha256": "8b062a54d1c0ff25fef4b1196b28fa3777aaccbd4a0d81f641ee0d9376273045",
+      "size": 158494
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/InternViT/fig-02.png",
+      "sha256": "ae278e49900291cf17f87fc536dd3e1a5398be9110d10dc5f46295209581a50d",
+      "size": 101640
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/InternViT/fig-03.png",
+      "sha256": "8ce35bb84e73acd40a8d18f35af52374fcb697b55e542203b8d8ae55d31c2c25",
+      "size": 239158
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/NaViT/fig-01.png",
+      "sha256": "942873bcbbed12ac47d54de3d6ce2ad3edeebcd0d1cde2ba82a851a5fe176e61",
+      "size": 246745
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/NaViT/fig-02.png",
+      "sha256": "d995c74908318b7809c1124dc2983cd2af7e67237dcb4ef024dda4659cf5ee08",
+      "size": 104676
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/NaViT/fig-03.png",
+      "sha256": "4ba8566743ed55ff0e58486feae752cd050770d245e60c5901e0a92cf3745ad1",
+      "size": 78275
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/NaViT/fig-04.png",
+      "sha256": "942873bcbbed12ac47d54de3d6ce2ad3edeebcd0d1cde2ba82a851a5fe176e61",
+      "size": 246745
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/NaViT/fig-05.png",
+      "sha256": "c1a9d6d17f5803c7f1cd3a67c7495ff020d8330a9e6e752d970e2fbc0a4b2ef7",
+      "size": 132452
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/SigLIP/fig-01.png",
+      "sha256": "6320b6605a4313d82a24f897657653f91358a91adbe4178eb226cd281a62aa16",
+      "size": 78759
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/SigLIP/fig-02.png",
+      "sha256": "4a887d9e8e2700891a141461322034f9c6ee7559500c10282ef5a28a56ad031a",
+      "size": 378109
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/SigLIP/fig-03.png",
+      "sha256": "db55aa7cf963f54ec318691d2bbb57df592f34eccd43e2ae658b09d076b87000",
+      "size": 573375
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/SigLIP2/fig-01.png",
+      "sha256": "821ec92abe12c41d732073012b2a3854ef9ab6a6ba4234258031bbb5137b4907",
+      "size": 157513
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/SigLIP2/fig-02.png",
+      "sha256": "39bf2de2075fdfa2391345516e4b861187d23b32bc02bb4563b58745b49e4b14",
+      "size": 388521
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/SigLIP2/fig-03.png",
+      "sha256": "b3eeb1cf40679deb0aaa6738ce4c8b91e95858608641653d60069ea81a1ca46a",
+      "size": 232461
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/SoViT/fig-01.png",
+      "sha256": "b03426ef5b94e6433a16cf99adf45149582934a4fd480b30eda9d32ede12b60d",
+      "size": 247640
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/SoViT/fig-02.png",
+      "sha256": "7ef217fab0768aee5abe7c6cdd28d15dc5f357f824903d5251ce16c571eb36b2",
+      "size": 60071
+    },
+    {
+      "path": "raw/notes/视觉编码器/images/SoViT/fig-03.png",
+      "sha256": "a2fabfb82d4b2e241217c016f7f5631f591411f96da5eb312fe239edff65f81f",
+      "size": 66584
+    },
+    {
+      "path": "raw/notes/视觉编码器/InternViT总结.tex",
+      "sha256": "3ccadd4004842312c1f3ed768cbde7e6cc1b1a37d4bdc063ab9a8eb11424acce",
+      "size": 18338
+    },
+    {
+      "path": "raw/notes/视觉编码器/Latex_out/AIMv2总结.pdf",
+      "sha256": "8ab5893d09381ad75e810e877362d9a6d9cd8e032716c42bbaa05584ae6ba2c9",
+      "size": 1610454
+    },
+    {
+      "path": "raw/notes/视觉编码器/Latex_out/InternViT总结.pdf",
+      "sha256": "9f1d8e9c471cfbf1847794f4c92e495401680165810b34613f9feb907a60f1ed",
+      "size": 767226
+    },
+    {
+      "path": "raw/notes/视觉编码器/Latex_out/NaViT总结.pdf",
+      "sha256": "285344d1d3c3d6b504f7c88ae9172cdad1bce4f4ffe122c81435f24f357e9ee4",
+      "size": 1001461
+    },
+    {
+      "path": "raw/notes/视觉编码器/Latex_out/SigLIP2总结.pdf",
+      "sha256": "df71ba1673b877958f3bc2e4910c27a925d3dc0983f0616eb48a105c291bd088",
+      "size": 1040422
+    },
+    {
+      "path": "raw/notes/视觉编码器/Latex_out/SigLIP总结.pdf",
+      "sha256": "f9ac0f65e5b4685e5a417732b1df232402511fd1abac8b0491fea6e026741a27",
+      "size": 1211697
+    },
+    {
+      "path": "raw/notes/视觉编码器/Latex_out/SoViT总结.pdf",
+      "sha256": "859aa48d76531486f1c3cbf8cd3653a209ec8f75ffaf15d705e65460ccf0979c",
+      "size": 678726
+    },
+    {
+      "path": "raw/notes/视觉编码器/NaViT总结.tex",
+      "sha256": "d6982acfb901902c1cd3d8780ae9357c9453a808e1c6f76d51c27bf19d1969d5",
+      "size": 11075
+    },
+    {
+      "path": "raw/notes/视觉编码器/README.md",
+      "sha256": "752380547f52fbac6bd199945b91bb5dcf4f255c89f87eefaa07303dd78c4065",
+      "size": 5040
+    },
+    {
+      "path": "raw/notes/视觉编码器/SigLIP2总结.tex",
+      "sha256": "5524f0ef1bd2c9343d402efb5fd9a1022679df319bdd12a5fdc882a08293f892",
+      "size": 13037
+    },
+    {
+      "path": "raw/notes/视觉编码器/SigLIP总结.tex",
+      "sha256": "60eda265c430a9125df9c5580ad2d70807ee97d4e7a34ad46893b1384b107a67",
+      "size": 10901
+    },
+    {
+      "path": "raw/notes/视觉编码器/SoViT总结.tex",
+      "sha256": "0429531deeb994b167c5b83564f73cd91fcbee871cc99a198cdc3ec04da8d039",
+      "size": 14767
+    },
+    {
+      "path": "raw/papers/architecture/connectors/BLIP-2.pdf",
+      "sha256": "6bc5d399d6127a64ace5167a2f0c00112a49725d2475d80322dbf0083f139e80",
+      "size": 6737540
+    },
+    {
+      "path": "raw/papers/architecture/connectors/Flamingo.pdf",
+      "sha256": "27af622bf50987fd98a03451a27a670adfaeefd5218a3e990b37abc326ba63f0",
+      "size": 31579390
+    },
+    {
+      "path": "raw/papers/architecture/connectors/InstructBLIP.pdf",
+      "sha256": "31c03f3ee54016e6da875593ed9d98419899d4164af638dc8cca76a4871beb35",
+      "size": 3774907
+    },
+    {
+      "path": "raw/papers/architecture/connectors/MiniGPT-4.pdf",
+      "sha256": "a78f64448a86d91bd3c821178686cbe129312d53ee2b7eaf29ab412ce44c2ac0",
+      "size": 3698200
+    },
+    {
+      "path": "raw/papers/architecture/connectors/mPLUG-Owl.pdf",
+      "sha256": "997b330fb3b0b6e4972f7e98ae7753cfbadf81512d0d070eae654e3be2085ffd",
+      "size": 15952374
+    },
+    {
+      "path": "raw/papers/architecture/generation/MiniGPT-5.pdf",
+      "sha256": "496647dc686fa0955af3f7346940273e92052fd0828776747a35d8214549c9f1",
+      "size": 42553867
+    },
+    {
+      "path": "raw/papers/architecture/pretraining/ALBEF.pdf",
+      "sha256": "137c937c0834d8aa116bac93cae46cabe86cf7b7645f3b6339639b194273b229",
+      "size": 7739417
+    },
+    {
+      "path": "raw/papers/architecture/pretraining/BEiT-v3.pdf",
+      "sha256": "f02c366d9a3e02d744807fac11f5f89255aff2532108a0795d4ee2736c1376d4",
+      "size": 611526
+    },
+    {
+      "path": "raw/papers/architecture/pretraining/BLIP.pdf",
+      "sha256": "63e0335cdd57c3d92b907b89c93d10befdd29b8aeed108091bbde90c121ed97a",
+      "size": 1303121
+    },
+    {
+      "path": "raw/papers/architecture/pretraining/CoCa.pdf",
+      "sha256": "ebb8ecad1667502a8e016241b499b2479e296d59c7df06abdedb5cb51d26457b",
+      "size": 4092626
+    },
+    {
+      "path": "raw/papers/architecture/pretraining/VLMo.pdf",
+      "sha256": "636d9dfd99492bdf57e2ec517f5587af7fcdc7dcb3470a6cddc68f53cdb2e5ee",
+      "size": 578934
+    },
+    {
+      "path": "raw/papers/models/deepseek/DeepSeek-OCR.pdf",
+      "sha256": "a7297788968f8ad9ed21bcd273110814e4889efbbc99bfea86dca12205797a90",
+      "size": 7631170
+    },
+    {
+      "path": "raw/papers/models/deepseek/DeepSeek-V4.1-Flash.pdf",
+      "sha256": "0cfdda19c8e1691b5226dd0d4949e2397051268e8a823c2fb61db94ea20c4ac0",
+      "size": 1663475
+    },
+    {
+      "path": "raw/papers/models/deepseek/DeepSeek-VL.pdf",
+      "sha256": "09e6a250407a046b156a0f97c81ac681b57983d89c8287ccdc77d51e379692b9",
+      "size": 6079366
+    },
+    {
+      "path": "raw/papers/models/deepseek/DeepSeek-VL2.pdf",
+      "sha256": "cff2bd0ad1656769d7447f0e3cf3a1885902333894f123bdac27fce05c97459e",
+      "size": 6007241
+    },
+    {
+      "path": "raw/papers/models/internvl/InternVL.pdf",
+      "sha256": "a948f7499c06b8a6cb0073149f1b8f41d3acd10c4bb29fe79f250806f32e5fab",
+      "size": 1315333
+    },
+    {
+      "path": "raw/papers/models/llava/LLaVA-1.5.pdf",
+      "sha256": "b7074a6dad218e0dd109f2a80311548d447e1cf4b9e31c002696985784cc05b9",
+      "size": 2215588
+    },
+    {
+      "path": "raw/papers/models/llava/LLaVA.pdf",
+      "sha256": "dc8bace378a282ea78caa9b5959306202fbfa3b8cedaf8a66541a9af18f4d3bf",
+      "size": 5906135
+    },
+    {
+      "path": "raw/papers/models/qwen/Qwen-VL.pdf",
+      "sha256": "b4eca60ae9d3c1548242da02ece0e2f35ce23d3a983255830d98212aa92e3167",
+      "size": 6329953
+    },
+    {
+      "path": "raw/papers/models/qwen/Qwen2-VL.pdf",
+      "sha256": "30bb0f6c9babf910295d6b7cd34b6f54824236f68782664c3c93fbf4803275d0",
+      "size": 35936325
+    },
+    {
+      "path": "raw/papers/models/qwen/Qwen3-VL.pdf",
+      "sha256": "ee075d08e67de1148d6437c6c1d481f7894183b8793905a2deb5f62664f49380",
+      "size": 4385558
+    },
+    {
+      "path": "raw/papers/models/qwen/Qwen3.8-Flash-Next.pdf",
+      "sha256": "17db868acaa0b86caaf89cd9516e0a92f79d7e161431e5e274b70a3123d60ef7",
+      "size": 2363790
+    },
+    {
+      "path": "raw/papers/vision/alignment/CLIP.pdf",
+      "sha256": "6478b6e571a7d6fcd846d8ef77bfd60c285f1986abb8f475eedc43de403074f5",
+      "size": 6813639
+    },
+    {
+      "path": "raw/papers/vision/alignment/SigLIP.pdf",
+      "sha256": "2efade8de3baeffe9eba759aab9f510ea8f8ac3c365f02f0da75d9baf9ffa2db",
+      "size": 614960
+    },
+    {
+      "path": "raw/papers/vision/alignment/SigLIP2.pdf",
+      "sha256": "b840240c075aad94d46f739712c594cb6848d0bf0e5b516da5d8da7586ad6bb9",
+      "size": 623539
+    },
+    {
+      "path": "raw/papers/vision/encoders/AIMv2.pdf",
+      "sha256": "f86924b23fb81db4f190c82d416597c0cd9fd8d819c106bf32a11c24db815d4f",
+      "size": 4788339
+    },
+    {
+      "path": "raw/papers/vision/encoders/NaViT.pdf",
+      "sha256": "d4421cab93fe27a49c64120faa46822dc95a563ed70f5495b25112b35619a396",
+      "size": 1853088
+    },
+    {
+      "path": "raw/papers/vision/encoders/SoViT.pdf",
+      "sha256": "360540d5b39e666adc1a72bf6f50c803b5494c05bf4e03b666bf479cc7ab903b",
+      "size": 758597
+    },
+    {
+      "path": "raw/papers/vision/encoders/ViT.pdf",
+      "sha256": "8ce7b83971a14508ca711a27c875c9b6914c4f6767cf3150fb1ca6c07aa056d6",
+      "size": 3743814
+    },
+    {
+      "path": "raw/surveys/Efficient Multimodal Large Language Models A Survey.pdf",
+      "sha256": "f62a5e5635507195c0571731aa46924e6336a13997c339ddc72c9e6b4ae83926",
+      "size": 5055945
+    },
+    {
+      "path": "raw/surveys/Perception, Reason, Think, and Plan A Survey on Large Multimodal Reasoning Models.pdf",
+      "sha256": "94bf79d9c9bbeeae25b997cd35a290e056dc4ba561bf5a9b4cd7a786e98cdd94",
+      "size": 9855511
+    },
+    {
+      "path": "raw/web/S024-LLaVA-NeXT/high_res_arch_v2.png",
+      "sha256": "7f8ed15e0ef0d16843297e1deb4a5d7ac2f386e681e44690d939b543b6d1f848",
+      "size": 460988
+    },
+    {
+      "path": "raw/web/S024-LLaVA-NeXT/official-blog.html",
+      "sha256": "23029ba42dcf6bba3b006770a839f44e76b52763b600d8780ab2d9712d7c886e",
+      "size": 29763
+    },
+    {
+      "path": "raw/web/S029-Qwen-3.5/config.json",
+      "sha256": "3ae7fa89c2f7d1354096418ddaf1331e9e0898a8ca11e804fb6dbaa087efb7da",
+      "size": 4177
+    },
+    {
+      "path": "raw/web/S029-Qwen-3.5/README.md",
+      "sha256": "bda4b24e975f65ac677985306ddbad33362e65064637660654c8bb7dea7edf50",
+      "size": 94793
+    }
+  ],
+  "protected_history": [
+    {
+      "path": "maintenance/migrations/2026-10-31-initialization.json",
+      "sha256": "f64d4ec5b358e44519d6c7b9b24d2b5d4ba5e7b6da5cf3c0e81cfb716cab4a9d",
+      "size": 242599
+    },
+    {
+      "path": "maintenance/migrations/2026-10-31-initialization.md",
+      "sha256": "5ef2eda7f2e6c3e41d6f44bc1f8ba6ce3f3177eaf5b6c955201cb8cb44b25301",
+      "size": 8059
+    },
+    {
+      "path": "maintenance/research/R001-initialization.md",
+      "sha256": "ab03a35cd7954f95c20d031bf2adc35f1cb08a676184a4315c068b8864812295",
+      "size": 21081
+    },
+    {
+      "path": "maintenance/research/R001-reviews/final-structure.md",
+      "sha256": "bdeac0303ebc734d022915ece96ae5ddf052a17b90e4b6f73574596e84a678a3",
+      "size": 12139
+    },
+    {
+      "path": "maintenance/research/R001-reviews/final-validation.json",
+      "sha256": "126d0f54719a981ab5f30e7f9f34d05900e4ad85755b62b8458a0aa48a8f3618",
+      "size": 1296
+    },
+    {
+      "path": "maintenance/research/R001-reviews/lecture.md",
+      "sha256": "116459f00890d940d8d2d34129d81465e519e67f6a683f559f341fa7edefe660",
+      "size": 13227
+    },
+    {
+      "path": "maintenance/research/R001-reviews/models-and-generation.md",
+      "sha256": "8f0aecc553652bba32c8441b5a8eabfebd6feb499072353b477d684d9b077bed",
+      "size": 27136
+    },
+    {
+      "path": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+      "sha256": "843757f20f5678327f289efdb9c53028af89ab31154de4acdbb9531a7a03dcfc",
+      "size": 36959
+    },
+    {
+      "path": "maintenance/research/R001-reviews/rendering.md",
+      "sha256": "7d3c84b46a2935d2f38a635076f3281f3fbef95ab54e8c18f154bbcfefc33ea0",
+      "size": 13535
+    },
+    {
+      "path": "maintenance/research/R001-reviews/structure-tool-and-builds.md",
+      "sha256": "c3a4811d8fe3100f59a04d750bf4297b5a20a050abbd90c61a4e58a1f9edc07a",
+      "size": 13867
+    },
+    {
+      "path": "maintenance/research/R001-reviews/surveys.md",
+      "sha256": "5d682bdfcfd22c79681bb38918be183932ba21b246516de416cd07cb99cec13c",
+      "size": 19267
+    },
+    {
+      "path": "maintenance/research/R001-reviews/themes-and-diagrams.md",
+      "sha256": "06ff69b478e31008d12b2aa770a29b63e8b6d2c60a537223060a84a1342fcb6c",
+      "size": 18536
+    },
+    {
+      "path": "maintenance/research/R001-reviews/vision.md",
+      "sha256": "7a51dd0118562db67f5411b793809676f3ccc1984a7d639d9337c5186277c27a",
+      "size": 34134
+    },
+    {
+      "path": "maintenance/source-registry.json",
+      "sha256": "fdd72dd737893f445e92e27655abd9dd4970f1d3d17533ad9a356d1a03687963",
+      "size": 49013
+    }
+  ],
+  "log": {
+    "path": "wiki/log.md",
+    "sha256": "7391ce4de352a1cc247f1a2155641b8b5682d4ccd1a39bde821ac7ec75383089",
+    "size": 2598
+  },
+  "proposal": {
+    "path": "MLLM知识库架构调整方案.md",
+    "sha256": "bd0ed4665fa9a65d093e41f5370489f995e8188ad2313dee2b5213b1ce98b539",
+    "size": 56001
+  },
+  "scope": "Byte baseline before any Raw or knowledge-page change; checker edits in this task are recoverable from git_head."
+}

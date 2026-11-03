@@ -9,8 +9,8 @@ sources:
 reading_status: read
 ingest_status: complete
 related_directions:
-  - vision/encoders
-  - architecture/connectors
+  - vision/representation
+  - architecture/visual-interfaces
 ---
 
 # Qwen-VL：固定视觉接口、细粒度监督与三阶段训练

@@ -9,8 +9,8 @@ ingest_status: complete
 sources:
   - "[[raw/papers/models/deepseek/DeepSeek-VL2.pdf]]"
 related_directions:
-  - vision/encoders
-  - architecture/connectors
+  - vision/representation
+  - architecture/visual-interfaces
 ---
 # DeepSeek-VL2：动态切块、稀疏语言模型与可定位的回答
 

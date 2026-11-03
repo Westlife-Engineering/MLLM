@@ -9,8 +9,8 @@ sources:
 reading_status: read
 ingest_status: complete
 related_directions:
-  - vision/encoders
-  - architecture/connectors
+  - vision/representation
+  - architecture/visual-interfaces
 ---
 
 # Qwen2-VL：动态视觉 token、M-RoPE 与图像视频统一输入

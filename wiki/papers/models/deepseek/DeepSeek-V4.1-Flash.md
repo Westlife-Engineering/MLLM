@@ -9,9 +9,9 @@ ingest_status: complete
 sources:
   - "[[raw/papers/models/deepseek/DeepSeek-V4.1-Flash.pdf]]"
 related_directions:
-  - vision/encoders
-  - architecture/connectors
-  - architecture/pretraining
+  - vision/representation
+  - architecture/visual-interfaces
+  - architecture/language-backbones
 ---
 # DeepSeek-V4.1-Flash：将长上下文成本拆成计算、全局缓存和可重放局部状态
 

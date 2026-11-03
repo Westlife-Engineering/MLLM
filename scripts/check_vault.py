@@ -170,6 +170,10 @@ class Checker:
         self.texts, self.hashes, self.pages = {}, {}, {}
         self.links, self.frontmatter, self.sources = {}, {}, []
         self.raw_expected, self.old_paths = {}, {}
+        self.raw_moves, self.wiki_moves = {}, {}
+        self.historical_documents, self.directions = set(), set()
+        self.withdrawn_documents = {}
+        self.topic_candidates = []
         self.manifests = []
         self.counts = Counter()
 
@@ -205,9 +209,23 @@ class Checker:
                 self.pages[path] = len(pdf)
         return self.pages[path]
 
-    def verify_raw(self, row, origin, path_key="new_path"):
+    def raw_destination(self, relative, sha256, size=None):
+        seen = set()
+        while relative in self.raw_moves:
+            if relative in seen:
+                raise ValueError(f"migration cycle: {relative}")
+            seen.add(relative)
+            move = self.raw_moves[relative]
+            if move["sha256"].lower() != sha256.lower() or (size is not None and move["size"] != size):
+                raise ValueError(f"migration bytes disagree: {relative}")
+            relative = move["new_path"]
+        return relative
+
+    def verify_raw(self, row, origin, path_key="new_path", *, historical=False):
         relative = row.get(path_key, "")
         try:
+            if historical:
+                relative = self.raw_destination(relative, row.get("sha256", ""), row.get("size"))
             path = self.path(relative)
             if not relative.startswith("raw/"):
                 raise ValueError("registered raw path must begin raw/")
@@ -231,6 +249,7 @@ class Checker:
         paths = sorted((self.root / "maintenance/migrations").glob("*.json"))
         if not paths:
             self.issue("migration_manifest", "maintenance/migrations", "no manifest")
+        all_records, original_records = [], []
         for path in paths:
             data = json.loads(self.text(path))
             self.manifests.append(data)
@@ -254,18 +273,101 @@ class Checker:
                 seen.add(row.get("new_path"))
                 if "size" not in row:
                     self.issue("manifest_size", self.rel(path), row.get("new_path"))
-                self.verify_raw(row, self.rel(path))
+                all_records.append((row, self.rel(path)))
+                original_records.append(row)
                 if row.get("old_path"):
+                    previous = self.old_paths.get(row["old_path"])
+                    if previous and any(previous.get(k) != row.get(k) for k in ("new_path", "sha256", "size")):
+                        self.issue("migration_conflict", self.rel(path), row["old_path"])
                     self.old_paths[row["old_path"]] = row
             self.counts["manifest_raw_records"] += len(records)
+            for field, moves, prefix in (("raw_moves", self.raw_moves, "raw/"),
+                                         ("wiki_moves", self.wiki_moves, "wiki/")):
+                for move in data.get(field, []):
+                    old, new = move["old_path"], move["new_path"]
+                    if any(not p.startswith(prefix) or self.rel(self.path(p)) != p for p in (old, new)):
+                        self.issue("migration_path", self.rel(path), f"{old} -> {new}")
+                        continue
+                    if old in moves and moves[old] != move:
+                        self.issue("migration_conflict", self.rel(path), old)
+                        continue
+                    if field == "raw_moves":
+                        if not re.fullmatch(r"[0-9a-fA-F]{64}", move.get("sha256", "")) or not isinstance(move.get("size"), int) or move["size"] < 0:
+                            self.issue("migration_bytes", self.rel(path), old)
+                            continue
+                        all_records.append((move, self.rel(path)))
+                    elif not re.fullmatch(r"S\d+", move.get("source_id", "")) or not all(p.endswith(".md") for p in (old, new)):
+                        self.issue("migration_identity", self.rel(path), old)
+                        continue
+                    moves[old] = move
+            for record in data.get("historical_documents", []):
+                doc = self.path(record["path"])
+                if not record["path"].startswith("maintenance/") or not doc.is_file() or self.digest(doc) != record["sha256"]:
+                    self.issue("historical_document", self.rel(path), record["path"])
+                else:
+                    self.historical_documents.add(record["path"])
+            # This records historical links only; it never exempts Raw inventory
+            # or source-page checks from requiring their registered originals.
+            for record in data.get("withdrawn_documents", []):
+                old = record["path"]
+                replacement = self.path(record["replacement"])
+                if (self.rel(self.path(old)) != old or self.path(old).exists()
+                        or not record.get("reason") or not record.get("user_instruction")
+                        or not re.fullmatch(r"[0-9a-fA-F]{64}", record.get("sha256", ""))
+                        or not isinstance(record.get("size"), int) or record["size"] < 0
+                        or not record["replacement"].startswith("maintenance/")
+                        or not replacement.is_file() or old in self.withdrawn_documents):
+                    self.issue("withdrawn_document", self.rel(path), old)
+                    continue
+                date.fromisoformat(record["date"])
+                self.withdrawn_documents[old] = replacement
+        self.counts["raw_path_moves"] = len(self.raw_moves)
+        self.counts["wiki_path_moves"] = len(self.wiki_moves)
+        for target, count in Counter(r["new_path"] for r in self.raw_moves.values()).items():
+            if count > 1:
+                self.issue("migration_merge", target, "distinct originals must not merge, even with equal bytes")
+        for old, move in self.raw_moves.items():
+            if old in self.old_paths and self.old_paths[old] != move:
+                self.issue("migration_conflict", "maintenance/migrations", old)
+            self.old_paths[old] = move
+            try:
+                self.raw_destination(old, move["sha256"], move["size"])
+            except ValueError as exc:
+                self.issue("migration_chain", old, exc)
+        for row, origin in all_records:
+            self.verify_raw(row, origin, historical=True)
+        final_origins = {}
+        for row in original_records:
+            try:
+                final = self.raw_destination(row["new_path"], row["sha256"], row.get("size"))
+                previous = final_origins.setdefault(final, row["new_path"])
+                if previous != row["new_path"]:
+                    self.issue("migration_merge", final, f"{previous} and {row['new_path']} were distinct originals")
+            except ValueError:
+                pass  # The same malformed chain has already been reported above.
+        for data in self.manifests:
             for row in data.get("markdown_dependency_audit", {}).get("local_links", []):
                 if row.get("status") == "missing":
                     old = self.old_paths.get(row.get("source"))
                     if not old:
-                        self.issue("historical_registration", self.rel(path), row)
+                        self.issue("historical_registration", "maintenance/migrations", row)
                     else:
                         self.historical.append({"file": old["new_path"], "line": row.get("line"),
                                                 "target": row.get("argument"), "kind": "frozen_raw_missing_link"})
+
+    def taxonomy(self):
+        relative = "workflows/taxonomy.yaml"
+        data = yaml.safe_load(self.text(self.path(relative)))
+        if not isinstance(data, dict) or data.get("schema_version") != 1 or not isinstance(data.get("directions"), dict):
+            self.issue("taxonomy_schema", relative, "expected v1 directions mapping")
+            return
+        for direction, definition in data["directions"].items():
+            if not re.fullmatch(r"[a-z0-9-]+/[a-z0-9-]+", direction) or not isinstance(definition, dict):
+                self.issue("taxonomy_direction", relative, direction)
+                continue
+            self.directions.add(direction)
+            if not definition.get("description") or not str(definition.get("entry", "")).startswith("wiki/") or not self.path(definition.get("entry", "")).is_file():
+                self.issue("taxonomy_entry", relative, direction)
 
     def registry(self):
         file = "maintenance/source-registry.json"
@@ -306,6 +408,8 @@ class Checker:
             if typ in {"paper", "source"}:
                 if not isinstance(direction, str) or not re.fullmatch(r"[a-z0-9-]+/[a-z0-9-]+", direction):
                     self.issue("primary_direction", file, f"{sid}: {direction}")
+                elif direction not in self.directions:
+                    self.issue("unknown_direction", file, f"{sid}: {direction}")
                 expected_parent += "/" + str(direction)
             if self.rel(page.parent) != expected_parent or page.suffix != ".md":
                 self.issue("source_directory", row["wiki_path"], expected_parent)
@@ -356,7 +460,7 @@ class Checker:
         else:
             candidate = ((self.root if wiki else source.parent) / path).resolve() if path else source
         if wiki and not candidate.exists() and candidate.suffix.lower() not in {
-            ".md", ".pdf", ".png", ".svg", ".jpg", ".jpeg", ".webp", ".html", ".json", ".excalidraw"
+            ".md", ".pdf", ".png", ".svg", ".jpg", ".jpeg", ".webp", ".html", ".json", ".yaml", ".yml", ".excalidraw"
         }:
             candidate = Path(str(candidate) + ".md")
         if not candidate.is_relative_to(self.root):
@@ -364,7 +468,7 @@ class Checker:
         return candidate, anchor
 
     def markdown(self):
-        files = [self.root / "AGENTS.md"]
+        files = sorted(self.root.glob("*.md"))
         for tree in ("wiki", "workflows", "conversation-to-note", "maintenance", "组会"):
             files.extend(sorted((self.root / tree).rglob("*.md")))
         files = [p for p in files if p.is_file()]
@@ -418,13 +522,13 @@ class Checker:
                         continue
                     self.links[path].add(dest)
                     if not dest.is_file():
-                        # Only the log can refer to documented, verified historical migrations.
-                        mapped = self.old_paths.get(target.partition("#")[0]) if relative == "wiki/log.md" else None
-                        if mapped and self.path(mapped["new_path"]).is_file() and self.digest(self.path(mapped["new_path"])) == mapped["sha256"]:
-                            self.historical.append({"file": relative, "target": target, "kind": "documented_migration"})
-                        else:
+                        mapped = self.historical_target(dest) if relative == "wiki/log.md" or relative in self.historical_documents else None
+                        if mapped is None:
                             self.issue("link_target", relative, target, line=line)
-                        continue
+                            continue
+                        kind = "documented_withdrawal" if self.rel(dest) in self.withdrawn_documents else "documented_migration"
+                        dest = mapped
+                        self.historical.append({"file": relative, "target": target, "resolved": self.rel(dest), "kind": kind})
                     if anchor and dest.suffix.lower() == ".md":
                         valid = bool(re.search(r"\^" + re.escape(anchor[1:]) + r"\s*$", masked_markdown(self.text(dest), False), re.M)) if anchor.startswith("^") else anchor in heading_forms(self.text(dest))
                         if not valid:
@@ -436,6 +540,29 @@ class Checker:
                 except (OSError, ValueError, RuntimeError) as exc:
                     self.issue("linked_file", relative, f"{target}: {exc}", line=line)
         self.counts["markdown_files"] = len(files)
+
+    def historical_target(self, dest):
+        """Resolve only explicitly frozen history; current Wiki never uses aliases."""
+        relative = self.rel(dest)
+        if relative in self.withdrawn_documents:
+            return self.withdrawn_documents[relative]
+        mapped = self.old_paths.get(relative)
+        if mapped:
+            final = self.path(self.raw_destination(mapped["new_path"], mapped["sha256"], mapped.get("size")))
+            return final if final.is_file() and self.digest(final) == mapped["sha256"].lower() else None
+        seen, sid = set(), None
+        while relative in self.wiki_moves:
+            if relative in seen:
+                raise ValueError(f"Wiki migration cycle: {relative}")
+            seen.add(relative)
+            move = self.wiki_moves[relative]
+            if sid is not None and sid != move["source_id"]:
+                raise ValueError(f"Wiki migration identity changed: {relative}")
+            sid, relative = move["source_id"], move["new_path"]
+        if sid and any(r["source_id"] == sid and r["wiki_path"] == relative for r in self.sources):
+            final = self.path(relative)
+            return final if final.is_file() else None
+        return None
 
     def source_pages_and_index(self):
         by_page = {self.path(r["wiki_path"]): r for r in self.sources}
@@ -455,6 +582,9 @@ class Checker:
                     self.issue("registry_page_mismatch", self.rel(path), key)
             if row["type"] in {"paper", "source"} and fm.get("primary_direction") != row["primary_direction"]:
                 self.issue("registry_page_mismatch", self.rel(path), "primary_direction")
+            related = fm.get("related_directions", [])
+            if not isinstance(related, list) or any(d not in self.directions or d == row.get("primary_direction") for d in related) or len(related) != len(set(related)):
+                self.issue("related_direction", self.rel(path), related)
             text = self.text(path)
             linked_raw = set()
             for value in fm.get("sources", []) if isinstance(fm.get("sources"), list) else []:
@@ -468,8 +598,19 @@ class Checker:
                     self.issue("source_page_hash", self.rel(path), raw["path"])
             for topic in row.get("integrated_topics", []):
                 target = self.path(topic if topic.endswith(".md") else topic + ".md")
+                if not topic.startswith("wiki/") or not topic.endswith(".md") or self.rel(target) != topic:
+                    self.issue("theme_path", self.rel(path), f"canonical Vault-relative .md path required: {topic}")
+                if self.frontmatter.get(target, {}).get("type") not in {"topic", "overview", "question"}:
+                    self.issue("theme_type", self.rel(path), topic)
                 if not target.is_file() or target not in self.links.get(path, set()) or path not in self.links.get(target, set()):
                     self.issue("theme_backlink", self.rel(path), topic)
+            topics = row.get("integrated_topics", [])
+            if len(topics) != len({self.path(t if t.endswith(".md") else t + ".md") for t in topics}):
+                self.issue("duplicate_theme", self.rel(path), row["source_id"])
+        self.counts["registered_integrated_relations"] = sum(len(r.get("integrated_topics", [])) for r in self.sources)
+        for old in self.wiki_moves:
+            if self.historical_target(self.path(old)) is None:
+                self.issue("wiki_migration_target", old, "final page/registered identity missing")
         for sid, count in ids.items():
             if not sid or count != 1:
                 self.issue("duplicate_page_source_id", "wiki", f"{sid}: {count}")
@@ -480,6 +621,21 @@ class Checker:
             relative = self.rel(path)
             if relative.startswith("wiki/") and not relative.startswith("wiki/assets/") and path.name not in {"index.md", "log.md"} and path not in self.links.get(index, set()):
                 self.issue("index_coverage", relative, "not linked from wiki/index.md", pending=True)
+
+    def topic_reference_candidates(self):
+        raw_to_source = {r["path"]: row for row in self.sources for r in row.get("raw_files", [])}
+        for path, fm in self.frontmatter.items():
+            if fm.get("type") not in {"topic", "overview", "question"}:
+                continue
+            body = re.sub(r"\A---\s*\n.*?\n---(?:\s*\n|$)", "", self.text(path), count=1, flags=re.S)
+            body = re.split(r"(?m)^## 实际来源入口\s*$", body)[0]
+            candidates = set()
+            for target, _, _, _ in markdown_links(body):
+                source = raw_to_source.get(target.partition("#")[0])
+                if source and self.rel(path) not in source.get("integrated_topics", []):
+                    candidates.add(source["source_id"])
+            for sid in sorted(candidates):
+                self.topic_candidates.append({"source_id": sid, "target": self.rel(path)})
 
     def tex(self):
         actual = []
@@ -530,17 +686,19 @@ class Checker:
                     self.issue("nested_wiki", self.rel(path), "nested wiki path")
 
     def run(self):
-        for operation in (self.load_manifests, self.registry, self.markdown,
-                          self.source_pages_and_index, self.tex, self.inventory):
+        for operation in (self.load_manifests, self.taxonomy, self.registry, self.markdown,
+                          self.source_pages_and_index, self.topic_reference_candidates, self.tex, self.inventory):
             try:
                 operation()
-            except (OSError, ValueError, KeyError, TypeError) as exc:
+            except (OSError, ValueError, KeyError, TypeError, yaml.YAMLError) as exc:
                 self.issue("check_failed", operation.__name__, exc)
         return {"scope": "Structural integrity only; no scholarly correctness, TeX compilation, remote resource completeness, or Obsidian UI validation.",
                 "root": str(self.root), "allow_incomplete": self.allow,
                 "counts": dict(self.counts), "registry_sources": len(self.sources),
                 "registry_types": dict(Counter(r.get("type") for r in self.sources)),
                 "pdfs_checked": len(self.pages), "errors": self.errors, "warnings": self.warnings,
+                "topic_reference_candidates": self.topic_candidates,
+                "candidate_scope": "Body Raw citations absent from registered relations; human review only, not errors or automatic integration.",
                 "documented_historical_links": self.historical, "passed": not self.errors}
 
 

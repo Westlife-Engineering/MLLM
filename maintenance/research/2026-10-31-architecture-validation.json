@@ -1,0 +1,489 @@
+{
+  "date": "2026-10-31",
+  "strict": {
+    "scope": "Structural integrity only; no scholarly correctness, TeX compilation, remote resource completeness, or Obsidian UI validation.",
+    "root": "C:\\Users\\ZENGZX\\Desktop\\MLLM",
+    "allow_incomplete": false,
+    "counts": {
+      "manifest_raw_records": 289,
+      "raw_path_moves": 23,
+      "wiki_path_moves": 23,
+      "links_checked": 2625,
+      "markdown_files": 76,
+      "registered_integrated_relations": 143,
+      "tex_files": 31,
+      "tex_dependencies": 165,
+      "raw_files": 289,
+      "raw_bytes": 320725810
+    },
+    "registry_sources": 34,
+    "registry_types": {
+      "survey": 2,
+      "lecture": 1,
+      "paper": 29,
+      "source": 2
+    },
+    "pdfs_checked": 32,
+    "errors": [],
+    "warnings": [],
+    "topic_reference_candidates": [
+      {
+        "source_id": "S002",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S011",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S012",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S013",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S014",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S015",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S017",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S018",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S019",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S020",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S021",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S025",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S028",
+        "target": "wiki/architecture/Overview.md"
+      },
+      {
+        "source_id": "S001",
+        "target": "wiki/efficiency/Overview.md"
+      },
+      {
+        "source_id": "S005",
+        "target": "wiki/efficiency/Overview.md"
+      },
+      {
+        "source_id": "S006",
+        "target": "wiki/efficiency/Overview.md"
+      },
+      {
+        "source_id": "S009",
+        "target": "wiki/efficiency/Overview.md"
+      },
+      {
+        "source_id": "S025",
+        "target": "wiki/efficiency/Overview.md"
+      },
+      {
+        "source_id": "S032",
+        "target": "wiki/efficiency/Overview.md"
+      },
+      {
+        "source_id": "S033",
+        "target": "wiki/efficiency/Overview.md"
+      },
+      {
+        "source_id": "S034",
+        "target": "wiki/efficiency/Overview.md"
+      },
+      {
+        "source_id": "S004",
+        "target": "wiki/efficiency/Resource-Ledger.md"
+      },
+      {
+        "source_id": "S014",
+        "target": "wiki/efficiency/Resource-Ledger.md"
+      },
+      {
+        "source_id": "S015",
+        "target": "wiki/efficiency/Resource-Ledger.md"
+      },
+      {
+        "source_id": "S021",
+        "target": "wiki/efficiency/Resource-Ledger.md"
+      },
+      {
+        "source_id": "S004",
+        "target": "wiki/evaluation/Judges-and-Task-Success.md"
+      },
+      {
+        "source_id": "S005",
+        "target": "wiki/evaluation/Overview.md"
+      },
+      {
+        "source_id": "S007",
+        "target": "wiki/evaluation/Overview.md"
+      },
+      {
+        "source_id": "S011",
+        "target": "wiki/evaluation/Overview.md"
+      },
+      {
+        "source_id": "S013",
+        "target": "wiki/evaluation/Overview.md"
+      },
+      {
+        "source_id": "S015",
+        "target": "wiki/evaluation/Overview.md"
+      },
+      {
+        "source_id": "S022",
+        "target": "wiki/evaluation/Overview.md"
+      },
+      {
+        "source_id": "S028",
+        "target": "wiki/evaluation/Overview.md"
+      },
+      {
+        "source_id": "S033",
+        "target": "wiki/evaluation/Overview.md"
+      },
+      {
+        "source_id": "S034",
+        "target": "wiki/evaluation/Overview.md"
+      },
+      {
+        "source_id": "S002",
+        "target": "wiki/foundations/Formalization.md"
+      },
+      {
+        "source_id": "S002",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S022",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S023",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S024",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S025",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S026",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S027",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S028",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S029",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S030",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S031",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S032",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S033",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S034",
+        "target": "wiki/models/Overview.md"
+      },
+      {
+        "source_id": "S004",
+        "target": "wiki/overview.md"
+      },
+      {
+        "source_id": "S006",
+        "target": "wiki/overview.md"
+      },
+      {
+        "source_id": "S014",
+        "target": "wiki/overview.md"
+      },
+      {
+        "source_id": "S016",
+        "target": "wiki/overview.md"
+      },
+      {
+        "source_id": "S021",
+        "target": "wiki/overview.md"
+      },
+      {
+        "source_id": "S027",
+        "target": "wiki/overview.md"
+      },
+      {
+        "source_id": "S011",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S012",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S017",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S018",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S019",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S022",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S023",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S025",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S028",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S031",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S032",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S034",
+        "target": "wiki/training/Overview.md"
+      },
+      {
+        "source_id": "S013",
+        "target": "wiki/training/Supervision-and-Stages.md"
+      },
+      {
+        "source_id": "S004",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S005",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S006",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S007",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S008",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S009",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S010",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S026",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S027",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S031",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S032",
+        "target": "wiki/vision/Overview.md"
+      },
+      {
+        "source_id": "S033",
+        "target": "wiki/vision/Overview.md"
+      }
+    ],
+    "candidate_scope": "Body Raw citations absent from registered relations; human review only, not errors or automatic integration.",
+    "documented_historical_links": [
+      {
+        "file": "raw/notes/MLLM实例/Qwen/复刻说明.md",
+        "line": 11,
+        "target": "Latex_out/Qwen3.8-Flash-Next总结.pdf",
+        "kind": "frozen_raw_missing_link"
+      },
+      {
+        "file": "raw/notes/视觉编码器/README.md",
+        "line": 43,
+        "target": "../.work/visual-encoders/continuation-main/review.md",
+        "kind": "frozen_raw_missing_link"
+      },
+      {
+        "file": "raw/notes/视觉编码器/README.md",
+        "line": 43,
+        "target": "../.work/visual-encoders/continuation-main/final-verification.json",
+        "kind": "frozen_raw_missing_link"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/pretraining/ALBEF",
+        "resolved": "wiki/papers/architecture/multimodal-backbones/ALBEF.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/pretraining/BLIP",
+        "resolved": "wiki/papers/architecture/multimodal-backbones/BLIP.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/pretraining/CoCa",
+        "resolved": "wiki/papers/architecture/multimodal-backbones/CoCa.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/pretraining/VLMo",
+        "resolved": "wiki/papers/architecture/multimodal-backbones/VLMo.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/pretraining/BEiT-v3",
+        "resolved": "wiki/papers/architecture/multimodal-backbones/BEiT-v3.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/connectors/Flamingo",
+        "resolved": "wiki/papers/architecture/visual-interfaces/Flamingo.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/connectors/BLIP-2",
+        "resolved": "wiki/papers/architecture/visual-interfaces/BLIP-2.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/connectors/InstructBLIP",
+        "resolved": "wiki/papers/training/instruction-adaptation/InstructBLIP.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/connectors/MiniGPT-4",
+        "resolved": "wiki/papers/training/instruction-adaptation/MiniGPT-4.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/pretraining-and-connectors.md",
+        "target": "wiki/papers/architecture/connectors/mPLUG-Owl",
+        "resolved": "wiki/papers/training/instruction-adaptation/mPLUG-Owl.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/vision.md",
+        "target": "wiki/papers/vision/encoders/ViT",
+        "resolved": "wiki/papers/vision/representation/ViT.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/vision.md",
+        "target": "wiki/papers/vision/encoders/SoViT",
+        "resolved": "wiki/papers/vision/representation/SoViT.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/vision.md",
+        "target": "wiki/papers/vision/encoders/NaViT",
+        "resolved": "wiki/papers/vision/representation/NaViT.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/vision.md",
+        "target": "wiki/papers/vision/encoders/AIMv2",
+        "resolved": "wiki/papers/vision/representation/AIMv2.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/vision.md",
+        "target": "wiki/papers/vision/alignment/CLIP",
+        "resolved": "wiki/papers/vision/representation/CLIP.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/vision.md",
+        "target": "wiki/papers/vision/alignment/SigLIP",
+        "resolved": "wiki/papers/vision/representation/SigLIP.md",
+        "kind": "documented_migration"
+      },
+      {
+        "file": "maintenance/research/R001-reviews/vision.md",
+        "target": "wiki/papers/vision/alignment/SigLIP2",
+        "resolved": "wiki/papers/vision/representation/SigLIP2.md",
+        "kind": "documented_migration"
+      }
+    ],
+    "passed": true
+  },
+  "regression_tests": {
+    "command": "python -B -m unittest discover -s tests -v",
+    "tests_run": 34,
+    "passed": true,
+    "scope": "Final code version; temporary fixtures only."
+  },
+  "scholarly_scope": "Targeted classification/relationship checks as listed in architecture-review.md; not full rereading or replication.",
+  "obsidian_tested": false,
+  "git_commit_created": false
+}

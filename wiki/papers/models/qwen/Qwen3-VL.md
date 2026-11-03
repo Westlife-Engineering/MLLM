@@ -9,8 +9,8 @@ sources:
 reading_status: read
 ingest_status: complete
 related_directions:
-  - vision/encoders
-  - architecture/connectors
+  - vision/representation
+  - architecture/visual-interfaces
 ---
 
 # Qwen3-VL：把视觉层级、时间与长上下文接入同一语言骨干

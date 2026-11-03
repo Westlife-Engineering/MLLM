@@ -33,6 +33,12 @@
 
 `maintenance/source-registry.json` 由主 Agent 统一维护，顶层 `schema_version: 1` 与 `sources` 数组。每项有 `source_id`、`slug`、`type`（survey / lecture / paper / source）、`title`、`primary_direction`（survey / lecture 可为 null）、`identity_key`、`raw_path`、`wiki_path`、`raw_files`、`legacy_inputs`、`reading_status`、`ingest_status`、`integrated_topics`。raw_files 是 `{path, sha256, url, version}` 的数组，实际新增 Raw 逐项登记；legacy_inputs 为冻结输入路径数组。初始原件由迁移 manifest 覆盖，不因未逐份列入 raw_files 就漏掉保全检查。owner / review 等本轮说明可按需增加，不为脚本方便无限扩展 Schema。登记页与来源页状态一致，主路径不替代实际 raw_files 清单。子代理交付更新建议，不能并发写登记表。
 
+方向值按 [[workflows/taxonomy.yaml|现用词表]]，归属理由及原文定位放唯一来源页正文；不在索引、registry 和另一张表各手写同一解释。来源页 `related_directions` 表示粗粒度跨方向导航，可以为空，不能重复或等于主方向；它不承诺某主题已使用此来源。家族/组件查找由现有模型总览承担。
+
+`integrated_topics` 只登记确有论证作用的主题页：支持定义、机制、比较、条件、冲突或纠错均可，具体的范围限制也可以是实质贡献。仅名字/入口是 mention，泛泛介绍范围是 background，都不自动进入该数组。原文覆盖与阅读范围另在来源页说明，综述/讲义按页段记录；实质使用不改变转述证据身份。本轮保留 v1，不强制维护 coverage/topic_relations、study_scope 或全量任务/模态标签。
+
+更新主题后检查正文 Raw 引用与登记关系的差集，人工审定是否需补关系及回链。检查器的 `topic_reference_candidates` 仅是正文引用候选，已剔除 frontmatter 和“实际来源入口”；既不自动新增关系，也不将每个旁引或 Overview 复述判为结构错误。报告的关系数是已登记数，不能据此宣称全库实质使用已穷尽。
+
 ## 单篇分析要回答什么
 
 | 分析问题 | 研究信息 |
